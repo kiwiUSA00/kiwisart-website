@@ -216,6 +216,20 @@ section.tight { padding: 56px 0; }
   box-shadow: 0 20px 40px -20px rgba(32,51,39,0.35);
 }
 
+.about-icon {
+  background: var(--paper-alt);
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.about-icon img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
 .about-layout {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
