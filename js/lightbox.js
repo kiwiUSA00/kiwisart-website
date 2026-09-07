@@ -13,12 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
     lbImg.src = src;
     lbImg.alt = alt || "";
     overlay.classList.add("open");
-    document.body.style.overflow = "hidden";
   }
 
   function closeLightbox() {
     overlay.classList.remove("open");
-    document.body.style.overflow = "";
     lbImg.src = "";
   }
 
