@@ -312,6 +312,53 @@ section.tight { padding: 56px 0; }
 }
 .contact-alt a { color: #f1ede4; text-decoration: underline; }
 
+/* Lightbox */
+.zoomable { cursor: zoom-in; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 22, 18, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 32px;
+}
+.lightbox.open { display: flex; }
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  cursor: default;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+}
+.lightbox-close:hover { opacity: 0.75; }
+
+.art-sold {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--clay);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--line);
