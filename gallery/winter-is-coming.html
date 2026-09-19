@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Winter is Coming — Kiwi\'s Art',
       text: 'Chill blues and frosty whites evoke the crisp, serene stillness of winter's quiet embrace....',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
