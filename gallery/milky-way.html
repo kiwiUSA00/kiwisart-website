@@ -262,76 +262,8 @@
       <button class="room-close-btn" onclick="closeRoom()" aria-label="Close">&times;</button>
     </div>
     <div class="room-scene" id="room-scene">
-        <canvas class="room-canvas" id="room-canvas" width="860" height="537"></canvas>
-        <img class="room-art-img" id="room-art-img" src="/images/milky-way.jpg" alt="Milky Way — dark, metallic tones swirl in space-like patterns evoking the vastness of the cosmos.">
-        <div class="rm-furniture">
-                    <!-- Sofa: three back cushions, wide and low -->
-          <svg class="room-sofa-svg" viewBox="0 0 800 220" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- sofa body / structural frame -->
-            <rect x="0" y="60" width="800" height="160" rx="4" fill="var(--furn-dark)"/>
-            <!-- left arm - top face -->
-            <rect x="0" y="52" width="68" height="12" rx="4" fill="var(--furn-hi)"/>
-            <!-- left arm - front face -->
-            <rect x="0" y="60" width="68" height="160" rx="6" fill="var(--furn)"/>
-            <!-- right arm - top face -->
-            <rect x="732" y="52" width="68" height="12" rx="4" fill="var(--furn-hi)"/>
-            <!-- right arm - front face -->
-            <rect x="732" y="60" width="68" height="160" rx="6" fill="var(--furn)"/>
-            <!-- back cushion 1 (left) -->
-            <rect x="72" y="16" width="208" height="148" rx="10" fill="var(--furn)"/>
-            <rect x="72" y="16" width="208" height="14" rx="10" fill="var(--furn-hi)"/>
-            <!-- back cushion 2 (center) -->
-            <rect x="296" y="16" width="208" height="148" rx="10" fill="var(--furn)"/>
-            <rect x="296" y="16" width="208" height="14" rx="10" fill="var(--furn-hi)"/>
-            <!-- back cushion 3 (right) -->
-            <rect x="520" y="16" width="208" height="148" rx="10" fill="var(--furn)"/>
-            <rect x="520" y="16" width="208" height="14" rx="10" fill="var(--furn-hi)"/>
-            <!-- seat cushions (3) -->
-            <rect x="68" y="156" width="216" height="52" rx="6" fill="var(--furn-hi)"/>
-            <rect x="292" y="156" width="216" height="52" rx="6" fill="var(--furn-hi)"/>
-            <rect x="516" y="156" width="216" height="52" rx="6" fill="var(--furn-hi)"/>
-            <!-- cushion gap shadows -->
-            <rect x="284" y="156" width="8" height="52" fill="var(--furn-dark)"/>
-            <rect x="508" y="156" width="8" height="52" fill="var(--furn-dark)"/>
-            <!-- throw pillow left (dark square, rotated slightly) -->
-            <rect x="100" y="52" width="82" height="82" rx="6" fill="var(--furn-dark)" transform="rotate(-6 141 93)"/>
-            <!-- throw pillow right -->
-            <rect x="618" y="52" width="82" height="82" rx="6" fill="var(--furn-dark)" transform="rotate(6 659 93)"/>
-            <!-- legs -->
-            <rect x="80" y="208" width="16" height="12" rx="3" fill="var(--furn-dark)"/>
-            <rect x="704" y="208" width="16" height="12" rx="3" fill="var(--furn-dark)"/>
-            <rect x="240" y="208" width="16" height="12" rx="3" fill="var(--furn-dark)"/>
-            <rect x="544" y="208" width="16" height="12" rx="3" fill="var(--furn-dark)"/>
-          </svg>
-          <!-- Floor lamp (right side) -->
-          <div class="rm-lamp-wrap">
-            <svg viewBox="0 0 60 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <polygon points="6,0 54,0 46,80 14,80" fill="var(--furn)"/>
-              <rect x="27" y="80" width="6" height="158" fill="var(--furn-dark)"/>
-              <ellipse cx="30" cy="240" rx="26" ry="8" fill="var(--furn-dark)"/>
-              <rect x="23" y="232" width="14" height="48" rx="3" fill="var(--furn-dark)"/>
-            </svg>
-          </div>
-          <!-- Potted plant (left side) -->
-          <div class="rm-plant-wrap rm-plant-left">
-            <svg viewBox="0 0 80 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <!-- stems -->
-              <path d="M40 140 Q30 100 20 70" stroke="var(--plant-stem)" stroke-width="4" fill="none" stroke-linecap="round"/>
-              <path d="M40 140 Q40 90 38 50" stroke="var(--plant-stem)" stroke-width="4" fill="none" stroke-linecap="round"/>
-              <path d="M40 140 Q52 100 60 65" stroke="var(--plant-stem)" stroke-width="4" fill="none" stroke-linecap="round"/>
-              <!-- leaves -->
-              <ellipse cx="20" cy="68" rx="14" ry="22" fill="var(--plant-stem)" transform="rotate(-20 20 68)"/>
-              <ellipse cx="38" cy="46" rx="12" ry="20" fill="var(--plant-stem)"/>
-              <ellipse cx="60" cy="62" rx="14" ry="22" fill="var(--plant-stem)" transform="rotate(20 60 62)"/>
-              <!-- pot -->
-              <path d="M22 140 Q22 170 18 172 L62 172 Q58 170 58 140 Z" fill="var(--plant-pot)"/>
-              <rect x="18" y="140" width="44" height="10" rx="3" fill="var(--plant-pot)"/>
-              <!-- pot highlight -->
-              <path d="M22 140 Q22 148 18 149" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="none"/>
-            </svg>
-          </div>
-        </div>
-        <div class="rm-vignette"></div>
+        <canvas id="room-canvas" width="860" height="537"></canvas>
+        <img id="room-art-img" src="/images/milky-way.jpg" alt="Milky Way — dark, metallic tones swirl in space-like patterns evoking the vastness of the cosmos." style="display:none" crossorigin="anonymous">
       </div>
     <div class="room-ctrls">
       <div class="room-ctrl">
