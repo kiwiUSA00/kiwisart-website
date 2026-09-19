@@ -83,6 +83,24 @@
       </div>
     </div>
   </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="email-capture">
+        <div class="eyebrow">Stay in Touch</div>
+        <h2>New work, first.</h2>
+        <p>Occasional updates when new paintings are finished or a commission slot opens. No noise — just art.</p>
+        <form class="email-form" id="email-form" action="https://formspree.io/troy.evans@outlook.com" method="POST">
+          <input type="hidden" name="_next" value="https://kiwisart.com/contact.html?subscribed=1">
+          <input type="hidden" name="_subject" value="New subscriber — Kiwi's Art">
+          <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="email-form-note" id="email-form-note">No spam, ever. Unsubscribe any time.</p>
+        <p class="email-success" id="email-success">You're in. Thanks for following along.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -98,5 +116,18 @@
 </footer>
 
 <script src="/js/nav.js"></script>
+<script>
+  (function() {
+    if (window.location.search.indexOf('subscribed=1') !== -1) {
+      var form = document.getElementById('email-form');
+      var note = document.getElementById('email-form-note');
+      var success = document.getElementById('email-success');
+      if (form) form.style.display = 'none';
+      if (note) note.style.display = 'none';
+      if (success) success.style.display = 'block';
+      history.replaceState(null, '', window.location.pathname);
+    }
+  })();
+</script>
 </body>
 </html>
