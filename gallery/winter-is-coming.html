@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Winter is Coming | Original Painting by Kiwi | Kiwi's Art</title>
-<meta name="description" content="There's a moment in late October when the light changes and you know the season has turned. Before the cold hits, just that stillness. Cool blues, white blooms — the world going quiet.">
+<meta name="description" content="Chill blues and frosty whites evoke the crisp, serene stillness of winter's quiet embrace.">
 <meta name="author" content="Kiwi">
 <link rel="canonical" href="https://kiwisart.com/gallery/winter-is-coming.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Winter is Coming | Original Painting by Kiwi">
-<meta property="og:description" content="There's a moment in late October when the light changes and you know the season has turned. Before the cold hits, just that stillness. Cool blues, white blooms — the world going quiet.">
+<meta property="og:description" content="Chill blues and frosty whites evoke the crisp, serene stillness of winter's quiet embrace.">
 <meta property="og:url" content="https://kiwisart.com/gallery/winter-is-coming.html">
 <meta property="og:image" content="https://kiwisart.com/images/winter-is-coming.jpg">
 <meta property="og:image:alt" content="Winter is Coming — icy blue and white abstract floral form evoking the stillness of winter.">
@@ -152,7 +152,7 @@
     "name": "Winter is Coming",
     "image": "https://kiwisart.com/images/winter-is-coming.jpg",
     "url": "https://kiwisart.com/gallery/winter-is-coming.html",
-    "description": "There's a moment in late October when the light changes and you know the season has turned. Before the cold hits, just that stillness. Cool blues, white blooms — the world going quiet.",
+    "description": "Chill blues and frosty whites evoke the crisp, serene stillness of winter's quiet embrace.",
     "artform": "Painting",
     "width": "78¾ × 55 in",
     "creator": {"@type": "Person", "name": "Kiwi", "url": "https://kiwisart.com/"}
@@ -191,7 +191,7 @@
           <div class="eyebrow">Original Painting</div>
           <h1>Winter is Coming</h1>
           <span class="art-dims">78&frac34; &times; 55 in</span>
-          <p>There's a moment in late October when the light changes and you know the season has turned. Before the cold hits, just that stillness. Cool blues, white blooms — the world going quiet.</p>
+          <p>Chill blues and frosty whites evoke the crisp, serene stillness of winter's quiet embrace.</p>
 
           <div class="share-row">
             <button class="share-btn" id="share-native" onclick="shareNative()">
@@ -242,13 +242,14 @@
 <script src="/js/nav.js"></script>
 <script src="/js/lightbox.js"></script>
 <script>
-var PAGE_URL = window.location.href;
+// Always use the canonical URL so we copy the right link regardless of how the page was reached
+var PAGE_URL = (document.querySelector('link[rel="canonical"]') || {}).href || window.location.href;
 
 function shareNative() {
   if (navigator.share) {
     navigator.share({
       title: 'Winter is Coming — Kiwi\'s Art',
-      text: 'There's a moment in late October when the light changes and you know the season has turned. Before t...',
+      text: 'Chill blues and frosty whites evoke the crisp, serene stillness of winter's quiet embrace....',
       url: PAGE_URL
     }).catch(function(err) {
       if (err.name !== 'AbortError') { copyLink(); }
@@ -259,30 +260,38 @@ function shareNative() {
 }
 
 function copyLink() {
+  var btn = document.getElementById('copy-btn');
+  if (btn) btn.disabled = true;
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(PAGE_URL).then(showCopied).catch(function() {
+    navigator.clipboard.writeText(PAGE_URL).then(function() {
+      showCopied();
+    }).catch(function() {
       fallbackCopy(PAGE_URL);
+    }).finally(function() {
+      if (btn) btn.disabled = false;
     });
   } else {
     fallbackCopy(PAGE_URL);
+    if (btn) btn.disabled = false;
   }
 }
 
 function fallbackCopy(text) {
   var ta = document.createElement('textarea');
   ta.value = text;
-  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;width:1px;height:1px;';
   document.body.appendChild(ta);
   ta.focus();
   ta.select();
-  try { document.execCommand('copy'); showCopied(); } catch(e) {}
+  try { var ok = document.execCommand('copy'); if (ok) showCopied(); } catch(e) {}
   document.body.removeChild(ta);
 }
 
 function showCopied() {
   var fb = document.getElementById('copy-feedback');
-  fb.classList.add('show');
-  setTimeout(function() { fb.classList.remove('show'); }, 2000);
+  var btn = document.getElementById('copy-btn');
+  if (fb) { fb.classList.add('show'); setTimeout(function() { fb.classList.remove('show'); }, 2500); }
+  if (btn) { btn.textContent = 'Copied!'; setTimeout(function() { btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Link'; }, 2500); }
 }
 </script>
 </body>
