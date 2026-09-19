@@ -33,16 +33,16 @@
   .process-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0;
+    gap: 16px;
     margin-top: 36px;
-    border: 1px solid var(--line);
   }
   .process-step {
     padding: 36px 28px 40px;
-    border-right: 1px solid var(--line);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
     position: relative;
   }
-  .process-step:last-child { border-right: none; }
   .step-number {
     font-family: "Playfair Display", serif;
     font-size: 3rem;
@@ -71,6 +71,7 @@
   }
   .size-card {
     border: 1px solid var(--line);
+    border-radius: 12px;
     padding: 32px 28px;
     text-align: center;
     background: #fff;
