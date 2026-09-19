@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Fire is Raging — Kiwi\'s Art',
       text: 'Blazing fire and uncontrollable rage twist and roar, screaming with wild energy....',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
