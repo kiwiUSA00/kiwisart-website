@@ -85,6 +85,10 @@
       <div class="eyebrow">Selected Works</div>
       <h1>Discover the Beauty of Kiwi's Art</h1>
       <p class="lede">Eleven original paintings exploring the natural world through bold color, texture, and unexpected perspective. Click any piece for a closer look.</p>
+      <button class="btn-immersive" id="btn-immersive" onclick="openImmersive(0)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        Immersive View
+      </button>
     </div>
   </section>
   <section class="tight">
@@ -260,7 +264,98 @@
     </nav>
   </div>
 </footer>
+<div class="immersive-overlay" id="immersive-overlay" role="dialog" aria-modal="true">
+  <button class="imm-close" onclick="closeImmersive()" aria-label="Close">&#x2715;</button>
+  <button class="imm-nav imm-prev" id="imm-prev" onclick="immNav(-1)" aria-label="Previous painting">&#8592;</button>
+  <div class="imm-stage">
+    <img class="imm-img" id="imm-img" src="" alt="">
+  </div>
+  <button class="imm-nav imm-next" id="imm-next" onclick="immNav(1)" aria-label="Next painting">&#8594;</button>
+  <div class="imm-info">
+    <div class="imm-title" id="imm-title"></div>
+    <div class="imm-meta" id="imm-meta"></div>
+  </div>
+  <div class="imm-dots" id="imm-dots"></div>
+</div>
+
 <script src="/js/nav.js"></script>
 <script src="/js/lightbox.js"></script>
+<script>
+var IMM_PAINTINGS = [
+  {src:'/images/waves.jpg', alt:'Waves — a churning mass of white forms erupting outward from a deep cobalt center, fractal ribbons spiraling in every direction.', title:'Waves', meta:'Oil · 46½ × 30¾ in', href:'/gallery/waves.html'},
+  {src:'/images/koi.jpg', alt:'Koi — white and blush forms drifting and weaving through rich crimson depths, evoking koi in graceful, fluid motion.', title:'Koi', meta:'Oil · 46½ × 30¾ in', href:'/gallery/koi.html'},
+  {src:'/images/snow-storm.jpg', alt:'Snow Storm — wind-whipped snow rendered in swirling motion, capturing nature\'s winter fury.', title:'Snow Storm', meta:'Oil · 78¾ × 55 in', href:'/gallery/snow-storm.html'},
+  {src:'/images/sea-foam.jpg', alt:'Sea Foam — fluid green abstract painting with swirling white lines, evoking waves and organic motion.', title:'Sea Foam', meta:'Oil · 55 × 39¼ in', href:'/gallery/sea-foam.html'},
+  {src:'/images/fight.jpg', alt:'Fight — clash of dark force and electric blue expressing raw energy and transformation.', title:'Fight', meta:'Oil · 78¾ × 55 in', href:'/gallery/fight.html'},
+  {src:'/images/spring-bloom.jpg', alt:'Spring Bloom — textured abstract painting with lively greens and glowing yellow, radiating energy.', title:'Spring Bloom', meta:'Oil · 78¾ × 55 in', href:'/gallery/spring-bloom.html'},
+  {src:'/images/milky-way.jpg', alt:'Milky Way — dark, metallic tones swirl in space-like patterns evoking the vastness of the cosmos.', title:'Milky Way', meta:'Oil · 78¾ × 55 in', href:'/gallery/milky-way.html'},
+  {src:'/images/tidal-pool.jpg', alt:'Tidal Pool — calm tidal pool with clear blue-green water reflecting light, nestled among rugged rocky shores.', title:'Tidal Pool', meta:'Oil · 78¾ × 55 in', href:'/gallery/tidal-pool.html'},
+  {src:'/images/fire-is-raging.jpg', alt:'Fire is Raging — blazing red, yellow, and black abstract expressing wild, uncontrollable energy.', title:'Fire is Raging', meta:'Oil · 78¾ × 55 in', href:'/gallery/fire-is-raging.html'},
+  {src:'/images/spring-is-awakening.jpg', alt:'Spring is Awakening — vibrant green and gold abstract bursting with fresh, springtime energy.', title:'Spring is Awakening', meta:'Oil · 78¾ × 55 in', href:'/gallery/spring-is-awakening.html'},
+  {src:'/images/winter-is-coming.jpg', alt:'Winter is Coming — icy blue and white abstract floral form evoking the stillness of winter.', title:'Winter is Coming', meta:'Oil · 78¾ × 55 in', href:'/gallery/winter-is-coming.html'}
+];
+var immIdx = 0;
+
+function openImmersive(idx) {
+  immIdx = idx || 0;
+  var o = document.getElementById('immersive-overlay');
+  o.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  immShow();
+  immBuildDots();
+}
+function closeImmersive() {
+  document.getElementById('immersive-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function immShow() {
+  var p = IMM_PAINTINGS[immIdx];
+  var img = document.getElementById('imm-img');
+  img.style.opacity = '0';
+  img.src = p.src;
+  img.alt = p.alt;
+  img.onload = function() { img.style.opacity = '1'; };
+  document.getElementById('imm-title').textContent = p.title;
+  document.getElementById('imm-meta').textContent = p.meta;
+  document.getElementById('imm-prev').style.visibility = immIdx > 0 ? 'visible' : 'hidden';
+  document.getElementById('imm-next').style.visibility = immIdx < IMM_PAINTINGS.length - 1 ? 'visible' : 'hidden';
+  document.querySelectorAll('.imm-dot').forEach(function(d, i) {
+    d.classList.toggle('active', i === immIdx);
+  });
+}
+function immNav(dir) {
+  var n = immIdx + dir;
+  if (n >= 0 && n < IMM_PAINTINGS.length) { immIdx = n; immShow(); }
+}
+function immBuildDots() {
+  var c = document.getElementById('imm-dots');
+  c.innerHTML = '';
+  IMM_PAINTINGS.forEach(function(_, i) {
+    var d = document.createElement('button');
+    d.className = 'imm-dot' + (i === immIdx ? ' active' : '');
+    d.setAttribute('aria-label', 'Painting ' + (i+1));
+    d.onclick = function() { immIdx = i; immShow(); };
+    c.appendChild(d);
+  });
+}
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('immersive-overlay').classList.contains('open')) return;
+  if (e.key === 'ArrowLeft') immNav(-1);
+  if (e.key === 'ArrowRight') immNav(1);
+  if (e.key === 'Escape') closeImmersive();
+});
+(function() {
+  var sx = 0;
+  document.addEventListener('touchstart', function(e) {
+    if (!document.getElementById('immersive-overlay').classList.contains('open')) return;
+    sx = e.touches[0].clientX;
+  }, {passive:true});
+  document.addEventListener('touchend', function(e) {
+    if (!document.getElementById('immersive-overlay').classList.contains('open')) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 50) immNav(dx < 0 ? 1 : -1);
+  }, {passive:true});
+})();
+</script>
 </body>
 </html>
