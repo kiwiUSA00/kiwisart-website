@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Sea Foam — Kiwi\'s Art',
       text: 'Organic and dynamic, evoking natural processes like waves, sea foam, and algae-rich water seen from ...',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
