@@ -46,14 +46,18 @@
     var nextIdx = (idx + 1) % images.length;
     var next = makeSlide(images[nextIdx]);
 
-    // Start transparent, insert behind current
+    // Start transparent, insert AFTER current so it sits on top in the stacking order
     next.style.opacity = "0";
-    hero.insertBefore(next, hero.firstChild);
+    if (current.nextSibling) {
+      hero.insertBefore(next, current.nextSibling);
+    } else {
+      hero.appendChild(next);
+    }
 
     // Force reflow so the transition fires
     next.getBoundingClientRect();
 
-    // Fade in the new slide
+    // Fade in the new slide (on top of the old one)
     next.style.opacity = "1";
 
     // After transition ends, remove the old slide
