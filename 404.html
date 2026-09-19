@@ -10,27 +10,87 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VX9PJ92T7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VX9PJ92T7J');
+  gtag('config', 'GT-P845MC3M');
+</script>
+<style>
+  .not-found {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+  }
+  .not-found-inner { max-width: 480px; }
+  .not-found-num {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(6rem, 20vw, 10rem);
+    font-weight: 700;
+    color: var(--line);
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  .not-found h1 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    margin-bottom: 0.6em;
+    color: var(--forest-dark);
+  }
+  .not-found p {
+    color: #47505e;
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+  }
+  .not-found .btn-row { justify-content: center; }
+</style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/images/kiwi-icon.png" alt="" class="brand-icon">Kiwi's Art</a>
+    <a class="brand" href="/"><img src="/images/kiwi-icon.png" alt="Kiwi's Art logo" class="brand-icon">Kiwi's Art</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/commission.html">Commission</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 <main id="main">
-  <section style="text-align:center;">
-    <div class="wrap">
-      <div class="eyebrow">404</div>
+  <div class="not-found">
+    <div class="not-found-inner">
+      <p class="not-found-num">404</p>
       <h1>Page not found</h1>
-      <p class="lede">The page you're looking for doesn't exist or has moved.</p>
-      <p><a class="btn btn-primary" href="/">Back to Home</a></p>
+      <p>The page you're looking for doesn't exist — it may have moved, or the link might be wrong.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/gallery.html">View the Gallery</a>
+        <a class="btn btn-outline" href="/">Go Home</a>
+      </div>
     </div>
-  </section>
+  </div>
 </main>
 <footer class="site-footer">
   <div class="wrap">
     <span>&copy; 2026 Kiwi's Art. All rights reserved.</span>
+    <nav aria-label="Footer">
+      <a href="/gallery.html">Gallery</a> &middot;
+      <a href="/commission.html">Commission</a> &middot;
+      <a href="/about.html">About</a> &middot;
+      <a href="/contact.html">Contact</a>
+    </nav>
   </div>
 </footer>
+<script src="/js/nav.js"></script>
 </body>
 </html>
