@@ -155,9 +155,11 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.18em;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #e7dcc7;
+  color: var(--clay);
   margin-bottom: 14px;
 }
+
+.hero .eyebrow { color: #e7dcc7; }
 
 .hero h1 { color: #fff; max-width: 720px; }
 
