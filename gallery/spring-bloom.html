@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Spring Bloom — Kiwi\'s Art',
       text: 'Spring vibes emerge in swirling green and yellow textures full of life and motion....',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
