@@ -631,6 +631,34 @@ section.tight + section.tight { padding-top: 0; }
 .rcb:hover { background: var(--paper-alt); }
 .rcb.active { background: var(--forest-dark); color: #fff; border-color: var(--forest-dark); }
 
+.room-furniture-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 3;
+  padding: 0 5%;
+}
+.room-sofa-svg {
+  width: 54%;
+  display: block;
+  flex-shrink: 0;
+}
+.room-lamp-wrap {
+  position: absolute;
+  right: 6%;
+  bottom: 0;
+  width: 6%;
+}
+.room-lamp-svg {
+  width: 100%;
+  display: block;
+}
+
 /* Commission form */
 .commission-form { max-width: 600px; margin-top: 8px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
