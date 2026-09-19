@@ -43,6 +43,17 @@
     display: block;
     cursor: zoom-in;
   }
+  @keyframes revealSweep {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0% 0 0); }
+  }
+  .painting-hero-img {
+    animation: revealSweep 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-play-state: paused;
+  }
+  .painting-hero-img.revealed {
+    animation-play-state: running;
+  }
   .painting-detail {
     display: grid;
     grid-template-columns: 1fr 360px;
@@ -180,7 +191,7 @@
 
 <main id="main">
   <section class="painting-hero">
-    <img src="/images/winter-is-coming.jpg" alt="Winter is Coming — icy blue and white abstract floral form evoking the stillness of winter." width="1600" height="1176" class="painting-img">
+    <img src="/images/winter-is-coming.jpg" alt="Winter is Coming — icy blue and white abstract floral form evoking the stillness of winter." width="1600" height="1176" class="painting-img painting-hero-img">
   </section>
 
   <section>
@@ -250,58 +261,57 @@
       <span>Preview in a Room</span>
       <button class="room-close-btn" onclick="closeRoom()" aria-label="Close">&times;</button>
     </div>
-    <div class="room-scene">
-      <div class="room-wall" id="room-wall">
+    <div class="room-scene" id="room-scene">
+      <div class="rm-ceiling" id="rm-ceiling"></div>
+      <div class="rm-left" id="rm-left"></div>
+      <div class="rm-right" id="rm-right"></div>
+      <div class="rm-back" id="rm-back">
         <div class="room-art" id="room-art">
           <img src="/images/winter-is-coming.jpg" alt="Winter is Coming — icy blue and white abstract floral form evoking the stillness of winter.">
         </div>
-        <div class="room-furniture-wrap">
-          <svg class="room-sofa-svg" viewBox="0 0 500 160" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- back -->
-            <rect x="28" y="8" width="444" height="82" rx="10" fill="var(--furn)"/>
-            <!-- seat -->
-            <rect x="8" y="82" width="484" height="48" rx="8" fill="var(--furn-dark)"/>
-            <!-- left arm -->
-            <rect x="0" y="38" width="34" height="92" rx="8" fill="var(--furn)"/>
-            <!-- right arm -->
-            <rect x="466" y="38" width="34" height="92" rx="8" fill="var(--furn)"/>
-            <!-- legs -->
-            <rect x="40" y="125" width="13" height="35" rx="4" fill="var(--furn-dark)"/>
-            <rect x="447" y="125" width="13" height="35" rx="4" fill="var(--furn-dark)"/>
-            <rect x="175" y="125" width="13" height="35" rx="4" fill="var(--furn-dark)"/>
-            <rect x="312" y="125" width="13" height="35" rx="4" fill="var(--furn-dark)"/>
+      </div>
+      <div class="rm-base" id="rm-base"></div>
+      <div class="rm-floor" id="rm-floor"></div>
+      <div class="rm-furniture" id="rm-furniture">
+        <svg class="room-sofa-svg" viewBox="0 0 500 160" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="28" y="8" width="444" height="14" rx="6" fill="var(--furn-hi)"/>
+          <rect x="28" y="20" width="444" height="66" rx="6" fill="var(--furn)"/>
+          <rect x="8" y="82" width="484" height="44" rx="6" fill="var(--furn-dark)"/>
+          <rect x="0" y="38" width="34" height="8" rx="3" fill="var(--furn-hi)"/>
+          <rect x="0" y="46" width="34" height="80" rx="6" fill="var(--furn)"/>
+          <rect x="466" y="38" width="34" height="8" rx="3" fill="var(--furn-hi)"/>
+          <rect x="466" y="46" width="34" height="80" rx="6" fill="var(--furn)"/>
+          <rect x="42" y="122" width="12" height="38" rx="4" fill="var(--furn-dark)"/>
+          <rect x="446" y="122" width="12" height="38" rx="4" fill="var(--furn-dark)"/>
+          <rect x="178" y="122" width="12" height="38" rx="4" fill="var(--furn-dark)"/>
+          <rect x="310" y="122" width="12" height="38" rx="4" fill="var(--furn-dark)"/>
+        </svg>
+        <div class="rm-lamp-wrap">
+          <svg class="room-lamp-svg" viewBox="0 0 60 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="8,2 52,2 44,72 16,72" fill="var(--furn)"/>
+            <rect x="27" y="72" width="6" height="136" fill="var(--furn-dark)"/>
+            <ellipse cx="30" cy="210" rx="22" ry="6" fill="var(--furn-dark)"/>
+            <rect x="24" y="205" width="12" height="35" rx="3" fill="var(--furn-dark)"/>
           </svg>
-          <div class="room-lamp-wrap">
-            <svg class="room-lamp-svg" viewBox="0 0 60 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <!-- shade -->
-              <polygon points="8,2 52,2 44,72 16,72" fill="var(--furn)"/>
-              <!-- pole -->
-              <rect x="27" y="72" width="6" height="136" fill="var(--furn-dark)"/>
-              <!-- foot -->
-              <ellipse cx="30" cy="210" rx="22" ry="6" fill="var(--furn-dark)"/>
-              <rect x="24" y="205" width="12" height="35" rx="3" fill="var(--furn-dark)"/>
-            </svg>
-          </div>
         </div>
       </div>
-      <div class="room-baseboard" id="room-baseboard"></div>
-      <div class="room-floor" id="room-floor"></div>
+      <div class="rm-vignette"></div>
     </div>
     <div class="room-ctrls">
       <div class="room-ctrl">
-        <span class="room-ctrl-label">Style</span>
+        <div class="room-ctrl-label">Room Style</div>
         <div class="room-ctrl-btns">
-          <button onclick="setRoomStyle('modern')" class="rcb active" data-rs="modern">Modern</button>
-          <button onclick="setRoomStyle('warm')" class="rcb" data-rs="warm">Warm</button>
-          <button onclick="setRoomStyle('dark')" class="rcb" data-rs="dark">Dark</button>
+          <button class="rcb active" data-rs="modern" onclick="setRoomStyle('modern')">Modern</button>
+          <button class="rcb" data-rs="warm" onclick="setRoomStyle('warm')">Warm</button>
+          <button class="rcb" data-rs="dark" onclick="setRoomStyle('dark')">Dark</button>
         </div>
       </div>
       <div class="room-ctrl">
-        <span class="room-ctrl-label">Scale</span>
+        <div class="room-ctrl-label">Painting Size</div>
         <div class="room-ctrl-btns">
-          <button onclick="setRoomScale('small')" class="rcb" data-rsc="small">Small</button>
-          <button onclick="setRoomScale('medium')" class="rcb active" data-rsc="medium">Medium</button>
-          <button onclick="setRoomScale('large')" class="rcb" data-rsc="large">Large</button>
+          <button class="rcb" data-rsc="small" onclick="setRoomScale('small')">Small</button>
+          <button class="rcb active" data-rsc="medium" onclick="setRoomScale('medium')">Medium</button>
+          <button class="rcb" data-rsc="large" onclick="setRoomScale('large')">Large</button>
         </div>
       </div>
     </div>
@@ -367,6 +377,15 @@ function showCopied() {
   if (fb) { fb.classList.add('show'); setTimeout(function() { fb.classList.remove('show'); }, 2500); }
   if (btn) { btn.textContent = 'Copied!'; setTimeout(function() { btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Link'; }, 2500); }
 }
+</script>
+<script>
+(function() {
+  var img = document.querySelector('.painting-hero-img');
+  if (!img) return;
+  function reveal() { img.classList.add('revealed'); }
+  if (img.complete) { reveal(); }
+  else { img.addEventListener('load', reveal); }
+})();
 </script>
 </body>
 </html>
