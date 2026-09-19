@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Snow Storm — Kiwi\'s Art',
       text: 'Ever been caught in a blizzard? Wind-whipped snow creating chaotic beauty — nature's winter fury ren...',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
