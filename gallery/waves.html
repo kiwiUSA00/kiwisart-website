@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Waves — Kiwi\'s Art',
       text: 'A churning mass of white forms erupts outward from a deep cobalt center — fractal ribbons spiraling ...',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
