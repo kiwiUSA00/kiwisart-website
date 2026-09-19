@@ -13,11 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
     lbImg.src = src;
     lbImg.alt = alt || "";
     overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
   }
 
   function closeLightbox() {
     overlay.classList.remove("open");
     lbImg.src = "";
+    document.body.style.overflow = "";
   }
 
   overlay.addEventListener("click", function (e) {
@@ -28,7 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Escape") closeLightbox();
   });
 
-  document.querySelectorAll(".art-card img, .featured-strip img").forEach(function (img) {
+  // Apply to painting detail images and any standalone art-card images not inside a link
+  document.querySelectorAll(".painting-img, .art-card img:not(a img), .featured-strip img").forEach(function (img) {
+    // Skip images already inside an anchor (they navigate instead)
+    if (img.closest("a")) return;
     img.classList.add("zoomable");
     img.addEventListener("click", function (e) {
       e.preventDefault();
