@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Milky Way — Kiwi\'s Art',
       text: 'Dark and metallic tones swirl in space-like patterns, evoking the vastness of the cosmos....',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
