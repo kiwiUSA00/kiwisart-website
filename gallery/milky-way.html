@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Milky Way | Original Painting by Kiwi | Kiwi's Art</title>
-<meta name="description" content="I took this one outside on a clear night and looked at it under the stars. The metallic swirls found their place. Some paintings need the dark to make sense.">
+<meta name="description" content="Dark and metallic tones swirl in space-like patterns, evoking the vastness of the cosmos.">
 <meta name="author" content="Kiwi">
 <link rel="canonical" href="https://kiwisart.com/gallery/milky-way.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Milky Way | Original Painting by Kiwi">
-<meta property="og:description" content="I took this one outside on a clear night and looked at it under the stars. The metallic swirls found their place. Some paintings need the dark to make sense.">
+<meta property="og:description" content="Dark and metallic tones swirl in space-like patterns, evoking the vastness of the cosmos.">
 <meta property="og:url" content="https://kiwisart.com/gallery/milky-way.html">
 <meta property="og:image" content="https://kiwisart.com/images/milky-way.jpg">
 <meta property="og:image:alt" content="Milky Way — dark, metallic tones swirl in space-like patterns evoking the vastness of the cosmos.">
@@ -152,7 +152,7 @@
     "name": "Milky Way",
     "image": "https://kiwisart.com/images/milky-way.jpg",
     "url": "https://kiwisart.com/gallery/milky-way.html",
-    "description": "I took this one outside on a clear night and looked at it under the stars. The metallic swirls found their place. Some paintings need the dark to make sense.",
+    "description": "Dark and metallic tones swirl in space-like patterns, evoking the vastness of the cosmos.",
     "artform": "Painting",
     "width": "78¾ × 55 in",
     "creator": {"@type": "Person", "name": "Kiwi", "url": "https://kiwisart.com/"}
@@ -191,7 +191,7 @@
           <div class="eyebrow">Original Painting</div>
           <h1>Milky Way</h1>
           <span class="art-dims">78&frac34; &times; 55 in</span>
-          <p>I took this one outside on a clear night and looked at it under the stars. The metallic swirls found their place. Some paintings need the dark to make sense.</p>
+          <p>Dark and metallic tones swirl in space-like patterns, evoking the vastness of the cosmos.</p>
 
           <div class="share-row">
             <button class="share-btn" id="share-native" onclick="shareNative()">
@@ -242,13 +242,14 @@
 <script src="/js/nav.js"></script>
 <script src="/js/lightbox.js"></script>
 <script>
-var PAGE_URL = window.location.href;
+// Always use the canonical URL so we copy the right link regardless of how the page was reached
+var PAGE_URL = (document.querySelector('link[rel="canonical"]') || {}).href || window.location.href;
 
 function shareNative() {
   if (navigator.share) {
     navigator.share({
       title: 'Milky Way — Kiwi\'s Art',
-      text: 'I took this one outside on a clear night and looked at it under the stars. The metallic swirls found...',
+      text: 'Dark and metallic tones swirl in space-like patterns, evoking the vastness of the cosmos....',
       url: PAGE_URL
     }).catch(function(err) {
       if (err.name !== 'AbortError') { copyLink(); }
@@ -259,30 +260,38 @@ function shareNative() {
 }
 
 function copyLink() {
+  var btn = document.getElementById('copy-btn');
+  if (btn) btn.disabled = true;
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(PAGE_URL).then(showCopied).catch(function() {
+    navigator.clipboard.writeText(PAGE_URL).then(function() {
+      showCopied();
+    }).catch(function() {
       fallbackCopy(PAGE_URL);
+    }).finally(function() {
+      if (btn) btn.disabled = false;
     });
   } else {
     fallbackCopy(PAGE_URL);
+    if (btn) btn.disabled = false;
   }
 }
 
 function fallbackCopy(text) {
   var ta = document.createElement('textarea');
   ta.value = text;
-  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;width:1px;height:1px;';
   document.body.appendChild(ta);
   ta.focus();
   ta.select();
-  try { document.execCommand('copy'); showCopied(); } catch(e) {}
+  try { var ok = document.execCommand('copy'); if (ok) showCopied(); } catch(e) {}
   document.body.removeChild(ta);
 }
 
 function showCopied() {
   var fb = document.getElementById('copy-feedback');
-  fb.classList.add('show');
-  setTimeout(function() { fb.classList.remove('show'); }, 2000);
+  var btn = document.getElementById('copy-btn');
+  if (fb) { fb.classList.add('show'); setTimeout(function() { fb.classList.remove('show'); }, 2500); }
+  if (btn) { btn.textContent = 'Copied!'; setTimeout(function() { btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Link'; }, 2500); }
 }
 </script>
 </body>
