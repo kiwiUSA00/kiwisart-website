@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Spring is Awakening — Kiwi\'s Art',
       text: 'Vibrant greens and soft pastels burst with life, radiating the fresh energy of spring....',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
