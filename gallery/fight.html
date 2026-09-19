@@ -242,23 +242,45 @@
 <script src="/js/nav.js"></script>
 <script src="/js/lightbox.js"></script>
 <script>
+var PAGE_URL = window.location.href;
+
 function shareNative() {
   if (navigator.share) {
     navigator.share({
       title: 'Fight — Kiwi\'s Art',
       text: 'Clash of dark force and electric blue, expressing raw energy, tension, and transformation....',
-      url: window.location.href
+      url: PAGE_URL
     });
   } else {
     copyLink();
   }
 }
+
 function copyLink() {
-  navigator.clipboard.writeText(window.location.href).then(function() {
-    var fb = document.getElementById('copy-feedback');
-    fb.classList.add('show');
-    setTimeout(function() { fb.classList.remove('show'); }, 2000);
-  });
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(PAGE_URL).then(showCopied).catch(function() {
+      fallbackCopy(PAGE_URL);
+    });
+  } else {
+    fallbackCopy(PAGE_URL);
+  }
+}
+
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try { document.execCommand('copy'); showCopied(); } catch(e) {}
+  document.body.removeChild(ta);
+}
+
+function showCopied() {
+  var fb = document.getElementById('copy-feedback');
+  fb.classList.add('show');
+  setTimeout(function() { fb.classList.remove('show'); }, 2000);
 }
 </script>
 </body>
