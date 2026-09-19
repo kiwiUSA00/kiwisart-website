@@ -1,24 +1,50 @@
 var ROOM_STYLES = {
-  modern: { wall: '#e8e4de', baseboard: '#cbc7c0', floor: 'linear-gradient(180deg,#b5a590 0%,#8a7a6a 100%)', furn: '#c4bbb2', furnDark: '#a8a098' },
-  warm:   { wall: '#d5c9b0', baseboard: '#b5a48a', floor: 'linear-gradient(180deg,#8a6e50 0%,#5e4a34 100%)', furn: '#a08868', furnDark: '#7d6a4e' },
-  dark:   { wall: '#252232', baseboard: '#18161f', floor: 'linear-gradient(180deg,#1a160c 0%,#0e0a06 100%)', furn: '#302c42', furnDark: '#1c1a28' }
+  modern: {
+    ceiling: '#ccc8c1',
+    back:    '#e8e4de',
+    left:    'linear-gradient(to right, #bab6af, #d8d4ce)',
+    right:   'linear-gradient(to left, #bab6af, #d8d4ce)',
+    base:    '#cbc7c0',
+    floor:   'linear-gradient(180deg,#c8b89e 0%,#8a7a6a 100%)',
+    furn: '#c4bbb2', furnHi: '#d8d2cc', furnDark: '#a8a098'
+  },
+  warm: {
+    ceiling: '#b8a880',
+    back:    '#d5c9b0',
+    left:    'linear-gradient(to right, #a89878, #c8bc9e)',
+    right:   'linear-gradient(to left, #a89878, #c8bc9e)',
+    base:    '#b5a48a',
+    floor:   'linear-gradient(180deg,#b08060 0%,#5e4a34 100%)',
+    furn: '#a08868', furnHi: '#b89878', furnDark: '#7d6a4e'
+  },
+  dark: {
+    ceiling: '#161420',
+    back:    '#252232',
+    left:    'linear-gradient(to right, #0e0c18, #1e1c28)',
+    right:   'linear-gradient(to left, #0e0c18, #1e1c28)',
+    base:    '#18161f',
+    floor:   'linear-gradient(180deg,#2a2018 0%,#0e0a06 100%)',
+    furn: '#302c42', furnHi: '#3e3a52', furnDark: '#1c1a28'
+  }
 };
-var ROOM_SCALES = { small: '18%', medium: '30%', large: '46%' };
+var ROOM_SCALES = { small: '20%', medium: '33%', large: '52%' };
 var curRoomStyle = 'modern', curRoomScale = 'medium';
 
 function applyRoom() {
   var s = ROOM_STYLES[curRoomStyle];
-  var wall  = document.getElementById('room-wall');
-  var base  = document.getElementById('room-baseboard');
-  var floor = document.getElementById('room-floor');
-  var art   = document.getElementById('room-art');
-  if (wall)  wall.style.background  = s.wall;
-  if (base)  base.style.background  = s.baseboard;
-  if (floor) floor.style.background = s.floor;
-  if (art)   art.style.width        = ROOM_SCALES[curRoomScale];
+  var get = function(id) { return document.getElementById(id); };
+  var el;
+  if ((el = get('rm-ceiling'))) el.style.background = s.ceiling;
+  if ((el = get('rm-back')))    el.style.background = s.back;
+  if ((el = get('rm-left')))    el.style.background = s.left;
+  if ((el = get('rm-right')))   el.style.background = s.right;
+  if ((el = get('rm-base')))    el.style.background = s.base;
+  if ((el = get('rm-floor')))   el.style.background = s.floor;
+  if ((el = get('room-art')))   el.style.width = ROOM_SCALES[curRoomScale];
   var scene = document.querySelector('.room-scene');
   if (scene) {
     scene.style.setProperty('--furn', s.furn);
+    scene.style.setProperty('--furn-hi', s.furnHi);
     scene.style.setProperty('--furn-dark', s.furnDark);
   }
 }
@@ -42,8 +68,8 @@ function setRoomScale(sc) {
 function openRoom() {
   var o = document.getElementById('room-overlay');
   if (!o) return;
-  o.classList.add('open');
   applyRoom();
+  o.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
