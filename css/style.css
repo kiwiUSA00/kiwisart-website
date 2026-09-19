@@ -535,34 +535,26 @@ section.tight + section.tight { padding-top: 0; }
 .room-overlay {
   position: fixed; inset: 0;
   background: rgba(6,10,20,0.94);
-  z-index: 300;
-  display: none;
-  align-items: center;
-  justify-content: center;
+  z-index: 300; display: none;
+  align-items: center; justify-content: center;
   padding: 16px;
 }
 .room-overlay.open { display: flex; }
 
 .room-panel {
-  background: #fff;
-  border-radius: 14px;
-  overflow: hidden;
-  width: min(900px, 100%);
+  background: #fff; border-radius: 14px;
+  overflow: hidden; width: min(900px,100%);
   max-height: calc(100vh - 32px);
-  display: flex;
-  flex-direction: column;
+  display: flex; flex-direction: column;
   box-shadow: 0 32px 80px rgba(0,0,0,0.7);
 }
 .room-header {
-  display: flex;
-  align-items: center;
+  display: flex; align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
   border-bottom: 1px solid var(--line);
-  font-size: 0.97rem;
-  font-weight: 600;
-  color: var(--forest-dark);
-  flex-shrink: 0;
+  font-size: 0.97rem; font-weight: 600;
+  color: var(--forest-dark); flex-shrink: 0;
 }
 .room-close-btn {
   background: none; border: none; cursor: pointer;
@@ -570,96 +562,32 @@ section.tight + section.tight { padding-top: 0; }
 }
 .room-close-btn:hover { color: var(--forest-dark); }
 
-/* Canvas scene */
 .room-scene {
   position: relative;
-  aspect-ratio: 860/537;
-  overflow: hidden;
-  flex-shrink: 0;
-  background: #111;
+  width: 100%; aspect-ratio: 860/537;
+  overflow: hidden; flex-shrink: 0; background: #111;
 }
-.room-canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
+#room-canvas {
+  display: block; width: 100%; height: 100%;
 }
+#room-art-img { display: none; }
 
-/* Painting overlay */
-.room-art-img {
-  position: absolute;
-  display: block;
-  pointer-events: none;
-  z-index: 2;
-  transition: left 0.3s ease, top 0.3s ease, width 0.3s ease;
-  box-shadow:
-    0 1px 0 2px rgba(80,60,30,0.3),   /* thin frame */
-    0 6px 24px rgba(0,0,0,0.5),        /* drop shadow */
-    0 2px 6px rgba(0,0,0,0.3);
-}
-
-/* Furniture layer */
-.rm-furniture {
-  position: absolute;
-  bottom: -1px; left: 0; right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  pointer-events: none;
-  z-index: 3;
-  padding: 0 8%;
-}
-.room-sofa-svg {
-  width: 70%;
-  display: block;
-  flex-shrink: 0;
-  filter: drop-shadow(0 -4px 20px rgba(0,0,0,0.35)) drop-shadow(0 8px 20px rgba(0,0,0,0.5));
-}
-.rm-lamp-wrap {
-  position: absolute;
-  right: 5%;
-  bottom: 0;
-  width: 5%;
-}
-.rm-lamp-wrap svg { width: 100%; display: block; }
-
-.rm-plant-wrap {
-  position: absolute;
-  bottom: 0;
-  width: 8%;
-}
-.rm-plant-left { left: 3%; }
-.rm-plant-wrap svg { width: 100%; display: block; }
-
-/* Vignette */
-.rm-vignette {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 75% 85% at 50% 42%, transparent 30%, rgba(0,0,0,0.4) 100%);
-  pointer-events: none;
-  z-index: 5;
-}
-
-/* Controls */
 .room-ctrls {
-  display: flex;
-  gap: 24px;
+  display: flex; gap: 24px;
   padding: 14px 20px;
   border-top: 1px solid var(--line);
-  background: #faf9f7;
-  flex-shrink: 0;
+  background: #faf9f7; flex-shrink: 0;
 }
 .room-ctrl { display: flex; flex-direction: column; gap: 6px; }
 .room-ctrl-label {
-  font-size: 0.73rem; font-weight: 600; letter-spacing: 0.07em;
-  text-transform: uppercase; color: #999;
+  font-size: 0.73rem; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase; color: #999;
 }
 .room-ctrl-btns { display: flex; gap: 6px; }
 .rcb {
-  padding: 5px 14px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: #fff;
-  font-size: 0.82rem;
-  cursor: pointer; color: #666;
+  padding: 5px 14px; border: 1px solid var(--line);
+  border-radius: 20px; background: #fff;
+  font-size: 0.82rem; cursor: pointer; color: #666;
   transition: all 0.15s;
 }
 .rcb:hover { border-color: var(--forest); color: var(--forest-dark); }
@@ -667,7 +595,6 @@ section.tight + section.tight { padding-top: 0; }
 
 @media (max-width: 640px) {
   .room-ctrls { flex-wrap: wrap; gap: 12px; }
-  .rm-plant-left { display: none; }
 }
 
 /* ── Brushstroke divider ─────────────────────────────────── */
