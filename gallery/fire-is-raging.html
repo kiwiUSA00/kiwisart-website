@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fire is Raging | Original Painting by Kiwi | Kiwi's Art</title>
-<meta name="description" content="Red and yellow don't negotiate. This was painted fast, in one session, with whatever was on the palette. Fire doesn't plan — neither did I.">
+<meta name="description" content="Blazing fire and uncontrollable rage twist and roar, screaming with wild energy.">
 <meta name="author" content="Kiwi">
 <link rel="canonical" href="https://kiwisart.com/gallery/fire-is-raging.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Fire is Raging | Original Painting by Kiwi">
-<meta property="og:description" content="Red and yellow don't negotiate. This was painted fast, in one session, with whatever was on the palette. Fire doesn't plan — neither did I.">
+<meta property="og:description" content="Blazing fire and uncontrollable rage twist and roar, screaming with wild energy.">
 <meta property="og:url" content="https://kiwisart.com/gallery/fire-is-raging.html">
 <meta property="og:image" content="https://kiwisart.com/images/fire-is-raging.jpg">
 <meta property="og:image:alt" content="Fire is Raging — blazing red, yellow, and black abstract expressing wild, uncontrollable energy.">
@@ -152,7 +152,7 @@
     "name": "Fire is Raging",
     "image": "https://kiwisart.com/images/fire-is-raging.jpg",
     "url": "https://kiwisart.com/gallery/fire-is-raging.html",
-    "description": "Red and yellow don't negotiate. This was painted fast, in one session, with whatever was on the palette. Fire doesn't plan — neither did I.",
+    "description": "Blazing fire and uncontrollable rage twist and roar, screaming with wild energy.",
     "artform": "Painting",
     "width": "78¾ × 55 in",
     "creator": {"@type": "Person", "name": "Kiwi", "url": "https://kiwisart.com/"}
@@ -191,7 +191,7 @@
           <div class="eyebrow">Original Painting</div>
           <h1>Fire is Raging</h1>
           <span class="art-dims">78&frac34; &times; 55 in</span>
-          <p>Red and yellow don't negotiate. This was painted fast, in one session, with whatever was on the palette. Fire doesn't plan — neither did I.</p>
+          <p>Blazing fire and uncontrollable rage twist and roar, screaming with wild energy.</p>
 
           <div class="share-row">
             <button class="share-btn" id="share-native" onclick="shareNative()">
@@ -242,13 +242,14 @@
 <script src="/js/nav.js"></script>
 <script src="/js/lightbox.js"></script>
 <script>
-var PAGE_URL = window.location.href;
+// Always use the canonical URL so we copy the right link regardless of how the page was reached
+var PAGE_URL = (document.querySelector('link[rel="canonical"]') || {}).href || window.location.href;
 
 function shareNative() {
   if (navigator.share) {
     navigator.share({
       title: 'Fire is Raging — Kiwi\'s Art',
-      text: 'Red and yellow don't negotiate. This was painted fast, in one session, with whatever was on the pale...',
+      text: 'Blazing fire and uncontrollable rage twist and roar, screaming with wild energy....',
       url: PAGE_URL
     }).catch(function(err) {
       if (err.name !== 'AbortError') { copyLink(); }
@@ -259,30 +260,38 @@ function shareNative() {
 }
 
 function copyLink() {
+  var btn = document.getElementById('copy-btn');
+  if (btn) btn.disabled = true;
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(PAGE_URL).then(showCopied).catch(function() {
+    navigator.clipboard.writeText(PAGE_URL).then(function() {
+      showCopied();
+    }).catch(function() {
       fallbackCopy(PAGE_URL);
+    }).finally(function() {
+      if (btn) btn.disabled = false;
     });
   } else {
     fallbackCopy(PAGE_URL);
+    if (btn) btn.disabled = false;
   }
 }
 
 function fallbackCopy(text) {
   var ta = document.createElement('textarea');
   ta.value = text;
-  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;width:1px;height:1px;';
   document.body.appendChild(ta);
   ta.focus();
   ta.select();
-  try { document.execCommand('copy'); showCopied(); } catch(e) {}
+  try { var ok = document.execCommand('copy'); if (ok) showCopied(); } catch(e) {}
   document.body.removeChild(ta);
 }
 
 function showCopied() {
   var fb = document.getElementById('copy-feedback');
-  fb.classList.add('show');
-  setTimeout(function() { fb.classList.remove('show'); }, 2000);
+  var btn = document.getElementById('copy-btn');
+  if (fb) { fb.classList.add('show'); setTimeout(function() { fb.classList.remove('show'); }, 2500); }
+  if (btn) { btn.textContent = 'Copied!'; setTimeout(function() { btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Link'; }, 2500); }
 }
 </script>
 </body>
