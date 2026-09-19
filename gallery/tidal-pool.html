@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tidal Pool | Original Painting by Kiwi | Kiwi's Art</title>
-<meta name="description" content="Tidal pools have a particular stillness — all that life held in a shallow inch of water, waiting for the tide to come back. Blues and greens that shift with the light.">
+<meta name="description" content="Calm tidal pool with clear blue-green water reflecting light, nestled among rugged rocky shores.">
 <meta name="author" content="Kiwi">
 <link rel="canonical" href="https://kiwisart.com/gallery/tidal-pool.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tidal Pool | Original Painting by Kiwi">
-<meta property="og:description" content="Tidal pools have a particular stillness — all that life held in a shallow inch of water, waiting for the tide to come back. Blues and greens that shift with the light.">
+<meta property="og:description" content="Calm tidal pool with clear blue-green water reflecting light, nestled among rugged rocky shores.">
 <meta property="og:url" content="https://kiwisart.com/gallery/tidal-pool.html">
 <meta property="og:image" content="https://kiwisart.com/images/tidal-pool.jpg">
 <meta property="og:image:alt" content="Tidal Pool — calm tidal pool with clear blue-green water reflecting light, nestled among rugged rocky shores.">
@@ -152,7 +152,7 @@
     "name": "Tidal Pool",
     "image": "https://kiwisart.com/images/tidal-pool.jpg",
     "url": "https://kiwisart.com/gallery/tidal-pool.html",
-    "description": "Tidal pools have a particular stillness — all that life held in a shallow inch of water, waiting for the tide to come back. Blues and greens that shift with the light.",
+    "description": "Calm tidal pool with clear blue-green water reflecting light, nestled among rugged rocky shores.",
     "artform": "Painting",
     "width": "78¾ × 55 in",
     "creator": {"@type": "Person", "name": "Kiwi", "url": "https://kiwisart.com/"}
@@ -191,7 +191,7 @@
           <div class="eyebrow">Original Painting</div>
           <h1>Tidal Pool</h1>
           <span class="art-dims">78&frac34; &times; 55 in</span>
-          <p>Tidal pools have a particular stillness — all that life held in a shallow inch of water, waiting for the tide to come back. Blues and greens that shift with the light.</p>
+          <p>Calm tidal pool with clear blue-green water reflecting light, nestled among rugged rocky shores.</p>
 
           <div class="share-row">
             <button class="share-btn" id="share-native" onclick="shareNative()">
@@ -242,13 +242,14 @@
 <script src="/js/nav.js"></script>
 <script src="/js/lightbox.js"></script>
 <script>
-var PAGE_URL = window.location.href;
+// Always use the canonical URL so we copy the right link regardless of how the page was reached
+var PAGE_URL = (document.querySelector('link[rel="canonical"]') || {}).href || window.location.href;
 
 function shareNative() {
   if (navigator.share) {
     navigator.share({
       title: 'Tidal Pool — Kiwi\'s Art',
-      text: 'Tidal pools have a particular stillness — all that life held in a shallow inch of water, waiting for...',
+      text: 'Calm tidal pool with clear blue-green water reflecting light, nestled among rugged rocky shores....',
       url: PAGE_URL
     }).catch(function(err) {
       if (err.name !== 'AbortError') { copyLink(); }
@@ -259,30 +260,38 @@ function shareNative() {
 }
 
 function copyLink() {
+  var btn = document.getElementById('copy-btn');
+  if (btn) btn.disabled = true;
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(PAGE_URL).then(showCopied).catch(function() {
+    navigator.clipboard.writeText(PAGE_URL).then(function() {
+      showCopied();
+    }).catch(function() {
       fallbackCopy(PAGE_URL);
+    }).finally(function() {
+      if (btn) btn.disabled = false;
     });
   } else {
     fallbackCopy(PAGE_URL);
+    if (btn) btn.disabled = false;
   }
 }
 
 function fallbackCopy(text) {
   var ta = document.createElement('textarea');
   ta.value = text;
-  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;width:1px;height:1px;';
   document.body.appendChild(ta);
   ta.focus();
   ta.select();
-  try { document.execCommand('copy'); showCopied(); } catch(e) {}
+  try { var ok = document.execCommand('copy'); if (ok) showCopied(); } catch(e) {}
   document.body.removeChild(ta);
 }
 
 function showCopied() {
   var fb = document.getElementById('copy-feedback');
-  fb.classList.add('show');
-  setTimeout(function() { fb.classList.remove('show'); }, 2000);
+  var btn = document.getElementById('copy-btn');
+  if (fb) { fb.classList.add('show'); setTimeout(function() { fb.classList.remove('show'); }, 2500); }
+  if (btn) { btn.textContent = 'Copied!'; setTimeout(function() { btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Link'; }, 2500); }
 }
 </script>
 </body>
