@@ -114,15 +114,10 @@
 
   @media (max-width: 880px) {
     .process-grid { grid-template-columns: 1fr 1fr; }
-    .process-step { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .process-step:nth-child(2n) { border-right: none; }
-    .process-step:nth-last-child(-n+2) { border-bottom: none; }
     .sizes-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
     .process-grid { grid-template-columns: 1fr; }
-    .process-step { border-right: none; border-bottom: 1px solid var(--line); }
-    .process-step:last-child { border-bottom: none; }
   }
 </style>
 <script type="application/ld+json">
