@@ -240,20 +240,20 @@ section.tight + section.tight { padding-top: 0; }
 
 .about-logo {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .about-logo img {
   width: 100%;
-  max-width: 280px;
+  max-width: 260px;
   height: auto;
 }
 
 .about-layout {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 48px;
+  align-items: start;
 }
 
 /* Gallery grid */
