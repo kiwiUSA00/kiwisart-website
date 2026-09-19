@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Fight — Kiwi\'s Art',
       text: 'Clash of dark force and electric blue, expressing raw energy, tension, and transformation....',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
