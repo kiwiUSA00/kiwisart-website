@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Tidal Pool — Kiwi\'s Art',
       text: 'Calm tidal pool with clear blue-green water reflecting light, nestled among rugged rocky shores....',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
