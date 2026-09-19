@@ -522,6 +522,161 @@ section.tight + section.tight { padding-top: 0; }
 }
 .skip-link:focus { left: 16px; top: 16px; }
 
+/* Room visualizer */
+.room-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8,14,28,0.9);
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.room-overlay.open { display: flex; }
+.room-panel {
+  background: var(--paper);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 820px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+}
+.room-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--forest-dark);
+}
+.room-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6a7080;
+  padding: 0 4px;
+}
+.room-close-btn:hover { color: var(--ink); }
+.room-scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+.room-wall {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 72%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.35s;
+}
+.room-baseboard {
+  position: absolute;
+  left: 0; right: 0;
+  top: 72%;
+  height: 8px;
+  transition: background 0.35s;
+}
+.room-floor {
+  position: absolute;
+  left: 0; right: 0;
+  top: calc(72% + 8px);
+  bottom: 0;
+  transition: background 0.35s;
+}
+.room-art { transition: width 0.35s ease; }
+.room-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 12px 48px -8px rgba(0,0,0,0.55), 2px 4px 12px rgba(0,0,0,0.2);
+}
+.room-ctrls {
+  display: flex;
+  gap: 20px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+  align-items: center;
+}
+.room-ctrl { display: flex; align-items: center; gap: 10px; }
+.room-ctrl-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6a7080;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.room-ctrl-btns { display: flex; gap: 5px; }
+.rcb {
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--ink);
+  font-family: inherit;
+  transition: background 0.1s, border-color 0.1s;
+}
+.rcb:hover { background: var(--paper-alt); }
+.rcb.active { background: var(--forest-dark); color: #fff; border-color: var(--forest-dark); }
+
+/* Commission form */
+.commission-form { max-width: 600px; margin-top: 8px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block;
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--forest-dark);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--forest); }
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a7080' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+.form-group textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
+.commission-success {
+  display: none;
+  color: #2a6e3f;
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 1.05rem;
+}
+
 @media (max-width: 880px) {
   .about-layout { grid-template-columns: 1fr; }
   .mission-grid { grid-template-columns: 1fr; }
@@ -555,4 +710,6 @@ section.tight + section.tight { padding-top: 0; }
     align-items: flex-start;
     gap: 20px;
   }
+  .form-row { grid-template-columns: 1fr; }
+  .room-ctrls { gap: 12px; }
 }
