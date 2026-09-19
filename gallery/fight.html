@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fight | Original Painting by Kiwi | Kiwi's Art</title>
-<meta name="description" content="Some paintings have a mood before they have a subject. This one wanted to collide. Dark mass against electric blue — not quite violence, not quite resolution. The tension is the point.">
+<meta name="description" content="Clash of dark force and electric blue, expressing raw energy, tension, and transformation.">
 <meta name="author" content="Kiwi">
 <link rel="canonical" href="https://kiwisart.com/gallery/fight.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Fight | Original Painting by Kiwi">
-<meta property="og:description" content="Some paintings have a mood before they have a subject. This one wanted to collide. Dark mass against electric blue — not quite violence, not quite resolution. The tension is the point.">
+<meta property="og:description" content="Clash of dark force and electric blue, expressing raw energy, tension, and transformation.">
 <meta property="og:url" content="https://kiwisart.com/gallery/fight.html">
 <meta property="og:image" content="https://kiwisart.com/images/fight.jpg">
 <meta property="og:image:alt" content="Fight — clash of dark force and electric blue expressing raw energy and transformation.">
@@ -152,7 +152,7 @@
     "name": "Fight",
     "image": "https://kiwisart.com/images/fight.jpg",
     "url": "https://kiwisart.com/gallery/fight.html",
-    "description": "Some paintings have a mood before they have a subject. This one wanted to collide. Dark mass against electric blue — not quite violence, not quite resolution. The tension is the point.",
+    "description": "Clash of dark force and electric blue, expressing raw energy, tension, and transformation.",
     "artform": "Painting",
     "width": "78¾ × 55 in",
     "creator": {"@type": "Person", "name": "Kiwi", "url": "https://kiwisart.com/"}
@@ -191,7 +191,7 @@
           <div class="eyebrow">Original Painting</div>
           <h1>Fight</h1>
           <span class="art-dims">78&frac34; &times; 55 in</span>
-          <p>Some paintings have a mood before they have a subject. This one wanted to collide. Dark mass against electric blue — not quite violence, not quite resolution. The tension is the point.</p>
+          <p>Clash of dark force and electric blue, expressing raw energy, tension, and transformation.</p>
 
           <div class="share-row">
             <button class="share-btn" id="share-native" onclick="shareNative()">
@@ -242,13 +242,14 @@
 <script src="/js/nav.js"></script>
 <script src="/js/lightbox.js"></script>
 <script>
-var PAGE_URL = window.location.href;
+// Always use the canonical URL so we copy the right link regardless of how the page was reached
+var PAGE_URL = (document.querySelector('link[rel="canonical"]') || {}).href || window.location.href;
 
 function shareNative() {
   if (navigator.share) {
     navigator.share({
       title: 'Fight — Kiwi\'s Art',
-      text: 'Some paintings have a mood before they have a subject. This one wanted to collide. Dark mass against...',
+      text: 'Clash of dark force and electric blue, expressing raw energy, tension, and transformation....',
       url: PAGE_URL
     }).catch(function(err) {
       if (err.name !== 'AbortError') { copyLink(); }
@@ -259,30 +260,38 @@ function shareNative() {
 }
 
 function copyLink() {
+  var btn = document.getElementById('copy-btn');
+  if (btn) btn.disabled = true;
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(PAGE_URL).then(showCopied).catch(function() {
+    navigator.clipboard.writeText(PAGE_URL).then(function() {
+      showCopied();
+    }).catch(function() {
       fallbackCopy(PAGE_URL);
+    }).finally(function() {
+      if (btn) btn.disabled = false;
     });
   } else {
     fallbackCopy(PAGE_URL);
+    if (btn) btn.disabled = false;
   }
 }
 
 function fallbackCopy(text) {
   var ta = document.createElement('textarea');
   ta.value = text;
-  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+  ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;width:1px;height:1px;';
   document.body.appendChild(ta);
   ta.focus();
   ta.select();
-  try { document.execCommand('copy'); showCopied(); } catch(e) {}
+  try { var ok = document.execCommand('copy'); if (ok) showCopied(); } catch(e) {}
   document.body.removeChild(ta);
 }
 
 function showCopied() {
   var fb = document.getElementById('copy-feedback');
-  fb.classList.add('show');
-  setTimeout(function() { fb.classList.remove('show'); }, 2000);
+  var btn = document.getElementById('copy-btn');
+  if (fb) { fb.classList.add('show'); setTimeout(function() { fb.classList.remove('show'); }, 2500); }
+  if (btn) { btn.textContent = 'Copied!'; setTimeout(function() { btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Link'; }, 2500); }
 }
 </script>
 </body>
