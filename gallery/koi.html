@@ -250,6 +250,8 @@ function shareNative() {
       title: 'Koi — Kiwi\'s Art',
       text: 'White and blush forms drift and weave through rich crimson depths, evoking koi in graceful motion — ...',
       url: PAGE_URL
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') { copyLink(); }
     });
   } else {
     copyLink();
