@@ -27,7 +27,7 @@ var WALL_LEFT  =  40;   // horizontal breathing room (canvas px)
 var WALL_RIGHT = 820;
 var WALL_TOP   =  15;   // just below ceiling cornice
 var SOFA_Y     = 240;   // painting bottom limit (large paintings stop above this)
-var HANG_CY    = 160;   // eye-level centre for small/medium paintings
+var HANG_CY    = 130;   // eye-level centre for small/medium paintings
 
 // ── Main draw ─────────────────────────────────────────────────────────────────
 function drawRoom() {
