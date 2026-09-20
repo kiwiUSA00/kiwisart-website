@@ -58,7 +58,7 @@
   main, section, .wrap { padding: 0 !important; margin: 0 !important; }
   section { display: block; }
   .sheet-wrap { box-shadow: none; max-width: 100%; width: 100%; margin: 0; border-radius: 0; }
-  .sheet-wrap canvas { display: block; width: 100% !important; height: auto !important; }
+  .sheet-wrap canvas{display:block;width:auto!important;height:100vh!important;max-width:100%!important}
 }
 </style>
 </head>
@@ -101,20 +101,22 @@
     </div>
   </section>
 
-  <section class="section-alt">
-    <div class="wrap">
-      <div class="contact-card">
-        <div class="contact-card-text">
-          <h2>More colouring pages</h2>
-          <p>Koi and Waves are also available as free printables.</p>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a class="btn btn-primary" href="/colouring/koi.html">Koi</a>
-          <a class="btn btn-outline" href="/colouring/waves.html">Waves</a>
-        </div>
-      </div>
+  <section class="section-alt"><div class="wrap">
+    <p class="all-colour-label">More colouring pages</p>
+    <div class="all-colour-grid">
+      <a class="btn btn-outline acg-btn" href="/colouring/koi.html">Koi</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/waves.html">Waves</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/snow-storm.html">Snow Storm</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/sea-foam.html">Sea Foam</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/fight.html">Fight</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/milky-way.html">Milky Way</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/spring-bloom.html">Spring Bloom</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/tidal-pool.html">Tidal Pool</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/fire-is-raging.html">Fire Is Raging</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/spring-is-awakening.html">Spring Is Awakening</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/winter-is-coming.html">Winter Is Coming</a>
     </div>
-  </section>
+  </div></section>
 </main>
 
 <footer class="site-footer">
@@ -357,5 +359,5 @@
 
 })();
 </script>
-</body>
+<script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
 </html>

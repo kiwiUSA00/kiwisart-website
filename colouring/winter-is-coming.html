@@ -25,7 +25,7 @@
 .sheet-wrap canvas{display:block;width:100%;height:auto}
 .colouring-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 12px}
 .colouring-hint{font-size:.85rem;color:var(--lede);margin-bottom:48px;line-height:1.6}
-@media print{@page{margin:0}.site-header,.skip-link,.colouring-intro,.colouring-actions,.colouring-hint,.site-footer,.page-eyebrow,.section-alt,h1{display:none!important}body,html{margin:0!important;padding:0!important;background:white}main,section,.wrap{padding:0!important;margin:0!important}section{display:block}.sheet-wrap{box-shadow:none;max-width:100%;width:100%;margin:0;border-radius:0}.sheet-wrap canvas{display:block;width:100%!important;height:auto!important}}
+@media print{@page{margin:0}.site-header,.skip-link,.colouring-intro,.colouring-actions,.colouring-hint,.site-footer,.page-eyebrow,.section-alt,h1{display:none!important}body,html{margin:0!important;padding:0!important;background:white}main,section,.wrap{padding:0!important;margin:0!important}section{display:block}.sheet-wrap{box-shadow:none;max-width:100%;width:100%;margin:0;border-radius:0}.sheet-wrap canvas{display:block;width:auto!important;height:100vh!important;max-width:100%!important}}
 </style>
 </head>
 <body>
@@ -50,10 +50,22 @@
     </div>
     <p class="colouring-hint">Best on heavy paper or white card stock. A4 and US Letter both fit perfectly. Free for personal use only.</p>
   </div></section>
-  <section class="section-alt"><div class="wrap"><div class="contact-card">
-    <div class="contact-card-text"><h2>All paintings have a colouring page</h2><p>Every piece in the gallery comes with a free printable — find yours from the gallery.</p></div>
-    <a class="btn btn-primary" href="/gallery.html">Browse the Gallery</a>
-  </div></div></section>
+  <section class="section-alt"><div class="wrap">
+    <p class="all-colour-label">More colouring pages</p>
+    <div class="all-colour-grid">
+      <a class="btn btn-outline acg-btn" href="/colouring/koi.html">Koi</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/waves.html">Waves</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/snow-storm.html">Snow Storm</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/sea-foam.html">Sea Foam</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/fight.html">Fight</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/milky-way.html">Milky Way</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/spring-bloom.html">Spring Bloom</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/tidal-pool.html">Tidal Pool</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/fire-is-raging.html">Fire Is Raging</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/spring-is-awakening.html">Spring Is Awakening</a>
+      <a class="btn btn-outline acg-btn" href="/colouring/winter-is-coming.html">Winter Is Coming</a>
+    </div>
+  </div></section>
 </main>
 <footer class="site-footer"><div class="wrap">
   <span>&copy; 2026 Kiwi's Art. All rights reserved.</span>
@@ -175,5 +187,5 @@
   ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Winter Is Coming  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
-</body>
+<script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
 </html>
