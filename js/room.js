@@ -23,11 +23,15 @@ var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2; // ≈ -161.5
 // This defines the maximum painting area at "Large" scale.
 // Calibrated against reference photo: painting fills right accent wall,
 // top ~8px from canvas top on left, ~0 on right; left edge at x≈412.
+// Calibrated by pixel-mapping the reference photo (1024×1024) to canvas:
+//   photo → canvas:  x' = x * (860/1024),  y' = -161.5 + y * (860/1024)
+// Reference painting corners in photo: tl(487,198) tr(999,133) br(999,765) bl(487,725)
+// Right-side ceiling (133) maps to canvas y≈-50 → clipped to 0.
 var QUAD = {
-  tl: [412,   8],   // top-left  — left edge of accent wall at ceiling
-  tr: [856,   0],   // top-right — right corner (ceiling at canvas top)
-  br: [856, 537],   // bottom-right — right corner at canvas bottom
-  bl: [412, 462]    // bottom-left — floor at left edge of accent wall
+  tl: [410,   5],   // top-left  — left edge of accent wall at ceiling
+  tr: [840,   0],   // top-right — right corner, ceiling (above canvas top)
+  br: [840, 481],   // bottom-right — right corner (NOT canvas bottom!)
+  bl: [410, 448]    // bottom-left — floor at left edge of accent wall
 };
 
 // ── Vertical centre for each painting size ────────────────────────────────────
