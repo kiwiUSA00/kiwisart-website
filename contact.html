@@ -76,11 +76,26 @@
       <h1>Got something to say?</h1>
       <p class="lede">Interested in a piece, arranging a viewing, or discussing a commission? Send Kiwi a message and you'll hear back soon.</p>
 
-      <div class="contact-card" style="margin-top:32px;">
-        <h2>Email Kiwi</h2>
-        <p>The fastest way to reach out is by email — click below to open a message addressed to Kiwi's Art.</p>
-        <a class="btn btn-primary" href="mailto:troy.evans@outlook.com?subject=Inquiry%20from%20Kiwi%27s%20Art%20website">Email Kiwi</a>
-      </div>
+      <form class="commission-form" id="contact-form" action="https://formspree.io/f/xdekanbp" method="POST" style="margin-top:32px;">
+        <input type="hidden" name="_subject" value="Message via Kiwi's Art — Contact">
+        <input type="hidden" name="_next" value="https://kiwisart.com/contact.html?sent=1">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ct-name">Your name</label>
+            <input type="text" id="ct-name" name="name" required placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label for="ct-email">Email address</label>
+            <input type="email" id="ct-email" name="email" required placeholder="jane@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ct-message">Message</label>
+          <textarea id="ct-message" name="message" required placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+      <p class="commission-success" id="contact-success">Your message has been sent — Kiwi will be in touch soon. ✓</p>
     </div>
   </section>
 
@@ -118,7 +133,15 @@
 <script src="/js/nav.js"></script>
 <script>
   (function() {
-    if (window.location.search.indexOf('subscribed=1') !== -1) {
+    var p = window.location.search;
+    if (p.indexOf('sent=1') !== -1) {
+      var f = document.getElementById('contact-form');
+      var s = document.getElementById('contact-success');
+      if (f) f.style.display = 'none';
+      if (s) s.style.display = 'block';
+      history.replaceState(null, '', window.location.pathname);
+    }
+    if (p.indexOf('subscribed=1') !== -1) {
       var form = document.getElementById('email-form');
       var note = document.getElementById('email-form-note');
       var success = document.getElementById('email-success');
