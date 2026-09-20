@@ -28,10 +28,10 @@ var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2; // ≈ -161.5 (crops t
 //   │        │  right side is taller (wall recedes into scene upper-right)
 //   BL──────BR
 var QUAD = {
-  tl: [348,  30],
-  tr: [852,   5],
-  br: [852, 425],
-  bl: [348, 425]
+  tl: [462,  55],   // left wall top  — ceiling line on left side
+  tr: [852,   8],   // right wall top — ceiling rises toward right (perspective)
+  br: [852, 508],   // right wall bottom — floor lower on right (closer to camera)
+  bl: [462, 442]    // left wall bottom — floor higher on left (farther from camera)
 };
 
 // ── Perspective-correct image draw (horizontal-strip method) ─────────────────
