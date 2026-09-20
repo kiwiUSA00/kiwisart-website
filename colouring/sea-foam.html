@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sea Foam — Free Colouring Page | Kiwi's Art</title>
+<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Sea Foam' — organic foam and water forms to colour your own way.">
+<meta name="author" content="Kiwi">
+<link rel="canonical" href="https://kiwisart.com/colouring/sea-foam.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sea Foam — Free Colouring Page | Kiwi's Art">
+<meta property="og:url" content="https://kiwisart.com/colouring/sea-foam.html">
+<meta property="og:image" content="https://kiwisart.com/images/sea-foam.jpg">
+<meta property="og:site_name" content="Kiwi's Art">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VX9PJ92T7J"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VX9PJ92T7J');gtag('config','GT-P845MC3M');</script>
+<style>
+.colouring-intro{max-width:600px}.colouring-intro p{font-size:1.05rem;line-height:1.75;color:#3d4455}
+.sheet-wrap{max-width:560px;margin:36px auto 24px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.10),0 24px 64px rgba(0,0,0,.06);border-radius:1px;overflow:hidden}
+.sheet-wrap canvas{display:block;width:100%;height:auto}
+.colouring-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 12px}
+.colouring-hint{font-size:.85rem;color:var(--lede);margin-bottom:48px;line-height:1.6}
+@media print{.site-header,.skip-link,.colouring-intro,.colouring-actions,.colouring-hint,.site-footer,.page-eyebrow{display:none!important}body{padding:0;background:white}.sheet-wrap{box-shadow:none;max-width:100%;margin:0;border-radius:0}section{padding:0!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/"><img src="/images/kiwi-icon.png" alt="Kiwi's Art logo" class="brand-icon">Kiwi's Art</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <nav class="main-nav" aria-label="Primary"><ul>
+    <li><a href="/">Home</a></li><li><a href="/gallery.html">Gallery</a></li>
+    <li><a href="/commission.html">Commission</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li>
+  </ul></nav>
+</div></header>
+<main id="main">
+  <section><div class="wrap">
+    <div class="eyebrow page-eyebrow">Free Colouring Page</div>
+    <h1>Sea Foam</h1>
+    <div class="colouring-intro"><p>A printable line drawing inspired by the original painting — organic foam and algae-rich water seen from above. Fill each cell with its own colour.</p></div>
+    <div class="sheet-wrap"><canvas id="c" width="595" height="800"></canvas></div>
+    <div class="colouring-actions">
+      <button class="btn btn-primary" onclick="window.print()">Print Colouring Page</button>
+      <a class="btn btn-outline" href="/gallery/sea-foam.html">View Original Painting</a>
+    </div>
+    <p class="colouring-hint">Best on heavy paper or white card stock. A4 and US Letter both fit perfectly. Free for personal use only.</p>
+  </div></section>
+  <section class="section-alt"><div class="wrap"><div class="contact-card">
+    <div class="contact-card-text"><h2>All paintings have a colouring page</h2><p>Every piece in the gallery comes with a free printable — find yours from the gallery.</p></div>
+    <a class="btn btn-primary" href="/gallery.html">Browse the Gallery</a>
+  </div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <span>&copy; 2026 Kiwi's Art. All rights reserved.</span>
+  <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
+</div></footer>
+<script src="/js/nav.js"></script>
+<script>
+(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
+
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
+
+  // Irregular foam cell — closed bezier blob
+  function cell(pts, lw, alpha){
+    s(lw,alpha);
+    ctx.beginPath();
+    var n=pts.length;
+    ctx.moveTo((pts[n-1][0]+pts[0][0])/2,(pts[n-1][1]+pts[0][1])/2);
+    for(var i=0;i<n;i++){
+      var p0=pts[i],p1=pts[(i+1)%n];
+      ctx.quadraticCurveTo(p0[0],p0[1],(p0[0]+p1[0])/2,(p0[1]+p1[1])/2);
+    }
+    ctx.closePath();ctx.stroke();
+  }
+
+  // Generate a blob: center cx,cy, n points, radius r with variance
+  function blob(cx,cy,r,n,variance,seed){
+    var pts=[];
+    for(var i=0;i<n;i++){
+      var a=(i/n)*Math.PI*2;
+      var rv=r*(1+variance*(Math.sin(seed+i*2.1)*0.5+Math.sin(seed*1.3+i*3.7)*0.3));
+      pts.push([cx+Math.cos(a)*rv, cy+Math.sin(a)*rv*0.85]);
+    }
+    return pts;
+  }
+
+  // Large primary cells
+  var cells=[
+    {cx:140,cy:130,r:90,n:8,v:0.28,sd:1.1,lw:2.0,a:0.72},
+    {cx:360,cy:110,r:80,n:7,v:0.25,sd:2.3,lw:1.9,a:0.68},
+    {cx:510,cy:200,r:75,n:8,v:0.22,sd:0.8,lw:1.8,a:0.65},
+    {cx:80, cy:300,r:85,n:7,v:0.30,sd:1.7,lw:1.9,a:0.70},
+    {cx:280,cy:280,r:95,n:9,v:0.26,sd:3.0,lw:2.1,a:0.74},
+    {cx:470,cy:360,r:78,n:8,v:0.24,sd:1.4,lw:1.8,a:0.66},
+    {cx:150,cy:460,r:88,n:8,v:0.27,sd:2.0,lw:2.0,a:0.71},
+    {cx:380,cy:490,r:82,n:7,v:0.23,sd:0.6,lw:1.9,a:0.67},
+    {cx:540,cy:550,r:70,n:8,v:0.29,sd:1.9,lw:1.7,a:0.64},
+    {cx:60, cy:580,r:80,n:7,v:0.25,sd:2.5,lw:1.8,a:0.69},
+    {cx:250,cy:620,r:90,n:9,v:0.28,sd:1.2,lw:2.0,a:0.72},
+    {cx:460,cy:680,r:76,n:8,v:0.22,sd:3.1,lw:1.8,a:0.65},
+    {cx:120,cy:720,r:85,n:7,v:0.26,sd:0.9,lw:1.9,a:0.68},
+    {cx:360,cy:730,r:88,n:8,v:0.24,sd:2.2,lw:2.0,a:0.70},
+  ];
+  cells.forEach(function(c){cell(blob(c.cx,c.cy,c.r,c.n,c.v,c.sd),c.lw,c.a);});
+
+  // Medium secondary cells filling gaps
+  var med=[
+    {cx:230,cy:170,r:48,n:7,v:0.30,sd:1.5},{cx:430,cy:170,r:42,n:6,v:0.28,sd:2.8},
+    {cx:550,cy:100,r:38,n:6,v:0.25,sd:1.0},{cx:38, cy:160,r:45,n:6,v:0.32,sd:0.5},
+    {cx:190,cy:350,r:52,n:7,v:0.27,sd:3.2},{cx:420,cy:290,r:44,n:6,v:0.29,sd:1.6},
+    {cx:570,cy:440,r:40,n:6,v:0.26,sd:2.0},{cx:30, cy:450,r:42,n:6,v:0.31,sd:1.1},
+    {cx:320,cy:400,r:50,n:7,v:0.28,sd:0.7},{cx:150,cy:560,r:46,n:6,v:0.27,sd:2.4},
+    {cx:540,cy:640,r:44,n:7,v:0.30,sd:1.3},{cx:320,cy:560,r:48,n:6,v:0.25,sd:3.5},
+    {cx:200,cy:750,r:42,n:6,v:0.28,sd:0.4},{cx:480,cy:770,r:45,n:7,v:0.26,sd:1.8},
+    {cx:570,cy:760,r:38,n:6,v:0.29,sd:2.6},{cx:38, cy:750,r:40,n:6,v:0.31,sd:1.9},
+  ];
+  med.forEach(function(c){cell(blob(c.cx,c.cy,c.r,c.n,c.v,c.sd),1.2,0.50);});
+
+  // Small filler cells
+  var sm=[
+    {cx:300,cy:60,r:26,n:6,v:0.33,sd:0.3},{cx:490,cy:60,r:22,n:5,v:0.30,sd:2.1},
+    {cx:28, cy:60,r:24,n:5,v:0.35,sd:1.4},{cx:170,cy:220,r:28,n:6,v:0.32,sd:3.0},
+    {cx:370,cy:210,r:25,n:5,v:0.29,sd:1.7},{cx:555,cy:300,r:24,n:5,v:0.31,sd:0.9},
+    {cx:340,cy:340,r:28,n:6,v:0.33,sd:2.3},{cx:100,cy:390,r:26,n:5,v:0.30,sd:1.5},
+    {cx:500,cy:490,r:24,n:5,v:0.32,sd:3.3},{cx:85, cy:670,r:26,n:6,v:0.28,sd:0.8},
+    {cx:440,cy:590,r:24,n:5,v:0.31,sd:2.0},{cx:300,cy:690,r:28,n:6,v:0.29,sd:1.2},
+    {cx:570,cy:720,r:22,n:5,v:0.33,sd:2.9},{cx:30, cy:680,r:24,n:5,v:0.30,sd:0.6},
+  ];
+  sm.forEach(function(c){cell(blob(c.cx,c.cy,c.r,c.n,c.v,c.sd),0.8,0.38);});
+
+  // Tendrils connecting cells
+  s(0.7,0.20);
+  var tendrils=[
+    [140,130,280,280],[280,280,470,360],[140,130,80,300],[360,110,280,280],
+    [280,280,150,460],[380,490,470,360],[380,490,250,620],[540,550,460,680],
+    [150,460,60,580],[250,620,120,720],[360,730,250,620],[380,490,360,730],
+  ];
+  tendrils.forEach(function(t){
+    var mx=(t[0]+t[2])/2+Math.sin((t[0]+t[1])*0.05)*30;
+    var my=(t[1]+t[3])/2+Math.cos((t[0]+t[2])*0.04)*25;
+    ctx.beginPath();ctx.moveTo(t[0],t[1]);ctx.quadraticCurveTo(mx,my,t[2],t[3]);ctx.stroke();
+  });
+
+  // Border
+  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Sea Foam  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+})();
+</script>
+</body>
+</html>

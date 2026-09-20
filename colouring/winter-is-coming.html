@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winter Is Coming — Free Colouring Page | Kiwi's Art</title>
+<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Winter Is Coming' — frost crystals, dendritic ice forms, and snowflakes to colour your own way.">
+<meta name="author" content="Kiwi">
+<link rel="canonical" href="https://kiwisart.com/colouring/winter-is-coming.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Winter Is Coming — Free Colouring Page | Kiwi's Art">
+<meta property="og:url" content="https://kiwisart.com/colouring/winter-is-coming.html">
+<meta property="og:image" content="https://kiwisart.com/images/winter-is-coming.jpg">
+<meta property="og:site_name" content="Kiwi's Art">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VX9PJ92T7J"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VX9PJ92T7J');gtag('config','GT-P845MC3M');</script>
+<style>
+.colouring-intro{max-width:600px}.colouring-intro p{font-size:1.05rem;line-height:1.75;color:#3d4455}
+.sheet-wrap{max-width:560px;margin:36px auto 24px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.10),0 24px 64px rgba(0,0,0,.06);border-radius:1px;overflow:hidden}
+.sheet-wrap canvas{display:block;width:100%;height:auto}
+.colouring-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 12px}
+.colouring-hint{font-size:.85rem;color:var(--lede);margin-bottom:48px;line-height:1.6}
+@media print{.site-header,.skip-link,.colouring-intro,.colouring-actions,.colouring-hint,.site-footer,.page-eyebrow{display:none!important}body{padding:0;background:white}.sheet-wrap{box-shadow:none;max-width:100%;margin:0;border-radius:0}section{padding:0!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/"><img src="/images/kiwi-icon.png" alt="Kiwi's Art logo" class="brand-icon">Kiwi's Art</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <nav class="main-nav" aria-label="Primary"><ul>
+    <li><a href="/">Home</a></li><li><a href="/gallery.html">Gallery</a></li>
+    <li><a href="/commission.html">Commission</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li>
+  </ul></nav>
+</div></header>
+<main id="main">
+  <section><div class="wrap">
+    <div class="eyebrow page-eyebrow">Free Colouring Page</div>
+    <h1>Winter Is Coming</h1>
+    <div class="colouring-intro"><p>A printable line drawing inspired by the original painting — dendritic frost crystals spreading across the page, hexagonal snowflakes of varying complexity, and the quiet geometry of ice. Colour each crystal its own way.</p></div>
+    <div class="sheet-wrap"><canvas id="c" width="595" height="800"></canvas></div>
+    <div class="colouring-actions">
+      <button class="btn btn-primary" onclick="window.print()">Print Colouring Page</button>
+      <a class="btn btn-outline" href="/gallery/winter-is-coming.html">View Original Painting</a>
+    </div>
+    <p class="colouring-hint">Best on heavy paper or white card stock. A4 and US Letter both fit perfectly. Free for personal use only.</p>
+  </div></section>
+  <section class="section-alt"><div class="wrap"><div class="contact-card">
+    <div class="contact-card-text"><h2>All paintings have a colouring page</h2><p>Every piece in the gallery comes with a free printable — find yours from the gallery.</p></div>
+    <a class="btn btn-primary" href="/gallery.html">Browse the Gallery</a>
+  </div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <span>&copy; 2026 Kiwi's Art. All rights reserved.</span>
+  <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
+</div></footer>
+<script src="/js/nav.js"></script>
+<script>
+(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
+
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.0;}
+
+  // Snowflake: cx,cy=center, r=radius, complexity 1-3
+  function snowflake(cx,cy,r,complexity,lw,alpha){
+    s(lw,alpha);
+    for(var i=0;i<6;i++){
+      var a=i*Math.PI/3;
+      var ex=cx+Math.cos(a)*r, ey=cy+Math.sin(a)*r;
+      // Main arm
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(ex,ey);ctx.stroke();
+      if(complexity>=2){
+        // Side branches at 1/3 and 2/3
+        [0.33,0.67].forEach(function(t){
+          var px=cx+Math.cos(a)*r*t, py=cy+Math.sin(a)*r*t;
+          var bl=r*0.25;
+          [-0.52,0.52].forEach(function(ba){
+            var ba2=a+Math.PI/2+ba;
+            ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+Math.cos(ba2)*bl,py+Math.sin(ba2)*bl);ctx.stroke();
+          });
+        });
+      }
+      if(complexity>=3){
+        // Tip branch at 5/6
+        var t=0.82;
+        var px=cx+Math.cos(a)*r*t, py=cy+Math.sin(a)*r*t;
+        var bl=r*0.18;
+        [-Math.PI/3,Math.PI/3].forEach(function(ba){
+          var ba2=a+ba;
+          ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+Math.cos(ba2)*bl,py+Math.sin(ba2)*bl);ctx.stroke();
+        });
+        // Extra sub-branch at 1/2
+        var px2=cx+Math.cos(a)*r*0.5, py2=cy+Math.sin(a)*r*0.5;
+        [-0.52,0.52].forEach(function(ba){
+          var ba2=a+Math.PI/2+ba;
+          var bl2=r*0.18;
+          ctx.beginPath();ctx.moveTo(px2,py2);ctx.lineTo(px2+Math.cos(ba2)*bl2,py2+Math.sin(ba2)*bl2);ctx.stroke();
+          // sub-sub branch
+          var px3=px2+Math.cos(ba2)*bl2*0.5, py3=py2+Math.sin(ba2)*bl2*0.5;
+          [-0.7,0.7].forEach(function(sba){
+            ctx.beginPath();ctx.moveTo(px3,py3);
+            ctx.lineTo(px3+Math.cos(ba2+sba)*bl2*0.5,py3+Math.sin(ba2+sba)*bl2*0.5);
+            ctx.stroke();
+          });
+        });
+      }
+    }
+    // Hex centre ring
+    ctx.beginPath();ctx.arc(cx,cy,r*0.12,0,Math.PI*2);ctx.stroke();
+  }
+
+  // Large hero snowflakes
+  snowflake(160,200, 80, 3, 1.8,0.72);
+  snowflake(430,140, 70, 3, 1.7,0.70);
+  snowflake(298,500, 90, 3, 1.9,0.74);
+  snowflake(110,580, 65, 3, 1.6,0.68);
+  snowflake(490,580, 68, 3, 1.6,0.68);
+  snowflake(298,120, 55, 3, 1.5,0.65);
+
+  // Medium snowflakes
+  snowflake( 50,100, 40, 2, 1.4,0.62);
+  snowflake(540, 90, 38, 2, 1.3,0.60);
+  snowflake( 60,380, 42, 2, 1.4,0.62);
+  snowflake(540,380, 40, 2, 1.3,0.60);
+  snowflake(200,680, 44, 2, 1.4,0.62);
+  snowflake(400,680, 42, 2, 1.3,0.60);
+  snowflake(298,760, 38, 2, 1.3,0.58);
+  snowflake(140,400, 36, 2, 1.2,0.55);
+  snowflake(455,400, 36, 2, 1.2,0.55);
+
+  // Small simple snowflakes
+  var smalls=[
+    [80,260,22,1],[200,330,20,1],[380,320,22,1],[510,260,20,1],
+    [120,460,20,1],[470,460,22,1],[250,620,20,1],[350,620,22,1],
+    [60,640,18,1],[540,640,18,1],[180,100,18,1],[420,240,20,1],
+    [300,300,18,1],[90,730,18,1],[510,730,18,1],[298,40,16,1],
+    [180,760,16,1],[420,760,16,1],[60,190,18,1],[540,190,18,1],
+  ];
+  smalls.forEach(function(sf,i){
+    snowflake(sf[0],sf[1],sf[2],sf[3], 1.0+i%2*0.2, 0.48+i%3*0.06);
+  });
+
+  // Dendritic frost networks — branching lines spreading from corners
+  function frostNetwork(startX,startY,angle,depth,len,lw,alpha){
+    if(depth===0||len<4) return;
+    s(lw,alpha);
+    var ex=startX+Math.cos(angle)*len, ey=startY+Math.sin(angle)*len;
+    ctx.beginPath();ctx.moveTo(startX,startY);ctx.lineTo(ex,ey);ctx.stroke();
+    var branches=depth>2?3:2;
+    for(var i=0;i<branches;i++){
+      var spread=(i===0?0:(i===1?0.5:-0.5));
+      frostNetwork(ex,ey,angle+spread,depth-1,len*0.65,lw*0.85,alpha*0.9);
+    }
+  }
+
+  frostNetwork(24,24,    Math.PI*0.18,  6, 55, 1.2, 0.45);
+  frostNetwork(571,24,   Math.PI*0.82,  6, 52, 1.2, 0.45);
+  frostNetwork(24,776,   -Math.PI*0.18, 6, 50, 1.1, 0.42);
+  frostNetwork(571,776,  -Math.PI*0.82, 6, 50, 1.1, 0.42);
+  frostNetwork(298,24,   Math.PI*0.5,   5, 45, 1.0, 0.38);
+  frostNetwork(24,400,   0,             5, 42, 1.0, 0.38);
+  frostNetwork(571,400,  Math.PI,       5, 42, 1.0, 0.38);
+
+  // Border
+  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Winter Is Coming  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+})();
+</script>
+</body>
+</html>

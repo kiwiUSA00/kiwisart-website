@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fire Is Raging — Free Colouring Page | Kiwi's Art</title>
+<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Fire Is Raging' — leaping flame tongues, smoke curls, and ember sparks to colour your own way.">
+<meta name="author" content="Kiwi">
+<link rel="canonical" href="https://kiwisart.com/colouring/fire-is-raging.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fire Is Raging — Free Colouring Page | Kiwi's Art">
+<meta property="og:url" content="https://kiwisart.com/colouring/fire-is-raging.html">
+<meta property="og:image" content="https://kiwisart.com/images/fire-is-raging.jpg">
+<meta property="og:site_name" content="Kiwi's Art">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VX9PJ92T7J"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VX9PJ92T7J');gtag('config','GT-P845MC3M');</script>
+<style>
+.colouring-intro{max-width:600px}.colouring-intro p{font-size:1.05rem;line-height:1.75;color:#3d4455}
+.sheet-wrap{max-width:560px;margin:36px auto 24px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.10),0 24px 64px rgba(0,0,0,.06);border-radius:1px;overflow:hidden}
+.sheet-wrap canvas{display:block;width:100%;height:auto}
+.colouring-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 12px}
+.colouring-hint{font-size:.85rem;color:var(--lede);margin-bottom:48px;line-height:1.6}
+@media print{.site-header,.skip-link,.colouring-intro,.colouring-actions,.colouring-hint,.site-footer,.page-eyebrow{display:none!important}body{padding:0;background:white}.sheet-wrap{box-shadow:none;max-width:100%;margin:0;border-radius:0}section{padding:0!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/"><img src="/images/kiwi-icon.png" alt="Kiwi's Art logo" class="brand-icon">Kiwi's Art</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <nav class="main-nav" aria-label="Primary"><ul>
+    <li><a href="/">Home</a></li><li><a href="/gallery.html">Gallery</a></li>
+    <li><a href="/commission.html">Commission</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li>
+  </ul></nav>
+</div></header>
+<main id="main">
+  <section><div class="wrap">
+    <div class="eyebrow page-eyebrow">Free Colouring Page</div>
+    <h1>Fire Is Raging</h1>
+    <div class="colouring-intro"><p>A printable line drawing inspired by the original painting — leaping flame tongues rising from a fierce blaze, with smoke curls above and glowing embers scattered through. Choose your own colours for the fire.</p></div>
+    <div class="sheet-wrap"><canvas id="c" width="595" height="800"></canvas></div>
+    <div class="colouring-actions">
+      <button class="btn btn-primary" onclick="window.print()">Print Colouring Page</button>
+      <a class="btn btn-outline" href="/gallery/fire-is-raging.html">View Original Painting</a>
+    </div>
+    <p class="colouring-hint">Best on heavy paper or white card stock. A4 and US Letter both fit perfectly. Free for personal use only.</p>
+  </div></section>
+  <section class="section-alt"><div class="wrap"><div class="contact-card">
+    <div class="contact-card-text"><h2>All paintings have a colouring page</h2><p>Every piece in the gallery comes with a free printable — find yours from the gallery.</p></div>
+    <a class="btn btn-primary" href="/gallery.html">Browse the Gallery</a>
+  </div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <span>&copy; 2026 Kiwi's Art. All rights reserved.</span>
+  <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
+</div></footer>
+<script src="/js/nav.js"></script>
+<script>
+(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
+
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
+
+  // Flame tongue: base at (bx,by), tip at (tx,ty), with bezier bulge
+  function flame(bx,by,tx,ty,lean,lw,alpha){
+    s(lw,alpha);
+    var mx=(bx+tx)/2+lean, my=(by+ty)/2;
+    var width=(by-ty)*0.15;
+    ctx.beginPath();
+    ctx.moveTo(bx-width,by);
+    ctx.bezierCurveTo(bx-width+lean*0.4,by-(by-ty)*0.3,
+                      tx+lean*0.6-(width*0.5),my,tx,ty);
+    ctx.bezierCurveTo(tx+lean*0.6+(width*0.5),my,
+                      bx+width+lean*0.4,by-(by-ty)*0.3,bx+width,by);
+    ctx.closePath();ctx.stroke();
+  }
+
+  // Large primary flames from the base
+  flame(200,780, 180,180,  -30, 2.2,0.72);
+  flame(280,780, 295,100,   10, 2.4,0.76);
+  flame(370,780, 350,140,  -15, 2.2,0.72);
+  flame(450,780, 440,220,  -20, 2.0,0.68);
+  flame(130,780, 110,300,  -40, 1.9,0.65);
+  flame(490,780, 510,280,   30, 1.9,0.65);
+  flame(80, 780,  70,380,  -25, 1.7,0.60);
+  flame(520,780, 530,360,   25, 1.7,0.60);
+
+  // Secondary mid-flames
+  flame(240,780, 230,350, -20, 1.6,0.55);
+  flame(320,780, 310,280,   5, 1.7,0.58);
+  flame(400,780, 395,320, -10, 1.6,0.55);
+  flame(170,780, 160,420, -15, 1.4,0.50);
+  flame(460,780, 470,400,  20, 1.4,0.50);
+
+  // Small flicker flames near top of big flames
+  flame(180,240, 175,160, -8, 1.2,0.48);
+  flame(295,155, 292,100,  5, 1.3,0.50);
+  flame(350,195, 348,135, -5, 1.2,0.46);
+  flame(440,270, 438,200,  8, 1.1,0.44);
+  flame(110,340, 108,275, -10, 1.0,0.42);
+
+  // Base fire log / ground embers zone
+  s(1.8,0.65);
+  ctx.beginPath();
+  ctx.moveTo(24,780);ctx.bezierCurveTo(150,760,450,758,571,778);
+  ctx.lineTo(571,800);ctx.lineTo(24,800);ctx.closePath();ctx.stroke();
+
+  // Log cross-sections
+  s(1.2,0.55);
+  [[120,785,30,12],[240,782,35,13],[350,784,32,12],[460,783,28,11]].forEach(function(l){
+    ctx.beginPath();ctx.ellipse(l[0],l[1],l[2],l[3],0,0,Math.PI*2);ctx.stroke();
+    ctx.beginPath();ctx.arc(l[0],l[1],l[2]*0.5,0,Math.PI*2);ctx.stroke();
+  });
+
+  // Smoke curls rising from flame tips
+  function smokeCurl(sx,sy,driftX){
+    s(0.9,0.22);
+    var cx=sx, cy=sy;
+    for(var i=0;i<5;i++){
+      var nx=cx+driftX+(Math.sin(i*1.3)*30), ny=cy-60;
+      ctx.beginPath();ctx.moveTo(cx,cy);
+      ctx.bezierCurveTo(cx+driftX*0.3+20,cy-20,nx-20,ny+20,nx,ny);
+      ctx.stroke();
+      cx=nx;cy=ny;driftX*=0.8;
+    }
+  }
+  smokeCurl(180,170, -15);
+  smokeCurl(295,95,   8);
+  smokeCurl(350,135, -10);
+  smokeCurl(440,215,  18);
+  smokeCurl(110,295, -20);
+  smokeCurl(510,270,  14);
+
+  // Ember sparks — small angled dashes
+  s(0.8,0.45);
+  var embers=[
+    [160,200,12],[340,160,10],[480,190,11],[140,320,9],[500,300,10],
+    [220,280,11],[390,250,9],[270,320,12],[430,360,10],[170,400,9],
+    [340,380,11],[500,420,10],[100,440,9],[420,440,12],[240,460,10],
+    [370,480,11],[130,510,9],[490,490,10],[300,440,12],[200,500,10],
+    [450,520,11],[160,540,9],[360,540,10],[280,560,11],[440,560,9],
+  ];
+  embers.forEach(function(e){
+    var a=Math.sin(e[0]*0.15)*Math.PI*0.4+0.2;
+    ctx.beginPath();ctx.moveTo(e[0],e[1]);ctx.lineTo(e[0]+Math.cos(a)*e[2],e[1]-Math.sin(a)*e[2]);ctx.stroke();
+  });
+
+  // Border
+  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Fire Is Raging  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+})();
+</script>
+</body>
+</html>

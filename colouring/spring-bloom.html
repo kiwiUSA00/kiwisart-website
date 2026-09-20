@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spring Bloom — Free Colouring Page | Kiwi's Art</title>
+<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Spring Bloom' — large flower petals, stems, and leaves to colour your own way.">
+<meta name="author" content="Kiwi">
+<link rel="canonical" href="https://kiwisart.com/colouring/spring-bloom.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spring Bloom — Free Colouring Page | Kiwi's Art">
+<meta property="og:url" content="https://kiwisart.com/colouring/spring-bloom.html">
+<meta property="og:image" content="https://kiwisart.com/images/spring-bloom.jpg">
+<meta property="og:site_name" content="Kiwi's Art">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VX9PJ92T7J"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VX9PJ92T7J');gtag('config','GT-P845MC3M');</script>
+<style>
+.colouring-intro{max-width:600px}.colouring-intro p{font-size:1.05rem;line-height:1.75;color:#3d4455}
+.sheet-wrap{max-width:560px;margin:36px auto 24px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.10),0 24px 64px rgba(0,0,0,.06);border-radius:1px;overflow:hidden}
+.sheet-wrap canvas{display:block;width:100%;height:auto}
+.colouring-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 12px}
+.colouring-hint{font-size:.85rem;color:var(--lede);margin-bottom:48px;line-height:1.6}
+@media print{.site-header,.skip-link,.colouring-intro,.colouring-actions,.colouring-hint,.site-footer,.page-eyebrow{display:none!important}body{padding:0;background:white}.sheet-wrap{box-shadow:none;max-width:100%;margin:0;border-radius:0}section{padding:0!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/"><img src="/images/kiwi-icon.png" alt="Kiwi's Art logo" class="brand-icon">Kiwi's Art</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <nav class="main-nav" aria-label="Primary"><ul>
+    <li><a href="/">Home</a></li><li><a href="/gallery.html">Gallery</a></li>
+    <li><a href="/commission.html">Commission</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li>
+  </ul></nav>
+</div></header>
+<main id="main">
+  <section><div class="wrap">
+    <div class="eyebrow page-eyebrow">Free Colouring Page</div>
+    <h1>Spring Bloom</h1>
+    <div class="colouring-intro"><p>A printable line drawing inspired by the original painting — bold flowers in full bloom, curving stems, and layered leaves. Each petal is its own canvas.</p></div>
+    <div class="sheet-wrap"><canvas id="c" width="595" height="800"></canvas></div>
+    <div class="colouring-actions">
+      <button class="btn btn-primary" onclick="window.print()">Print Colouring Page</button>
+      <a class="btn btn-outline" href="/gallery/spring-bloom.html">View Original Painting</a>
+    </div>
+    <p class="colouring-hint">Best on heavy paper or white card stock. A4 and US Letter both fit perfectly. Free for personal use only.</p>
+  </div></section>
+  <section class="section-alt"><div class="wrap"><div class="contact-card">
+    <div class="contact-card-text"><h2>All paintings have a colouring page</h2><p>Every piece in the gallery comes with a free printable — find yours from the gallery.</p></div>
+    <a class="btn btn-primary" href="/gallery.html">Browse the Gallery</a>
+  </div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <span>&copy; 2026 Kiwi's Art. All rights reserved.</span>
+  <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
+</div></footer>
+<script src="/js/nav.js"></script>
+<script>
+(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
+
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
+
+  // Draw a flower: cx,cy=center, r=petal radius, n=petals, offset angle
+  function flower(cx,cy,r,n,angleOff,lw,alpha){
+    s(lw,alpha);
+    for(var i=0;i<n;i++){
+      var a=angleOff+i*(Math.PI*2/n);
+      var px=cx+Math.cos(a)*r*0.6, py=cy+Math.sin(a)*r*0.6;
+      var cp1x=cx+Math.cos(a-0.5)*r*1.1, cp1y=cy+Math.sin(a-0.5)*r*1.1;
+      var cp2x=cx+Math.cos(a+0.5)*r*1.1, cp2y=cy+Math.sin(a+0.5)*r*1.1;
+      ctx.beginPath();ctx.moveTo(cx,cy);
+      ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,px+Math.cos(a)*r*0.65,py+Math.sin(a)*r*0.65);
+      ctx.bezierCurveTo(cx+Math.cos(a+0.5)*r*0.2,cy+Math.sin(a+0.5)*r*0.2,
+                        cx+Math.cos(a-0.5)*r*0.2,cy+Math.sin(a-0.5)*r*0.2,cx,cy);
+      ctx.stroke();
+    }
+    // centre circle
+    ctx.beginPath();ctx.arc(cx,cy,r*0.22,0,Math.PI*2);ctx.stroke();
+    // centre detail rings
+    ctx.beginPath();ctx.arc(cx,cy,r*0.11,0,Math.PI*2);ctx.stroke();
+  }
+
+  // Large hero flower, centre-upper
+  flower(298,220,130,7,0.2,2.0,0.72);
+  // Centre stamens
+  s(0.9,0.45);
+  for(var i=0;i<12;i++){
+    var a=i*Math.PI/6;
+    ctx.beginPath();ctx.moveTo(298+Math.cos(a)*20,220+Math.sin(a)*20);
+    ctx.lineTo(298+Math.cos(a)*34,220+Math.sin(a)*34);ctx.stroke();
+    ctx.beginPath();ctx.arc(298+Math.cos(a)*36,220+Math.sin(a)*36,3,0,Math.PI*2);ctx.stroke();
+  }
+
+  // Secondary flower lower-left
+  flower(130,580,88,6,0.5,1.8,0.68);
+  s(0.8,0.40);
+  for(var i=0;i<10;i++){
+    var a=i*Math.PI/5;
+    ctx.beginPath();ctx.moveTo(130+Math.cos(a)*13,580+Math.sin(a)*13);
+    ctx.lineTo(130+Math.cos(a)*24,580+Math.sin(a)*24);ctx.stroke();
+  }
+
+  // Secondary flower lower-right
+  flower(460,620,80,5,1.1,1.7,0.65);
+  s(0.8,0.38);
+  for(var i=0;i<9;i++){
+    var a=i*Math.PI*2/9;
+    ctx.beginPath();ctx.moveTo(460+Math.cos(a)*12,620+Math.sin(a)*12);
+    ctx.lineTo(460+Math.cos(a)*22,620+Math.sin(a)*22);ctx.stroke();
+  }
+
+  // Small bud upper-right
+  flower(490,130,52,5,0.8,1.4,0.58);
+
+  // Small bud upper-left
+  flower(100,160,46,5,0.2,1.3,0.55);
+
+  // Stems
+  s(1.6,0.65);
+  // Main stem
+  ctx.beginPath();ctx.moveTo(298,350);ctx.bezierCurveTo(295,480,290,580,285,760);ctx.stroke();
+  // Left branch
+  ctx.beginPath();ctx.moveTo(293,460);ctx.bezierCurveTo(240,490,160,510,130,540);ctx.stroke();
+  // Right branch
+  ctx.beginPath();ctx.moveTo(290,520);ctx.bezierCurveTo(350,530,420,540,460,570);ctx.stroke();
+  // Upper left twig
+  ctx.beginPath();ctx.moveTo(296,390);ctx.bezierCurveTo(230,380,160,330,100,230);ctx.stroke();
+  // Upper right twig
+  ctx.beginPath();ctx.moveTo(300,400);ctx.bezierCurveTo(370,380,430,340,490,220);ctx.stroke();
+
+  // Leaves — elliptical with midrib
+  function leaf(cx,cy,rx,ry,angle){
+    ctx.save();ctx.translate(cx,cy);ctx.rotate(angle);
+    s(1.4,0.62);
+    ctx.beginPath();
+    ctx.ellipse(0,0,ry,rx,0,0,Math.PI*2);ctx.stroke();
+    // midrib
+    s(0.8,0.40);
+    ctx.beginPath();ctx.moveTo(0,-rx);ctx.lineTo(0,rx);ctx.stroke();
+    // side veins
+    s(0.6,0.30);
+    for(var i=1;i<5;i++){
+      var y=-rx+(rx*2*i/5);
+      ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(ry*0.7,y+ry*0.2);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(-ry*0.7,y+ry*0.2);ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  leaf(250,430, 52, 24, -0.4);
+  leaf(340,450, 48, 22, 0.5);
+  leaf(185,490, 44, 20, -0.8);
+  leaf(400,500, 46, 21, 0.7);
+  leaf(250,560, 50, 23, -0.3);
+  leaf(350,570, 46, 21, 0.4);
+  leaf(120,490, 42, 19, -1.2);
+  leaf(450,555, 44, 20, 1.0);
+  leaf(285,660, 54, 25, 0.1);
+  leaf(290,700, 48, 22, -0.15);
+
+  // Grass / ground line
+  s(1.0,0.35);
+  ctx.beginPath();ctx.moveTo(24,760);
+  for(var x=24;x<=571;x+=10){
+    ctx.lineTo(x, 760+Math.sin(x*0.08)*6);
+  }
+  ctx.stroke();
+
+  // Border
+  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Spring Bloom  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+})();
+</script>
+</body>
+</html>

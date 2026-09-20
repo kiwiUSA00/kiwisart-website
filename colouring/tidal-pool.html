@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tidal Pool — Free Colouring Page | Kiwi's Art</title>
+<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Tidal Pool' — sea anemones, starfish, rocks and ripples to colour your own way.">
+<meta name="author" content="Kiwi">
+<link rel="canonical" href="https://kiwisart.com/colouring/tidal-pool.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tidal Pool — Free Colouring Page | Kiwi's Art">
+<meta property="og:url" content="https://kiwisart.com/colouring/tidal-pool.html">
+<meta property="og:image" content="https://kiwisart.com/images/tidal-pool.jpg">
+<meta property="og:site_name" content="Kiwi's Art">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VX9PJ92T7J"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VX9PJ92T7J');gtag('config','GT-P845MC3M');</script>
+<style>
+.colouring-intro{max-width:600px}.colouring-intro p{font-size:1.05rem;line-height:1.75;color:#3d4455}
+.sheet-wrap{max-width:560px;margin:36px auto 24px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08),0 8px 32px rgba(0,0,0,.10),0 24px 64px rgba(0,0,0,.06);border-radius:1px;overflow:hidden}
+.sheet-wrap canvas{display:block;width:100%;height:auto}
+.colouring-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 12px}
+.colouring-hint{font-size:.85rem;color:var(--lede);margin-bottom:48px;line-height:1.6}
+@media print{.site-header,.skip-link,.colouring-intro,.colouring-actions,.colouring-hint,.site-footer,.page-eyebrow{display:none!important}body{padding:0;background:white}.sheet-wrap{box-shadow:none;max-width:100%;margin:0;border-radius:0}section{padding:0!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/"><img src="/images/kiwi-icon.png" alt="Kiwi's Art logo" class="brand-icon">Kiwi's Art</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  <nav class="main-nav" aria-label="Primary"><ul>
+    <li><a href="/">Home</a></li><li><a href="/gallery.html">Gallery</a></li>
+    <li><a href="/commission.html">Commission</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li>
+  </ul></nav>
+</div></header>
+<main id="main">
+  <section><div class="wrap">
+    <div class="eyebrow page-eyebrow">Free Colouring Page</div>
+    <h1>Tidal Pool</h1>
+    <div class="colouring-intro"><p>A printable line drawing inspired by the original painting — a top-down view of a rocky tidal pool, with sea anemones, a starfish, algae fronds and rippled water. Colour each creature its own way.</p></div>
+    <div class="sheet-wrap"><canvas id="c" width="595" height="800"></canvas></div>
+    <div class="colouring-actions">
+      <button class="btn btn-primary" onclick="window.print()">Print Colouring Page</button>
+      <a class="btn btn-outline" href="/gallery/tidal-pool.html">View Original Painting</a>
+    </div>
+    <p class="colouring-hint">Best on heavy paper or white card stock. A4 and US Letter both fit perfectly. Free for personal use only.</p>
+  </div></section>
+  <section class="section-alt"><div class="wrap"><div class="contact-card">
+    <div class="contact-card-text"><h2>All paintings have a colouring page</h2><p>Every piece in the gallery comes with a free printable — find yours from the gallery.</p></div>
+    <a class="btn btn-primary" href="/gallery.html">Browse the Gallery</a>
+  </div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap">
+  <span>&copy; 2026 Kiwi's Art. All rights reserved.</span>
+  <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
+</div></footer>
+<script src="/js/nav.js"></script>
+<script>
+(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
+
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
+
+  // Pool outline — irregular rocky oval
+  s(2.2,0.72);
+  ctx.beginPath();
+  ctx.moveTo(100,130);
+  ctx.bezierCurveTo(60,80,180,30,300,28);
+  ctx.bezierCurveTo(420,26,550,60,560,130);
+  ctx.bezierCurveTo(580,220,570,360,555,460);
+  ctx.bezierCurveTo(540,570,510,680,430,730);
+  ctx.bezierCurveTo(360,770,220,775,150,730);
+  ctx.bezierCurveTo(80,690,50,600,38,500);
+  ctx.bezierCurveTo(26,400,30,240,100,130);
+  ctx.stroke();
+
+  // Rocks around the rim — blob shapes
+  s(1.8,0.68);
+  var rocks=[
+    {pts:[[80,80],[120,50],[170,60],[180,100],[140,120],[90,110]]},
+    {pts:[[390,24],[440,18],[490,40],[480,75],[420,70],[380,50]]},
+    {pts:[[520,200],[555,170],[575,210],[560,250],[525,240]]},
+    {pts:[[540,500],[570,470],[590,510],[575,555],[540,545]]},
+    {pts:[[80,600],[50,570],[40,620],[65,650],[100,640]]},
+    {pts:[[170,740],[130,720],[150,770],[200,775],[210,745]]},
+    {pts:[[30,320],[20,280],[55,265],[70,300],[58,335]]},
+  ];
+  rocks.forEach(function(rock){
+    var pts=rock.pts, n=pts.length;
+    ctx.beginPath();ctx.moveTo((pts[n-1][0]+pts[0][0])/2,(pts[n-1][1]+pts[0][1])/2);
+    for(var i=0;i<n;i++){var p0=pts[i],p1=pts[(i+1)%n];ctx.quadraticCurveTo(p0[0],p0[1],(p0[0]+p1[0])/2,(p0[1]+p1[1])/2);}
+    ctx.closePath();ctx.stroke();
+  });
+
+  // Water ripple ovals inside pool
+  s(0.8,0.28);
+  [[298,400,220,160],[298,400,160,115],[298,400,100,70],[298,400,46,32]].forEach(function(r){
+    ctx.beginPath();ctx.ellipse(r[0],r[1],r[2],r[3],0,0,Math.PI*2);ctx.stroke();
+  });
+
+  // Anemones — radial tentacles from a centre
+  function anemone(cx,cy,r,n,lw,alpha){
+    s(lw,alpha);
+    for(var i=0;i<n;i++){
+      var a=i*Math.PI*2/n;
+      var cp1x=cx+Math.cos(a-0.3)*r*0.6, cp1y=cy+Math.sin(a-0.3)*r*0.6;
+      var cp2x=cx+Math.cos(a+0.3)*r*0.8, cp2y=cy+Math.sin(a+0.3)*r*0.8;
+      var ex=cx+Math.cos(a)*r, ey=cy+Math.sin(a)*r;
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,ex,ey);ctx.stroke();
+    }
+    ctx.beginPath();ctx.arc(cx,cy,r*0.18,0,Math.PI*2);ctx.stroke();
+  }
+
+  anemone(200,300, 55,14, 1.6,0.68);
+  anemone(390,260, 48,12, 1.5,0.65);
+  anemone(150,500, 44,12, 1.4,0.62);
+  anemone(420,520, 50,13, 1.5,0.65);
+  anemone(310,560, 40,11, 1.3,0.60);
+  anemone(260,200, 38,11, 1.3,0.58);
+  anemone(460,380, 42,12, 1.4,0.62);
+
+  // Starfish — 5-armed with texture
+  function starfish(cx,cy,r,angle){
+    s(1.6,0.70);
+    for(var i=0;i<5;i++){
+      var a=angle+i*Math.PI*2/5;
+      var an=angle+(i+0.5)*Math.PI*2/5;
+      var ox=cx+Math.cos(a)*r, oy=cy+Math.sin(a)*r;
+      var ix=cx+Math.cos(an)*r*0.38, iy=cy+Math.sin(an)*r*0.38;
+      var prev=angle+(i-0.5)*Math.PI*2/5;
+      var ix2=cx+Math.cos(prev)*r*0.38, iy2=cy+Math.sin(prev)*r*0.38;
+      ctx.beginPath();ctx.moveTo(ix2,iy2);
+      ctx.bezierCurveTo(cx+Math.cos(a-0.3)*r*0.6,cy+Math.sin(a-0.3)*r*0.6,
+                        cx+Math.cos(a+0.3)*r*0.6,cy+Math.sin(a+0.3)*r*0.6,ox,oy);
+      ctx.bezierCurveTo(cx+Math.cos(a+0.3)*r*0.6,cy+Math.sin(a+0.3)*r*0.6,
+                        cx+Math.cos(an-0.3)*r*0.5,cy+Math.sin(an-0.3)*r*0.5,ix,iy);
+      ctx.stroke();
+      // arm midrib
+      s(0.7,0.35);
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(ox,oy);ctx.stroke();
+      s(1.6,0.70);
+    }
+    ctx.beginPath();ctx.arc(cx,cy,r*0.22,0,Math.PI*2);ctx.stroke();
+  }
+
+  starfish(330,380, 62, 0.3);
+  starfish(180,620, 44, 1.0);
+
+  // Algae fronds — long wavy ribbons
+  s(1.1,0.50);
+  var fronds=[
+    {sx:240,sy:480,pts:[[240,480],[220,440],[215,400],[225,360],[240,330]]},
+    {sx:360,sy:460,pts:[[360,460],[375,420],[380,385],[370,350],[355,320]]},
+    {sx:290,sy:650,pts:[[290,650],[280,610],[275,570],[285,530],[295,500]]},
+    {sx:430,sy:620,pts:[[430,620],[445,580],[450,545],[440,510],[425,480]]},
+    {sx:180,sy:400,pts:[[180,400],[165,365],[160,330],[170,295],[185,270]]},
+  ];
+  fronds.forEach(function(fr){
+    var pts=fr.pts;
+    ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+    for(var i=1;i<pts.length;i++){
+      var prev=pts[i-1], cur=pts[i];
+      var mx=(prev[0]+cur[0])/2+((i%2===0)?12:-12), my=(prev[1]+cur[1])/2;
+      ctx.quadraticCurveTo(mx,my,cur[0],cur[1]);
+    }
+    ctx.stroke();
+    // Side leaflets
+    s(0.7,0.38);
+    for(var i=1;i<pts.length;i++){
+      var p=pts[i], a=i%2===0?-0.7:0.7;
+      ctx.beginPath();ctx.moveTo(p[0],p[1]);
+      ctx.lineTo(p[0]+Math.cos(a)*18,p[1]+Math.sin(a)*18);ctx.stroke();
+    }
+    s(1.1,0.50);
+  });
+
+  // Small pebbles
+  s(1.0,0.42);
+  [[120,440,14,10],[460,300,12,9],[200,560,16,11],[380,620,13,10],[280,460,10,8],
+   [150,350,12,9],[420,450,14,10],[350,660,11,8],[250,680,13,10],[490,560,12,9]].forEach(function(p){
+    ctx.beginPath();ctx.ellipse(p[0],p[1],p[2],p[3],Math.sin(p[0]*0.1),0,Math.PI*2);ctx.stroke();
+  });
+
+  // Bubbles
+  s(0.7,0.30);
+  [[230,250,6],[350,280,5],[410,310,7],[170,470,5],[320,490,6],[480,420,5],
+   [240,600,6],[390,580,5],[310,630,4],[450,660,6]].forEach(function(b){
+    ctx.beginPath();ctx.arc(b[0],b[1],b[2],0,Math.PI*2);ctx.stroke();
+  });
+
+  // Border
+  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Tidal Pool  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+})();
+</script>
+</body>
+</html>
