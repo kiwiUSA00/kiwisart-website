@@ -1,7 +1,5 @@
 // Room preview — real photo background with artwork composited onto accent wall
 // Photo: images/room-bg.jpg (1024×1024, Auckland apartment with blue-grey accent wall)
-// Ceiling in room rises left→right (perspective: wall recedes to upper-right),
-// so the painting quad is taller on the right than the left.
 
 var ROOM_SCALES = { small: 0.55, medium: 0.78, large: 1.0 };
 var curScale = 'medium';
@@ -18,25 +16,27 @@ var rCanvas = null, rCtx = null, rImg = null, roomBgImg = null;
 var PHOTO_W = 1024, PHOTO_H = 1024;
 var CANVAS_W = 860, CANVAS_H = 537;
 var PHOTO_SCALE = CANVAS_W / PHOTO_W;           // ≈ 0.840
-var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2; // ≈ -161.5 (crops top/bottom)
+var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2; // ≈ -161.5
 
-// ── Perspective quad for the accent wall (canvas coords) ─────────────────────
-// Four corners where artwork appears at scale = 1.0 (large).
-// Ceiling rises right → top-right (TR) has a smaller y than top-left (TL).
-// Floor is level → BL and BR share the same y.
-//   TL──────TR
-//   │        │  right side is taller (wall recedes into scene upper-right)
-//   BL──────BR
+// ── Perspective quad for the accent wall (canvas coords at scale = 1.0) ──────
+// Right side is taller (closer to camera); ceiling slopes up from left→right.
+// This defines the maximum painting area at "Large" scale.
 var QUAD = {
-  tl: [462,  55],   // left wall top  — ceiling line on left side
-  tr: [852,   8],   // right wall top — ceiling rises toward right (perspective)
-  br: [852, 508],   // right wall bottom — floor lower on right (closer to camera)
-  bl: [462, 442]    // left wall bottom — floor higher on left (farther from camera)
+  tl: [460,  45],   // top-left  — left edge of accent wall, ceiling line left
+  tr: [852,   0],   // top-right — ceiling at canvas top (rises toward right)
+  br: [852, 530],   // bottom-right — near canvas bottom (floor, right side)
+  bl: [460, 470]    // bottom-left — floor left side (higher = farther from camera)
 };
 
+// ── Vertical centre for each painting size ────────────────────────────────────
+// Smaller paintings hang higher on the wall (lower cy value = higher in canvas).
+var SIZE_CENTER_Y = { small: 219, medium: 252, large: 310 };
+
+// ── Canvas y where the sofa starts (used to composite sofa in front of painting)
+var SOFA_Y = 415;
+
 // ── Perspective-correct image draw (horizontal-strip method) ─────────────────
-// Maps img onto a quadrilateral defined by four canvas-space corner points.
-// 50 strips gives smooth results with negligible CPU cost on a static frame.
+// Maps img onto a quadrilateral via 50 affine-transformed horizontal strips.
 function drawImageQuad(ctx, img, tl, tr, br, bl) {
   var iw = img.naturalWidth, ih = img.naturalHeight;
   var N  = 50;
@@ -44,16 +44,12 @@ function drawImageQuad(ctx, img, tl, tr, br, bl) {
   for (var i = 0; i < N; i++) {
     var t0 = i / N, t1 = (i + 1) / N;
 
-    // Interpolate left and right edges of this strip
     var lx0 = tl[0] + (bl[0] - tl[0]) * t0,  ly0 = tl[1] + (bl[1] - tl[1]) * t0;
     var lx1 = tl[0] + (bl[0] - tl[0]) * t1,  ly1 = tl[1] + (bl[1] - tl[1]) * t1;
     var rx0 = tr[0] + (br[0] - tr[0]) * t0,   ry0 = tr[1] + (br[1] - tr[1]) * t0;
     var rx1 = tr[0] + (br[0] - tr[0]) * t1,   ry1 = tr[1] + (br[1] - tr[1]) * t1;
 
-    // Source strip rows
     var sy = t0 * ih, sh = (t1 - t0) * ih;
-
-    // Affine transform:  (0, sy)→(lx0,ly0)  (iw, sy)→(rx0,ry0)  (0, sy+sh)→(lx1,ly1)
     var a = (rx0 - lx0) / iw;
     var b = (ry0 - ly0) / iw;
     var c = (lx1 - lx0) / sh;
@@ -63,10 +59,8 @@ function drawImageQuad(ctx, img, tl, tr, br, bl) {
 
     ctx.save();
     ctx.beginPath();
-    ctx.moveTo(lx0, ly0);
-    ctx.lineTo(rx0, ry0);
-    ctx.lineTo(rx1, ry1);
-    ctx.lineTo(lx1, ly1);
+    ctx.moveTo(lx0, ly0); ctx.lineTo(rx0, ry0);
+    ctx.lineTo(rx1, ry1); ctx.lineTo(lx1, ly1);
     ctx.closePath();
     ctx.clip();
     ctx.transform(a, b, c, d, e, f);
@@ -76,10 +70,11 @@ function drawImageQuad(ctx, img, tl, tr, br, bl) {
   ctx.restore();
 }
 
-// ── Scale a quad toward its centroid ─────────────────────────────────────────
-function scaleQuad(q, wsc, hsc) {
+// ── Scale a quad toward a chosen centre point ─────────────────────────────────
+function scaleQuad(q, wsc, hsc, targetCy) {
   var cx = (q.tl[0] + q.tr[0] + q.br[0] + q.bl[0]) / 4;
-  var cy = (q.tl[1] + q.tr[1] + q.br[1] + q.bl[1]) / 4;
+  var cy = (targetCy !== undefined) ? targetCy
+         : (q.tl[1] + q.tr[1] + q.br[1] + q.bl[1]) / 4;
   function sc(pt) {
     return [cx + (pt[0] - cx) * wsc, cy + (pt[1] - cy) * hsc];
   }
@@ -92,102 +87,91 @@ function drawRoom() {
   var ctx = rCtx;
   ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
 
-  // ── Background photo ──────────────────────────────────────────────────────
+  // ── 1. Room background (full photo, cover-fill) ───────────────────────────
   if (roomBgImg && roomBgImg.naturalWidth > 0) {
     ctx.drawImage(roomBgImg,
-      0, 0, PHOTO_W, PHOTO_H,   // full source
-      0, PHOTO_DY, CANVAS_W, PHOTO_H * PHOTO_SCALE // cover-fill dest
+      0, 0, PHOTO_W, PHOTO_H,
+      0, PHOTO_DY, CANVAS_W, PHOTO_H * PHOTO_SCALE
     );
   } else {
     ctx.fillStyle = '#7a8090';
     ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
   }
 
-  // ── Artwork on wall (perspective-correct) ─────────────────────────────────
+  // ── 2. Artwork on accent wall (perspective-correct) ───────────────────────
   if (rImg && rImg.naturalWidth > 0) {
-    var sc = ROOM_SCALES[curScale] || 0.78;
+    var sc       = ROOM_SCALES[curScale] || 0.78;
+    var targetCy = SIZE_CENTER_Y[curScale] || 252;
 
-    // Effective wall dimensions (average of left/right and top/bottom)
     var wallW = ((QUAD.tr[0] - QUAD.tl[0]) + (QUAD.br[0] - QUAD.bl[0])) / 2;
     var wallH = ((QUAD.bl[1] - QUAD.tl[1]) + (QUAD.br[1] - QUAD.tr[1])) / 2;
 
-    // Determine whether width or height is the constraining dimension
     var aspect  = rImg.naturalHeight / rImg.naturalWidth; // h/w
     var wallAsp = wallH / wallW;
     var wScale, hScale;
     if (aspect >= wallAsp) {
-      // Portrait-ish relative to wall: height constrains
       hScale = sc;
-      wScale = sc * (wallH / aspect) / wallW; // shrink width to match aspect
+      wScale = sc * (wallH / aspect) / wallW;
     } else {
-      // Landscape-ish relative to wall: width constrains
       wScale = sc;
-      hScale = sc * (wallW * aspect) / wallH; // shrink height to match aspect
+      hScale = sc * (wallW * aspect) / wallH;
     }
 
-    var q = scaleQuad(QUAD, wScale, hScale);
+    var q       = scaleQuad(QUAD, wScale, hScale, targetCy);
+    var pad     = 5;
+    var shadowQ = scaleQuad(QUAD, wScale + pad / wallW * 2, hScale + pad / wallH * 2, targetCy);
+    var frameQ  = scaleQuad(QUAD, wScale + 3  / wallW * 2, hScale + 3  / wallH * 2, targetCy);
 
-    // Shadow (draw a slightly-larger dark quad behind the artwork)
-    var pad = 5;
-    var shadowQ = scaleQuad(QUAD,
-      wScale  + pad / wallW * 2,
-      hScale  + pad / wallH * 2
-    );
+    // Shadow (drawn behind painting)
     ctx.save();
-    ctx.shadowColor    = 'rgba(0,0,0,0.6)';
-    ctx.shadowBlur     = 22;
-    ctx.shadowOffsetX  = 4;
-    ctx.shadowOffsetY  = 8;
+    ctx.shadowColor   = 'rgba(0,0,0,0.6)';
+    ctx.shadowBlur    = 22;
+    ctx.shadowOffsetX = 4;
+    ctx.shadowOffsetY = 8;
     ctx.fillStyle = '#0a0a0a';
     ctx.beginPath();
-    ctx.moveTo(shadowQ.tl[0], shadowQ.tl[1]);
-    ctx.lineTo(shadowQ.tr[0], shadowQ.tr[1]);
-    ctx.lineTo(shadowQ.br[0], shadowQ.br[1]);
-    ctx.lineTo(shadowQ.bl[0], shadowQ.bl[1]);
-    ctx.closePath();
-    ctx.fill();
+    ctx.moveTo(shadowQ.tl[0], shadowQ.tl[1]); ctx.lineTo(shadowQ.tr[0], shadowQ.tr[1]);
+    ctx.lineTo(shadowQ.br[0], shadowQ.br[1]); ctx.lineTo(shadowQ.bl[0], shadowQ.bl[1]);
+    ctx.closePath(); ctx.fill();
     ctx.restore();
 
-    // Frame (thin dark border — also a perspective quad)
-    var frameQ = scaleQuad(QUAD,
-      wScale  + 3 / wallW * 2,
-      hScale  + 3 / wallH * 2
-    );
+    // Frame (thin dark border)
     ctx.save();
     ctx.fillStyle = 'rgba(30,22,10,0.65)';
     ctx.beginPath();
-    ctx.moveTo(frameQ.tl[0], frameQ.tl[1]);
-    ctx.lineTo(frameQ.tr[0], frameQ.tr[1]);
-    ctx.lineTo(frameQ.br[0], frameQ.br[1]);
-    ctx.lineTo(frameQ.bl[0], frameQ.bl[1]);
-    ctx.closePath();
-    ctx.fill();
+    ctx.moveTo(frameQ.tl[0], frameQ.tl[1]); ctx.lineTo(frameQ.tr[0], frameQ.tr[1]);
+    ctx.lineTo(frameQ.br[0], frameQ.br[1]); ctx.lineTo(frameQ.bl[0], frameQ.bl[1]);
+    ctx.closePath(); ctx.fill();
     ctx.restore();
 
-    // Artwork — perspective-warped onto the quad
+    // Artwork — perspective-warped
     drawImageQuad(ctx, rImg, q.tl, q.tr, q.br, q.bl);
 
-    // Subtle glare: lighten top-left corner slightly (follows wall light source)
+    // Subtle glare: lighten top-left corner
     ctx.save();
-    var glare = ctx.createLinearGradient(
-      q.tl[0], q.tl[1],
-      q.br[0], q.br[1]
-    );
+    var glare = ctx.createLinearGradient(q.tl[0], q.tl[1], q.br[0], q.br[1]);
     glare.addColorStop(0,   'rgba(255,255,255,0.10)');
     glare.addColorStop(0.4, 'rgba(255,255,255,0.03)');
     glare.addColorStop(1,   'rgba(255,255,255,0)');
     ctx.beginPath();
-    ctx.moveTo(q.tl[0], q.tl[1]);
-    ctx.lineTo(q.tr[0], q.tr[1]);
-    ctx.lineTo(q.br[0], q.br[1]);
-    ctx.lineTo(q.bl[0], q.bl[1]);
-    ctx.closePath();
-    ctx.fillStyle = glare;
-    ctx.fill();
+    ctx.moveTo(q.tl[0], q.tl[1]); ctx.lineTo(q.tr[0], q.tr[1]);
+    ctx.lineTo(q.br[0], q.br[1]); ctx.lineTo(q.bl[0], q.bl[1]);
+    ctx.closePath(); ctx.fillStyle = glare; ctx.fill();
     ctx.restore();
   }
 
-  // ── Vignette ──────────────────────────────────────────────────────────────
+  // ── 3. Sofa overlay — redraw lower room photo so furniture sits in front ───
+  // This makes a large painting appear to go behind the sofa naturally.
+  if (roomBgImg && roomBgImg.naturalWidth > 0) {
+    var srcSofaY = (SOFA_Y - PHOTO_DY) / PHOTO_SCALE;  // ≈ 686 in photo coords
+    var srcSofaH = PHOTO_H - srcSofaY;
+    ctx.drawImage(roomBgImg,
+      0, srcSofaY, PHOTO_W, srcSofaH,
+      0, SOFA_Y,   CANVAS_W, srcSofaH * PHOTO_SCALE
+    );
+  }
+
+  // ── 4. Vignette ───────────────────────────────────────────────────────────
   var vig = ctx.createRadialGradient(
     CANVAS_W * 0.50, CANVAS_H * 0.44, CANVAS_H * 0.18,
     CANVAS_W * 0.50, CANVAS_H * 0.44, CANVAS_H * 0.80
@@ -215,7 +199,6 @@ function openRoom() {
   rCtx = rCanvas ? rCanvas.getContext('2d') : null;
   o.classList.add('open');
   document.body.style.overflow = 'hidden';
-  // Hide "Room Style" controls — not applicable to photo mode
   o.querySelectorAll('.room-ctrl').forEach(function (ctrl) {
     if (ctrl.querySelector('[data-rs]')) ctrl.style.display = 'none';
   });
