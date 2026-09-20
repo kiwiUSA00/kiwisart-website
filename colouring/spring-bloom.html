@@ -82,18 +82,28 @@
 
   // Draw a flower: cx,cy=center, r=petal radius, n=petals, offset angle
   function flower(cx,cy,r,n,angleOff,lw,alpha){
+    ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
     s(lw,alpha);
     for(var i=0;i<n;i++){
       var a=angleOff+i*(Math.PI*2/n);
       var px=cx+Math.cos(a)*r*0.6, py=cy+Math.sin(a)*r*0.6;
       var cp1x=cx+Math.cos(a-0.5)*r*1.1, cp1y=cy+Math.sin(a-0.5)*r*1.1;
       var cp2x=cx+Math.cos(a+0.5)*r*1.1, cp2y=cy+Math.sin(a+0.5)*r*1.1;
+      var tipX=px+Math.cos(a)*r*0.65, tipY=py+Math.sin(a)*r*0.65;
       ctx.beginPath();ctx.moveTo(cx,cy);
-      ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,px+Math.cos(a)*r*0.65,py+Math.sin(a)*r*0.65);
+      ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,tipX,tipY);
       ctx.bezierCurveTo(cx+Math.cos(a+0.5)*r*0.2,cy+Math.sin(a+0.5)*r*0.2,
                         cx+Math.cos(a-0.5)*r*0.2,cy+Math.sin(a-0.5)*r*0.2,cx,cy);
+      // Gradient fill for petal volume
+      ctx.save();
+      var pg=ctx.createLinearGradient(cx,cy,tipX,tipY);
+      pg.addColorStop(0,'rgba(255,255,255,0.0)');
+      pg.addColorStop(0.5,'rgba(0,0,0,0.0)');
+      pg.addColorStop(1,'rgba(0,0,0,0.07)');
+      ctx.fillStyle=pg;ctx.fill();ctx.restore();
       ctx.stroke();
     }
+    ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
     // centre circle
     ctx.beginPath();ctx.arc(cx,cy,r*0.22,0,Math.PI*2);ctx.stroke();
     // centre detail rings

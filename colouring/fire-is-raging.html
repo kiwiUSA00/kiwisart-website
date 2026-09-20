@@ -91,7 +91,17 @@
                       tx+lean*0.6-(width*0.5),my,tx,ty);
     ctx.bezierCurveTo(tx+lean*0.6+(width*0.5),my,
                       bx+width+lean*0.4,by-(by-ty)*0.3,bx+width,by);
-    ctx.closePath();ctx.stroke();
+    ctx.closePath();
+    // Gradient fill — lighter at tip, slightly darker at base
+    ctx.save();
+    var fg=ctx.createLinearGradient(tx,ty,bx,by);
+    fg.addColorStop(0,'rgba(255,255,255,0.0)');
+    fg.addColorStop(0.5,'rgba(0,0,0,0.0)');
+    fg.addColorStop(1,'rgba(0,0,0,0.07)');
+    ctx.fillStyle=fg;ctx.fill();ctx.restore();
+    ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
+    ctx.stroke();
+    ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
   }
 
   // Large primary flames from the base

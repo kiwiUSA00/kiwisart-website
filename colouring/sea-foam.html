@@ -81,10 +81,25 @@
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
 
   // Irregular foam cell — closed bezier blob
-  function cell(pts, lw, alpha){
+  function cell(pts, lw, alpha, doFill){
+    var n=pts.length;
+    // Gradient volume fill for large cells
+    if(doFill){
+      var minY=pts[0][1],maxY=pts[0][1];
+      for(var j=1;j<n;j++){if(pts[j][1]<minY)minY=pts[j][1];if(pts[j][1]>maxY)maxY=pts[j][1];}
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo((pts[n-1][0]+pts[0][0])/2,(pts[n-1][1]+pts[0][1])/2);
+      for(var fi=0;fi<n;fi++){var fp0=pts[fi],fp1=pts[(fi+1)%n];ctx.quadraticCurveTo(fp0[0],fp0[1],(fp0[0]+fp1[0])/2,(fp0[1]+fp1[1])/2);}
+      ctx.closePath();
+      var cg=ctx.createLinearGradient(0,minY,0,maxY);
+      cg.addColorStop(0,'rgba(255,255,255,0.0)');
+      cg.addColorStop(0.5,'rgba(0,0,0,0.0)');
+      cg.addColorStop(1,'rgba(0,0,0,0.07)');
+      ctx.fillStyle=cg;ctx.fill();ctx.restore();
+    }
     s(lw,alpha);
     ctx.beginPath();
-    var n=pts.length;
     ctx.moveTo((pts[n-1][0]+pts[0][0])/2,(pts[n-1][1]+pts[0][1])/2);
     for(var i=0;i<n;i++){
       var p0=pts[i],p1=pts[(i+1)%n];
@@ -121,7 +136,9 @@
     {cx:120,cy:720,r:85,n:7,v:0.26,sd:0.9,lw:1.9,a:0.68},
     {cx:360,cy:730,r:88,n:8,v:0.24,sd:2.2,lw:2.0,a:0.70},
   ];
-  cells.forEach(function(c){cell(blob(c.cx,c.cy,c.r,c.n,c.v,c.sd),c.lw,c.a);});
+  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
+  cells.forEach(function(c){cell(blob(c.cx,c.cy,c.r,c.n,c.v,c.sd),c.lw,c.a,true);});
+  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
 
   // Medium secondary cells filling gaps
   var med=[

@@ -81,6 +81,7 @@
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
 
   // Pool outline — irregular rocky oval
+  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
   s(2.2,0.72);
   ctx.beginPath();
   ctx.moveTo(100,130);
@@ -92,8 +93,10 @@
   ctx.bezierCurveTo(80,690,50,600,38,500);
   ctx.bezierCurveTo(26,400,30,240,100,130);
   ctx.stroke();
+  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
 
   // Rocks around the rim — blob shapes
+  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
   s(1.8,0.68);
   var rocks=[
     {pts:[[80,80],[120,50],[170,60],[180,100],[140,120],[90,110]]},
@@ -110,6 +113,7 @@
     for(var i=0;i<n;i++){var p0=pts[i],p1=pts[(i+1)%n];ctx.quadraticCurveTo(p0[0],p0[1],(p0[0]+p1[0])/2,(p0[1]+p1[1])/2);}
     ctx.closePath();ctx.stroke();
   });
+  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
 
   // Water ripple ovals inside pool
   s(0.8,0.28);
@@ -119,6 +123,7 @@
 
   // Anemones — radial tentacles from a centre
   function anemone(cx,cy,r,n,lw,alpha){
+    ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
     s(lw,alpha);
     for(var i=0;i<n;i++){
       var a=i*Math.PI*2/n;
@@ -127,6 +132,7 @@
       var ex=cx+Math.cos(a)*r, ey=cy+Math.sin(a)*r;
       ctx.beginPath();ctx.moveTo(cx,cy);ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,ex,ey);ctx.stroke();
     }
+    ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
     ctx.beginPath();ctx.arc(cx,cy,r*0.18,0,Math.PI*2);ctx.stroke();
   }
 
@@ -140,6 +146,7 @@
 
   // Starfish — 5-armed with texture
   function starfish(cx,cy,r,angle){
+    ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
     s(1.6,0.70);
     for(var i=0;i<5;i++){
       var a=angle+i*Math.PI*2/5;
@@ -159,6 +166,7 @@
       ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(ox,oy);ctx.stroke();
       s(1.6,0.70);
     }
+    ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
     ctx.beginPath();ctx.arc(cx,cy,r*0.22,0,Math.PI*2);ctx.stroke();
   }
 

@@ -83,10 +83,12 @@
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.0;}
 
   // Galaxy core — concentric ellipses
+  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
   s(1.8,0.70);
   [18,32,48,66,86].forEach(function(r,i){
     ctx.beginPath();ctx.ellipse(CX,CY,r*1.2,r*0.6,0.3,0,Math.PI*2);ctx.stroke();
   });
+  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
   // Inner bright core hatch
   s(0.7,0.40);
   for(var i=0;i<8;i++){
@@ -107,12 +109,14 @@
       var rx=r*1.15, ry=r*0.62;
       pts.push([CX+Math.cos(a)*rx, CY+Math.sin(a)*ry*0.88]);
     }
+    ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
     ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
     for(var i=1;i<pts.length-1;i++){
       var mx=(pts[i][0]+pts[i+1][0])/2, my=(pts[i][1]+pts[i+1][1])/2;
       ctx.quadraticCurveTo(pts[i][0],pts[i][1],mx,my);
     }
     ctx.stroke();
+    ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
 
     // Arm width echoes
     s(0.8,color_a*0.55);

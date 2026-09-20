@@ -86,7 +86,8 @@
     ctx.beginPath();ctx.moveTo(x1,y1);ctx.quadraticCurveTo(cpx,cpy,x2,y2);ctx.stroke();
   }
 
-  // Main trunk
+  // Main trunk — shadow lifts boughs off the page
+  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
   branch(298,800, 298,550, 295,680, 3.2,0.78);
   branch(298,550, 285,320, 280,440, 2.6,0.74);
   branch(285,320, 270,140, 265,230, 2.0,0.70);
@@ -119,7 +120,8 @@
   branch(420,200, 480, 80, 460,130, 1.1,0.50);
   branch(380,140, 460, 60, 430, 90, 1.0,0.48);
 
-  // Small twigs
+  // Small twigs — no shadow (fine detail)
+  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
   s(0.9,0.45);
   var twigs=[
     [40,300,28,240,30,265],[80,260,50,200,58,228],[540,280,560,200,555,240],

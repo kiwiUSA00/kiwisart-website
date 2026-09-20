@@ -128,13 +128,15 @@
     ctx.beginPath();ctx.arc(cx,cy,r*0.12,0,Math.PI*2);ctx.stroke();
   }
 
-  // Large hero snowflakes
+  // Large hero snowflakes — shadow lifts them off the page
+  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
   snowflake(160,200, 80, 3, 1.8,0.72);
   snowflake(430,140, 70, 3, 1.7,0.70);
   snowflake(298,500, 90, 3, 1.9,0.74);
   snowflake(110,580, 65, 3, 1.6,0.68);
   snowflake(490,580, 68, 3, 1.6,0.68);
   snowflake(298,120, 55, 3, 1.5,0.65);
+  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
 
   // Medium snowflakes
   snowflake( 50,100, 40, 2, 1.4,0.62);

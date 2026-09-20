@@ -165,7 +165,26 @@
 
     var hw = len * 0.22;  // half-width at widest
 
-    // Body outline (top edge)
+    // --- Gradient volume fill (top = white, bottom = slight shadow) ---
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(-len * 0.5, 0);
+    ctx.bezierCurveTo(-len * 0.5 + len * 0.12, -hw * 1.1, len * 0.1, -hw * 1.2, len * 0.4, -hw * 0.35);
+    ctx.bezierCurveTo(len * 0.48, -hw * 0.1, len * 0.5, 0, len * 0.5, 0);
+    ctx.bezierCurveTo(len * 0.5, 0, len * 0.48, hw * 0.08, len * 0.4, hw * 0.3);
+    ctx.bezierCurveTo(len * 0.1, hw * 1.1, -len * 0.5 + len * 0.12, hw * 0.9, -len * 0.5, 0);
+    ctx.closePath();
+    var bodyGrad = ctx.createLinearGradient(0, -hw, 0, hw);
+    bodyGrad.addColorStop(0, 'rgba(255,255,255,0.0)');
+    bodyGrad.addColorStop(0.5, 'rgba(0,0,0,0.0)');
+    bodyGrad.addColorStop(1, 'rgba(0,0,0,0.07)');
+    ctx.fillStyle = bodyGrad;
+    ctx.fill();
+    ctx.restore();
+
+    // Body outline (top edge) — shadow lifts it off the page
+    ctx.shadowBlur = 7;
+    ctx.shadowColor = 'rgba(0,0,0,0.13)';
     s(2.0, 0.82);
     ctx.beginPath();
     ctx.moveTo(-len * 0.5, 0);
@@ -177,7 +196,8 @@
                        len * 0.5, 0);
     ctx.stroke();
 
-    // Body outline (bottom edge)
+    // Body outline (bottom edge — shadow side, heavier)
+    s(2.5, 0.90);
     ctx.beginPath();
     ctx.moveTo(-len * 0.5, 0);
     ctx.bezierCurveTo(-len * 0.5 + len * 0.12, hw * 0.9,
@@ -187,6 +207,9 @@
                        len * 0.5, 0,
                        len * 0.5, 0);
     ctx.stroke();
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
 
     // Tail — forked, flowing
     s(1.6, 0.70);
@@ -253,6 +276,13 @@
       ctx.arc(len * sr.x, sr.y, sr.r, 0.3, Math.PI - 0.3);
       ctx.stroke();
     });
+
+    // Cross-contour hint on ventral surface for depth
+    s(0.7, 0.18);
+    ctx.beginPath();
+    ctx.moveTo(len * 0.0, hw * 0.55);
+    ctx.bezierCurveTo(len * 0.1, hw * 0.9, len * 0.25, hw * 0.85, len * 0.32, hw * 0.38);
+    ctx.stroke();
 
     // Eye
     s(1.2, 0.75);

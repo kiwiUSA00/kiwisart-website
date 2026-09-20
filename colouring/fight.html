@@ -81,7 +81,10 @@
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
 
   // === DARK SIDE: jagged angular shards radiating from upper-left ===
-  s(1.8, 0.75);
+  var shardGrad=ctx.createLinearGradient(0,0,260,520);
+  shardGrad.addColorStop(0,'rgba(255,255,255,0.0)');
+  shardGrad.addColorStop(0.5,'rgba(0,0,0,0.0)');
+  shardGrad.addColorStop(1,'rgba(0,0,0,0.07)');
   var shards=[
     // [x1,y1, x2,y2, x3,y3] triangular spike shapes
     [[0,0],[120,80],[60,200]],
@@ -102,14 +105,18 @@
     [[0,680],[120,700],[80,800]],
     [[100,720],[230,680],[210,800]],
   ];
+  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
+  s(1.8, 0.75);
   shards.forEach(function(shard){
     ctx.beginPath();
     ctx.moveTo(shard[0][0],shard[0][1]);
     ctx.lineTo(shard[1][0],shard[1][1]);
     ctx.lineTo(shard[2][0],shard[2][1]);
     ctx.closePath();
+    ctx.fillStyle=shardGrad;ctx.fill();
     ctx.stroke();
   });
+  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
 
   // Internal fracture lines within shard territory
   s(0.9, 0.45);
@@ -126,6 +133,7 @@
   });
 
   // === LIGHT SIDE: bold sweeping arcs from lower-right ===
+  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
   s(2.0, 0.72);
   var arcs=[
     // large sweeping curves
@@ -144,6 +152,7 @@
     ctx.bezierCurveTo(a.cp1x,a.cp1y,a.cp2x,a.cp2y,a.ex,a.ey);
     ctx.stroke();
   });
+  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
 
   // Inner curve echoes (lighter, thinner)
   s(1.0, 0.40);
