@@ -72,121 +72,9 @@
   <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
 </div></footer>
 <script src="/js/nav.js"></script>
+
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-
-  // Perspective grid helper
-  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
-    ctx.save();
-    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
-    for (var i = 1; i <= numCross; i++) {
-      var t = Math.pow(i / numCross, 1.7);
-      var y = vpy + t * (yFar - vpy);
-      ctx.lineWidth = 0.4 + t * 0.35;
-      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
-    }
-    ctx.lineWidth = 0.4;
-    for (var r = 0; r <= numRays; r++) {
-      var bx = 10 + (r / numRays) * (W - 20);
-      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  // Sky-ground divide and perspective ground plane
-  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.10)'; ctx.lineWidth=0.9;
-  ctx.beginPath(); ctx.moveTo(15, H*0.65); ctx.lineTo(W-15, H*0.65); ctx.stroke(); ctx.restore();
-  perspGrid(W/2, H*0.65, H-10, 12, 9, 0.045);
-
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.0;}
-
-  // Snowflake: cx,cy=center, r=radius, complexity 1-3
-  function snowflake(cx,cy,r,complexity,lw,alpha){
-    s(lw,alpha);
-    for(var i=0;i<6;i++){
-      var a=i*Math.PI/3;
-      var ex=cx+Math.cos(a)*r, ey=cy+Math.sin(a)*r;
-      // Main arm
-      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(ex,ey);ctx.stroke();
-      if(complexity>=2){
-        // Side branches at 1/3 and 2/3
-        [0.33,0.67].forEach(function(t){
-          var px=cx+Math.cos(a)*r*t, py=cy+Math.sin(a)*r*t;
-          var bl=r*0.25;
-          [-0.52,0.52].forEach(function(ba){
-            var ba2=a+Math.PI/2+ba;
-            ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+Math.cos(ba2)*bl,py+Math.sin(ba2)*bl);ctx.stroke();
-          });
-        });
-      }
-      if(complexity>=3){
-        // Tip branch at 5/6
-        var t=0.82;
-        var px=cx+Math.cos(a)*r*t, py=cy+Math.sin(a)*r*t;
-        var bl=r*0.18;
-        [-Math.PI/3,Math.PI/3].forEach(function(ba){
-          var ba2=a+ba;
-          ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+Math.cos(ba2)*bl,py+Math.sin(ba2)*bl);ctx.stroke();
-        });
-        // Extra sub-branch at 1/2
-        var px2=cx+Math.cos(a)*r*0.5, py2=cy+Math.sin(a)*r*0.5;
-        [-0.52,0.52].forEach(function(ba){
-          var ba2=a+Math.PI/2+ba;
-          var bl2=r*0.18;
-          ctx.beginPath();ctx.moveTo(px2,py2);ctx.lineTo(px2+Math.cos(ba2)*bl2,py2+Math.sin(ba2)*bl2);ctx.stroke();
-          // sub-sub branch
-          var px3=px2+Math.cos(ba2)*bl2*0.5, py3=py2+Math.sin(ba2)*bl2*0.5;
-          [-0.7,0.7].forEach(function(sba){
-            ctx.beginPath();ctx.moveTo(px3,py3);
-            ctx.lineTo(px3+Math.cos(ba2+sba)*bl2*0.5,py3+Math.sin(ba2+sba)*bl2*0.5);
-            ctx.stroke();
-          });
-        });
-      }
-    }
-    // Hex centre ring
-    ctx.beginPath();ctx.arc(cx,cy,r*0.12,0,Math.PI*2);ctx.stroke();
-  }
-
-  // Large hero snowflakes — scaled by depth: high y (close) = bigger, low y (far) = smaller
-  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
-  // cy=200 < H*0.35 (280) → multiply r by 0.65
-  snowflake(160,200, 80*0.65, 3, 1.8,0.65);
-  // cy=140 < H*0.35 → multiply r by 0.65
-  snowflake(430,140, 70*0.65, 3, 1.7,0.62);
-  // cy=500 > H*0.60 (480) → multiply r by 1.25
-  snowflake(298,500, 90*1.25, 3, 1.9,0.80);
-  // cy=580 > H*0.60 → multiply r by 1.25
-  snowflake(110,580, 65*1.25, 3, 1.6,0.76);
-  // cy=580 > H*0.60 → multiply r by 1.25
-  snowflake(490,580, 68*1.25, 3, 1.6,0.76);
-  // cy=120 < H*0.35 → multiply r by 0.65
-  snowflake(298,120, 55*0.65, 3, 1.5,0.58);
-  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
-
-  // Medium snowflakes
-  snowflake( 50,100, 40, 2, 1.4,0.62);
-  snowflake(540, 90, 38, 2, 1.3,0.60);
-  snowflake( 60,380, 42, 2, 1.4,0.62);
-  snowflake(540,380, 40, 2, 1.3,0.60);
-  snowflake(200,680, 44, 2, 1.4,0.62);
-  snowflake(400,680, 42, 2, 1.3,0.60);
-  snowflake(298,760, 38, 2, 1.3,0.58);
-  snowflake(140,400, 36, 2, 1.2,0.55);
-  snowflake(455,400, 36, 2, 1.2,0.55);
-
-  // Small simple snowflakes
-  var smalls=[
-    [80,260,22,1],[200,330,20,1],[380,320,22,1],[510,260,20,1],
-    [120,460,20,1],[470,460,22,1],[250,620,20,1],[350,620,22,1],
-    [60,640,18,1],[540,640,18,1],[180,100,18,1],[420,240,20,1],
-    [300,300,18,1],[90,730,18,1],[510,730,18,1],[298,40,16,1],
-    [180,760,16,1],[420,760,16,1],[60,190,18,1],[540,190,18,1],
-  ];
-  smalls.forEach(function(){
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
@@ -296,5 +184,6 @@
   ctx.textAlign='center';ctx.fillText('Winter Is Coming  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
+
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
 </html>

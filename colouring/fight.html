@@ -72,144 +72,9 @@
   <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
 </div></footer>
 <script src="/js/nav.js"></script>
+
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-
-  // Perspective grid helper
-  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
-    ctx.save();
-    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
-    for (var i = 1; i <= numCross; i++) {
-      var t = Math.pow(i / numCross, 1.7);
-      var y = vpy + t * (yFar - vpy);
-      ctx.lineWidth = 0.4 + t * 0.35;
-      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
-    }
-    ctx.lineWidth = 0.4;
-    for (var r = 0; r <= numRays; r++) {
-      var bx = 10 + (r / numRays) * (W - 20);
-      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
-
-  // Ground plane perspective — drawn first to establish 3D arena space
-  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.12)'; ctx.lineWidth=0.9;
-  ctx.beginPath(); ctx.moveTo(10, H*0.72); ctx.lineTo(W-10, H*0.72); ctx.stroke(); ctx.restore();
-  perspGrid(W/2, H*0.72, H-10, 10, 8, 0.07);
-
-  // === DARK SIDE: jagged angular shards radiating from upper-left ===
-  var shardGrad=ctx.createLinearGradient(0,0,260,520);
-  shardGrad.addColorStop(0,'rgba(255,255,255,0.0)');
-  shardGrad.addColorStop(0.5,'rgba(0,0,0,0.0)');
-  shardGrad.addColorStop(1,'rgba(0,0,0,0.07)');
-  var shards=[
-    // [x1,y1, x2,y2, x3,y3] triangular spike shapes
-    [[0,0],[120,80],[60,200]],
-    [[0,0],[180,30],[200,160]],
-    [[0,0],[80,160],[30,300]],
-    [[20,0],[260,20],[220,140]],
-    [[0,50],[140,0],[160,110]],
-    [[0,100],[100,40],[80,220]],
-    [[30,200],[160,130],[120,320]],
-    [[0,200],[80,280],[40,400]],
-    [[60,300],[200,220],[180,380]],
-    [[0,320],[120,350],[80,500]],
-    [[90,380],[220,310],[200,480]],
-    [[0,420],[100,460],[60,580]],
-    [[40,500],[180,440],[160,600]],
-    [[0,550],[90,580],[50,700]],
-    [[70,600],[210,560],[190,720]],
-    [[0,680],[120,700],[80,800]],
-    [[100,720],[230,680],[210,800]],
-  ];
-  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
-  s(1.8, 0.75);
-  shards.forEach(function(shard){
-    ctx.beginPath();
-    ctx.moveTo(shard[0][0],shard[0][1]);
-    ctx.lineTo(shard[1][0],shard[1][1]);
-    ctx.lineTo(shard[2][0],shard[2][1]);
-    ctx.closePath();
-    ctx.fillStyle=shardGrad;ctx.fill();
-    ctx.stroke();
-  });
-  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
-
-  // Internal fracture lines within shard territory
-  s(0.9, 0.45);
-  var fractures=[
-    [30,50,150,120],[80,100,170,200],[40,180,160,250],
-    [20,280,140,360],[60,400,180,450],[30,480,160,540],
-    [70,580,190,640],[40,680,170,740],
-    [120,60,200,150],[150,180,230,280],[110,320,200,400],
-  ];
-  fractures.forEach(function(f){
-    var mx=(f[0]+f[2])/2 + (Math.sin(f[0]*0.07)*20);
-    var my=(f[1]+f[3])/2 + (Math.cos(f[1]*0.06)*15);
-    ctx.beginPath();ctx.moveTo(f[0],f[1]);ctx.quadraticCurveTo(mx,my,f[2],f[3]);ctx.stroke();
-  });
-
-  // === LIGHT SIDE: bold sweeping arcs from lower-right ===
-  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
-  s(2.0, 0.72);
-  var arcs=[
-    // large sweeping curves
-    {sx:595,sy:800,cp1x:400,cp1y:600,cp2x:350,cp2y:400,ex:450,ey:200},
-    {sx:595,sy:700,cp1x:420,cp1y:500,cp2x:380,cp2y:320,ex:480,ey:100},
-    {sx:595,sy:600,cp1x:450,cp1y:420,cp2x:420,cp2y:260,ex:500,ey:50},
-    {sx:595,sy:500,cp1x:480,cp1y:340,cp2x:460,cp2y:200,ex:540,ey:20},
-    {sx:595,sy:400,cp1x:500,cp1y:280,cp2x:490,cp2y:160,ex:570,ey:0},
-    {sx:595,sy:800,cp1x:380,cp1y:650,cp2x:320,cp2y:480,ex:380,ey:280},
-    {sx:595,sy:750,cp1x:360,cp1y:600,cp2x:300,cp2y:420,ex:340,ey:220},
-    {sx:595,sy:650,cp1x:400,cp1y:500,cp2x:360,cp2y:360,ex:420,ey:160},
-    {sx:595,sy:550,cp1x:440,cp1y:400,cp2x:410,cp2y:280,ex:460,ey:80},
-  ];
-  arcs.forEach(function(a){
-    ctx.beginPath();ctx.moveTo(a.sx,a.sy);
-    ctx.bezierCurveTo(a.cp1x,a.cp1y,a.cp2x,a.cp2y,a.ex,a.ey);
-    ctx.stroke();
-  });
-  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
-
-  // Inner curve echoes (lighter, thinner)
-  s(1.0, 0.40);
-  var echoes=[
-    {sx:595,sy:780,cp1x:390,cp1y:590,cp2x:340,cp2y:390,ex:440,ey:190},
-    {sx:595,sy:680,cp1x:410,cp1y:490,cp2x:370,cp2y:310,ex:470,ey:90},
-    {sx:595,sy:580,cp1x:440,cp1y:400,cp2x:410,cp2y:240,ex:510,ey:40},
-    {sx:595,sy:480,cp1x:470,cp1y:320,cp2x:450,cp2y:180,ex:555,ey:10},
-    {sx:595,sy:760,cp1x:370,cp1y:620,cp2x:310,cp2y:450,ex:360,ey:260},
-    {sx:595,sy:630,cp1x:420,cp1y:480,cp2x:390,cp2y:340,ex:430,ey:140},
-  ];
-  echoes.forEach(function(a){
-    ctx.beginPath();ctx.moveTo(a.sx,a.sy);
-    ctx.bezierCurveTo(a.cp1x,a.cp1y,a.cp2x,a.cp2y,a.ex,a.ey);
-    ctx.stroke();
-  });
-
-  // === CLASH ZONE: central tension line where forces meet ===
-  s(2.5, 0.65);
-  ctx.beginPath();
-  ctx.moveTo(280,0);
-  ctx.bezierCurveTo(260,200,320,400,300,600);
-  ctx.bezierCurveTo(295,700,310,750,295,800);
-  ctx.stroke();
-
-  // Tension sparks along clash line
-  s(0.8, 0.55);
-  var sparks=[
-    [275,80,310,60],[285,140,255,120],[280,200,315,185],
-    [278,260,308,240],[282,320,252,305],[280,380,312,365],
-    [279,440,309,420],[281,500,251,485],[280,560,313,548],
-    [278,620,308,605],[282,680,252,665],[280,740,315,728],
-  ];
-  sparks.forEach(function(){
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
@@ -325,5 +190,6 @@
   ctx.textAlign='center';ctx.fillText('Fight  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
+
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
 </html>

@@ -72,148 +72,9 @@
   <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
 </div></footer>
 <script src="/js/nav.js"></script>
+
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-
-  // Perspective grid helper
-  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
-    ctx.save();
-    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
-    for (var i = 1; i <= numCross; i++) {
-      var t = Math.pow(i / numCross, 1.7);
-      var y = vpy + t * (yFar - vpy);
-      ctx.lineWidth = 0.4 + t * 0.35;
-      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
-    }
-    ctx.lineWidth = 0.4;
-    for (var r = 0; r <= numRays; r++) {
-      var bx = 10 + (r / numRays) * (W - 20);
-      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
-
-  // Draw a flower: cx,cy=center, r=petal radius, n=petals, offset angle
-  function flower(cx,cy,r,n,angleOff,lw,alpha){
-    ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
-    s(lw,alpha);
-    for(var i=0;i<n;i++){
-      var a=angleOff+i*(Math.PI*2/n);
-      var px=cx+Math.cos(a)*r*0.6, py=cy+Math.sin(a)*r*0.6;
-      var cp1x=cx+Math.cos(a-0.5)*r*1.1, cp1y=cy+Math.sin(a-0.5)*r*1.1;
-      var cp2x=cx+Math.cos(a+0.5)*r*1.1, cp2y=cy+Math.sin(a+0.5)*r*1.1;
-      var tipX=px+Math.cos(a)*r*0.65, tipY=py+Math.sin(a)*r*0.65;
-      ctx.beginPath();ctx.moveTo(cx,cy);
-      ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,tipX,tipY);
-      ctx.bezierCurveTo(cx+Math.cos(a+0.5)*r*0.2,cy+Math.sin(a+0.5)*r*0.2,
-                        cx+Math.cos(a-0.5)*r*0.2,cy+Math.sin(a-0.5)*r*0.2,cx,cy);
-      // Gradient fill for petal volume
-      ctx.save();
-      var pg=ctx.createLinearGradient(cx,cy,tipX,tipY);
-      pg.addColorStop(0,'rgba(255,255,255,0.0)');
-      pg.addColorStop(0.5,'rgba(0,0,0,0.0)');
-      pg.addColorStop(1,'rgba(0,0,0,0.07)');
-      ctx.fillStyle=pg;ctx.fill();ctx.restore();
-      ctx.stroke();
-    }
-    ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
-    // centre circle
-    ctx.beginPath();ctx.arc(cx,cy,r*0.22,0,Math.PI*2);ctx.stroke();
-    // centre detail rings
-    ctx.beginPath();ctx.arc(cx,cy,r*0.11,0,Math.PI*2);ctx.stroke();
-  }
-
-  // Large hero flower, centre-upper
-  flower(298,220,130,7,0.2,2.0,0.72);
-  // Centre stamens
-  s(0.9,0.45);
-  for(var i=0;i<12;i++){
-    var a=i*Math.PI/6;
-    ctx.beginPath();ctx.moveTo(298+Math.cos(a)*20,220+Math.sin(a)*20);
-    ctx.lineTo(298+Math.cos(a)*34,220+Math.sin(a)*34);ctx.stroke();
-    ctx.beginPath();ctx.arc(298+Math.cos(a)*36,220+Math.sin(a)*36,3,0,Math.PI*2);ctx.stroke();
-  }
-
-  // Secondary flower lower-left
-  flower(130,580,88,6,0.5,1.8,0.68);
-  s(0.8,0.40);
-  for(var i=0;i<10;i++){
-    var a=i*Math.PI/5;
-    ctx.beginPath();ctx.moveTo(130+Math.cos(a)*13,580+Math.sin(a)*13);
-    ctx.lineTo(130+Math.cos(a)*24,580+Math.sin(a)*24);ctx.stroke();
-  }
-
-  // Secondary flower lower-right
-  flower(460,620,80,5,1.1,1.7,0.65);
-  s(0.8,0.38);
-  for(var i=0;i<9;i++){
-    var a=i*Math.PI*2/9;
-    ctx.beginPath();ctx.moveTo(460+Math.cos(a)*12,620+Math.sin(a)*12);
-    ctx.lineTo(460+Math.cos(a)*22,620+Math.sin(a)*22);ctx.stroke();
-  }
-
-  // Small bud upper-right — near top, multiply radius by 0.75 for perspective
-  flower(490,130,52*0.75,5,0.8,1.4,0.58);
-
-  // Small bud upper-left — near top, multiply radius by 0.75 for perspective
-  flower(100,160,46*0.75,5,0.2,1.3,0.55);
-
-  // Stems
-  s(1.6,0.65);
-  // Main stem
-  ctx.beginPath();ctx.moveTo(298,350);ctx.bezierCurveTo(295,480,290,580,285,760);ctx.stroke();
-  // Left branch
-  ctx.beginPath();ctx.moveTo(293,460);ctx.bezierCurveTo(240,490,160,510,130,540);ctx.stroke();
-  // Right branch
-  ctx.beginPath();ctx.moveTo(290,520);ctx.bezierCurveTo(350,530,420,540,460,570);ctx.stroke();
-  // Upper left twig
-  ctx.beginPath();ctx.moveTo(296,390);ctx.bezierCurveTo(230,380,160,330,100,230);ctx.stroke();
-  // Upper right twig
-  ctx.beginPath();ctx.moveTo(300,400);ctx.bezierCurveTo(370,380,430,340,490,220);ctx.stroke();
-
-  // Leaves — elliptical with midrib
-  function leaf(cx,cy,rx,ry,angle){
-    ctx.save();ctx.translate(cx,cy);ctx.rotate(angle);
-    s(1.4,0.62);
-    ctx.beginPath();
-    ctx.ellipse(0,0,ry,rx,0,0,Math.PI*2);ctx.stroke();
-    // midrib
-    s(0.8,0.40);
-    ctx.beginPath();ctx.moveTo(0,-rx);ctx.lineTo(0,rx);ctx.stroke();
-    // side veins
-    s(0.6,0.30);
-    for(var i=1;i<5;i++){
-      var y=-rx+(rx*2*i/5);
-      ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(ry*0.7,y+ry*0.2);ctx.stroke();
-      ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(-ry*0.7,y+ry*0.2);ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  leaf(250,430, 52, 24, -0.4);
-  leaf(340,450, 48, 22, 0.5);
-  leaf(185,490, 44, 20, -0.8);
-  leaf(400,500, 46, 21, 0.7);
-  leaf(250,560, 50, 23, -0.3);
-  leaf(350,570, 46, 21, 0.4);
-  leaf(120,490, 42, 19, -1.2);
-  leaf(450,555, 44, 20, 1.0);
-  leaf(285,660, 54, 25, 0.1);
-  leaf(290,700, 48, 22, -0.15);
-
-  // Grass / ground with perspective
-  var HORIZON_Y = H * 0.60;
-  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.16)'; ctx.lineWidth=1.1;
-  ctx.beginPath(); ctx.moveTo(15, HORIZON_Y); ctx.lineTo(W-15, HORIZON_Y); ctx.stroke(); ctx.restore();
-  perspGrid(W/2, HORIZON_Y, H - 10, 12, 10, 0.055);
-
-  // Distant flowers near horizon
-  [120, 150, 430].forEach(function(){
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
@@ -324,5 +185,6 @@
   ctx.textAlign='center';ctx.fillText('Spring Bloom  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
+
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
 </html>

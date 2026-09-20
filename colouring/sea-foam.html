@@ -72,130 +72,9 @@
   <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
 </div></footer>
 <script src="/js/nav.js"></script>
+
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-
-  // Perspective grid helper
-  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
-    ctx.save();
-    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
-    for (var i = 1; i <= numCross; i++) {
-      var t = Math.pow(i / numCross, 1.7);
-      var y = vpy + t * (yFar - vpy);
-      ctx.lineWidth = 0.4 + t * 0.35;
-      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
-    }
-    ctx.lineWidth = 0.4;
-    for (var r = 0; r <= numRays; r++) {
-      var bx = 10 + (r / numRays) * (W - 20);
-      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  // Horizon line and perspective grid drawn first
-  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.12)'; ctx.lineWidth=1.0;
-  ctx.beginPath(); ctx.moveTo(15, H*0.28); ctx.lineTo(W-15, H*0.28); ctx.stroke(); ctx.restore();
-  perspGrid(W/2, H*0.28, H-10, 12, 10, 0.045);
-
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
-
-  // Irregular foam cell — closed bezier blob
-  function cell(pts, lw, alpha, doFill){
-    var n=pts.length;
-    // Gradient volume fill for large cells
-    if(doFill){
-      var minY=pts[0][1],maxY=pts[0][1];
-      for(var j=1;j<n;j++){if(pts[j][1]<minY)minY=pts[j][1];if(pts[j][1]>maxY)maxY=pts[j][1];}
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo((pts[n-1][0]+pts[0][0])/2,(pts[n-1][1]+pts[0][1])/2);
-      for(var fi=0;fi<n;fi++){var fp0=pts[fi],fp1=pts[(fi+1)%n];ctx.quadraticCurveTo(fp0[0],fp0[1],(fp0[0]+fp1[0])/2,(fp0[1]+fp1[1])/2);}
-      ctx.closePath();
-      var cg=ctx.createLinearGradient(0,minY,0,maxY);
-      cg.addColorStop(0,'rgba(255,255,255,0.0)');
-      cg.addColorStop(0.5,'rgba(0,0,0,0.0)');
-      cg.addColorStop(1,'rgba(0,0,0,0.07)');
-      ctx.fillStyle=cg;ctx.fill();ctx.restore();
-    }
-    s(lw,alpha);
-    ctx.beginPath();
-    ctx.moveTo((pts[n-1][0]+pts[0][0])/2,(pts[n-1][1]+pts[0][1])/2);
-    for(var i=0;i<n;i++){
-      var p0=pts[i],p1=pts[(i+1)%n];
-      ctx.quadraticCurveTo(p0[0],p0[1],(p0[0]+p1[0])/2,(p0[1]+p1[1])/2);
-    }
-    ctx.closePath();ctx.stroke();
-  }
-
-  // Generate a blob: center cx,cy, n points, radius r with variance
-  function blob(cx,cy,r,n,variance,seed){
-    var pts=[];
-    for(var i=0;i<n;i++){
-      var a=(i/n)*Math.PI*2;
-      var rv=r*(1+variance*(Math.sin(seed+i*2.1)*0.5+Math.sin(seed*1.3+i*3.7)*0.3));
-      pts.push([cx+Math.cos(a)*rv, cy+Math.sin(a)*rv*0.85]);
-    }
-    return pts;
-  }
-
-  // Large primary cells
-  var cells=[
-    {cx:140,cy:130,r:90,n:8,v:0.28,sd:1.1,lw:2.0,a:0.72},
-    {cx:360,cy:110,r:80,n:7,v:0.25,sd:2.3,lw:1.9,a:0.68},
-    {cx:510,cy:200,r:75,n:8,v:0.22,sd:0.8,lw:1.8,a:0.65},
-    {cx:80, cy:300,r:85,n:7,v:0.30,sd:1.7,lw:1.9,a:0.70},
-    {cx:280,cy:280,r:95,n:9,v:0.26,sd:3.0,lw:2.1,a:0.74},
-    {cx:470,cy:360,r:78,n:8,v:0.24,sd:1.4,lw:1.8,a:0.66},
-    {cx:150,cy:460,r:88,n:8,v:0.27,sd:2.0,lw:2.0,a:0.71},
-    {cx:380,cy:490,r:82,n:7,v:0.23,sd:0.6,lw:1.9,a:0.67},
-    {cx:540,cy:550,r:70,n:8,v:0.29,sd:1.9,lw:1.7,a:0.64},
-    {cx:60, cy:580,r:80,n:7,v:0.25,sd:2.5,lw:1.8,a:0.69},
-    {cx:250,cy:620,r:90,n:9,v:0.28,sd:1.2,lw:2.0,a:0.72},
-    {cx:460,cy:680,r:76,n:8,v:0.22,sd:3.1,lw:1.8,a:0.65},
-    {cx:120,cy:720,r:85,n:7,v:0.26,sd:0.9,lw:1.9,a:0.68},
-    {cx:360,cy:730,r:88,n:8,v:0.24,sd:2.2,lw:2.0,a:0.70},
-  ];
-  ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
-  cells.forEach(function(c){cell(blob(c.cx,c.cy,c.r,c.n,c.v,c.sd),c.lw,c.a,true);});
-  ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
-
-  // Medium secondary cells filling gaps
-  var med=[
-    {cx:230,cy:170,r:48,n:7,v:0.30,sd:1.5},{cx:430,cy:170,r:42,n:6,v:0.28,sd:2.8},
-    {cx:550,cy:100,r:38,n:6,v:0.25,sd:1.0},{cx:38, cy:160,r:45,n:6,v:0.32,sd:0.5},
-    {cx:190,cy:350,r:52,n:7,v:0.27,sd:3.2},{cx:420,cy:290,r:44,n:6,v:0.29,sd:1.6},
-    {cx:570,cy:440,r:40,n:6,v:0.26,sd:2.0},{cx:30, cy:450,r:42,n:6,v:0.31,sd:1.1},
-    {cx:320,cy:400,r:50,n:7,v:0.28,sd:0.7},{cx:150,cy:560,r:46,n:6,v:0.27,sd:2.4},
-    {cx:540,cy:640,r:44,n:7,v:0.30,sd:1.3},{cx:320,cy:560,r:48,n:6,v:0.25,sd:3.5},
-    {cx:200,cy:750,r:42,n:6,v:0.28,sd:0.4},{cx:480,cy:770,r:45,n:7,v:0.26,sd:1.8},
-    {cx:570,cy:760,r:38,n:6,v:0.29,sd:2.6},{cx:38, cy:750,r:40,n:6,v:0.31,sd:1.9},
-  ];
-  med.forEach(function(c){cell(blob(c.cx,c.cy,c.r,c.n,c.v,c.sd),1.2,0.50);});
-
-  // Small filler cells
-  var sm=[
-    {cx:300,cy:60,r:26,n:6,v:0.33,sd:0.3},{cx:490,cy:60,r:22,n:5,v:0.30,sd:2.1},
-    {cx:28, cy:60,r:24,n:5,v:0.35,sd:1.4},{cx:170,cy:220,r:28,n:6,v:0.32,sd:3.0},
-    {cx:370,cy:210,r:25,n:5,v:0.29,sd:1.7},{cx:555,cy:300,r:24,n:5,v:0.31,sd:0.9},
-    {cx:340,cy:340,r:28,n:6,v:0.33,sd:2.3},{cx:100,cy:390,r:26,n:5,v:0.30,sd:1.5},
-    {cx:500,cy:490,r:24,n:5,v:0.32,sd:3.3},{cx:85, cy:670,r:26,n:6,v:0.28,sd:0.8},
-    {cx:440,cy:590,r:24,n:5,v:0.31,sd:2.0},{cx:300,cy:690,r:28,n:6,v:0.29,sd:1.2},
-    {cx:570,cy:720,r:22,n:5,v:0.33,sd:2.9},{cx:30, cy:680,r:24,n:5,v:0.30,sd:0.6},
-  ];
-  sm.forEach(function(c){cell(blob(c.cx,c.cy,c.r,c.n,c.v,c.sd),0.8,0.38);});
-
-  // Tendrils connecting cells
-  s(0.7,0.20);
-  var tendrils=[
-    [140,130,280,280],[280,280,470,360],[140,130,80,300],[360,110,280,280],
-    [280,280,150,460],[380,490,470,360],[380,490,250,620],[540,550,460,680],
-    [150,460,60,580],[250,620,120,720],[360,730,250,620],[380,490,360,730],
-  ];
-  tendrils.forEach(function(){
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
@@ -294,5 +173,6 @@
   ctx.textAlign='center';ctx.fillText('Sea Foam  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
+
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
 </html>

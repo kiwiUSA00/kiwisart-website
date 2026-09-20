@@ -72,129 +72,9 @@
   <nav aria-label="Footer"><a href="/gallery.html">Gallery</a> &middot; <a href="/commission.html">Commission</a> &middot; <a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a></nav>
 </div></footer>
 <script src="/js/nav.js"></script>
+
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-
-  // Perspective grid helper
-  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
-    ctx.save();
-    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
-    for (var i = 1; i <= numCross; i++) {
-      var t = Math.pow(i / numCross, 1.7);
-      var y = vpy + t * (yFar - vpy);
-      ctx.lineWidth = 0.4 + t * 0.35;
-      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
-    }
-    ctx.lineWidth = 0.4;
-    for (var r = 0; r <= numRays; r++) {
-      var bx = 10 + (r / numRays) * (W - 20);
-      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
-
-  // Flame tongue: base at (bx,by), tip at (tx,ty), with bezier bulge
-  function flame(bx,by,tx,ty,lean,lw,alpha){
-    s(lw,alpha);
-    var mx=(bx+tx)/2+lean, my=(by+ty)/2;
-    var width=(by-ty)*0.15;
-    ctx.beginPath();
-    ctx.moveTo(bx-width,by);
-    ctx.bezierCurveTo(bx-width+lean*0.4,by-(by-ty)*0.3,
-                      tx+lean*0.6-(width*0.5),my,tx,ty);
-    ctx.bezierCurveTo(tx+lean*0.6+(width*0.5),my,
-                      bx+width+lean*0.4,by-(by-ty)*0.3,bx+width,by);
-    ctx.closePath();
-    // Gradient fill — lighter at tip, slightly darker at base
-    ctx.save();
-    var fg=ctx.createLinearGradient(tx,ty,bx,by);
-    fg.addColorStop(0,'rgba(255,255,255,0.0)');
-    fg.addColorStop(0.5,'rgba(0,0,0,0.0)');
-    fg.addColorStop(1,'rgba(0,0,0,0.07)');
-    ctx.fillStyle=fg;ctx.fill();ctx.restore();
-    ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
-    ctx.stroke();
-    ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
-  }
-
-  // Large primary flames from the base
-  flame(200,780, 180,180,  -30, 2.2,0.72);
-  flame(280,780, 295,100,   10, 2.4,0.76);
-  flame(370,780, 350,140,  -15, 2.2,0.72);
-  flame(450,780, 440,220,  -20, 2.0,0.68);
-  flame(130,780, 110,300,  -40, 1.9,0.65);
-  flame(490,780, 510,280,   30, 1.9,0.65);
-  flame(80, 780,  70,380,  -25, 1.7,0.60);
-  flame(520,780, 530,360,   25, 1.7,0.60);
-
-  // Secondary mid-flames
-  flame(240,780, 230,350, -20, 1.6,0.55);
-  flame(320,780, 310,280,   5, 1.7,0.58);
-  flame(400,780, 395,320, -10, 1.6,0.55);
-  flame(170,780, 160,420, -15, 1.4,0.50);
-  flame(460,780, 470,400,  20, 1.4,0.50);
-
-  // Small flicker flames near top of big flames
-  flame(180,240, 175,160, -8, 1.2,0.48);
-  flame(295,155, 292,100,  5, 1.3,0.50);
-  flame(350,195, 348,135, -5, 1.2,0.46);
-  flame(440,270, 438,200,  8, 1.1,0.44);
-  flame(110,340, 108,275, -10, 1.0,0.42);
-
-  // Perspective ground — horizon at 65% down, fire fills foreground
-  var HORIZON_Y = H * 0.65;
-  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.13)'; ctx.lineWidth=1.0;
-  ctx.beginPath(); ctx.moveTo(10, HORIZON_Y); ctx.lineTo(W-10, HORIZON_Y); ctx.stroke(); ctx.restore();
-  perspGrid(W/2, HORIZON_Y, H - 10, 10, 8, 0.06);
-
-  // Base fire log / ground embers zone
-  s(1.8,0.65);
-  ctx.beginPath();
-  ctx.moveTo(24,780);ctx.bezierCurveTo(150,760,450,758,571,778);
-  ctx.lineTo(571,800);ctx.lineTo(24,800);ctx.closePath();ctx.stroke();
-
-  // Log cross-sections
-  s(1.2,0.55);
-  [[120,785,30,12],[240,782,35,13],[350,784,32,12],[460,783,28,11]].forEach(function(l){
-    ctx.beginPath();ctx.ellipse(l[0],l[1],l[2],l[3],0,0,Math.PI*2);ctx.stroke();
-    ctx.beginPath();ctx.arc(l[0],l[1],l[2]*0.5,0,Math.PI*2);ctx.stroke();
-  });
-
-  // Smoke curls rising from flame tips
-  function smokeCurl(sx,sy,driftX){
-    s(0.9,0.22);
-    var cx=sx, cy=sy;
-    for(var i=0;i<5;i++){
-      var nx=cx+driftX+(Math.sin(i*1.3)*30), ny=cy-60;
-      ctx.beginPath();ctx.moveTo(cx,cy);
-      ctx.bezierCurveTo(cx+driftX*0.3+20,cy-20,nx-20,ny+20,nx,ny);
-      ctx.stroke();
-      cx=nx;cy=ny;driftX*=0.8;
-    }
-  }
-  // Smoke curls — slightly smaller/lighter since they're high (far) in the canvas
-  smokeCurl(180,170, -13);
-  smokeCurl(295,95,   7);
-  smokeCurl(350,135, -9);
-  smokeCurl(440,215,  15);
-  smokeCurl(110,295, -17);
-  smokeCurl(510,270,  12);
-
-  // Ember sparks — small angled dashes
-  s(0.8,0.45);
-  var embers=[
-    [160,200,12],[340,160,10],[480,190,11],[140,320,9],[500,300,10],
-    [220,280,11],[390,250,9],[270,320,12],[430,360,10],[170,400,9],
-    [340,380,11],[500,420,10],[100,440,9],[420,440,12],[240,460,10],
-    [370,480,11],[130,510,9],[490,490,10],[300,440,12],[200,500,10],
-    [450,520,11],[160,540,9],[360,540,10],[280,560,11],[440,560,9],
-  ];
-  embers.forEach(function(){
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
@@ -345,5 +225,6 @@
   ctx.textAlign='center';ctx.fillText('Fire Is Raging  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
+
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
 </html>
