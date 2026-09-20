@@ -1,8 +1,8 @@
 // Room preview — real photo background with artwork composited onto cleared wall
 // Photo: images/room-bg.jpg (1440×960, stag removed)
-// Art target wall area (in 1440×960 photo px): x=831–1058, y=256–547
+// Dark wall area (in 1440×960 photo px): x≈800–1440, y≈270–620
 
-var ROOM_SCALES = { small: 0.45, medium: 0.70, large: 0.95 };
+var ROOM_SCALES = { small: 0.55, medium: 0.78, large: 1.0 };
 var curScale = 'medium';
 var rCanvas = null, rCtx = null, rImg = null, roomBgImg = null;
 
@@ -25,7 +25,8 @@ function photoToCanvas(px, py) {
 }
 
 // Wall area where the artwork will be shown (photo coords)
-var WALL = { x1: 831, y1: 256, x2: 1058, y2: 547 };
+// Covers the full dark right wall; artwork is centred within it
+var WALL = { x1: 800, y1: 268, x2: 1200, y2: 608 };
 
 function drawRoom() {
   if (!rCtx) return;
@@ -125,6 +126,10 @@ function openRoom() {
   rCtx = rCanvas ? rCanvas.getContext('2d') : null;
   o.classList.add('open');
   document.body.style.overflow = 'hidden';
+  // Hide "Room Style" controls — not applicable to photo mode
+  o.querySelectorAll('.room-ctrl').forEach(function (ctrl) {
+    if (ctrl.querySelector('[data-rs]')) ctrl.style.display = 'none';
+  });
   setTimeout(function () {
     var img = document.getElementById('room-art-img');
     if (img && img.complete && img.naturalWidth > 0) {
