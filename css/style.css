@@ -267,6 +267,29 @@ section.tight + section.tight { padding-top: 0; }
   align-items: start;
 }
 
+/* Process & Methods */
+.process-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 36px;
+}
+.method-block h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  color: var(--forest-dark);
+  margin-bottom: 12px;
+}
+.method-block p {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: #47505e;
+  margin: 0;
+}
+@media (max-width: 820px) {
+  .process-methods { grid-template-columns: 1fr; gap: 28px; }
+}
+
 /* Gallery grid */
 .gallery-grid {
   display: grid;
