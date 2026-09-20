@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waves — Free Colouring Page | Kiwi's Art</title>
+<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Waves' — spiralling forms and wave crests to colour your own way.">
+<meta name="author" content="Kiwi">
+<link rel="canonical" href="https://kiwisart.com/colouring/waves.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Waves — Free Colouring Page | Kiwi's Art">
+<meta property="og:description" content="A free printable colouring page inspired by Kiwi's original painting 'Waves'. Print and colour your own way.">
+<meta property="og:url" content="https://kiwisart.com/colouring/waves.html">
+<meta property="og:image" content="https://kiwisart.com/images/waves.jpg">
+<meta property="og:site_name" content="Kiwi's Art">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VX9PJ92T7J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VX9PJ92T7J');
+  gtag('config', 'GT-P845MC3M');
+</script>
+<style>
+.colouring-intro { max-width: 600px; }
+.colouring-intro p { font-size: 1.05rem; line-height: 1.75; color: #3d4455; }
+.sheet-wrap {
+  max-width: 560px;
+  margin: 36px auto 24px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.10), 0 24px 64px rgba(0,0,0,0.06);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.sheet-wrap canvas { display: block; width: 100%; height: auto; }
+.colouring-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 28px 0 12px;
+}
+.colouring-hint {
+  font-size: 0.85rem;
+  color: var(--lede);
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+@media print {
+  .site-header, .skip-link, .colouring-intro, .colouring-actions, .colouring-hint, .site-footer, .page-eyebrow { display: none !important; }
+  body { padding: 0; background: white; }
+  .sheet-wrap { box-shadow: none; max-width: 100%; margin: 0; border-radius: 0; }
+  section { padding: 0 !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/images/kiwi-icon.png" alt="Kiwi's Art logo" class="brand-icon">Kiwi's Art</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/commission.html">Commission</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section>
+    <div class="wrap">
+      <div class="eyebrow page-eyebrow">Free Colouring Page</div>
+      <h1>Waves</h1>
+      <div class="colouring-intro">
+        <p>A printable line drawing inspired by the original painting — spiralling ribbons and breaking crests. Colour from the centre outward, or outward in.</p>
+      </div>
+
+      <div class="sheet-wrap">
+        <canvas id="c" width="595" height="800"></canvas>
+      </div>
+
+      <div class="colouring-actions">
+        <button class="btn btn-primary" onclick="window.print()">Print Colouring Page</button>
+        <a class="btn btn-outline" href="/gallery/waves.html">View Original Painting</a>
+      </div>
+      <p class="colouring-hint">Best on heavy paper or white card stock. A4 and US Letter both fit perfectly. Free for personal use only.</p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="contact-card">
+        <div class="contact-card-text">
+          <h2>More colouring pages</h2>
+          <p>Koi and Snow Storm are also available as free printables.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/colouring/koi.html">Koi</a>
+          <a class="btn btn-outline" href="/colouring/snow-storm.html">Snow Storm</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 Kiwi's Art. All rights reserved.</span>
+    <nav aria-label="Footer">
+      <a href="/gallery.html">Gallery</a> &middot;
+      <a href="/commission.html">Commission</a> &middot;
+      <a href="/about.html">About</a> &middot;
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/js/nav.js"></script>
+<script>
+(function () {
+  var cv = document.getElementById('c');
+  var ctx = cv.getContext('2d');
+  var W = cv.width, H = cv.height;
+  var CX = W / 2, CY = H / 2 + 10;
+
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, W, H);
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+
+  function s(w, alpha) {
+    ctx.strokeStyle = alpha !== undefined ? 'rgba(17,17,17,' + alpha + ')' : '#111';
+    ctx.lineWidth = w || 1.8;
+  }
+
+  function spiralPt(a, rBase, rGrowth, cx, cy) {
+    var r = rBase + rGrowth * a;
+    return [cx + Math.cos(a) * r, cy + Math.sin(a) * r];
+  }
+
+  function spiralArm(cx, cy, r0, growth, aStart, aEnd, steps, lw, alpha) {
+    s(lw, alpha);
+    ctx.beginPath();
+    var p = spiralPt(aStart, r0, growth, cx, cy);
+    ctx.moveTo(p[0], p[1]);
+    var da = (aEnd - aStart) / steps;
+    for (var i = 1; i <= steps; i++) {
+      var a1 = aStart + (i - 0.5) * da;
+      var a2 = aStart + i * da;
+      var cp = spiralPt(a1, r0, growth, cx, cy);
+      var ep = spiralPt(a2, r0, growth, cx, cy);
+      ctx.quadraticCurveTo(cp[0], cp[1], ep[0], ep[1]);
+    }
+    ctx.stroke();
+  }
+
+  function ribbon(cx, cy, r0, growth, aStart, aEnd, w0, w1, steps, alpha) {
+    var da = (aEnd - aStart) / steps;
+    s(1.8, alpha || 0.9);
+    ctx.beginPath();
+    for (var i = 0; i <= steps; i++) {
+      var a = aStart + i * da;
+      var t = i / steps;
+      var offset = w0 + (w1 - w0) * t;
+      var r = r0 + growth * a + offset;
+      var x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.beginPath();
+    for (var i = 0; i <= steps; i++) {
+      var a = aStart + i * da;
+      var t = i / steps;
+      var offset = w0 + (w1 - w0) * t;
+      var r = r0 + growth * a - offset;
+      var x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+
+  function foamLines(cx, cy, r0, growth, aStart, aEnd, steps, tickLen, alpha) {
+    s(0.65, alpha || 0.25);
+    var da = (aEnd - aStart) / steps;
+    for (var i = 0; i < steps; i += 2) {
+      var a = aStart + i * da;
+      var r = r0 + growth * a;
+      var x = cx + Math.cos(a) * r;
+      var y = cy + Math.sin(a) * r;
+      var perpA = a + Math.PI / 2;
+      ctx.beginPath();
+      ctx.moveTo(x + Math.cos(perpA) * tickLen, y + Math.sin(perpA) * tickLen);
+      ctx.lineTo(x - Math.cos(perpA) * tickLen, y - Math.sin(perpA) * tickLen);
+      ctx.stroke();
+    }
+  }
+
+  function crest(x, y, angle, size, alpha) {
+    s(1.2, alpha || 0.55);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+    ctx.beginPath();
+    ctx.moveTo(-size, 0);
+    ctx.bezierCurveTo(-size * 0.4, -size * 0.9, size * 0.4, -size * 0.9, size, 0);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(size * 0.6, -size * 0.62);
+    ctx.bezierCurveTo(size * 1.1, -size * 0.3, size * 0.9, size * 0.2, size * 0.4, size * 0.05);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // Background concentric rings
+  for (var ring = 1; ring <= 9; ring++) {
+    var rr = ring * 36;
+    s(0.7, 0.07 + ring * 0.005);
+    ctx.beginPath();
+    var steps = 120;
+    for (var i = 0; i <= steps; i++) {
+      var a = (i / steps) * Math.PI * 2;
+      var wobble = Math.sin(a * 5 + ring) * 6 + Math.sin(a * 11 + ring * 2) * 3;
+      var rx = CX + Math.cos(a) * (rr + wobble);
+      var ry = CY + Math.sin(a) * (rr + wobble) * 0.88;
+      i === 0 ? ctx.moveTo(rx, ry) : ctx.lineTo(rx, ry);
+    }
+    ctx.closePath();
+    ctx.stroke();
+  }
+
+  // 6 primary spiral arms
+  var numArms = 6;
+  for (var arm = 0; arm < numArms; arm++) {
+    var baseAngle = (arm / numArms) * Math.PI * 2 - Math.PI * 0.15;
+    var r0 = 18;
+    var growth = 28;
+    var aStart = baseAngle;
+    var aEnd = baseAngle + Math.PI * 1.6;
+    ribbon(CX, CY, r0, growth, aStart, aEnd, 14, 20, 40, 0.72);
+    foamLines(CX, CY, r0 + 2, growth, aStart, aEnd, 80, 7, 0.2);
+    var r0b = r0 + 8;
+    var aStartB = baseAngle + 0.22;
+    spiralArm(CX, CY, r0b, growth, aStartB, aStartB + Math.PI * 1.3, 60, 0.85, 0.28);
+    var tipAngle = aEnd;
+    var tipR = r0 + growth * tipAngle;
+    var tx = CX + Math.cos(tipAngle) * tipR;
+    var ty = CY + Math.sin(tipAngle) * tipR;
+    if (tx > 20 && tx < W - 20 && ty > 20 && ty < H - 20) {
+      crest(tx, ty, tipAngle + Math.PI / 2, 18, 0.5);
+    }
+  }
+
+  // Centre vortex
+  for (var v = 0; v < 5; v++) {
+    var va = (v / 5) * Math.PI * 2;
+    spiralArm(CX, CY, 4, 10, va, va + Math.PI * 1.2, 50, 1.1, 0.6);
+  }
+  s(1.4, 0.55); ctx.beginPath(); ctx.ellipse(CX, CY, 14, 11, 0.2, 0, Math.PI * 2); ctx.stroke();
+  s(1.0, 0.35); ctx.beginPath(); ctx.ellipse(CX, CY, 7, 5.5, 0.2, 0, Math.PI * 2); ctx.stroke();
+  s(0.8, 0.5);  ctx.beginPath(); ctx.arc(CX, CY, 3, 0, Math.PI * 2); ctx.stroke();
+
+  // Outer wisps
+  for (var w = 0; w < 14; w++) {
+    var wa = (w / 14) * Math.PI * 2 + 0.1;
+    var wr0 = 80 + Math.sin(w * 1.7) * 30;
+    var growth2 = 18 + Math.sin(w) * 6;
+    spiralArm(CX, CY, wr0, growth2, wa, wa + Math.PI * 0.75, 35, 0.7, 0.18);
+  }
+
+  // Spray dots
+  var sprayData = [
+    [CX + 200, CY - 140, 12, 28, 1.5, 8],
+    [CX - 180, CY + 160, 14, 30, 1.5, 7],
+    [CX + 100, CY + 210, 10, 25, 1.2, 9],
+    [CX - 200, CY - 120, 12, 26, 1.4, 6],
+    [CX + 220, CY + 80,  10, 22, 1.3, 8],
+    [CX - 80,  CY - 220, 10, 24, 1.2, 7],
+    [CX + 40,  CY + 240, 8,  20, 1.1, 6],
+  ];
+  sprayData.forEach(function(sd, si) {
+    for (var di = 0; di < sd[5]; di++) {
+      var a = (di / sd[5]) * Math.PI * 2 + si * 0.9;
+      var r = sd[2] + (sd[3] - sd[2]) * ((Math.sin(di * 3.7 + si) * 0.5 + 0.5));
+      var x = sd[0] + Math.cos(a) * r, y = sd[1] + Math.sin(a) * r;
+      s(0.8, 0.3 + (di % 3) * 0.08);
+      ctx.beginPath();
+      ctx.arc(x, y, sd[4] * (0.4 + (Math.sin(di * 2.1) * 0.5 + 0.5) * 0.7), 0, Math.PI * 2);
+      ctx.stroke();
+    }
+  });
+
+  // Outer crests
+  var outerCrests = [
+    [CX + 210, CY - 80,  0.6, 14],
+    [CX - 195, CY + 90,  3.9, 13],
+    [CX + 80,  CY + 230, 1.9, 12],
+    [CX - 100, CY - 210, 5.1, 11],
+    [CX + 230, CY + 130, 1.1, 10],
+    [CX - 210, CY - 60,  2.8, 12],
+  ];
+  outerCrests.forEach(function(c) { crest(c[0], c[1], c[2], c[3], 0.45); });
+
+  // Border
+  ctx.save();
+  ctx.strokeStyle = 'rgba(17,17,17,0.14)'; ctx.lineWidth = 1.2;
+  ctx.strokeRect(16, 16, W - 32, H - 32);
+  ctx.strokeStyle = 'rgba(17,17,17,0.07)'; ctx.lineWidth = 0.8;
+  ctx.strokeRect(22, 22, W - 44, H - 44);
+  ctx.restore();
+
+  // Credit
+  ctx.save();
+  ctx.font = 'italic 600 15px "Playfair Display", Georgia, serif';
+  ctx.fillStyle = 'rgba(17,17,17,0.2)';
+  ctx.textAlign = 'center';
+  ctx.fillText('Waves  ·  Kiwi\'s Art', W / 2, H - 26);
+  ctx.restore();
+
+})();
+</script>
+</body>
+</html>
