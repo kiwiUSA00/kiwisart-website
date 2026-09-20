@@ -205,15 +205,101 @@
     {sx:140,sy:460,cp1x:250,cp1y:420,cp2x:360,cp2y:380,ex:480,ey:340},
     {sx:160,sy:500,cp1x:260,cp1y:455,cp2x:360,cp2y:415,ex:470,ey:370},
   ];
-  lanes.forEach(function(l){
-    ctx.beginPath();ctx.moveTo(l.sx,l.sy);ctx.bezierCurveTo(l.cp1x,l.cp1y,l.cp2x,l.cp2y,l.ex,l.ey);ctx.stroke();
+  lanes.forEach(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
+
+  var VY=H*0.45,TL=0.28,FL=560,VX=W/2;
+  function p(wx,wy,wz){
+    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
+    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.85;
+    var sc=FL/Math.max(rz,10);
+    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
+  }
+  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
+
+  // Galaxy disk concentric rings in XZ plane (y=0)
+  [15,30,50,75,100,130,165,200].forEach(function(r,ri){
+    s(0.7+ri*0.1, 0.10+ri*0.06);
+    ctx.beginPath();
+    var segs=48;
+    for(var i=0;i<=segs;i++){
+      var a=(i/segs)*Math.PI*2;
+      var wobble=1+Math.sin(a*3+ri)*0.08;
+      var q=p(Math.cos(a)*r*wobble,0,Math.sin(a)*r*wobble);
+      i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
+    }
+    ctx.closePath();ctx.stroke();
   });
 
-  // Border
+  // 4 spiral arms
+  for(var arm=0;arm<4;arm++){
+    var startAng=(arm/4)*Math.PI*2;
+    s(1.0,0.55);
+    ctx.beginPath();
+    var segs=60;
+    var started=false;
+    for(var i=0;i<=segs;i++){
+      var t=i/segs;
+      var ang=startAng+t*Math.PI*1.8;
+      var r=12+t*190;
+      var wx=Math.cos(ang)*r,wz=Math.sin(ang)*r;
+      var wy=Math.sin(t*Math.PI)*8; // slight thickness
+      var q=p(wx,wy,wz);
+      if(!started){ctx.moveTo(q.x,q.y);started=true;}else ctx.lineTo(q.x,q.y);
+    }
+    ctx.stroke();
+    // Arm width lines
+    s(0.5,0.22);
+    for(var i=5;i<=segs-5;i+=6){
+      var t=i/segs;
+      var ang=startAng+t*Math.PI*1.8;
+      var r=12+t*190;
+      var w=r*0.12;
+      var perpAng=ang+Math.PI/2;
+      line3(Math.cos(ang)*r+Math.cos(perpAng)*w,0,Math.sin(ang)*r+Math.sin(perpAng)*w,
+             Math.cos(ang)*r-Math.cos(perpAng)*w,0,Math.sin(ang)*r-Math.sin(perpAng)*w);
+    }
+  }
+
+  // Galactic core — dense concentric bright rings
+  ctx.shadowBlur=6;ctx.shadowColor='rgba(0,0,0,0.15)';
+  [5,10,18,28].forEach(function(r){
+    s(1.2,0.70);
+    ctx.beginPath();
+    var segs=32;
+    for(var i=0;i<=segs;i++){var a=(i/segs)*Math.PI*2,q=p(Math.cos(a)*r,0,Math.sin(a)*r);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}
+    ctx.closePath();ctx.stroke();
+  });
+  ctx.shadowBlur=0;
+
+  // Stars — dots at random XZ positions at various y-heights
+  var starData=[[-180,5,-40],[-150,-8,120],[100,12,-160],[220,-5,80],[-60,15,200],
+    [170,8,-100],[-240,3,60],[-80,10,-220],[130,-10,180],[50,6,-80],
+    [190,4,140],[-110,8,-180],[80,-6,220],[-200,7,100],[160,12,-50],
+    [-30,5,160],[240,-4,-120],[110,10,80],[-160,6,-100],[70,8,200],
+    [210,3,-60],[-90,12,120],[-140,-5,80],[180,7,-180],[20,10,100],
+    [-250,4,40],[150,-8,-140],[90,6,220],[-180,10,-60],[120,5,160]];
+  starData.forEach(function(sd){
+    var q=p(sd[0],sd[1],sd[2]);
+    var r=Math.max(q.s*2.5,1.2);
+    s(0.8,0.65);ctx.beginPath();ctx.arc(q.x,q.y,r,0,Math.PI*2);ctx.stroke();
+  });
+
+  // Nebula clouds — gentle curved bands
+  s(0.6,0.15);
+  [[80,20,-60,150,15,50],[-60,10,80,-140,8,160],[120,18,80,200,22,-20]].forEach(function(nb){
+    var a=p(nb[0],nb[1],nb[2]),b=p(nb[3],nb[4],nb[5]);
+    var mid=p((nb[0]+nb[3])/2,(nb[1]+nb[4])/2+20,(nb[2]+nb[5])/2);
+    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.quadraticCurveTo(mid.x,mid.y,b.x,b.y);ctx.stroke();
+  });
+
   ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
   ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
-
-  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Milky Way  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
+  ctx.textAlign='center';ctx.fillText('Milky Way  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>

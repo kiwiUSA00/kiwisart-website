@@ -194,16 +194,155 @@
     [370,480,11],[130,510,9],[490,490,10],[300,440,12],[200,500,10],
     [450,520,11],[160,540,9],[360,540,10],[280,560,11],[440,560,9],
   ];
-  embers.forEach(function(e){
-    var a=Math.sin(e[0]*0.15)*Math.PI*0.4+0.2;
-    ctx.beginPath();ctx.moveTo(e[0],e[1]);ctx.lineTo(e[0]+Math.cos(a)*e[2],e[1]-Math.sin(a)*e[2]);ctx.stroke();
+  embers.forEach(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
+
+  var VY=H*0.42,TL=0.30,FL=560,VX=W/2;
+  function p(wx,wy,wz){
+    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
+    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.85;
+    var sc=FL/Math.max(rz,10);
+    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
+  }
+  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+  function poly3(pts){
+    if(!pts.length)return;var f=p(pts[0][0],pts[0][1],pts[0][2]);
+    ctx.beginPath();ctx.moveTo(f.x,f.y);
+    for(var i=1;i<pts.length;i++){var q=p(pts[i][0],pts[i][1],pts[i][2]);ctx.lineTo(q.x,q.y);}
+    ctx.stroke();
+  }
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
+
+  // Ground perspective grid
+  s(0.4,0.06);
+  for(var gz=-200;gz<=180;gz+=45){line3(-250,0,gz,250,0,gz);}
+  for(var gx=-250;gx<=250;gx+=55){line3(gx,0,-200,gx,0,180);}
+
+  // Logs — cylinders lying on ground (along Z axis)
+  function log3d(lx,lz,len,r,ang){
+    var segs=12;
+    // Two end caps (ellipses)
+    for(var end=0;end<2;end++){
+      var ez=lz+(end===0?-len/2:len/2);
+      s(1.3,0.68);
+      ctx.beginPath();
+      for(var i=0;i<=segs;i++){
+        var a=(i/segs)*Math.PI*2;
+        var ex=lx+Math.cos(ang)*Math.cos(a)*r-Math.sin(ang)*Math.sin(a)*r*0.5;
+        var ey=Math.sin(a)*r*0.5;
+        var q=p(ex,ey,ez);
+        i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
+      }
+      ctx.closePath();ctx.stroke();
+    }
+    // Log length lines (bark)
+    s(0.7,0.40);
+    for(var i=0;i<6;i++){
+      var a=(i/6)*Math.PI*2;
+      var ex=lx+Math.cos(a)*r,ey=Math.sin(a)*r*0.5;
+      line3(ex,ey,lz-len/2,ex,ey,lz+len/2);
+    }
+    // Bark ring details
+    s(0.6,0.25);
+    for(var ri=1;ri<=3;ri++){
+      var ez2=lz-len/2+ri*(len/4);
+      ctx.beginPath();
+      for(var i=0;i<=segs;i++){
+        var a=(i/segs)*Math.PI*2;
+        var ex=lx+Math.cos(ang)*Math.cos(a)*r-Math.sin(ang)*Math.sin(a)*r*0.5;
+        var ey=Math.sin(a)*r*0.5;
+        var q=p(ex,ey,ez2);
+        i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
+      }
+      ctx.closePath();ctx.stroke();
+    }
+  }
+  log3d(-50,-10,140,14,0.15);
+  log3d(55,5,130,12,-0.18);
+  log3d(0,15,90,10,Math.PI/2+0.1);
+
+  // Flame function
+  function flame3d(fx,fz,height,lean,width){
+    var segs=18;
+    var ptsL=[],ptsR=[];
+    for(var i=0;i<=segs;i++){
+      var t=i/segs;
+      var fy=height*t;
+      var ww=width*(1-t)*(1-t);
+      var fxOff=lean*t*t*height*0.3;
+      ptsL.push([fx+fxOff-ww,fy,fz]);
+      ptsR.push([fx+fxOff+ww,fy,fz]);
+    }
+    // Outline
+    ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.14)';
+    s(2.0,0.78);
+    poly3(ptsL);
+    s(2.2,0.82);
+    poly3(ptsR);
+    ctx.shadowBlur=0;
+    // Close tip
+    s(1.5,0.70);
+    line3(ptsL[segs][0],ptsL[segs][1],ptsL[segs][2],ptsR[segs][0],ptsR[segs][1],ptsR[segs][2]);
+    // Base
+    s(1.2,0.55);
+    line3(ptsL[0][0],0,fz,ptsR[0][0],0,fz);
+    // Interior turbulence
+    s(0.7,0.30);
+    for(var i=1;i<=3;i++){
+      var t2=i/4,fy2=height*t2;
+      var ww2=width*(1-t2)*(1-t2)*0.65;
+      var fxOff2=lean*t2*t2*height*0.3;
+      var qA=p(fx+fxOff2-ww2*0.6,fy2,fz),qB=p(fx+fxOff2+ww2*0.6,fy2*1.1,fz-8);
+      ctx.beginPath();ctx.moveTo(qA.x,qA.y);ctx.quadraticCurveTo((qA.x+qB.x)/2,qA.y-10,qB.x,qB.y);ctx.stroke();
+    }
+    // Inner flame licks
+    s(1.0,0.48);
+    for(var i=0;i<4;i++){
+      var t3=0.25+i*0.18;
+      var fy3=height*t3*0.8;
+      var ww3=width*(1-t3)*(1-t3)*0.5;
+      var fxO=lean*t3*t3*height*0.2;
+      line3(fx+fxO,0,fz,fx+fxO+(i%2===0?ww3:-ww3),fy3,fz-5);
+    }
+  }
+
+  // Background flames (smaller, behind)
+  flame3d(-40,30,160,0.2,28);
+  flame3d(40,25,145,-0.15,26);
+  // Main flames
+  ctx.shadowBlur=5;ctx.shadowColor='rgba(0,0,0,0.13)';
+  flame3d(-65,0,240,0.3,55);
+  flame3d(65,10,220,-0.2,50);
+  ctx.shadowBlur=0;
+  // Side flames
+  flame3d(-100,8,180,0.35,38);
+  flame3d(95,5,165,-0.25,35);
+
+  // Smoke curls rising from flame tips
+  s(0.6,0.15);
+  [[-60,240,0],[-65,240,0],[60,220,10],[65,220,10]].forEach(function(sm){
+    var base=p(sm[0],sm[1],sm[2]);
+    for(var i=0;i<3;i++){
+      var curl=p(sm[0]+Math.sin(i*1.2)*30,sm[1]+i*40+50,sm[2]-i*10);
+      ctx.beginPath();ctx.moveTo(base.x,base.y);ctx.quadraticCurveTo(base.x+15,base.y-20,curl.x,curl.y);ctx.stroke();
+      base=curl;
+    }
   });
 
-  // Border
+  // Ember sparks
+  s(0.8,0.35);
+  [[-80,20,-15],[80,15,-5],[-20,35,10],[30,28,-8],[-50,12,20],[60,18,-12],
+   [-15,45,-20],[25,22,15],[-35,30,-10],[50,25,8]].forEach(function(em){
+    var q=p(em[0],em[1],em[2]);
+    ctx.beginPath();ctx.arc(q.x,q.y,q.s*2.5,0,Math.PI*2);ctx.stroke();
+  });
+
   ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
   ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
-
-  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Fire Is Raging  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
+  ctx.textAlign='center';ctx.fillText('Fire Is Raging  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>

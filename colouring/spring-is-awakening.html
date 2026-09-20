@@ -243,20 +243,118 @@
   perspGrid(W/2, HORIZON_Y, H - 10, 14, 10, 0.055);
 
   // Distant blossom suggestions near horizon
-  [[80, HORIZON_Y-30], [180, HORIZON_Y-45], [440, HORIZON_Y-35], [530, HORIZON_Y-28]].forEach(function(pt) {
-    blossom(pt[0], pt[1], 5, 0);
+  [[80, HORIZON_Y-30], [180, HORIZON_Y-45], [440, HORIZON_Y-35], [530, HORIZON_Y-28]].forEach(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
+
+  var VY=H*0.38,TL=0.28,FL=560,VX=W/2;
+  function p(wx,wy,wz){
+    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
+    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.85;
+    var sc=FL/Math.max(rz,10);
+    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
+  }
+  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
+
+  // Ground grid
+  s(0.4,0.055);
+  for(var gz=-200;gz<=220;gz+=50){line3(-300,0,gz,300,0,gz);}
+  for(var gx=-300;gx<=300;gx+=65){line3(gx,0,-200,gx,0,220);}
+
+  // Spring grass
+  s(0.6,0.18);
+  [[-150,80],[-90,120],[60,100],[140,70],[-180,150],[110,150],[-50,180],[30,160],[-210,60],[170,100]].forEach(function(g){
+    line3(g[0],0,g[1],g[0]+3,14,g[1]+2);
+    line3(g[0]+8,0,g[1]+4,g[0]+11,11,g[1]+6);
   });
 
-  s(1.2,0.40);
-  ctx.beginPath();ctx.moveTo(24,755);
-  for(var x=24;x<=571;x+=8){ctx.lineTo(x,755+Math.sin(x*0.09)*5);}
-  ctx.stroke();
+  // Main trunk — 3D cylinder (two vertical arcs + side lines)
+  var TRUNK_R=12,TRUNK_H=220;
+  s(2.0,0.78);
+  // Front and back of trunk
+  ctx.beginPath();
+  for(var i=0;i<=16;i++){var a=(i/16)*Math.PI,q=p(Math.cos(a)*TRUNK_R,i/16*TRUNK_H,Math.sin(a)*TRUNK_R*0.6);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.stroke();
+  ctx.beginPath();
+  for(var i=0;i<=16;i++){var a=Math.PI+(i/16)*Math.PI,q=p(Math.cos(a)*TRUNK_R,i/16*TRUNK_H,Math.sin(a)*TRUNK_R*0.6);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.stroke();
+  // Trunk verticals (bark lines)
+  s(0.9,0.40);
+  [-TRUNK_R,0,TRUNK_R].forEach(function(dx){line3(dx,0,0,dx*0.5,TRUNK_H,0);});
+  // Bark rings
+  s(0.6,0.28);
+  [40,80,120,160].forEach(function(hy){
+    ctx.beginPath();
+    for(var i=0;i<=16;i++){var a=(i/16)*Math.PI*2,q=p(Math.cos(a)*TRUNK_R*(1-hy/TRUNK_H*0.35),hy,Math.sin(a)*TRUNK_R*0.6*(1-hy/TRUNK_H*0.25));i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}
+    ctx.closePath();ctx.stroke();
+  });
 
-  // Border
+  // Bough function — thick 3D branch from trunk to tip
+  function bough3d(bx1,by1,bz1,bx2,by2,bz2,thick){
+    s(thick*0.2+0.5,0.72);
+    line3(bx1,by1,bz1,bx2,by2,bz2);
+    // Parallel back edge for 3D thickness
+    s(thick*0.12+0.3,0.45);
+    line3(bx1+thick*0.5,by1,bz1+thick*0.3,bx2+thick*0.3,by2,bz2+thick*0.2);
+    // Cross-connector at mid
+    s(0.6,0.30);
+    line3((bx1+bx2)/2,(by1+by2)/2,(bz1+bz2)/2,(bx1+bx2)/2+thick*0.5,(by1+by2)/2,(bz1+bz2)/2+thick*0.3);
+  }
+
+  // Major boughs
+  bough3d(0,180,0,-120,260,-30,8);
+  bough3d(0,180,0,130,255,20,8);
+  bough3d(0,150,0,-80,200,60,6);
+  bough3d(0,150,0,90,210,-50,6);
+  bough3d(0,200,0,0,265,-80,7);
+
+  // Branches (thinner)
+  var branches=[
+    [-120,260,-30,-170,310,-50,4],[-120,260,-30,-80,320,-15,4],
+    [130,255,20,175,305,35,4],[130,255,20,90,315,50,4],
+    [-80,200,60,-120,265,70,3],[-80,200,60,-40,265,85,3],
+    [90,210,-50,130,270,-35,3],[90,210,-50,60,270,-60,3],
+    [0,265,-80,-30,330,-90,3],[0,265,-80,35,330,-70,3]
+  ];
+  branches.forEach(function(b){bough3d(b[0],b[1],b[2],b[3],b[4],b[5],b[6]);});
+
+  // Blossoms at branch tips — small discs in XZ plane
+  s(1.0,0.60);
+  var blossomTips=[
+    [-170,310,-50],[-80,320,-15],[175,305,35],[90,315,50],
+    [-120,265,70],[-40,265,85],[130,270,-35],[60,270,-60],
+    [-30,330,-90],[35,330,-70],[0,265,-80],[-50,310,40],[80,300,-60]
+  ];
+  blossomTips.forEach(function(bt){
+    // 5-petal flower disc
+    for(var pi=0;pi<5;pi++){
+      var ang=(pi/5)*Math.PI*2;
+      ctx.beginPath();
+      for(var i=0;i<=10;i++){
+        var a=(i/10)*Math.PI*2;
+        var px=bt[0]+Math.cos(ang)*10+Math.cos(ang+a)*5;
+        var pz=bt[2]+Math.sin(ang)*10+Math.sin(ang+a)*5;
+        var q=p(px,bt[1],pz);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
+      }
+      ctx.closePath();ctx.stroke();
+    }
+    // Center
+    s(0.8,0.75);
+    ctx.beginPath();for(var i=0;i<=8;i++){var a=(i/8)*Math.PI*2,q=p(bt[0]+Math.cos(a)*4,bt[1],bt[2]+Math.sin(a)*3);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.closePath();ctx.stroke();
+  });
+
+  // Sky suggestion — light curved lines in far background
+  s(0.5,0.09);
+  [[-180,340,-220,-60,355,-240],[40,345,-230,200,330,-210],[-100,360,-260,100,350,-250]].forEach(function(sk){
+    var a=p(sk[0],sk[1],sk[2]),b=p(sk[3],sk[4],sk[5]);
+    var mid=p((sk[0]+sk[3])/2,sk[1]+12,(sk[2]+sk[5])/2);
+    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.quadraticCurveTo(mid.x,mid.y,b.x,b.y);ctx.stroke();
+  });
+
   ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
   ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
-
-  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Spring Is Awakening  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
+  ctx.textAlign='center';ctx.fillText('Spring Is Awakening  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>

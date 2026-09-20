@@ -344,24 +344,107 @@
     [CX + 230, CY + 130, 1.1, 10],
     [CX - 210, CY - 60,  2.8, 12],
   ];
-  outerCrests.forEach(function(c) { crest(c[0], c[1], c[2], c[3], 0.45); });
+  outerCrests.forEach(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
 
-  // Border
-  ctx.save();
-  ctx.strokeStyle = 'rgba(17,17,17,0.14)'; ctx.lineWidth = 1.2;
-  ctx.strokeRect(16, 16, W - 32, H - 32);
-  ctx.strokeStyle = 'rgba(17,17,17,0.07)'; ctx.lineWidth = 0.8;
-  ctx.strokeRect(22, 22, W - 44, H - 44);
-  ctx.restore();
+  var VX=W*0.42,VY=H*0.48,FL=520,TL=0.18;
+  function p(wx,wy,wz){
+    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
+    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.9;
+    var sc=FL/Math.max(rz,10);
+    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
+  }
+  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
 
-  // Credit
-  ctx.save();
-  ctx.font = 'italic 600 15px "Playfair Display", Georgia, serif';
-  ctx.fillStyle = 'rgba(17,17,17,0.2)';
-  ctx.textAlign = 'center';
-  ctx.fillText('Waves  ·  Kiwi\'s Art', W / 2, H - 26);
-  ctx.restore();
+  // Horizon
+  s(0.9,0.15);
+  var hL=p(-600,0,-400),hR=p(600,0,-400);
+  ctx.beginPath();ctx.moveTo(hL.x,hL.y);ctx.lineTo(hR.x,hR.y);ctx.stroke();
 
+  // Ocean surface grid
+  s(0.4,0.05);
+  for(var gx=-500;gx<=500;gx+=80){line3(gx,0,-400,gx,0,300);}
+  for(var gz=-400;gz<=300;gz+=60){line3(-500,0,gz,500,0,gz);}
+
+  var WAVE_W=480,WAVE_Z=0,BARREL_R=110;
+
+  // Wave cross-section function
+  function waveSection(wx,zOff,alph,lw){
+    s(lw||1.5,alph||0.7);
+    var segs=24;
+    ctx.beginPath();
+    var base=p(wx,0,WAVE_Z+zOff+BARREL_R*0.8);
+    ctx.moveTo(base.x,base.y);
+    for(var i=0;i<=segs;i++){
+      var ang=-Math.PI*0.5+(i/segs)*Math.PI*0.95;
+      var cy=BARREL_R*Math.sin(ang)+BARREL_R;
+      var cz=WAVE_Z+BARREL_R*Math.cos(ang);
+      var q=p(wx,cy+BARREL_R*0.1,cz+zOff);
+      ctx.lineTo(q.x,q.y);
+    }
+    ctx.stroke();
+  }
+
+  // Inner barrel horizontal rings
+  s(1.0,0.22);
+  for(var i=1;i<=8;i++){
+    var ang=(i/9)*Math.PI*0.85;
+    var cy=BARREL_R*Math.sin(ang)+BARREL_R;
+    var cz=WAVE_Z+BARREL_R*Math.cos(ang);
+    line3(-WAVE_W*0.5,cy+BARREL_R*0.1,cz,WAVE_W*0.5,cy+BARREL_R*0.1,cz);
+  }
+
+  // Wave face sections
+  var sections=[[-WAVE_W*0.5,18,2.0,0.75],[-WAVE_W*0.3,12,1.9,0.72],[-WAVE_W*0.1,6,1.8,0.70],[WAVE_W*0.1,0,2.2,0.80],[WAVE_W*0.3,0,2.1,0.76],[WAVE_W*0.5,0,1.7,0.65]];
+  sections.forEach(function(sc2){waveSection(sc2[0],sc2[1],sc2[3],sc2[2]);});
+
+  // Barrel opening edge
+  ctx.shadowBlur=6;ctx.shadowColor='rgba(0,0,0,0.15)';
+  s(2.4,0.82);
+  ctx.beginPath();
+  var segs=32;
+  for(var i=0;i<=segs;i++){
+    var ang=-Math.PI*0.5+(i/segs)*Math.PI*1.0;
+    var cy=BARREL_R*Math.sin(ang)+BARREL_R;
+    var cz=WAVE_Z+BARREL_R*Math.cos(ang);
+    var q=p(-WAVE_W*0.5,cy+BARREL_R*0.1,cz);
+    i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
+  }
+  ctx.stroke();ctx.shadowBlur=0;
+
+  // Foam on crest
+  s(0.8,0.35);
+  for(var fx=-WAVE_W*0.5;fx<WAVE_W*0.5;fx+=28){
+    var foamZ=WAVE_Z+BARREL_R*0.12,foamY=BARREL_R*2.05;
+    var q1=p(fx,foamY,foamZ),q2=p(fx+14,foamY+Math.sin(fx*0.1)*8,foamZ-6);
+    ctx.beginPath();ctx.moveTo(q1.x,q1.y);ctx.quadraticCurveTo(q2.x,q2.y,p(fx+22,foamY,foamZ).x,p(fx+22,foamY,foamZ).y);ctx.stroke();
+  }
+
+  // Spray droplets
+  s(0.6,0.28);
+  var sprayPts=[[-200,240,10],[-120,240,-8],[-40,238,15],[50,242,-5],[140,240,8],[220,238,-12]];
+  sprayPts.forEach(function(sp){
+    for(var i=0;i<5;i++){
+      var q=p(sp[0]+i*8,BARREL_R*2.05+i*10,WAVE_Z-15+i*6);
+      ctx.beginPath();ctx.arc(q.x,q.y,q.s*2.5,0,Math.PI*2);ctx.stroke();
+    }
+  });
+
+  // Distant swells
+  s(0.7,0.14);
+  [[-300,-180],[-150,-220],[200,-200],[320,-190]].forEach(function(sw){
+    ctx.beginPath();
+    var q1=p(sw[0]-80,25,-300),q2=p(sw[0],45,-300),q3=p(sw[0]+80,25,-300);
+    ctx.moveTo(q1.x,q1.y);ctx.quadraticCurveTo(q2.x,q2.y,q3.x,q3.y);ctx.stroke();
+  });
+
+  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
+  ctx.textAlign='center';ctx.fillText('Waves  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>

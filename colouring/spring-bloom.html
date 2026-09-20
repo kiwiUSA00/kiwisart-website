@@ -213,22 +213,115 @@
   perspGrid(W/2, HORIZON_Y, H - 10, 12, 10, 0.055);
 
   // Distant flowers near horizon
-  [120, 150, 430].forEach(function(fx) {
-    flower(fx, HORIZON_Y - 18, 8, 5, 0, 0.6, 0.18);
+  [120, 150, 430].forEach(function(){
+  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+  ctx.lineCap='round';ctx.lineJoin='round';
+
+  var VY=H*0.36,TL=0.35,FL=560,VX=W/2;
+  function p(wx,wy,wz){
+    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
+    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.85;
+    var sc=FL/Math.max(rz,10);
+    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
+  }
+  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
+
+  // Ground grid
+  s(0.4,0.055);
+  for(var gz=-220;gz<=220;gz+=55){line3(-280,0,gz,280,0,gz);}
+  for(var gx=-280;gx<=280;gx+=60){line3(gx,0,-220,gx,0,220);}
+
+  // Grass — short strokes on ground
+  s(0.6,0.20);
+  var grassPts=[[-80,-120],[-50,-150],[40,-130],[90,-100],[-20,-180],[70,-160],
+    [-100,-90],[120,-120],[150,-80],[-130,-140],[60,-200],[-60,-200]];
+  grassPts.forEach(function(g){
+    line3(g[0],0,g[1],g[0]+4,12,g[1]+2);
+    line3(g[0]+5,0,g[1]+3,g[0]+9,10,g[1]+5);
   });
 
-  s(1.0,0.35);
-  ctx.beginPath();ctx.moveTo(24,760);
-  for(var x=24;x<=571;x+=10){
-    ctx.lineTo(x, 760+Math.sin(x*0.08)*6);
+  // Flower function — 3D flower in XZ plane
+  function flower3d(cx,cz,petalR,petalW,stemH,numPetals){
+    numPetals=numPetals||8;
+    // Stem
+    s(1.2,0.55);
+    line3(cx,0,cz,cx,stemH,cz);
+    // Petals — ellipses in XZ plane tilted
+    s(1.0,0.68);
+    for(var pi=0;pi<numPetals;pi++){
+      var ang=(pi/numPetals)*Math.PI*2;
+      var px=cx+Math.cos(ang)*petalR,pz=cz+Math.sin(ang)*petalR;
+      // Petal outline as small ellipse
+      ctx.beginPath();
+      var segs=12;
+      for(var i=0;i<=segs;i++){
+        var a=(i/segs)*Math.PI*2;
+        var ex=px+Math.cos(ang)*Math.cos(a)*petalW*0.9-Math.sin(ang)*Math.sin(a)*petalW*0.35;
+        var ez=pz+Math.sin(ang)*Math.cos(a)*petalW*0.9+Math.cos(ang)*Math.sin(a)*petalW*0.35;
+        var q=p(ex,stemH,ez);
+        i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
+      }
+      ctx.closePath();ctx.stroke();
+    }
+    // Center disc
+    s(1.2,0.80);
+    ctx.beginPath();
+    var segs=16;
+    for(var i=0;i<=segs;i++){var a=(i/segs)*Math.PI*2,q=p(cx+Math.cos(a)*petalW*0.4,stemH,cz+Math.sin(a)*petalW*0.4);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}
+    ctx.closePath();ctx.stroke();
   }
-  ctx.stroke();
 
-  // Border
+  // Leaves — elongated ellipses on ground plane
+  function leaf3d(cx,cz,len,ang){
+    s(0.9,0.35);
+    ctx.beginPath();
+    for(var i=0;i<=16;i++){
+      var t=i/16,a=t*Math.PI*2;
+      var lx=cx+Math.cos(ang)*Math.cos(a)*len-Math.sin(ang)*Math.sin(a)*len*0.25;
+      var lz=cz+Math.sin(ang)*Math.cos(a)*len+Math.cos(ang)*Math.sin(a)*len*0.25;
+      var q=p(lx,0,lz);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
+    }
+    ctx.closePath();ctx.stroke();
+    // midrib
+    s(0.6,0.22);
+    line3(cx-Math.cos(ang)*len*0.85,0,cz-Math.sin(ang)*len*0.85,cx+Math.cos(ang)*len*0.85,0,cz+Math.sin(ang)*len*0.85);
+  }
+
+  // Tiny far flowers
+  flower3d(-120,-180,7,4,18,6);
+  flower3d(100,-190,6,3.5,15,6);
+  flower3d(-40,-200,5,3,12,5);
+
+  // Mid flowers
+  flower3d(-80,-80,14,8,32,8);
+  flower3d(90,-90,12,7,28,7);
+
+  // Leaves near mid flowers
+  leaf3d(-95,-70,18,0.4);
+  leaf3d(-65,-95,16,1.2);
+  leaf3d(75,-80,14,0.8);
+
+  // Hero flower — center foreground, large
+  ctx.shadowBlur=6;ctx.shadowColor='rgba(0,0,0,0.14)';
+  flower3d(0,30,32,18,55,10);
+  ctx.shadowBlur=0;
+  // Hero leaves
+  leaf3d(-18,22,28,0.3);
+  leaf3d(20,18,24,2.8);
+  leaf3d(0,50,20,1.5);
+
+  // Ground detail lines
+  s(0.5,0.10);
+  [[-150,0,60,100,0,80],[-200,0,120,180,0,100],[-160,0,0,150,0,10]].forEach(function(g){
+    line3(g[0],g[1],g[2],g[3],g[4],g[5]);
+  });
+
   ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
   ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
-
-  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';ctx.textAlign='center';ctx.fillText('Spring Bloom  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
+  ctx.textAlign='center';ctx.fillText('Spring Bloom  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
 })();
 </script>
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
