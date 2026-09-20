@@ -25,8 +25,9 @@ var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2; // = -54
 // canvas y = -54 + 600*0.5 = 246 → using 240 with comfortable gap.
 var WALL_LEFT  =  40;   // horizontal breathing room (canvas px)
 var WALL_RIGHT = 820;
-var WALL_TOP   =  20;   // just below ceiling cornice
-var SOFA_Y     = 240;   // painting bottom limit in canvas coords
+var WALL_TOP   =  15;   // just below ceiling cornice
+var SOFA_Y     = 240;   // painting bottom limit (large paintings stop above this)
+var HANG_CY    = 160;   // eye-level centre for small/medium paintings
 
 // ── Main draw ─────────────────────────────────────────────────────────────────
 function drawRoom() {
@@ -67,12 +68,12 @@ function drawRoom() {
     // Horizontal: always centred on the wall
     var cx = (WALL_LEFT + WALL_RIGHT) / 2;  // 430
 
-    // Vertical: large pins bottom 20 px above sofa; small/medium centred in zone
+    // Vertical: large pins bottom just above sofa; small/medium at eye-level centre
     var cy;
     if (curScale === 'large') {
-      cy = SOFA_Y - 20 - ph / 2;
+      cy = SOFA_Y - 15 - ph / 2;
     } else {
-      cy = (WALL_TOP + SOFA_Y) / 2;
+      cy = HANG_CY;
     }
 
     var left = Math.round(cx - pw / 2);
