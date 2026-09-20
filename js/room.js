@@ -102,8 +102,7 @@ function drawRoom() {
 
   // ── 2. Artwork on accent wall (perspective-correct) ───────────────────────
   if (rImg && rImg.naturalWidth > 0) {
-    var sc       = ROOM_SCALES[curScale] || 0.78;
-    var targetCy = SIZE_CENTER_Y[curScale] || 252;
+    var sc      = ROOM_SCALES[curScale] || 0.78;
 
     var wallW = ((QUAD.tr[0] - QUAD.tl[0]) + (QUAD.br[0] - QUAD.bl[0])) / 2;
     var wallH = ((QUAD.bl[1] - QUAD.tl[1]) + (QUAD.br[1] - QUAD.tr[1])) / 2;
@@ -117,6 +116,18 @@ function drawRoom() {
     } else {
       wScale = sc;
       hScale = sc * (wallW * aspect) / wallH;
+    }
+
+    // For large: pin painting bottom to sofa so it overlaps naturally.
+    // For small/medium: use fixed centre-heights so painting hangs high on wall.
+    var targetCy;
+    if (curScale === 'large') {
+      var paintingHalfH = (wallH / 2) * hScale;
+      var wallTopY      = (QUAD.tl[1] + QUAD.tr[1]) / 2;          // ≈ 4
+      targetCy = Math.max(SOFA_Y + 30 - paintingHalfH,            // bottom behind sofa
+                          wallTopY + paintingHalfH);               // top not above ceiling
+    } else {
+      targetCy = SIZE_CENTER_Y[curScale] || 215;
     }
 
     var q       = scaleQuad(QUAD, wScale, hScale, targetCy);
