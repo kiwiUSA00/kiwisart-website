@@ -1,6 +1,6 @@
-// Room preview — real photo background with artwork composited onto cleared wall
-// Photo: images/room-bg.jpg (1440×960, stag removed)
-// Dark wall area (in 1440×960 photo px): x≈800–1440, y≈270–620
+// Room preview — real photo background with artwork composited onto accent wall
+// Photo: images/room-bg.jpg (1024×1024, Auckland apartment with blue-grey accent wall)
+// Accent wall on the right side; painting placement measured from reference image
 
 var ROOM_SCALES = { small: 0.55, medium: 0.78, large: 1.0 };
 var curScale = 'medium';
@@ -13,20 +13,21 @@ var rCanvas = null, rCtx = null, rImg = null, roomBgImg = null;
   bg.src = '/images/room-bg.jpg';
 })();
 
-// Map from 1440×960 photo coordinates to canvas coordinates (860×537, cover-fill)
-var PHOTO_W = 1440, PHOTO_H = 960;
+// Map from 1024×1024 photo coordinates to canvas coordinates (860×537, cover-fill)
+var PHOTO_W = 1024, PHOTO_H = 1024;
 var CANVAS_W = 860, CANVAS_H = 537;
-// Cover scale: fit to canvas width (photo is slightly narrower aspect than canvas)
-var PHOTO_SCALE = CANVAS_W / PHOTO_W;            // 0.5972
-var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2;  // ≈ -18px (crops top/bottom)
+// Cover scale: fit to canvas width; top/bottom of photo are cropped
+var PHOTO_SCALE = CANVAS_W / PHOTO_W;            // ≈ 0.840
+var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2;  // ≈ -161.5 (crops top/bottom)
 
 function photoToCanvas(px, py) {
   return [px * PHOTO_SCALE, py * PHOTO_SCALE + PHOTO_DY];
 }
 
-// Wall area where the artwork will be shown (photo coords)
-// Covers the full dark right wall; artwork is centred within it
-var WALL = { x1: 800, y1: 268, x2: 1200, y2: 608 };
+// Wall area where the artwork will be shown (photo coords, 1024×1024 space)
+// Covers the blue-grey accent wall on the right; artwork is centred within it
+// Calibrated from reference placement of Koi painting on the wall
+var WALL = { x1: 280, y1: 240, x2: 1000, y2: 720 };
 
 function drawRoom() {
   if (!rCtx) return;
@@ -35,10 +36,12 @@ function drawRoom() {
 
   // ── Draw photo background ────────────────────────────────
   if (roomBgImg && roomBgImg.naturalWidth > 0) {
+    // Source: full image (PHOTO_W × PHOTO_H). Dest: scaled to canvas width,
+    // centred vertically (PHOTO_DY is negative → crops top/bottom equally).
     ctx.drawImage(roomBgImg,
       0, 0,
-      CANVAS_W,
-      PHOTO_H * PHOTO_SCALE,
+      PHOTO_W,
+      PHOTO_H,
       0, PHOTO_DY,
       CANVAS_W,
       PHOTO_H * PHOTO_SCALE
