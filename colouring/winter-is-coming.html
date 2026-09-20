@@ -78,110 +78,162 @@
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
+  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
 
-  var VY=H*0.40,TL=0.30,FL=560,VX=W/2;
-  function p(wx,wy,wz){
-    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
-    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.85;
-    var sc=FL/Math.max(rz,10);
-    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
+  // Low moon near horizon casting long shadows
+  S(1.5,0.68);
+  ctx.beginPath();ctx.arc(80,480,45,0,Math.PI*2);ctx.stroke();
+  S(0.6,0.30);
+  ctx.beginPath();ctx.arc(80,480,38,0,Math.PI*2);ctx.stroke();
+  // Moon glow rings
+  S(0.4,0.15);
+  [55,65,75].forEach(function(r){ctx.beginPath();ctx.arc(80,480,r,0,Math.PI*2);ctx.stroke();});
+
+  // Background pine trees
+  function bgPine(tx,ty,h){
+    S(1.2,0.55);
+    ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(tx-h*0.28,ty+h*0.4);ctx.lineTo(tx-h*0.18,ty+h*0.4);
+    ctx.lineTo(tx-h*0.38,ty+h*0.7);ctx.lineTo(tx-h*0.22,ty+h*0.7);
+    ctx.lineTo(tx-h*0.48,ty+h);ctx.lineTo(tx+h*0.48,ty+h);
+    ctx.lineTo(tx+h*0.22,ty+h*0.7);ctx.lineTo(tx+h*0.38,ty+h*0.7);
+    ctx.lineTo(tx+h*0.18,ty+h*0.4);ctx.lineTo(tx+h*0.28,ty+h*0.4);
+    ctx.closePath();ctx.stroke();
   }
-  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
+  bgPine(450,380,160);bgPine(520,400,130);bgPine(560,420,110);bgPine(580,430,90);
 
-  // Snow ground grid
-  s(0.4,0.055);
-  for(var gz=-220;gz<=200;gz+=50){line3(-280,0,gz,280,0,gz);}
-  for(var gx=-280;gx<=280;gx+=60){line3(gx,0,-220,gx,0,200);}
-
-  // Ground snow drift undulations
-  s(1.1,0.30);
-  var driftA=[[-250,0,130],[-180,4,127],[-90,2,132],[-20,0,128],[55,3,130],[140,1,128],[230,3,131]];
-  var f=p(driftA[0][0],driftA[0][1],driftA[0][2]);
-  ctx.beginPath();ctx.moveTo(f.x,f.y);
-  for(var i=1;i<driftA.length;i++){var q=p(driftA[i][0],driftA[i][1],driftA[i][2]);ctx.lineTo(q.x,q.y);}ctx.stroke();
-  var driftB=[[-240,0,175],[-160,5,172],[-60,3,178],[40,1,173],[130,4,175],[220,2,173]];
-  f=p(driftB[0][0],driftB[0][1],driftB[0][2]);
-  ctx.beginPath();ctx.moveTo(f.x,f.y);
-  for(var i=1;i<driftB.length;i++){var q=p(driftB[i][0],driftB[i][1],driftB[i][2]);ctx.lineTo(q.x,q.y);}ctx.stroke();
-
-  // 3D crystalline snowflake function — flat slab in world space
-  function crystal3d(cx,cy,cz,r){
-    var arms=6;
-    var THICK=4; // crystal thickness in Y
-    for(var arm=0;arm<arms;arm++){
-      var ang=(arm/arms)*Math.PI*2;
-      var ex=cx+Math.cos(ang)*r,ez=cz+Math.sin(ang)*r;
-      // Bottom slab arm
-      s(1.1,0.70);
-      line3(cx,cy,cz,ex,cy,ez);
-      // Top slab arm (shifted up by THICK)
-      s(0.8,0.45);
-      line3(cx,cy+THICK,cz,ex,cy+THICK,ez);
-      // Side edges at tip and base showing slab thickness
-      s(0.7,0.38);
-      line3(ex,cy,ez,ex,cy+THICK,ez);
-      // Sub-branches at 45% and 75% along arm
-      [0.45,0.72].forEach(function(frac){
-        var bAng=ang+Math.PI/3;
-        var br=r*0.28;
-        var mbx=cx+Math.cos(ang)*r*frac,mbz=cz+Math.sin(ang)*r*frac;
-        // Bottom slab branches
-        s(0.9,0.58);
-        line3(mbx,cy,mbz,mbx+Math.cos(bAng)*br,cy,mbz+Math.sin(bAng)*br);
-        line3(mbx,cy,mbz,mbx-Math.cos(bAng)*br,cy,mbz-Math.sin(bAng)*br);
-        // Top slab branches
-        s(0.6,0.38);
-        line3(mbx,cy+THICK,mbz,mbx+Math.cos(bAng)*br,cy+THICK,mbz+Math.sin(bAng)*br);
-        line3(mbx,cy+THICK,mbz,mbx-Math.cos(bAng)*br,cy+THICK,mbz-Math.sin(bAng)*br);
-        // Side connectors
-        s(0.5,0.28);
-        line3(mbx+Math.cos(bAng)*br,cy,mbz+Math.sin(bAng)*br,mbx+Math.cos(bAng)*br,cy+THICK,mbz+Math.sin(bAng)*br);
-      });
+  // Bare deciduous trees - left and right
+  function bareTree(tx,ty,trunkH,trunkW){
+    // Trunk
+    S(trunkW,0.88);
+    ctx.beginPath();ctx.moveTo(tx-trunkW*3,ty);ctx.bezierCurveTo(tx-trunkW*2,ty-trunkH*0.3,tx-trunkW,ty-trunkH*0.6,tx,ty-trunkH);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(tx+trunkW*3,ty);ctx.bezierCurveTo(tx+trunkW*2,ty-trunkH*0.3,tx+trunkW,ty-trunkH*0.6,tx,ty-trunkH);ctx.stroke();
+    // Bark texture
+    S(0.6,0.42);
+    for(var bi=0;bi<6;bi++){
+      var by=ty-bi*trunkH/6;
+      ctx.beginPath();ctx.moveTo(tx-trunkW*(3-bi*0.4),by);ctx.lineTo(tx-trunkW*(2.5-bi*0.35),by-trunkH*0.08);ctx.stroke();
     }
-    // Hex center outline
-    s(1.0,0.65);
-    ctx.beginPath();
-    for(var i=0;i<=6;i++){var a=(i/6)*Math.PI*2,q=p(cx+Math.cos(a)*r*0.18,cy,cz+Math.sin(a)*r*0.18);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.closePath();ctx.stroke();
-    ctx.beginPath();
-    for(var i=0;i<=6;i++){var a=(i/6)*Math.PI*2,q=p(cx+Math.cos(a)*r*0.18,cy+THICK,cz+Math.sin(a)*r*0.18);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.closePath();ctx.stroke();
+    // Main branches
+    S(2.0,0.80);
+    var branchData=[
+      [tx,ty-trunkH,tx-120,ty-trunkH-80,tx-180,ty-trunkH-55],
+      [tx,ty-trunkH,tx+110,ty-trunkH-85,tx+170,ty-trunkH-60],
+      [tx,ty-trunkH*0.8,tx-90,ty-trunkH*0.8-60,tx-140,ty-trunkH*0.8-40],
+      [tx,ty-trunkH*0.8,tx+80,ty-trunkH*0.8-55,tx+135,ty-trunkH*0.8-35]
+    ];
+    branchData.forEach(function(b){
+      S(1.8,0.80);
+      ctx.beginPath();ctx.moveTo(b[0],b[1]);ctx.quadraticCurveTo(b[2],b[3],b[3-3+3],b[4-3+4]);
+      ctx.moveTo(b[0],b[1]);ctx.bezierCurveTo(b[2],b[3],b[3],b[4],b[3],b[4]);ctx.stroke();
+      // Secondary branches
+      S(1.0,0.70);
+      for(var si2=0;si2<4;si2++){
+        var st=(si2+1)/5;
+        var sx2=b[0]+(b[3]-b[0])*st,sy2=b[1]+(b[4]-b[1])*st;
+        var sdir=(b[4]>b[1]?-1:1)*(si2%2===0?1:-1);
+        ctx.beginPath();ctx.moveTo(sx2,sy2);ctx.lineTo(sx2+sdir*30,sy2-25);ctx.stroke();
+        // Fine twigs
+        S(0.5,0.55);
+        ctx.beginPath();ctx.moveTo(sx2+sdir*30,sy2-25);ctx.lineTo(sx2+sdir*45,sy2-35);ctx.stroke();
+        ctx.beginPath();ctx.moveTo(sx2+sdir*30,sy2-25);ctx.lineTo(sx2+sdir*38,sy2-38);ctx.stroke();
+      }
+    });
   }
+  bareTree(155,720,200,3.0);
+  bareTree(440,720,180,2.5);
 
-  // 3 hero snowflakes at different depths
-  ctx.shadowBlur=5;ctx.shadowColor='rgba(0,0,0,0.12)';
-  crystal3d(-70,18,-60,58);
-  crystal3d(80,12,20,48);
-  crystal3d(10,24,-180,35);
-  ctx.shadowBlur=0;
-
-  // Background frost network from corners
-  s(0.5,0.15);
-  function frostBranch(sx,sy,sz,ang,len,depth){
-    if(depth<=0||len<5)return;
-    var ex=sx+Math.cos(ang)*len,ez=sz+Math.sin(ang)*len;
-    line3(sx,sy,sz,ex,sy,ez);
-    frostBranch(ex,sy,ez,ang-0.6,len*0.62,depth-1);
-    frostBranch(ex,sy,ez,ang+0.5,len*0.58,depth-1);
-    if(depth>2)frostBranch(ex,sy,ez,ang+Math.PI*0.08,len*0.50,depth-2);
-  }
-  frostBranch(-200,2,-180,0.6,55,4);
-  frostBranch(200,2,-180,Math.PI-0.6,55,4);
-  frostBranch(-200,2,170,-0.6,50,3);
-  frostBranch(200,2,170,Math.PI+0.6,50,3);
-
-  // Small distant snowflakes
-  s(0.65,0.40);
-  [[-130,5,-140,14],[120,4,-160,11],[-50,6,-200,8],[150,5,-100,9],[-170,3,-90,10]].forEach(function(sf){
-    for(var arm=0;arm<6;arm++){
-      var ang=(arm/6)*Math.PI*2;
-      line3(sf[0],sf[1],sf[2],sf[0]+Math.cos(ang)*sf[3],sf[1],sf[2]+Math.sin(ang)*sf[3]);
-    }
+  // Long shadows from moon
+  S(0.5,0.15);
+  [[155,720,250,760],[440,720,540,760]].forEach(function(sh){
+    ctx.beginPath();ctx.moveTo(sh[0],sh[1]);ctx.lineTo(sh[2],sh[3]);ctx.stroke();
   });
 
-  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+  // Frozen pond/stream - parallel lines and cracked ice at edges
+  S(1.5,0.60);
+  ctx.beginPath();ctx.ellipse(297,680,180,45,0,0,Math.PI*2);ctx.stroke();
+  // Ice surface parallel lines
+  S(0.6,0.30);
+  for(var il=0;il<8;il++){
+    var iy=680-30+il*8;
+    var ix=Math.sqrt(Math.max(0,1-(iy-680)*(iy-680)/(45*45)))*180;
+    ctx.beginPath();ctx.moveTo(297-ix,iy);ctx.lineTo(297+ix,iy);ctx.stroke();
+  }
+  // Cracked ice at edges
+  S(0.8,0.55);
+  [[120,678,145,665,158,672],[145,665,152,658,165,660],
+   [460,678,445,668,438,658],[445,668,455,660,448,652],
+   [200,700,215,710,205,718],[390,702,375,712,382,722]].forEach(function(c){
+    ctx.beginPath();ctx.moveTo(c[0],c[1]);ctx.lineTo(c[2],c[3]);ctx.lineTo(c[4],c[5]);ctx.stroke();
+  });
+
+  // Snow banks with drift curves
+  S(2.0,0.75);
+  ctx.beginPath();ctx.moveTo(0,730);ctx.bezierCurveTo(80,718,160,725,240,715);ctx.bezierCurveTo(297,708,350,715,420,710);ctx.bezierCurveTo(490,705,545,718,595,712);ctx.lineTo(595,800);ctx.lineTo(0,800);ctx.closePath();ctx.stroke();
+  // Drift shadow lines
+  S(0.7,0.38);
+  [[60,722,150,725],[200,718,310,718],[370,712,470,715],[520,714,590,716]].forEach(function(d){
+    ctx.beginPath();ctx.moveTo(d[0],d[1]);ctx.quadraticCurveTo((d[0]+d[2])/2,(d[1]+d[3])/2-5,d[2],d[3]);ctx.stroke();
+  });
+
+  // Deer in mid-distance
+  S(1.5,0.80);
+  var dx=310,dy=610;
+  // Body
+  ctx.beginPath();ctx.ellipse(dx,dy,38,22,0.15,0,Math.PI*2);ctx.stroke();
+  // Neck
+  ctx.beginPath();ctx.moveTo(dx+30,dy-8);ctx.bezierCurveTo(dx+40,dy-30,dx+45,dy-45,dx+42,dy-58);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(dx+40,dy-5);ctx.bezierCurveTo(dx+50,dy-25,dx+55,dy-42,dx+52,dy-58);ctx.stroke();
+  // Head
+  ctx.beginPath();ctx.ellipse(dx+47,dy-65,12,9,0.5,0,Math.PI*2);ctx.stroke();
+  // Snout
+  ctx.beginPath();ctx.ellipse(dx+57,dy-63,6,5,0.2,0,Math.PI*2);ctx.stroke();
+  // Eye
+  S(1.0,0.85);ctx.beginPath();ctx.arc(dx+50,dy-68,2,0,Math.PI*2);ctx.stroke();
+  // Ear
+  S(1.2,0.78);
+  ctx.beginPath();ctx.moveTo(dx+43,dy-72);ctx.bezierCurveTo(dx+40,dy-82,dx+48,dy-88,dx+52,dy-78);ctx.stroke();
+  // Antlers
+  S(1.0,0.75);
+  ctx.beginPath();ctx.moveTo(dx+45,dy-72);ctx.lineTo(dx+38,dy-88);ctx.lineTo(dx+32,dy-80);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(dx+38,dy-88);ctx.lineTo(dx+35,dy-98);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(dx+45,dy-72);ctx.lineTo(dx+50,dy-90);ctx.lineTo(dx+56,dy-82);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(dx+50,dy-90);ctx.lineTo(dx+52,dy-100);ctx.stroke();
+  // Legs
+  S(1.2,0.78);
+  [[dx+15,dy+18,dx+12,dy+50],[dx+5,dy+20,dx+2,dy+52],[dx-10,dy+18,dx-12,dy+50],[dx-22,dy+16,dx-24,dy+50]].forEach(function(l){
+    ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.bezierCurveTo(l[0]+2,l[1]+18,l[2]+2,l[3]-15,l[2],l[3]);ctx.stroke();
+    // Hoof
+    ctx.beginPath();ctx.moveTo(l[2]-4,l[3]);ctx.lineTo(l[2]+4,l[3]);ctx.stroke();
+  });
+  // Tail
+  S(0.9,0.65);
+  ctx.beginPath();ctx.ellipse(dx-38,dy-5,7,5,2.5,0,Math.PI*2);ctx.stroke();
+
+  // Snowflakes
+  function snowflake(sx,sy,r){
+    S(0.8,0.65);
+    for(var si=0;si<6;si++){
+      var a=si*Math.PI/3;
+      ctx.beginPath();ctx.moveTo(sx,sy);ctx.lineTo(sx+r*Math.cos(a),sy+r*Math.sin(a));ctx.stroke();
+      var bx=sx+r*0.55*Math.cos(a),by=sy+r*0.55*Math.sin(a);
+      ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+r*0.3*Math.cos(a+Math.PI/3),by+r*0.3*Math.sin(a+Math.PI/3));ctx.stroke();
+      ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+r*0.3*Math.cos(a-Math.PI/3),by+r*0.3*Math.sin(a-Math.PI/3));ctx.stroke();
+    }
+  }
+  [[60,60,12],[200,80,8],[380,55,14],[530,90,10],[480,140,8],[560,50,11],[100,160,7],[300,140,9],[450,180,7]].forEach(function(f){snowflake(f[0],f[1],f[2]);});
+  S(0.6,0.45);
+  [[150,45],[250,110],[420,100],[550,150],[80,220],[350,200]].forEach(function(d){ctx.beginPath();ctx.arc(d[0],d[1],2,0,Math.PI*2);ctx.stroke();});
+
+  // Credit
   ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Winter Is Coming  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.textAlign='center';ctx.fillText('Winter is Coming  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
+  // Decorative double border
+  ctx.save();
+  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
+  ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
+  ctx.strokeRect(22,22,W-44,H-44);
+  ctx.restore();
 })();
 </script>
 

@@ -138,103 +138,132 @@
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
+  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
 
-  var VX=W*0.42,VY=H*0.48,FL=520,TL=0.18;
-  function p(wx,wy,wz){
-    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
-    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.9;
-    var sc=FL/Math.max(rz,10);
-    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
-  }
-  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
+  // Horizon line
+  S(1.5,0.60);
+  ctx.beginPath();ctx.moveTo(30,360);ctx.lineTo(565,360);ctx.stroke();
 
-  // Horizon
-  s(0.9,0.15);
-  var hL=p(-600,0,-400),hR=p(600,0,-400);
-  ctx.beginPath();ctx.moveTo(hL.x,hL.y);ctx.lineTo(hR.x,hR.y);ctx.stroke();
+  // Distant mountain peak (Fuji-like)
+  S(1.2,0.55);
+  ctx.beginPath();ctx.moveTo(380,360);ctx.lineTo(460,280);ctx.lineTo(540,360);ctx.stroke();
+  // Snow cap
+  S(0.8,0.45);
+  ctx.beginPath();ctx.moveTo(445,295);ctx.lineTo(460,280);ctx.lineTo(475,295);ctx.stroke();
 
-  // Ocean surface grid
-  s(0.4,0.05);
-  for(var gx=-500;gx<=500;gx+=80){line3(gx,0,-400,gx,0,300);}
-  for(var gz=-400;gz<=300;gz+=60){line3(-500,0,gz,500,0,gz);}
+  // Background small wave
+  S(1.0,0.40);
+  ctx.beginPath();ctx.moveTo(30,380);
+  ctx.quadraticCurveTo(150,350,220,375);
+  ctx.quadraticCurveTo(290,400,350,375);
+  ctx.quadraticCurveTo(420,350,500,378);
+  ctx.lineTo(565,370);ctx.stroke();
 
-  var WAVE_W=480,WAVE_Z=0,BARREL_R=110;
+  // Calm water lines in background
+  S(0.6,0.25);
+  [390,410,430,450].forEach(function(y){
+    ctx.beginPath();ctx.moveTo(30,y);
+    ctx.quadraticCurveTo(297,y-8,565,y);ctx.stroke();
+  });
 
-  // Wave cross-section function
-  function waveSection(wx,zOff,alph,lw){
-    s(lw||1.5,alph||0.7);
-    var segs=24;
-    ctx.beginPath();
-    var base=p(wx,0,WAVE_Z+zOff+BARREL_R*0.8);
-    ctx.moveTo(base.x,base.y);
-    for(var i=0;i<=segs;i++){
-      var ang=-Math.PI*0.5+(i/segs)*Math.PI*0.95;
-      var cy=BARREL_R*Math.sin(ang)+BARREL_R;
-      var cz=WAVE_Z+BARREL_R*Math.cos(ang);
-      var q=p(wx,cy+BARREL_R*0.1,cz+zOff);
-      ctx.lineTo(q.x,q.y);
-    }
-    ctx.stroke();
-  }
-
-  // Inner barrel horizontal rings
-  s(1.0,0.22);
-  for(var i=1;i<=8;i++){
-    var ang=(i/9)*Math.PI*0.85;
-    var cy=BARREL_R*Math.sin(ang)+BARREL_R;
-    var cz=WAVE_Z+BARREL_R*Math.cos(ang);
-    line3(-WAVE_W*0.5,cy+BARREL_R*0.1,cz,WAVE_W*0.5,cy+BARREL_R*0.1,cz);
-  }
-
-  // Wave face sections
-  var sections=[[-WAVE_W*0.5,18,2.0,0.75],[-WAVE_W*0.3,12,1.9,0.72],[-WAVE_W*0.1,6,1.8,0.70],[WAVE_W*0.1,0,2.2,0.80],[WAVE_W*0.3,0,2.1,0.76],[WAVE_W*0.5,0,1.7,0.65]];
-  sections.forEach(function(sc2){waveSection(sc2[0],sc2[1],sc2[3],sc2[2]);});
-
-  // Barrel opening edge
-  ctx.shadowBlur=6;ctx.shadowColor='rgba(0,0,0,0.15)';
-  s(2.4,0.82);
+  // Main wave body - large curling wave
+  S(2.5,0.90);
+  // Wave base sweeps from left
   ctx.beginPath();
-  var segs=32;
-  for(var i=0;i<=segs;i++){
-    var ang=-Math.PI*0.5+(i/segs)*Math.PI*1.0;
-    var cy=BARREL_R*Math.sin(ang)+BARREL_R;
-    var cz=WAVE_Z+BARREL_R*Math.cos(ang);
-    var q=p(-WAVE_W*0.5,cy+BARREL_R*0.1,cz);
-    i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
-  }
-  ctx.stroke();ctx.shadowBlur=0;
+  ctx.moveTo(30,520);
+  ctx.bezierCurveTo(100,490,180,460,260,440);
+  ctx.bezierCurveTo(340,420,400,400,450,370);
+  ctx.bezierCurveTo(490,345,520,320,540,290);
+  ctx.bezierCurveTo(555,268,558,250,545,240);
+  ctx.stroke();
 
-  // Foam on crest
-  s(0.8,0.35);
-  for(var fx=-WAVE_W*0.5;fx<WAVE_W*0.5;fx+=28){
-    var foamZ=WAVE_Z+BARREL_R*0.12,foamY=BARREL_R*2.05;
-    var q1=p(fx,foamY,foamZ),q2=p(fx+14,foamY+Math.sin(fx*0.1)*8,foamZ-6);
-    ctx.beginPath();ctx.moveTo(q1.x,q1.y);ctx.quadraticCurveTo(q2.x,q2.y,p(fx+22,foamY,foamZ).x,p(fx+22,foamY,foamZ).y);ctx.stroke();
-  }
+  // Wave crest curling over - the barrel
+  S(2.5,0.92);
+  ctx.beginPath();
+  ctx.moveTo(545,240);
+  ctx.bezierCurveTo(560,215,575,195,560,175);
+  ctx.bezierCurveTo(548,158,520,155,495,162);
+  ctx.bezierCurveTo(460,172,430,195,410,215);
+  ctx.bezierCurveTo(385,238,365,265,350,290);
+  ctx.bezierCurveTo(335,315,330,345,340,380);
+  ctx.stroke();
 
-  // Spray droplets
-  s(0.6,0.28);
-  var sprayPts=[[-200,240,10],[-120,240,-8],[-40,238,15],[50,242,-5],[140,240,8],[220,238,-12]];
-  sprayPts.forEach(function(sp){
-    for(var i=0;i<5;i++){
-      var q=p(sp[0]+i*8,BARREL_R*2.05+i*10,WAVE_Z-15+i*6);
-      ctx.beginPath();ctx.arc(q.x,q.y,q.s*2.5,0,Math.PI*2);ctx.stroke();
+  // Inner barrel curve (tube opening)
+  S(1.8,0.75);
+  ctx.beginPath();
+  ctx.moveTo(495,162);
+  ctx.bezierCurveTo(470,170,450,185,435,205);
+  ctx.bezierCurveTo(415,230,405,260,415,295);
+  ctx.bezierCurveTo(420,315,430,330,445,340);
+  ctx.stroke();
+
+  // Wave body striations - flow lines
+  S(1.0,0.50);
+  var striations=[
+    [[60,530],[150,498],[240,470],[320,448],[390,428],[440,408],[470,390]],
+    [[80,545],[170,515],[260,488],[340,465],[405,445],[450,425],[475,408]],
+    [[100,560],[190,530],[280,505],[360,482],[420,460],[460,440],[480,425]],
+    [[120,575],[210,547],[300,522],[375,498],[432,475],[468,455],[485,440]]
+  ];
+  striations.forEach(function(pts){
+    ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+    for(var i=1;i<pts.length;i++) ctx.lineTo(pts[i][0],pts[i][1]);
+    ctx.stroke();
+  });
+
+  // Foam streaks inside curl
+  S(0.8,0.50);
+  [[490,170,460,195],[505,175,478,202],[478,178,450,205],
+   [465,185,440,215],[450,195,428,225]].forEach(function(f){
+    ctx.beginPath();ctx.moveTo(f[0],f[1]);ctx.quadraticCurveTo((f[0]+f[2])/2+8,(f[1]+f[3])/2-5,f[2],f[3]);ctx.stroke();
+  });
+
+  // Spray droplets off crest
+  S(0.8,0.65);
+  [[548,230,558,210],[552,240,568,225],[538,222,552,205],
+   [530,215,538,198],[520,225,525,207],[542,248,560,240]].forEach(function(sp){
+    ctx.beginPath();ctx.moveTo(sp[0],sp[1]);ctx.lineTo(sp[2],sp[3]);ctx.stroke();
+  });
+  // Droplet dots
+  [[555,205],[562,215],[548,200],[535,195],[528,202]].forEach(function(d){
+    ctx.beginPath();ctx.arc(d[0],d[1],2,0,Math.PI*2);ctx.stroke();
+  });
+
+  // Churning foam at base - irregular blob shapes
+  S(1.2,0.65);
+  var foamBlobs=[
+    [60,640,35,18],[120,655,28,15],[185,645,32,20],[250,660,38,18],
+    [320,650,30,17],[390,640,35,20],[460,648,28,16],[510,655,32,18],
+    [90,685,40,15],[170,690,35,18],[280,688,42,17],[390,685,36,16]
+  ];
+  foamBlobs.forEach(function(b){
+    ctx.beginPath();ctx.ellipse(b[0],b[1],b[2],b[3],Math.random()*0.3,0,Math.PI*2);ctx.stroke();
+  });
+  // Foam detail lines
+  S(0.6,0.40);
+  foamBlobs.forEach(function(b,i){
+    if(i%2===0){
+      ctx.beginPath();ctx.moveTo(b[0]-b[2]*0.5,b[1]);
+      ctx.quadraticCurveTo(b[0],b[1]-b[3]*0.5,b[0]+b[2]*0.5,b[1]);ctx.stroke();
     }
   });
 
-  // Distant swells
-  s(0.7,0.14);
-  [[-300,-180],[-150,-220],[200,-200],[320,-190]].forEach(function(sw){
-    ctx.beginPath();
-    var q1=p(sw[0]-80,25,-300),q2=p(sw[0],45,-300),q3=p(sw[0]+80,25,-300);
-    ctx.moveTo(q1.x,q1.y);ctx.quadraticCurveTo(q2.x,q2.y,q3.x,q3.y);ctx.stroke();
+  // White water lines connecting foam to wave
+  S(1.0,0.45);
+  [[140,600,100,640],[220,580,180,638],[300,575,270,642],[380,580,350,638]].forEach(function(l){
+    ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.quadraticCurveTo(l[0]-15,l[2]-10,l[2],l[3]);ctx.stroke();
   });
 
-  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+  // Credit
   ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Waves  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.textAlign='center';ctx.fillText('Waves  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
+  // Decorative double border
+  ctx.save();
+  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
+  ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
+  ctx.strokeRect(22,22,W-44,H-44);
+  ctx.restore();
 })();
 </script>
 

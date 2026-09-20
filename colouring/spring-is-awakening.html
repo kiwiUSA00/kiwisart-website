@@ -78,114 +78,144 @@
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
+  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
 
-  var VY=H*0.38,TL=0.28,FL=560,VX=W/2;
-  function p(wx,wy,wz){
-    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
-    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.85;
-    var sc=FL/Math.max(rz,10);
-    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
-  }
-  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
-
-  // Ground grid
-  s(0.4,0.055);
-  for(var gz=-200;gz<=220;gz+=50){line3(-300,0,gz,300,0,gz);}
-  for(var gx=-300;gx<=300;gx+=65){line3(gx,0,-200,gx,0,220);}
-
-  // Spring grass
-  s(0.6,0.18);
-  [[-150,80],[-90,120],[60,100],[140,70],[-180,150],[110,150],[-50,180],[30,160],[-210,60],[170,100]].forEach(function(g){
-    line3(g[0],0,g[1],g[0]+3,14,g[1]+2);
-    line3(g[0]+8,0,g[1]+4,g[0]+11,11,g[1]+6);
-  });
-
-  // Main trunk — 3D cylinder (two vertical arcs + side lines)
-  var TRUNK_R=12,TRUNK_H=220;
-  s(2.0,0.78);
-  // Front and back of trunk
-  ctx.beginPath();
-  for(var i=0;i<=16;i++){var a=(i/16)*Math.PI,q=p(Math.cos(a)*TRUNK_R,i/16*TRUNK_H,Math.sin(a)*TRUNK_R*0.6);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.stroke();
-  ctx.beginPath();
-  for(var i=0;i<=16;i++){var a=Math.PI+(i/16)*Math.PI,q=p(Math.cos(a)*TRUNK_R,i/16*TRUNK_H,Math.sin(a)*TRUNK_R*0.6);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.stroke();
-  // Trunk verticals (bark lines)
-  s(0.9,0.40);
-  [-TRUNK_R,0,TRUNK_R].forEach(function(dx){line3(dx,0,0,dx*0.5,TRUNK_H,0);});
-  // Bark rings
-  s(0.6,0.28);
-  [40,80,120,160].forEach(function(hy){
-    ctx.beginPath();
-    for(var i=0;i<=16;i++){var a=(i/16)*Math.PI*2,q=p(Math.cos(a)*TRUNK_R*(1-hy/TRUNK_H*0.35),hy,Math.sin(a)*TRUNK_R*0.6*(1-hy/TRUNK_H*0.25));i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}
-    ctx.closePath();ctx.stroke();
-  });
-
-  // Bough function — thick 3D branch from trunk to tip
-  function bough3d(bx1,by1,bz1,bx2,by2,bz2,thick){
-    s(thick*0.2+0.5,0.72);
-    line3(bx1,by1,bz1,bx2,by2,bz2);
-    // Parallel back edge for 3D thickness
-    s(thick*0.12+0.3,0.45);
-    line3(bx1+thick*0.5,by1,bz1+thick*0.3,bx2+thick*0.3,by2,bz2+thick*0.2);
-    // Cross-connector at mid
-    s(0.6,0.30);
-    line3((bx1+bx2)/2,(by1+by2)/2,(bz1+bz2)/2,(bx1+bx2)/2+thick*0.5,(by1+by2)/2,(bz1+bz2)/2+thick*0.3);
-  }
-
-  // Major boughs
-  bough3d(0,180,0,-120,260,-30,8);
-  bough3d(0,180,0,130,255,20,8);
-  bough3d(0,150,0,-80,200,60,6);
-  bough3d(0,150,0,90,210,-50,6);
-  bough3d(0,200,0,0,265,-80,7);
-
-  // Branches (thinner)
-  var branches=[
-    [-120,260,-30,-170,310,-50,4],[-120,260,-30,-80,320,-15,4],
-    [130,255,20,175,305,35,4],[130,255,20,90,315,50,4],
-    [-80,200,60,-120,265,70,3],[-80,200,60,-40,265,85,3],
-    [90,210,-50,130,270,-35,3],[90,210,-50,60,270,-60,3],
-    [0,265,-80,-30,330,-90,3],[0,265,-80,35,330,-70,3]
-  ];
-  branches.forEach(function(b){bough3d(b[0],b[1],b[2],b[3],b[4],b[5],b[6]);});
-
-  // Blossoms at branch tips — small discs in XZ plane
-  s(1.0,0.60);
-  var blossomTips=[
-    [-170,310,-50],[-80,320,-15],[175,305,35],[90,315,50],
-    [-120,265,70],[-40,265,85],[130,270,-35],[60,270,-60],
-    [-30,330,-90],[35,330,-70],[0,265,-80],[-50,310,40],[80,300,-60]
-  ];
-  blossomTips.forEach(function(bt){
-    // 5-petal flower disc
-    for(var pi=0;pi<5;pi++){
-      var ang=(pi/5)*Math.PI*2;
-      ctx.beginPath();
-      for(var i=0;i<=10;i++){
-        var a=(i/10)*Math.PI*2;
-        var px=bt[0]+Math.cos(ang)*10+Math.cos(ang+a)*5;
-        var pz=bt[2]+Math.sin(ang)*10+Math.sin(ang+a)*5;
-        var q=p(px,bt[1],pz);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
-      }
-      ctx.closePath();ctx.stroke();
+  // Background: gentle rolling hillside
+  S(1.0,0.30);
+  ctx.beginPath();ctx.moveTo(0,620);ctx.bezierCurveTo(150,580,300,600,450,585);ctx.bezierCurveTo(530,578,565,588,595,590);ctx.lineTo(595,800);ctx.lineTo(0,800);ctx.closePath();ctx.stroke();
+  // Distant dotted trees on hill
+  S(0.5,0.22);
+  [[50,610,18],[140,595,15],[260,598,17],[400,585,14],[520,580,16]].forEach(function(t){
+    for(var ti=0;ti<10;ti++){
+      var ta=ti*36*Math.PI/180;
+      ctx.beginPath();ctx.arc(t[0]+t[2]*0.65*Math.cos(ta),t[1]+t[2]*0.55*Math.sin(ta),1.5,0,Math.PI*2);ctx.stroke();
     }
-    // Center
-    s(0.8,0.75);
-    ctx.beginPath();for(var i=0;i<=8;i++){var a=(i/8)*Math.PI*2,q=p(bt[0]+Math.cos(a)*4,bt[1],bt[2]+Math.sin(a)*3);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.closePath();ctx.stroke();
   });
 
-  // Sky suggestion — light curved lines in far background
-  s(0.5,0.09);
-  [[-180,340,-220,-60,355,-240],[40,345,-230,200,330,-210],[-100,360,-260,100,350,-250]].forEach(function(sk){
-    var a=p(sk[0],sk[1],sk[2]),b=p(sk[3],sk[4],sk[5]);
-    var mid=p((sk[0]+sk[3])/2,sk[1]+12,(sk[2]+sk[5])/2);
-    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.quadraticCurveTo(mid.x,mid.y,b.x,b.y);ctx.stroke();
+  // Trunk with bark texture
+  S(4.0,0.90);
+  ctx.beginPath();ctx.moveTo(250,800);ctx.bezierCurveTo(260,700,275,650,285,600);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(345,800);ctx.bezierCurveTo(335,700,322,650,312,600);ctx.stroke();
+  // Trunk taper top
+  ctx.beginPath();ctx.moveTo(285,600);ctx.bezierCurveTo(290,570,294,550,297,520);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(312,600);ctx.bezierCurveTo(308,570,302,550,297,520);ctx.stroke();
+  // Root buttresses
+  S(2.5,0.80);
+  [[250,800,220,770],[345,800,375,770],[250,800,195,780],[345,800,400,775]].forEach(function(r){
+    ctx.beginPath();ctx.moveTo(r[0],r[1]);ctx.quadraticCurveTo(r[0],r[3],r[2],r[3]);ctx.stroke();
+  });
+  // Bark texture - vertical curved lines
+  S(0.7,0.45);
+  for(var bi=0;bi<8;bi++){
+    var bx=255+bi*11;
+    ctx.beginPath();ctx.moveTo(bx,780);
+    ctx.bezierCurveTo(bx+Math.sin(bi)*5,720,bx+Math.sin(bi*2)*4,650,bx+Math.sin(bi)*3,610);
+    ctx.stroke();
+  }
+
+  // Main branches
+  S(3.0,0.85);
+  ctx.beginPath();ctx.moveTo(297,520);ctx.bezierCurveTo(260,480,220,450,175,420);ctx.stroke(); // left main
+  ctx.beginPath();ctx.moveTo(297,520);ctx.bezierCurveTo(335,480,375,445,420,410);ctx.stroke(); // right main
+  ctx.beginPath();ctx.moveTo(297,520);ctx.bezierCurveTo(285,480,280,440,272,400);ctx.stroke(); // center up
+
+  S(2.2,0.80);
+  ctx.beginPath();ctx.moveTo(175,420);ctx.bezierCurveTo(140,390,105,365,80,330);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(175,420);ctx.bezierCurveTo(158,385,148,350,145,310);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(420,410);ctx.bezierCurveTo(455,375,485,345,515,310);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(420,410);ctx.bezierCurveTo(440,370,448,335,445,295);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(272,400);ctx.bezierCurveTo(255,360,245,320,240,280);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(272,400);ctx.bezierCurveTo(295,355,305,315,310,270);ctx.stroke();
+
+  // Fine twigs
+  S(1.0,0.70);
+  var twigEnds=[[80,330],[145,310],[515,310],[445,295],[240,280],[310,270]];
+  twigEnds.forEach(function(te,i){
+    for(var ti2=0;ti2<5;ti2++){
+      var ta=(-0.8+ti2*0.4)*Math.PI+((i%2===0)?-0.1:0.1);
+      S(0.8,0.65);
+      ctx.beginPath();ctx.moveTo(te[0],te[1]);
+      ctx.lineTo(te[0]+Math.cos(ta)*28,te[1]+Math.sin(ta)*28);ctx.stroke();
+      // Micro twigs
+      S(0.5,0.55);
+      var ttx=te[0]+Math.cos(ta)*28,tty=te[1]+Math.sin(ta)*28;
+      ctx.beginPath();ctx.moveTo(ttx,tty);ctx.lineTo(ttx+Math.cos(ta-0.4)*15,tty+Math.sin(ta-0.4)*15);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(ttx,tty);ctx.lineTo(ttx+Math.cos(ta+0.4)*15,tty+Math.sin(ta+0.4)*15);ctx.stroke();
+    }
   });
 
-  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+  // Flower buds and blossoms
+  function bud(bx,by,r){
+    S(1.0,0.78);
+    ctx.beginPath();ctx.ellipse(bx,by,r*0.45,r,0.1,0,Math.PI*2);ctx.stroke();
+    S(0.7,0.55);
+    ctx.beginPath();ctx.moveTo(bx,by+r);ctx.lineTo(bx,by+r+8);ctx.stroke(); // stem
+  }
+  function openBlossom(bx,by,r){
+    S(1.0,0.80);
+    for(var pi=0;pi<5;pi++){
+      var a=pi*72*Math.PI/180;
+      ctx.beginPath();ctx.ellipse(bx+r*0.6*Math.cos(a),by+r*0.6*Math.sin(a),r*0.45,r*0.35,a,0,Math.PI*2);ctx.stroke();
+    }
+    S(0.7,0.70);ctx.beginPath();ctx.arc(bx,by,r*0.2,0,Math.PI*2);ctx.stroke();
+    S(0.4,0.55);
+    for(var si=0;si<5;si++){var sa=si*72*Math.PI/180;ctx.beginPath();ctx.moveTo(bx+r*0.18*Math.cos(sa),by+r*0.18*Math.sin(sa));ctx.lineTo(bx+r*0.45*Math.cos(sa),by+r*0.45*Math.sin(sa));ctx.stroke();}
+  }
+  // Distribute buds and blossoms at twig ends
+  [[88,305,7],[78,318,8],[150,295,8],[140,308,7],[520,296,8],[510,308,7],[448,278,8],[440,292,7],[245,262,8],[238,275,7],[315,254,8],[308,268,7]].forEach(function(b){bud(b[0],b[1],b[2]);});
+  [[65,318,9],[160,302,10],[530,302,9],[460,285,10],[258,270,9],[325,260,10],[100,328,9],[475,298,10]].forEach(function(b){openBlossom(b[0],b[1],b[2]);});
+
+  // Robin at center
+  S(1.5,0.85);
+  var rx=297,ry=510;
+  ctx.beginPath();ctx.ellipse(rx,ry,16,12,0,0,Math.PI*2);ctx.stroke(); // body
+  ctx.beginPath();ctx.arc(rx+18,ry-8,8,0,Math.PI*2);ctx.stroke(); // head
+  // Beak
+  ctx.beginPath();ctx.moveTo(rx+25,ry-8);ctx.lineTo(rx+33,ry-7);ctx.stroke();
+  // Robin red breast (outlined area)
+  S(0.8,0.65);
+  ctx.beginPath();ctx.ellipse(rx+5,ry+2,8,10,0.3,0,Math.PI*2);ctx.stroke();
+  // Wing feather detail
+  ctx.beginPath();ctx.moveTo(rx-8,ry-2);ctx.quadraticCurveTo(rx,ry-15,rx+8,ry-8);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(rx-8,ry-2);ctx.lineTo(rx-12,ry+5);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(rx-8,ry-2);ctx.lineTo(rx-10,ry+9);ctx.stroke();
+  // Tail
+  S(1.0,0.75);
+  ctx.beginPath();ctx.moveTo(rx-14,ry+5);ctx.lineTo(rx-26,ry+12);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(rx-14,ry+5);ctx.lineTo(rx-24,ry+6);ctx.stroke();
+  // Eye
+  S(1.2,0.90);ctx.beginPath();ctx.arc(rx+19,ry-9,2,0,Math.PI*2);ctx.stroke();
+  // Legs on branch
+  S(0.8,0.65);[[rx+5,ry+12,rx+5,ry+24],[rx-3,ry+12,rx-3,ry+25]].forEach(function(l){ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(l[2],l[3]);ctx.stroke();});
+
+  // Ground shoots - new growth
+  S(1.2,0.72);
+  [[245,765,8],[262,760,10],[280,758,9],[315,762,8],[335,758,11],[350,765,9],
+   [220,770,6],[370,770,7]].forEach(function(sh){
+    ctx.beginPath();ctx.moveTo(sh[0],sh[1]+sh[2]);
+    ctx.bezierCurveTo(sh[0]-4,sh[1]+sh[2]*0.5,sh[0]-6,sh[1]+sh[2]*0.2,sh[0],sh[1]);
+    ctx.stroke();
+  });
+  // Crocus flowers at base
+  function crocus(cx,cy){
+    S(1.2,0.78);
+    [[-8,0],[0,-6],[8,0]].forEach(function(p){
+      ctx.beginPath();ctx.ellipse(cx+p[0],cy+p[1]-18,5,12,p[0]*0.07,0,Math.PI*2);ctx.stroke();
+    });
+    S(0.7,0.55);ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx,cy-8);ctx.stroke();
+  }
+  crocus(230,778);crocus(360,775);crocus(290,775);
+
+  // Credit
   ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Spring Is Awakening  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.textAlign='center';ctx.fillText('Spring is Awakening  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
+  // Decorative double border
+  ctx.save();
+  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
+  ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
+  ctx.strokeRect(22,22,W-44,H-44);
+  ctx.restore();
 })();
 </script>
 

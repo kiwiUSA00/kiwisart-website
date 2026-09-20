@@ -78,116 +78,133 @@
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
+  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
 
-  var VY=H*0.40,TL=0.22,FL=560,VX=W/2;
-  function p(wx,wy,wz){
-    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
-    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.85;
-    var sc=FL/Math.max(rz,10);
-    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
-  }
-  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
-
-  // Arena floor grid
-  s(0.4,0.06);
-  for(var gz=-200;gz<=200;gz+=50){line3(-300,0,gz,300,0,gz);}
-  for(var gx=-300;gx<=300;gx+=50){line3(gx,0,-200,gx,0,200);}
-
-  // Shard function — 3D prism spike
-  function shard3d(bx,bz,tx,tz,width,ty_top,alpha){
-    alpha=alpha||0.75;
-    var b1=p(bx-width,0,bz),b2=p(bx+width,0,bz+width*0.8);
-    var t1=p(tx-width*0.2,ty_top,tz),t2=p(tx+width*0.2,ty_top,tz+width*0.2);
-    // Front face
-    ctx.shadowBlur=5;ctx.shadowColor='rgba(0,0,0,0.15)';
-    s(1.8,alpha);
-    ctx.beginPath();ctx.moveTo(b1.x,b1.y);ctx.lineTo(t1.x,t1.y);ctx.lineTo(t2.x,t2.y);ctx.lineTo(b2.x,b2.y);ctx.lineTo(b1.x,b1.y);ctx.stroke();
-    ctx.shadowBlur=0;
-    // Side face
-    s(1.1,alpha*0.55);
-    var b3=p(bx+width*1.2,0,bz-width*0.5);
-    ctx.beginPath();ctx.moveTo(b2.x,b2.y);ctx.lineTo(t2.x,t2.y);ctx.lineTo(p(tx+width*0.2,ty_top,tz-width*0.2).x,p(tx+width*0.2,ty_top,tz-width*0.2).y);ctx.lineTo(b3.x,b3.y);ctx.lineTo(b2.x,b2.y);ctx.stroke();
-    // Top edge
-    s(0.8,alpha*0.4);
-    line3(tx-width*0.2,ty_top,tz,tx+width*0.2,ty_top,tz);
-  }
-
-  // LEFT force — dark jagged spikes from lower-left rising and leaning right
-  shard3d(-220,-80,-100,20,18,90,0.78);
-  shard3d(-190,-60,-80,25,22,115,0.82);
-  shard3d(-160,-40,-60,30,16,100,0.76);
-  shard3d(-140,-20,-50,35,20,130,0.85);
-  shard3d(-110,0,-30,40,14,110,0.70);
-  shard3d(-170,20,-70,10,12,85,0.65);
-  shard3d(-200,40,-90,5,10,75,0.60);
-
-  // RIGHT force — sweeping arc blades
-  function arcBlade(cx,cz,r,a1,a2,width,ty,alpha){
-    alpha=alpha||0.70;
-    var segs=20;
-    ctx.shadowBlur=5;ctx.shadowColor='rgba(0,0,0,0.13)';
-    s(width*0.35,alpha);
-    ctx.beginPath();
-    var started=false;
-    for(var i=0;i<=segs;i++){
-      var ang=a1+(a2-a1)*(i/segs);
-      var bx=cx+Math.cos(ang)*r,bz=cz+Math.sin(ang)*r;
-      var by=ty*Math.sin(Math.PI*i/segs);
-      var q=p(bx,by,bz);
-      if(!started){ctx.moveTo(q.x,q.y);started=true;}else ctx.lineTo(q.x,q.y);
-    }
-    ctx.stroke();
-    ctx.shadowBlur=0;
-    // parallel inner edge
-    s(width*0.2,alpha*0.45);
-    ctx.beginPath();started=false;
-    for(var i=0;i<=segs;i++){
-      var ang=a1+(a2-a1)*(i/segs);
-      var bx=cx+Math.cos(ang)*(r*0.82),bz=cz+Math.sin(ang)*(r*0.82);
-      var by=ty*0.8*Math.sin(Math.PI*i/segs);
-      var q=p(bx,by,bz);
-      if(!started){ctx.moveTo(q.x,q.y);started=true;}else ctx.lineTo(q.x,q.y);
-    }
-    ctx.stroke();
-  }
-  arcBlade(200,-20,110,Math.PI*0.5,Math.PI*1.4,8,95,0.78);
-  arcBlade(180,10,90,Math.PI*0.4,Math.PI*1.3,6,80,0.72);
-  arcBlade(220,-40,130,Math.PI*0.6,Math.PI*1.5,7,110,0.80);
-  arcBlade(160,40,80,Math.PI*0.3,Math.PI*1.2,5,70,0.65);
-
-  // CLASH ZONE — center explosion
-  s(1.2,0.55);
-  var cx=0,cz=0;
-  for(var i=0;i<16;i++){
-    var ang=(i/16)*Math.PI*2;
-    var r1=20+Math.sin(i*2.1)*12;
-    var r2=55+Math.cos(i*1.7)*25;
-    line3(cx+Math.cos(ang)*r1,r1*0.3,cz+Math.sin(ang)*r1,cx+Math.cos(ang)*r2,r2*0.5,cz+Math.sin(ang)*r2);
-  }
-  // Central burst rings
-  s(1.0,0.48);
-  for(var ri=1;ri<=3;ri++){
-    ctx.beginPath();
-    for(var i=0;i<=24;i++){
-      var ang=(i/24)*Math.PI*2;
-      var r=ri*18+Math.sin(i*4)*5;
-      var q=p(Math.cos(ang)*r,r*0.4,Math.sin(ang)*r);
-      i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);
-    }
-    ctx.closePath();ctx.stroke();
-  }
-  // Sparks
-  s(0.7,0.35);
-  [[30,45,20],[-20,30,35],[10,-25,40],[-35,15,-20],[40,20,-30],[-15,40,-35]].forEach(function(sp){
-    var q=p(sp[0],30,sp[2]);
-    ctx.beginPath();ctx.arc(q.x,q.y,q.s*3,0,Math.PI*2);ctx.stroke();
+  // Circular ripples around the confrontation
+  S(0.8,0.22);
+  [60,100,140,180,220,260].forEach(function(r){
+    ctx.beginPath();ctx.ellipse(297,410,r,r*0.45,0,0,Math.PI*2);ctx.stroke();
   });
 
-  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+  // Water turbulence - sharp spray lines radiating outward
+  S(0.9,0.60);
+  var center=[297,410];
+  var sprayAngles=[0,30,55,80,105,130,155,180,205,230,255,280,305,330];
+  sprayAngles.forEach(function(deg){
+    var a=deg*Math.PI/180;
+    var r1=85+Math.random()*20,r2=r1+40+Math.random()*50;
+    ctx.beginPath();ctx.moveTo(center[0]+r1*Math.cos(a),center[1]+r1*Math.sin(a)*0.5);
+    ctx.lineTo(center[0]+r2*Math.cos(a),center[1]+r2*Math.sin(a)*0.5);ctx.stroke();
+  });
+  // Droplets
+  S(0.7,0.55);
+  for(var di=0;di<20;di++){
+    var da=di*18*Math.PI/180,dr=110+di*8;
+    ctx.beginPath();ctx.arc(center[0]+dr*Math.cos(da),center[1]+dr*Math.sin(da)*0.5,2+Math.random()*2,0,Math.PI*2);ctx.stroke();
+  }
+
+  // KOI fish function for the fight scene
+  function fightKoi(cx,cy,len,dir,flip,openMouth){
+    var cos=Math.cos(dir),sin=Math.sin(dir);
+    var f=flip?-1:1;
+    function pt(along,perp){return {x:cx+along*cos-f*perp*sin, y:cy+along*sin+f*perp*cos};}
+    var hw=len*0.20;
+
+    // Body
+    S(2.8,0.92);
+    ctx.beginPath();
+    var nose=pt(len*0.5,0);
+    var tail=pt(-len*0.5,0);
+    ctx.moveTo(nose.x,nose.y);
+    ctx.bezierCurveTo(pt(len*0.2,hw).x,pt(len*0.2,hw).y,pt(-len*0.2,hw*0.75).x,pt(-len*0.2,hw*0.75).y,tail.x,tail.y);
+    ctx.bezierCurveTo(pt(-len*0.2,-hw*0.75).x,pt(-len*0.2,-hw*0.75).y,pt(len*0.2,-hw).x,pt(len*0.2,-hw).y,nose.x,nose.y);
+    ctx.stroke();
+
+    // Open mouth
+    if(openMouth){
+      S(1.8,0.88);
+      ctx.beginPath();
+      ctx.moveTo(pt(len*0.5,hw*0.25).x,pt(len*0.5,hw*0.25).y);
+      ctx.lineTo(pt(len*0.62,hw*0.5).x,pt(len*0.62,hw*0.5).y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(pt(len*0.5,-hw*0.25).x,pt(len*0.5,-hw*0.25).y);
+      ctx.lineTo(pt(len*0.62,-hw*0.4).x,pt(len*0.62,-hw*0.4).y);
+      ctx.stroke();
+    }
+
+    // Dramatic fan tail
+    S(2.0,0.85);
+    var tb=pt(-len*0.5,0);
+    [[-len*0.28,-len*0.12],[-len*0.25,len*0.12],[-len*0.26,-len*0.22],[-len*0.26,len*0.22]].forEach(function(tip){
+      var tip2=pt(tip[0],tip[1]);
+      ctx.beginPath();ctx.moveTo(tb.x,tb.y);
+      ctx.quadraticCurveTo(pt(-len*0.62,tip[1]*0.6).x,pt(-len*0.62,tip[1]*0.6).y,tip2.x,tip2.y);ctx.stroke();
+    });
+    // Connecting arc at tail tips
+    ctx.beginPath();
+    ctx.moveTo(pt(-len*0.76,-len*0.22).x,pt(-len*0.76,-len*0.22).y);
+    ctx.quadraticCurveTo(pt(-len*0.82,0).x,pt(-len*0.82,0).y,pt(-len*0.76,len*0.22).x,pt(-len*0.76,len*0.22).y);
+    ctx.stroke();
+
+    // Dramatic raised dorsal fin
+    S(1.8,0.80);
+    var df1=pt(len*0.18,-hw*0.95),df2=pt(-len*0.2,-hw*0.95),dfTip=pt(-len*0.01,-hw*1.80);
+    ctx.beginPath();ctx.moveTo(df1.x,df1.y);ctx.quadraticCurveTo(dfTip.x,dfTip.y,df2.x,df2.y);ctx.stroke();
+    // Dorsal fin rays
+    S(0.7,0.55);
+    for(var fr=0;fr<5;fr++){
+      var ft=(fr+1)/6;
+      var fpt=pt(len*0.18-len*0.38*ft,-hw*0.95);
+      var ftip2=pt(dfTip.x-cx+cx,dfTip.y-cy+cy); // approx tip
+      ctx.beginPath();ctx.moveTo(fpt.x,fpt.y);ctx.lineTo(dfTip.x-ft*8,dfTip.y+ft*12);ctx.stroke();
+    }
+
+    // Pectoral fin flared out
+    S(1.5,0.75);
+    var pf1=pt(len*0.1,hw*0.8),pfTip1=pt(len*0.32,hw*1.85),pfTip2=pt(len*0.05,hw*2.0);
+    ctx.beginPath();ctx.moveTo(pf1.x,pf1.y);ctx.quadraticCurveTo(pt(len*0.28,hw*1.5).x,pt(len*0.28,hw*1.5).y,pfTip1.x,pfTip1.y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(pf1.x,pf1.y);ctx.quadraticCurveTo(pt(len*0.12,hw*1.6).x,pt(len*0.12,hw*1.6).y,pfTip2.x,pfTip2.y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(pfTip1.x,pfTip1.y);ctx.quadraticCurveTo(pt(len*0.18,hw*1.95).x,pt(len*0.18,hw*1.95).y,pfTip2.x,pfTip2.y);ctx.stroke();
+
+    // Scales
+    S(0.9,0.45);
+    for(var sc=0;sc<9;sc++){
+      var st=0.32-sc*0.09;
+      var scW=hw*(0.18+Math.min(sc,4)*0.05-Math.max(0,sc-4)*0.05);
+      var scPt=pt(len*st,0);
+      ctx.beginPath();ctx.arc(scPt.x,scPt.y,scW,Math.PI*0.1+dir,Math.PI*0.9+dir);ctx.stroke();
+    }
+
+    // Eye with pupil
+    S(1.8,0.92);
+    var eye=pt(len*0.40,-hw*0.25);
+    ctx.beginPath();ctx.arc(eye.x,eye.y,6,0,Math.PI*2);ctx.stroke();
+    ctx.beginPath();ctx.arc(eye.x,eye.y,2.5,0,Math.PI*2);ctx.stroke();
+
+    // Barbels/whiskers
+    S(1.0,0.70);
+    var mouth2=pt(len*0.49,0);
+    [[len*0.66,-hw*0.5],[len*0.65,hw*0.4]].forEach(function(wt){
+      var tip=pt(wt[0],wt[1]);
+      ctx.beginPath();ctx.moveTo(mouth2.x,mouth2.y);ctx.quadraticCurveTo(pt(len*0.58,wt[1]*0.5).x,pt(len*0.58,wt[1]*0.5).y,tip.x,tip.y);ctx.stroke();
+    });
+  }
+
+  // Two fish forming S-curve face-to-face
+  fightKoi(175,300,175,0.15,false,true);
+  fightKoi(420,510,175,Math.PI+0.15,true,true);
+
+  // Credit
   ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Fight  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.textAlign='center';ctx.fillText('Fight  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
+  // Decorative double border
+  ctx.save();
+  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
+  ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
+  ctx.strokeRect(22,22,W-44,H-44);
+  ctx.restore();
 })();
 </script>
 

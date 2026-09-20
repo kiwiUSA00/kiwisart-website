@@ -139,146 +139,188 @@
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
 
-  var VY=H*0.34,TL=0.42,FL=560,VX=W/2;
-  function p(wx,wy,wz){
-    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
-    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.9;
-    var sc=FL/Math.max(rz,10);
-    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
-  }
-  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
-  function poly3(pts,close){
-    if(!pts.length)return;var f=p(pts[0][0],pts[0][1],pts[0][2]);
-    ctx.beginPath();ctx.moveTo(f.x,f.y);
-    for(var i=1;i<pts.length;i++){var q=p(pts[i][0],pts[i][1],pts[i][2]);ctx.lineTo(q.x,q.y);}
-    if(close){ctx.lineTo(f.x,f.y);}ctx.stroke();
-  }
-  function circle3(cx,gy,cz,r,n){
-    n=n||28;ctx.beginPath();
-    for(var i=0;i<=n;i++){var a=(i/n)*Math.PI*2,q=p(cx+Math.cos(a)*r,gy,cz+Math.sin(a)*r);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}
-    ctx.closePath();ctx.stroke();
-  }
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
+  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
 
-  var PW=270,PD=340,WALL=22;
-
-  // Water surface grid
-  s(0.4,0.05);
-  for(var gx=-PW/2;gx<=PW/2;gx+=45){line3(gx,0,-PD/2,gx,0,PD/2);}
-  for(var gz=-PD/2;gz<=PD/2;gz+=50){line3(-PW/2,0,gz,PW/2,0,gz);}
-
-  // Ripple rings on water
-  [[0,0,-80,22],[70,0,40,18],[-80,0,60,15],[-30,0,-160,12],[90,0,-120,16]].forEach(function(rs){
-    for(var ri=1;ri<=6;ri++){s(0.7,0.04+ri*0.018);circle3(rs[0],0,rs[2],rs[3]+ri*22,32);}
+  // Stone pond edge - top and sides
+  S(2,0.80);
+  ctx.beginPath();ctx.moveTo(0,60);ctx.quadraticCurveTo(100,40,200,50);ctx.quadraticCurveTo(297,55,595,45);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(0,65);ctx.quadraticCurveTo(100,48,200,57);ctx.quadraticCurveTo(297,62,595,52);ctx.stroke();
+  // Stone blocks along top edge
+  S(1.2,0.60);
+  [0,80,160,240,320,400,480,560].forEach(function(x){
+    ctx.beginPath();ctx.moveTo(x,45);ctx.lineTo(x,68);ctx.stroke();
   });
+  // Left edge stones
+  [65,130,200,270,340,410,480,560,640,720].forEach(function(y){
+    if(y<800){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(28,y);ctx.stroke();}
+  });
+  // Right edge stones
+  [65,130,200,270,340,410,480,560,640,720].forEach(function(y){
+    if(y<800){ctx.beginPath();ctx.moveTo(567,y);ctx.lineTo(595,y);ctx.stroke();}
+  });
+  S(2,0.80);
+  ctx.beginPath();ctx.moveTo(0,65);ctx.lineTo(0,800);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(595,52);ctx.lineTo(595,800);ctx.stroke();
 
-  // Pond walls
-  s(1.8,0.58);
-  poly3([[-PW/2,0,PD/2],[-PW/2,-WALL,PD/2],[PW/2,-WALL,PD/2],[PW/2,0,PD/2]],true);
-  poly3([[-PW/2,0,-PD/2],[-PW/2,-WALL,-PD/2],[-PW/2,-WALL,PD/2],[-PW/2,0,PD/2]],true);
-  poly3([[PW/2,0,-PD/2],[PW/2,-WALL,-PD/2],[PW/2,-WALL,PD/2],[PW/2,0,PD/2]],true);
-  s(1.4,0.30);line3(-PW/2,-WALL,-PD/2,PW/2,-WALL,-PD/2);
-
-  // Rim top edge
-  s(2.0,0.72);ctx.shadowBlur=5;ctx.shadowColor='rgba(0,0,0,0.13)';
-  poly3([[-PW/2,-WALL,-PD/2],[PW/2,-WALL,-PD/2],[PW/2,-WALL,PD/2],[-PW/2,-WALL,PD/2]],true);
-  ctx.shadowBlur=0;
+  // Water grid lines suggesting depth
+  S(0.6,0.18);
+  for(var gy=100;gy<780;gy+=55){
+    ctx.beginPath();ctx.moveTo(30,gy);ctx.lineTo(565,gy);ctx.stroke();
+  }
+  for(var gx=50;gx<570;gx+=70){
+    ctx.beginPath();ctx.moveTo(gx,70);ctx.lineTo(gx+20,780);ctx.stroke();
+  }
 
   // Lily pads
-  [[-90,0,-130,20],[80,0,120,16],[-50,0,150,14]].forEach(function(lp){
-    s(1.0,0.28);circle3(lp[0],lp[1],lp[2],lp[3],24);
-    var edge=p(lp[0]+lp[3],lp[1],lp[2]),ctr=p(lp[0],lp[1],lp[2]);
-    s(0.8,0.22);ctx.beginPath();ctx.moveTo(ctr.x,ctr.y);ctx.lineTo(edge.x,edge.y);ctx.stroke();
+  function lilyPad(cx,cy,r){
+    S(1.8,0.80);
+    ctx.beginPath();
+    // Circle with V notch
+    var notchAngle=-Math.PI/2;
+    var notchW=0.35;
+    ctx.arc(cx,cy,r,notchAngle+notchW,notchAngle+Math.PI*2-notchW);
+    ctx.lineTo(cx,cy);
+    ctx.closePath();ctx.stroke();
+    // Veins
+    S(0.7,0.45);
+    for(var vi=0;vi<7;vi++){
+      var va=notchAngle+notchW+vi*(Math.PI*2-notchW*2)/7;
+      ctx.beginPath();ctx.moveTo(cx,cy);
+      ctx.lineTo(cx+r*Math.cos(va),cy+r*Math.sin(va));ctx.stroke();
+    }
+  }
+  lilyPad(130,160,45);
+  lilyPad(430,580,50);
+  lilyPad(300,720,38);
+
+  // Flower on first lily pad
+  S(1.2,0.75);
+  [0,72,144,216,288].forEach(function(deg){
+    var a=deg*Math.PI/180;
+    ctx.beginPath();
+    ctx.ellipse(130+18*Math.cos(a),90+18*Math.sin(a),10,6,a,0,Math.PI*2);
+    ctx.stroke();
+  });
+  ctx.beginPath();ctx.arc(130,90,5,0,Math.PI*2);ctx.stroke();
+
+  // Flower bud on second lily pad
+  S(1.2,0.75);
+  ctx.beginPath();ctx.ellipse(430,525,8,14,0,0,Math.PI*2);ctx.stroke();
+  S(0.8,0.55);
+  ctx.beginPath();ctx.moveTo(430,511);ctx.lineTo(430,520);ctx.stroke();
+
+  // Ripple ellipses
+  S(0.8,0.30);
+  [[200,350],[380,420]].forEach(function(c){
+    for(var ri=1;ri<=4;ri++){
+      ctx.beginPath();ctx.ellipse(c[0],c[1],ri*22,ri*10,0,0,Math.PI*2);ctx.stroke();
+    }
   });
 
-  // Koi fish function
-  function koi3d(fx,fz,flen,dir){
-    var hw=flen*0.20;
-    function fishPt(t,side){
-      var lx=(t-0.5)*flen;
-      var ww;
-      if(t<0.12)ww=hw*t/0.12*0.6;
-      else if(t<0.55)ww=hw*(0.6+0.4*(t-0.12)/0.43);
-      else ww=hw*(1-(t-0.55)/0.45)*0.95;
-      var wx=fx+lx*Math.cos(dir)-ww*side*Math.sin(dir);
-      var wz=fz+lx*Math.sin(dir)+ww*side*Math.cos(dir);
-      return p(wx,0,wz);
+  // KOI FISH function
+  function drawKoi(cx,cy,len,dir,flip){
+    var cos=Math.cos(dir),sin=Math.sin(dir);
+    function pt(along,perp){
+      return {x:cx+along*cos-(flip?-1:1)*perp*sin, y:cy+along*sin+(flip?-1:1)*perp*cos};
     }
-    // Shadow fill
-    s(0.6,0.06);
+    // Body outline - tapered oval
+    S(2.5,0.88);
     ctx.beginPath();
-    for(var i=0;i<=20;i++){var q=fishPt(i/20,1);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}
-    for(var i=20;i>=0;i--){var q=fishPt(i/20,-1);ctx.lineTo(q.x,q.y);}
-    ctx.closePath();
-    var pA=fishPt(0.1,0),pB=fishPt(0.9,0);
-    var grad=ctx.createLinearGradient(pA.x,pA.y,pB.x,pB.y);
-    grad.addColorStop(0,'rgba(0,0,0,0.00)');grad.addColorStop(1,'rgba(0,0,0,0.06)');
-    ctx.fillStyle=grad;ctx.fill();
+    var hw=len*0.18;
+    // Draw body as bezier path
+    var nose=pt(len*0.5,0);
+    var belly1=pt(len*0.1,hw);
+    var belly2=pt(-len*0.2,hw*0.8);
+    var tail=pt(-len*0.5,0);
+    var back1=pt(-len*0.2,-hw*0.8);
+    var back2=pt(len*0.1,-hw);
+    ctx.moveTo(nose.x,nose.y);
+    ctx.bezierCurveTo(belly2.x,belly2.y,belly1.x,belly1.y,nose.x,nose.y);
+    ctx.moveTo(nose.x,nose.y);
+    ctx.bezierCurveTo(back1.x,back1.y,pt(len*0.0,-hw).x,pt(len*0.0,-hw).y,nose.x,nose.y);
+    // Full body
+    ctx.beginPath();
+    ctx.moveTo(nose.x,nose.y);
+    ctx.bezierCurveTo(belly2.x+(belly2.x-nose.x)*0.1,belly2.y,belly1.x,belly1.y,tail.x,tail.y);
+    ctx.bezierCurveTo(back2.x,back2.y,back1.x,back1.y,nose.x,nose.y);
+    ctx.stroke();
 
-    ctx.shadowBlur=6;ctx.shadowColor='rgba(0,0,0,0.14)';
-    s(2.1,0.80);
-    ctx.beginPath();for(var i=0;i<=24;i++){var q=fishPt(i/24,-1);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.stroke();
-    s(2.5,0.88);
-    ctx.beginPath();for(var i=0;i<=24;i++){var q=fishPt(i/24,1);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.stroke();
-    ctx.shadowBlur=0;
-
-    // Tail
-    s(1.5,0.68);
-    var tBase=fishPt(0.01,0);
-    var tUp=p(fx-(flen*0.6)*Math.cos(dir)-(hw*0.9)*Math.sin(dir),-flen*0.04,fz-(flen*0.6)*Math.sin(dir)+(hw*0.9)*Math.cos(dir));
-    var tDn=p(fx-(flen*0.6)*Math.cos(dir)+(hw*0.9)*Math.sin(dir),flen*0.03,fz-(flen*0.6)*Math.sin(dir)-(hw*0.9)*Math.cos(dir));
-    ctx.beginPath();ctx.moveTo(tBase.x,tBase.y);ctx.lineTo(tUp.x,tUp.y);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(tBase.x,tBase.y);ctx.lineTo(tDn.x,tDn.y);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(tUp.x,tUp.y);ctx.lineTo(tDn.x,tDn.y);ctx.stroke();
+    // Fan tail
+    S(1.5,0.80);
+    var tailBase=pt(-len*0.5,0);
+    var tailUpA=pt(-len*0.72,-len*0.20);
+    var tailUpB=pt(-len*0.68,len*0.20);
+    ctx.beginPath();ctx.moveTo(tailBase.x,tailBase.y);ctx.quadraticCurveTo(pt(-len*0.65,-len*0.10).x,pt(-len*0.65,-len*0.10).y,tailUpA.x,tailUpA.y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(tailBase.x,tailBase.y);ctx.quadraticCurveTo(pt(-len*0.65,len*0.10).x,pt(-len*0.65,len*0.10).y,tailUpB.x,tailUpB.y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(tailUpA.x,tailUpA.y);ctx.quadraticCurveTo(pt(-len*0.75,0).x,pt(-len*0.75,0).y,tailUpB.x,tailUpB.y);ctx.stroke();
+    // Tail stripes
+    S(0.7,0.45);
+    for(var ts=1;ts<=4;ts++){
+      var ta=pt(-len*0.5-ts*0.03,0);
+      ctx.beginPath();ctx.moveTo(ta.x,ta.y);ctx.lineTo(pt(-len*(0.55+ts*0.04),-len*(0.05+ts*0.03)).x,pt(-len*(0.55+ts*0.04),-len*(0.05+ts*0.03)).y);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(ta.x,ta.y);ctx.lineTo(pt(-len*(0.55+ts*0.04),len*(0.05+ts*0.03)).x,pt(-len*(0.55+ts*0.04),len*(0.05+ts*0.03)).y);ctx.stroke();
+    }
 
     // Dorsal fin
-    s(1.2,0.60);
-    var dBase1=p(fx+(flen*0.12)*Math.cos(dir),0,fz+(flen*0.12)*Math.sin(dir));
-    var dBase2=p(fx-(flen*0.22)*Math.cos(dir),0,fz-(flen*0.22)*Math.sin(dir));
-    var dTip=p(fx-(flen*0.08)*Math.cos(dir),-flen*0.22,fz-(flen*0.08)*Math.sin(dir));
-    ctx.beginPath();ctx.moveTo(dBase1.x,dBase1.y);ctx.quadraticCurveTo(dTip.x,dTip.y,dBase2.x,dBase2.y);ctx.stroke();
+    S(1.5,0.75);
+    var df1=pt(len*0.15,-hw*0.9);
+    var df2=pt(-len*0.18,-hw*0.9);
+    var dfTip=pt(-len*0.02,-hw*1.55);
+    ctx.beginPath();ctx.moveTo(df1.x,df1.y);ctx.quadraticCurveTo(dfTip.x,dfTip.y,df2.x,df2.y);ctx.stroke();
 
-    // Scale rows
-    s(0.6,0.26);
-    for(var sr=0;sr<7;sr++){
-      var st=0.12+sr*0.11;
-      var slx=(st-0.5)*flen;
-      var scx=fx+slx*Math.cos(dir),scz=fz+slx*Math.sin(dir);
-      var sw=hw*(sr<4?0.3+sr*0.07:0.58-(sr-4)*0.12);
-      circle3(scx,0,scz,sw,12);
+    // Pectoral fin
+    S(1.2,0.70);
+    var pf=pt(len*0.12,hw*0.7);
+    var pfTip=pt(len*0.22,hw*1.5);
+    ctx.beginPath();ctx.moveTo(pf.x,pf.y);ctx.quadraticCurveTo(pt(len*0.28,hw*1.2).x,pt(len*0.28,hw*1.2).y,pfTip.x,pfTip.y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(pf.x,pf.y);ctx.lineTo(pfTip.x,pfTip.y);ctx.stroke();
+
+    // Scale arcs
+    S(0.8,0.40);
+    for(var sc=0;sc<9;sc++){
+      var st=0.35-sc*0.09;
+      var scW=hw*(0.15+Math.min(sc,4)*0.06-Math.max(0,sc-4)*0.05);
+      var scPt=pt(len*st,0);
+      ctx.beginPath();ctx.arc(scPt.x,scPt.y,scW,Math.PI*0.1,Math.PI*0.9);ctx.stroke();
     }
 
     // Eye
-    s(1.1,0.80);
-    var ex=fx+(flen*0.44)*Math.cos(dir)-(hw*0.15)*Math.sin(dir);
-    var ez=fz+(flen*0.44)*Math.sin(dir)+(hw*0.15)*Math.cos(dir);
-    var ep=p(ex,-hw*0.12,ez);var er=Math.max(p(ex+2,-hw*0.12,ez).x-ep.x,3);
-    ctx.beginPath();ctx.arc(ep.x,ep.y,er,0,Math.PI*2);ctx.stroke();
+    S(1.5,0.90);
+    var eye=pt(len*0.38,-hw*0.2);
+    ctx.beginPath();ctx.arc(eye.x,eye.y,5,0,Math.PI*2);ctx.stroke();
+    S(0.8,0.60);
+    ctx.beginPath();ctx.arc(eye.x,eye.y,2,0,Math.PI*2);ctx.stroke();
 
-    // Whiskers
-    s(0.8,0.45);
-    var headPt=p(fx+(flen*0.5)*Math.cos(dir),0,fz+(flen*0.5)*Math.sin(dir));
-    var w1=p(fx+(flen*0.68)*Math.cos(dir)-(hw*0.5)*Math.sin(dir),-flen*0.04,fz+(flen*0.68)*Math.sin(dir)+(hw*0.5)*Math.cos(dir));
-    var w2=p(fx+(flen*0.68)*Math.cos(dir)+(hw*0.4)*Math.sin(dir),-flen*0.02,fz+(flen*0.68)*Math.sin(dir)-(hw*0.4)*Math.cos(dir));
-    var wt1=p(fx+(flen*0.82)*Math.cos(dir)-(hw*0.35)*Math.sin(dir),0,fz+(flen*0.82)*Math.sin(dir)+(hw*0.35)*Math.cos(dir));
-    var wt2=p(fx+(flen*0.82)*Math.cos(dir)+(hw*0.28)*Math.sin(dir),0,fz+(flen*0.82)*Math.sin(dir)-(hw*0.28)*Math.cos(dir));
-    ctx.beginPath();ctx.moveTo(headPt.x,headPt.y);ctx.quadraticCurveTo(w1.x,w1.y,wt1.x,wt1.y);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(headPt.x,headPt.y);ctx.quadraticCurveTo(w2.x,w2.y,wt2.x,wt2.y);ctx.stroke();
+    // Whiskers (barbels)
+    S(0.9,0.65);
+    var mouth=pt(len*0.49,hw*0.05);
+    var w1tip=pt(len*0.62,-hw*0.35);
+    var w2tip=pt(len*0.60,hw*0.30);
+    ctx.beginPath();ctx.moveTo(mouth.x,mouth.y);ctx.quadraticCurveTo(pt(len*0.57,-hw*0.15).x,pt(len*0.57,-hw*0.15).y,w1tip.x,w1tip.y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(mouth.x,mouth.y);ctx.quadraticCurveTo(pt(len*0.55,hw*0.15).x,pt(len*0.55,hw*0.15).y,w2tip.x,w2tip.y);ctx.stroke();
   }
 
-  koi3d(55,120,95,0.6);
-  koi3d(-65,10,148,Math.PI-0.25);
-  koi3d(0,-110,210,0.18);
+  // Draw two koi swimming in opposite directions
+  drawKoi(200,320,180,0.3,false);
+  drawKoi(380,520,170,Math.PI+0.4,true);
 
-  // Bubble clusters
-  s(0.7,0.22);
-  [[-80,-60,5],[-75,-52,3.5],[80,30,4],[85,22,3]].forEach(function(b){circle3(b[0],0,b[1],b[2],12);});
+  // Bubbles
+  S(0.8,0.35);
+  [[160,260,5],[175,245,3],[390,460,4],[405,448,3],[250,440,4],[260,428,2.5]].forEach(function(b){
+    ctx.beginPath();ctx.arc(b[0],b[1],b[2],0,Math.PI*2);ctx.stroke();
+  });
 
-  // Border + credit
-  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+  // Credit
+  S(1,0.18);
   ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Koi  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.textAlign='center';ctx.fillText('Koi  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
+  // Decorative double border
+  ctx.save();
+  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
+  ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
+  ctx.strokeRect(22,22,W-44,H-44);
+  ctx.restore();
 })();
 </script>
 

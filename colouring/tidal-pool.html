@@ -78,117 +78,154 @@
   var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
+  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
 
-  var VY=H*0.38,TL=0.48,FL=560,VX=W/2;
-  function p(wx,wy,wz){
-    var ry=wy*Math.cos(TL)-wz*Math.sin(TL);
-    var rz=wy*Math.sin(TL)+wz*Math.cos(TL)+FL*0.85;
-    var sc=FL/Math.max(rz,10);
-    return{x:VX+wx*sc,y:VY+ry*sc,s:sc};
+  // Rocky edge surrounding pool - bumpy jagged perimeter
+  S(2.5,0.88);
+  var poolX=297,poolY=410,poolRx=230,poolRy=160;
+  // Draw jagged rock edge - 24 points
+  var edgePts=[];
+  for(var ei=0;ei<24;ei++){
+    var ea=ei*Math.PI/12;
+    var jag=1+0.18*Math.sin(ei*7)*Math.cos(ei*3);
+    var ex=poolX+(poolRx+30*jag)*Math.cos(ea);
+    var ey=poolY+(poolRy+20*jag)*Math.sin(ea);
+    edgePts.push([ex,ey]);
   }
-  function line3(x1,y1,z1,x2,y2,z2){var a=p(x1,y1,z1),b=p(x2,y2,z2);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
-  function poly3(pts,close){
-    if(!pts.length)return;var f=p(pts[0][0],pts[0][1],pts[0][2]);
-    ctx.beginPath();ctx.moveTo(f.x,f.y);
-    for(var i=1;i<pts.length;i++){var q=p(pts[i][0],pts[i][1],pts[i][2]);ctx.lineTo(q.x,q.y);}
-    if(close)ctx.lineTo(f.x,f.y);ctx.stroke();
-  }
-  function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.5;}
-
-  // Pool outline shape — irregular oval in XZ plane
-  var poolPts=[];
-  var POOL_RX=155,POOL_RZ=110;
-  for(var i=0;i<=28;i++){
-    var a=(i/28)*Math.PI*2;
-    var wobble=1+Math.sin(a*3)*0.12+Math.sin(a*5)*0.06;
-    poolPts.push([Math.cos(a)*POOL_RX*wobble,0,Math.sin(a)*POOL_RZ*wobble]);
-  }
-  // Outer rim (ground level)
-  ctx.shadowBlur=5;ctx.shadowColor='rgba(0,0,0,0.12)';
-  s(2.0,0.75);
-  poly3(poolPts,true);
-  ctx.shadowBlur=0;
-
-  // Pool inner bottom (y=-10 = pool depth)
-  var poolInner=poolPts.map(function(pt){return[pt[0]*0.78,-10,pt[2]*0.78];});
-  s(1.3,0.50);
-  poly3(poolInner,true);
-
-  // Connect rim to inner at 8 points (visible pool wall)
-  s(0.9,0.35);
-  for(var i=0;i<28;i+=4){
-    line3(poolPts[i][0],0,poolPts[i][2],poolInner[i][0],-10,poolInner[i][2]);
-  }
-
-  // Water surface grid inside pool (at y=-7)
-  s(0.4,0.06);
-  for(var gx=-130;gx<=130;gx+=40){
-    line3(gx,-7,-90,gx,-7,90);
-  }
-  for(var gz=-90;gz<=90;gz+=35){
-    line3(-130,-7,gz,130,-7,gz);
-  }
-
-  // Ripple rings inside pool
-  [[0,-7,0,25],[40,-7,-20,18],[-35,-7,30,15]].forEach(function(ri){
-    for(var r=1;r<=4;r++){
-      s(0.6,0.05+r*0.025);
-      ctx.beginPath();
-      for(var i=0;i<=24;i++){var a=(i/24)*Math.PI*2,q=p(ri[0]+Math.cos(a)*(ri[3]+r*14),ri[1],ri[2]+Math.sin(a)*(ri[3]+r*10));i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}
-      ctx.closePath();ctx.stroke();
+  ctx.beginPath();ctx.moveTo(edgePts[0][0],edgePts[0][1]);
+  edgePts.forEach(function(pt){ctx.lineTo(pt[0],pt[1]);});
+  ctx.closePath();ctx.stroke();
+  // Rock texture bumps on edge
+  S(0.8,0.45);
+  edgePts.forEach(function(pt,i){
+    if(i%3===0){
+      ctx.beginPath();ctx.arc(pt[0],pt[1],5+Math.abs(Math.sin(i))*8,0,Math.PI*2);ctx.stroke();
     }
   });
 
-  // Starfish — 5 arms on pool bottom
-  s(1.0,0.60);
-  var sfx=40,sfz=-20;
-  for(var arm=0;arm<5;arm++){
-    var ang=(arm/5)*Math.PI*2-Math.PI/2;
-    var pts2=[[sfx,-8,sfz]];
-    for(var i=1;i<=8;i++){
-      var t=i/8;
-      var r=t*38;
-      var aw=Math.sin(t*Math.PI)*12;
-      pts2.push([sfx+Math.cos(ang)*r-Math.sin(ang)*aw*0.15,-8,sfz+Math.sin(ang)*r+Math.cos(ang)*aw*0.15]);
+  // Pool inner oval
+  S(1.5,0.55);
+  ctx.beginPath();ctx.ellipse(poolX,poolY,poolRx,poolRy,0,0,Math.PI*2);ctx.stroke();
+
+  // Water surface ripple lines
+  S(0.6,0.22);
+  [0.85,0.70,0.55,0.40].forEach(function(r){
+    ctx.beginPath();ctx.ellipse(poolX,poolY,poolRx*r,poolRy*r,0,0,Math.PI*2);ctx.stroke();
+  });
+
+  // Pebbles on pool floor
+  S(0.8,0.42);
+  [[200,500,10,7],[250,540,8,6],[350,520,12,8],[400,490,9,6],
+   [180,430,7,5],[320,555,11,7],[430,430,8,5],[280,400,10,7],[380,560,8,6]].forEach(function(p){
+    ctx.beginPath();ctx.ellipse(p[0],p[1],p[2],p[3],Math.sin(p[0])*0.5,0,Math.PI*2);ctx.stroke();
+  });
+
+  // Sea anemones
+  function anemone(ax,ay,r,tentacles){
+    S(1.5,0.80);
+    ctx.beginPath();ctx.ellipse(ax,ay,r,r*0.4,0,0,Math.PI*2);ctx.stroke(); // base
+    S(0.9,0.72);
+    for(var ti=0;ti<tentacles;ti++){
+      var ta=ti*(Math.PI*2/tentacles)-Math.PI/2;
+      var tx=ax+r*Math.cos(ta);
+      var ty=ay-r*0.4;
+      var tentLen=r*0.7+Math.sin(ti*3)*r*0.15;
+      ctx.beginPath();ctx.moveTo(tx,ty);
+      ctx.quadraticCurveTo(tx+Math.cos(ta)*tentLen*0.3,ty-tentLen*0.5,
+                           tx+Math.cos(ta+0.4)*tentLen*0.5,ty-tentLen);ctx.stroke();
+      // Bulbous tip
+      ctx.beginPath();ctx.arc(tx+Math.cos(ta+0.4)*tentLen*0.5,ty-tentLen,r*0.06,0,Math.PI*2);ctx.stroke();
     }
-    poly3(pts2,false);
   }
-  // Starfish center
-  s(1.1,0.65);
-  ctx.beginPath();for(var i=0;i<=16;i++){var a=(i/16)*Math.PI*2,q=p(sfx+Math.cos(a)*8,-8,sfz+Math.sin(a)*6);i===0?ctx.moveTo(q.x,q.y):ctx.lineTo(q.x,q.y);}ctx.closePath();ctx.stroke();
+  anemone(210,460,32,18);
+  anemone(380,470,28,16);
 
-  // Anemone — tentacles rising from bottom
-  s(0.9,0.55);
-  var aex=-55,aez=20;
-  for(var t=0;t<12;t++){
-    var tang=(t/12)*Math.PI*2;
-    var base=[aex+Math.cos(tang)*10,-9,aez+Math.sin(tang)*7];
-    var tip=[aex+Math.cos(tang)*28,2,aez+Math.sin(tang)*18];
-    line3(base[0],base[1],base[2],tip[0],tip[1],tip[2]);
-    // tip curl
-    var curl=[aex+Math.cos(tang+0.4)*32,4,aez+Math.sin(tang+0.4)*20];
-    var q1=p(tip[0],tip[1],tip[2]),q2=p(curl[0],curl[1],curl[2]);
-    ctx.beginPath();ctx.moveTo(q1.x,q1.y);ctx.quadraticCurveTo((q1.x+q2.x)/2,q1.y-6,q2.x,q2.y);ctx.stroke();
+  // Starfish
+  S(1.8,0.82);
+  function starfish(sx,sy,r){
+    ctx.beginPath();
+    for(var ai=0;ai<10;ai++){
+      var a=ai*Math.PI/5-Math.PI/2;
+      var sr2=ai%2===0?r:r*0.4;
+      if(ai===0)ctx.moveTo(sx+sr2*Math.cos(a),sy+sr2*Math.sin(a));
+      else ctx.lineTo(sx+sr2*Math.cos(a),sy+sr2*Math.sin(a));
+    }
+    ctx.closePath();ctx.stroke();
+    // Texture dots on starfish
+    S(0.5,0.45);
+    for(var si2=0;si2<5;si2++){
+      var sa=si2*72*Math.PI/180-Math.PI/2;
+      for(var sj=0;sj<3;sj++){
+        var sdist=r*(0.2+sj*0.22);
+        ctx.beginPath();ctx.arc(sx+sdist*Math.cos(sa),sy+sdist*Math.sin(sa),1.5,0,Math.PI*2);ctx.stroke();
+      }
+    }
   }
+  starfish(330,490,45);
 
-  // Rocks — irregular 3D polygon prisms
-  function rock3d(rx,rz,pts_xz,h){
-    // Top face
-    s(1.4,0.65);
-    var topPts=pts_xz.map(function(pt){return[rx+pt[0],h,rz+pt[1]];});
-    poly3(topPts,true);
-    // Vertical edges
-    s(0.8,0.35);
-    pts_xz.forEach(function(pt){line3(rx+pt[0],0,rz+pt[1],rx+pt[0],h,rz+pt[1]);});
+  // Small fish in pool
+  function poolFish(fx,fy,fl,dir){
+    S(1.2,0.75);
+    var c=Math.cos(dir),s=Math.sin(dir);
+    function pt(a,p){return {x:fx+a*c-p*s,y:fy+a*s+p*c};}
+    var hw=fl*0.18;
+    var nose=pt(fl*0.5,0),tail=pt(-fl*0.5,0);
+    ctx.beginPath();ctx.moveTo(nose.x,nose.y);
+    ctx.bezierCurveTo(pt(fl*0.2,hw).x,pt(fl*0.2,hw).y,pt(-fl*0.2,hw*0.7).x,pt(-fl*0.2,hw*0.7).y,tail.x,tail.y);
+    ctx.bezierCurveTo(pt(-fl*0.2,-hw*0.7).x,pt(-fl*0.2,-hw*0.7).y,pt(fl*0.2,-hw).x,pt(fl*0.2,-hw).y,nose.x,nose.y);
+    ctx.stroke();
+    // Tail
+    [[-fl*0.62,fl*0.18],[-fl*0.62,-fl*0.18]].forEach(function(t){
+      ctx.beginPath();ctx.moveTo(tail.x,tail.y);ctx.lineTo(pt(t[0],t[1]).x,pt(t[0],t[1]).y);ctx.stroke();
+    });
+    S(0.8,0.75);ctx.beginPath();ctx.arc(pt(fl*0.35,-hw*0.15).x,pt(fl*0.35,-hw*0.15).y,2.5,0,Math.PI*2);ctx.stroke();
   }
-  rock3d(-90,-60,[[-20,0],[-8,-18],[15,-12],[22,8],[5,18],[-15,12]],12);
-  rock3d(90,55,[[-14,0],[-5,-14],[12,-10],[16,6],[4,14],[-10,8]],9);
-  rock3d(60,-70,[[-10,0],[-4,-10],[9,-8],[13,5],[3,10],[-8,5]],7);
+  poolFish(280,530,40,0.4);
+  poolFish(330,420,35,Math.PI+0.3);
+  poolFish(430,545,38,0.8);
 
-  ctx.save();ctx.strokeStyle='rgba(17,17,17,0.13)';ctx.lineWidth=1.2;ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.06)';ctx.lineWidth=0.8;ctx.strokeRect(22,22,W-44,H-44);ctx.restore();
+  // Hermit crab in corner
+  S(1.5,0.78);
+  var crx=170,cry=530;
+  // Shell (spiral oval)
+  ctx.beginPath();ctx.ellipse(crx,cry,22,16,0.5,0,Math.PI*2);ctx.stroke();
+  S(0.7,0.48);
+  ctx.beginPath();ctx.moveTo(crx-5,cry);ctx.arc(crx-5,cry,10,0,Math.PI*1.5);ctx.stroke(); // shell spiral
+  // Claw
+  S(1.2,0.75);
+  ctx.beginPath();ctx.moveTo(crx+18,cry-5);
+  ctx.bezierCurveTo(crx+30,cry-15,crx+42,cry-12,crx+38,cry-5);
+  ctx.bezierCurveTo(crx+35,cry+2,crx+24,cry+2,crx+18,cry-5);ctx.stroke();
+  // Legs
+  S(0.7,0.60);
+  [[crx+10,cry+10,crx+22,cry+22],[crx+5,cry+12,crx+12,cry+25],[crx,cry+12,crx+2,cry+26]].forEach(function(l){
+    ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(l[2],l[3]);ctx.stroke();
+  });
+  // Eye stalks
+  ctx.beginPath();ctx.moveTo(crx+16,cry-12);ctx.lineTo(crx+22,cry-20);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(crx+12,cry-13);ctx.lineTo(crx+17,cry-22);ctx.stroke();
+  ctx.beginPath();ctx.arc(crx+22,cry-20,2.5,0,Math.PI*2);ctx.stroke();
+  ctx.beginPath();ctx.arc(crx+17,cry-22,2.5,0,Math.PI*2);ctx.stroke();
+
+  // Shells on floor
+  S(0.9,0.55);
+  // Spiral shell
+  ctx.beginPath();ctx.arc(440,540,8,0,Math.PI*2);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(440,540);ctx.arc(440,540,5,0,Math.PI*1.5);ctx.stroke();
+  // Clam shell
+  ctx.beginPath();ctx.ellipse(260,490,12,8,0.3,0,Math.PI);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(248,490);ctx.lineTo(272,490);ctx.stroke();
+
+  // Credit
   ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Tidal Pool  ·  Kiwi\'s Art',W/2,H-26);ctx.restore();
+  ctx.textAlign='center';ctx.fillText('Tidal Pool  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
+  // Decorative double border
+  ctx.save();
+  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
+  ctx.strokeRect(16,16,W-32,H-32);
+  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
+  ctx.strokeRect(22,22,W-44,H-44);
+  ctx.restore();
 })();
 </script>
 
