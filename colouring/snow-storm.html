@@ -52,10 +52,13 @@
   line-height: 1.6;
 }
 @media print {
-  .site-header, .skip-link, .colouring-intro, .colouring-actions, .colouring-hint, .site-footer, .page-eyebrow { display: none !important; }
-  body { padding: 0; background: white; }
-  .sheet-wrap { box-shadow: none; max-width: 100%; margin: 0; border-radius: 0; }
-  section { padding: 0 !important; }
+  @page { margin: 0; }
+  .site-header, .skip-link, .colouring-intro, .colouring-actions, .colouring-hint, .site-footer, .page-eyebrow, .section-alt, h1 { display: none !important; }
+  body, html { margin: 0 !important; padding: 0 !important; background: white; }
+  main, section, .wrap { padding: 0 !important; margin: 0 !important; }
+  section { display: block; }
+  .sheet-wrap { box-shadow: none; max-width: 100%; width: 100%; margin: 0; border-radius: 0; }
+  .sheet-wrap canvas { display: block; width: 100% !important; height: auto !important; }
 }
 </style>
 </head>
