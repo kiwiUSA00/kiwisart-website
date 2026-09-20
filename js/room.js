@@ -1,7 +1,7 @@
-// Room preview — real photo background with artwork composited onto accent wall
-// Photo: images/room-bg.jpg (1024×1024, Auckland apartment with blue-grey accent wall)
+// Room preview — straight-on photo, simple rectangle placement (no perspective warp)
+// Photo: images/room-bg.jpg (1720×1290, Auckland apartment, front-on accent wall)
 
-var ROOM_SCALES = { small: 0.55, medium: 0.78, large: 1.0 };
+var ROOM_SCALES = { small: 0.38, medium: 0.62, large: 0.90 };
 var curScale = 'medium';
 var rCanvas = null, rCtx = null, rImg = null, roomBgImg = null;
 
@@ -13,79 +13,20 @@ var rCanvas = null, rCtx = null, rImg = null, roomBgImg = null;
 })();
 
 // ── Photo → canvas mapping (cover-fill, 860×537 canvas) ──────────────────────
-var PHOTO_W = 1024, PHOTO_H = 1024;
+var PHOTO_W = 1720, PHOTO_H = 1290;
 var CANVAS_W = 860, CANVAS_H = 537;
-var PHOTO_SCALE = CANVAS_W / PHOTO_W;           // ≈ 0.840
-var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2; // ≈ -161.5
+var PHOTO_SCALE = CANVAS_W / PHOTO_W;              // exactly 0.5
+var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2; // = -54
 
-// ── Perspective quad for the accent wall (canvas coords at scale = 1.0) ──────
-// Right side is taller (closer to camera); ceiling slopes up from left→right.
-// This defines the maximum painting area at "Large" scale.
-// Calibrated against reference photo: painting fills right accent wall,
-// top ~8px from canvas top on left, ~0 on right; left edge at x≈412.
-// Calibrated by pixel-mapping the reference photo (1024×1024) to canvas:
-//   photo → canvas:  x' = x * (860/1024),  y' = -161.5 + y * (860/1024)
-// Reference painting corners in photo: tl(487,198) tr(999,133) br(999,765) bl(487,725)
-// Right-side ceiling (133) maps to canvas y≈-50 → clipped to 0.
-var QUAD = {
-  tl: [410,   5],   // top-left  — left edge of accent wall at ceiling
-  tr: [840,   0],   // top-right — right corner, ceiling (above canvas top)
-  br: [840, 481],   // bottom-right — right corner (NOT canvas bottom!)
-  bl: [410, 448]    // bottom-left — floor at left edge of accent wall
-};
-
-// ── Vertical centre for each painting size ────────────────────────────────────
-// Smaller paintings hang higher on the wall (lower cy value = higher in canvas).
-var SIZE_CENTER_Y = { small: 185, medium: 215, large: 235 };
-
-// ── Canvas y where the sofa starts (used to composite sofa in front of painting)
-var SOFA_Y = 392;
-
-// ── Perspective-correct image draw (horizontal-strip method) ─────────────────
-// Maps img onto a quadrilateral via 50 affine-transformed horizontal strips.
-function drawImageQuad(ctx, img, tl, tr, br, bl) {
-  var iw = img.naturalWidth, ih = img.naturalHeight;
-  var N  = 50;
-  ctx.save();
-  for (var i = 0; i < N; i++) {
-    var t0 = i / N, t1 = (i + 1) / N;
-
-    var lx0 = tl[0] + (bl[0] - tl[0]) * t0,  ly0 = tl[1] + (bl[1] - tl[1]) * t0;
-    var lx1 = tl[0] + (bl[0] - tl[0]) * t1,  ly1 = tl[1] + (bl[1] - tl[1]) * t1;
-    var rx0 = tr[0] + (br[0] - tr[0]) * t0,   ry0 = tr[1] + (br[1] - tr[1]) * t0;
-    var rx1 = tr[0] + (br[0] - tr[0]) * t1,   ry1 = tr[1] + (br[1] - tr[1]) * t1;
-
-    var sy = t0 * ih, sh = (t1 - t0) * ih;
-    var a = (rx0 - lx0) / iw;
-    var b = (ry0 - ly0) / iw;
-    var c = (lx1 - lx0) / sh;
-    var d = (ly1 - ly0) / sh;
-    var e = lx0 - c * sy;
-    var f = ly0 - d * sy;
-
-    ctx.save();
-    ctx.beginPath();
-    ctx.moveTo(lx0, ly0); ctx.lineTo(rx0, ry0);
-    ctx.lineTo(rx1, ry1); ctx.lineTo(lx1, ly1);
-    ctx.closePath();
-    ctx.clip();
-    ctx.transform(a, b, c, d, e, f);
-    ctx.drawImage(img, 0, 0);
-    ctx.restore();
-  }
-  ctx.restore();
-}
-
-// ── Scale a quad toward a chosen centre point ─────────────────────────────────
-function scaleQuad(q, wsc, hsc, targetCy) {
-  var cx = (q.tl[0] + q.tr[0] + q.br[0] + q.bl[0]) / 4;
-  var cy = (targetCy !== undefined) ? targetCy
-         : (q.tl[1] + q.tr[1] + q.br[1] + q.bl[1]) / 4;
-  function sc(pt) {
-    return [cx + (pt[0] - cx) * wsc, cy + (pt[1] - cy) * hsc];
-  }
-  return { tl: sc(q.tl), tr: sc(q.tr), br: sc(q.br), bl: sc(q.bl) };
-}
+// ── Wall hanging zone (canvas coordinates) ───────────────────────────────────
+// Paintings hang on the dark accent wall, above the sofa.
+// SOFA_Y: canvas y just above cushion tops — paintings must stay ABOVE this.
+// Original photo (3264×2448) cushion tops ≈ y=1200 → ÷2=600 in 1720×1290
+// canvas y = -54 + 600*0.5 = 246 → using 240 with comfortable gap.
+var WALL_LEFT  =  40;   // horizontal breathing room (canvas px)
+var WALL_RIGHT = 820;
+var WALL_TOP   =  20;   // just below ceiling cornice
+var SOFA_Y     = 240;   // painting bottom limit in canvas coords
 
 // ── Main draw ─────────────────────────────────────────────────────────────────
 function drawRoom() {
@@ -100,101 +41,80 @@ function drawRoom() {
       0, PHOTO_DY, CANVAS_W, PHOTO_H * PHOTO_SCALE
     );
   } else {
-    ctx.fillStyle = '#7a8090';
+    ctx.fillStyle = '#5a5e6a';
     ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
   }
 
-  // ── 2. Artwork on accent wall (perspective-correct) ───────────────────────
+  // ── 2. Artwork on wall (simple rectangle, no perspective warp) ────────────
   if (rImg && rImg.naturalWidth > 0) {
-    var sc      = ROOM_SCALES[curScale] || 0.78;
+    var sc = ROOM_SCALES[curScale] || 0.62;
 
-    var wallW = ((QUAD.tr[0] - QUAD.tl[0]) + (QUAD.br[0] - QUAD.bl[0])) / 2;
-    var wallH = ((QUAD.bl[1] - QUAD.tl[1]) + (QUAD.br[1] - QUAD.tr[1])) / 2;
+    var availW = WALL_RIGHT - WALL_LEFT;   // 780
+    var availH = SOFA_Y    - WALL_TOP;    // 200
 
-    var aspect  = rImg.naturalHeight / rImg.naturalWidth; // h/w
-    var wallAsp = wallH / wallW;
-    var wScale, hScale;
-    if (aspect >= wallAsp) {
-      hScale = sc;
-      wScale = sc * (wallH / aspect) / wallW;
+    var maxW = availW * sc;
+    var maxH = availH * sc;
+
+    // Fit painting inside maxW × maxH, preserving aspect ratio
+    var imgAspect = rImg.naturalWidth / rImg.naturalHeight;  // w/h
+    var pw, ph;
+    if (maxW / maxH > imgAspect) {
+      ph = maxH; pw = ph * imgAspect;   // height constrains
     } else {
-      wScale = sc;
-      hScale = sc * (wallW * aspect) / wallH;
+      pw = maxW; ph = pw / imgAspect;   // width constrains
     }
 
-    // For large: pin painting bottom to sofa so it overlaps naturally.
-    // For small/medium: use fixed centre-heights so painting hangs high on wall.
-    var targetCy;
+    // Horizontal: always centred on the wall
+    var cx = (WALL_LEFT + WALL_RIGHT) / 2;  // 430
+
+    // Vertical: large pins bottom 20 px above sofa; small/medium centred in zone
+    var cy;
     if (curScale === 'large') {
-      var paintingHalfH = (wallH / 2) * hScale;
-      var wallTopY      = (QUAD.tl[1] + QUAD.tr[1]) / 2;          // ≈ 4
-      targetCy = Math.max(SOFA_Y + 30 - paintingHalfH,            // bottom behind sofa
-                          wallTopY + paintingHalfH);               // top not above ceiling
+      cy = SOFA_Y - 20 - ph / 2;
     } else {
-      targetCy = SIZE_CENTER_Y[curScale] || 215;
+      cy = (WALL_TOP + SOFA_Y) / 2;
     }
 
-    var q       = scaleQuad(QUAD, wScale, hScale, targetCy);
-    var pad     = 5;
-    var shadowQ = scaleQuad(QUAD, wScale + pad / wallW * 2, hScale + pad / wallH * 2, targetCy);
-    var frameQ  = scaleQuad(QUAD, wScale + 3  / wallW * 2, hScale + 3  / wallH * 2, targetCy);
+    var left = Math.round(cx - pw / 2);
+    var top  = Math.round(cy - ph / 2);
+    pw = Math.round(pw);
+    ph = Math.round(ph);
 
-    // Shadow (drawn behind painting)
+    // Shadow
     ctx.save();
-    ctx.shadowColor   = 'rgba(0,0,0,0.6)';
-    ctx.shadowBlur    = 22;
-    ctx.shadowOffsetX = 4;
-    ctx.shadowOffsetY = 8;
-    ctx.fillStyle = '#0a0a0a';
-    ctx.beginPath();
-    ctx.moveTo(shadowQ.tl[0], shadowQ.tl[1]); ctx.lineTo(shadowQ.tr[0], shadowQ.tr[1]);
-    ctx.lineTo(shadowQ.br[0], shadowQ.br[1]); ctx.lineTo(shadowQ.bl[0], shadowQ.bl[1]);
-    ctx.closePath(); ctx.fill();
+    ctx.shadowColor   = 'rgba(0,0,0,0.55)';
+    ctx.shadowBlur    = 20;
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 7;
+    ctx.fillStyle     = '#080808';
+    ctx.fillRect(left - 3, top - 3, pw + 6, ph + 6);
     ctx.restore();
 
-    // Frame (thin dark border)
-    ctx.save();
-    ctx.fillStyle = 'rgba(30,22,10,0.65)';
-    ctx.beginPath();
-    ctx.moveTo(frameQ.tl[0], frameQ.tl[1]); ctx.lineTo(frameQ.tr[0], frameQ.tr[1]);
-    ctx.lineTo(frameQ.br[0], frameQ.br[1]); ctx.lineTo(frameQ.bl[0], frameQ.bl[1]);
-    ctx.closePath(); ctx.fill();
-    ctx.restore();
+    // Thin frame
+    ctx.fillStyle = 'rgba(25,18,8,0.70)';
+    ctx.fillRect(left - 3, top - 3, pw + 6, ph + 6);
 
-    // Artwork — perspective-warped
-    drawImageQuad(ctx, rImg, q.tl, q.tr, q.br, q.bl);
+    // Artwork
+    ctx.drawImage(rImg, left, top, pw, ph);
 
-    // Subtle glare: lighten top-left corner
+    // Subtle glare
     ctx.save();
-    var glare = ctx.createLinearGradient(q.tl[0], q.tl[1], q.br[0], q.br[1]);
-    glare.addColorStop(0,   'rgba(255,255,255,0.10)');
-    glare.addColorStop(0.4, 'rgba(255,255,255,0.03)');
+    var glare = ctx.createLinearGradient(left, top, left + pw, top + ph);
+    glare.addColorStop(0,   'rgba(255,255,255,0.09)');
+    glare.addColorStop(0.4, 'rgba(255,255,255,0.02)');
     glare.addColorStop(1,   'rgba(255,255,255,0)');
-    ctx.beginPath();
-    ctx.moveTo(q.tl[0], q.tl[1]); ctx.lineTo(q.tr[0], q.tr[1]);
-    ctx.lineTo(q.br[0], q.br[1]); ctx.lineTo(q.bl[0], q.bl[1]);
-    ctx.closePath(); ctx.fillStyle = glare; ctx.fill();
+    ctx.fillStyle = glare;
+    ctx.fillRect(left, top, pw, ph);
     ctx.restore();
   }
 
-  // ── 3. Sofa overlay — redraw lower room photo so furniture sits in front ───
-  // This makes a large painting appear to go behind the sofa naturally.
-  if (roomBgImg && roomBgImg.naturalWidth > 0) {
-    var srcSofaY = (SOFA_Y - PHOTO_DY) / PHOTO_SCALE;  // ≈ 686 in photo coords
-    var srcSofaH = PHOTO_H - srcSofaY;
-    ctx.drawImage(roomBgImg,
-      0, srcSofaY, PHOTO_W, srcSofaH,
-      0, SOFA_Y,   CANVAS_W, srcSofaH * PHOTO_SCALE
-    );
-  }
-
-  // ── 4. Vignette ───────────────────────────────────────────────────────────
+  // ── 3. Vignette ───────────────────────────────────────────────────────────
   var vig = ctx.createRadialGradient(
-    CANVAS_W * 0.50, CANVAS_H * 0.44, CANVAS_H * 0.18,
-    CANVAS_W * 0.50, CANVAS_H * 0.44, CANVAS_H * 0.80
+    CANVAS_W * 0.50, CANVAS_H * 0.45, CANVAS_H * 0.20,
+    CANVAS_W * 0.50, CANVAS_H * 0.45, CANVAS_H * 0.82
   );
   vig.addColorStop(0, 'rgba(0,0,0,0)');
-  vig.addColorStop(1, 'rgba(0,0,0,0.32)');
+  vig.addColorStop(1, 'rgba(0,0,0,0.28)');
   ctx.fillStyle = vig;
   ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
 }
@@ -207,7 +127,7 @@ function setRoomScale(sc) {
   drawRoom();
 }
 
-function setRoomStyle() { /* no-op — photo has no style variants */ }
+function setRoomStyle() { /* no-op */ }
 
 function openRoom() {
   var o = document.getElementById('room-overlay');
