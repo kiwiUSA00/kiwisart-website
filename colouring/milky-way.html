@@ -78,15 +78,37 @@
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
 
-  var CX=298, CY=390; // galaxy centre
+  // Perspective grid helper
+  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
+    for (var i = 1; i <= numCross; i++) {
+      var t = Math.pow(i / numCross, 1.7);
+      var y = vpy + t * (yFar - vpy);
+      ctx.lineWidth = 0.4 + t * 0.35;
+      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
+    }
+    ctx.lineWidth = 0.4;
+    for (var r = 0; r <= numRays; r++) {
+      var bx = 10 + (r / numRays) * (W - 20);
+      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  var CX=298, CY=440; // galaxy centre — shifted down for perspective
 
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.0;}
 
-  // Galaxy core — concentric ellipses
+  // Subtle horizon line at top of canvas — edge of observable space
+  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.08)'; ctx.lineWidth=0.8;
+  ctx.beginPath(); ctx.moveTo(15, H*0.12); ctx.lineTo(W-15, H*0.12); ctx.stroke(); ctx.restore();
+
+  // Galaxy core — concentric ellipses, ry = rx * 0.45 for strong tilt (~65° angle)
   ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
   s(1.8,0.70);
   [18,32,48,66,86].forEach(function(r,i){
-    ctx.beginPath();ctx.ellipse(CX,CY,r*1.2,r*0.6,0.3,0,Math.PI*2);ctx.stroke();
+    ctx.beginPath();ctx.ellipse(CX,CY,r*1.2,r*0.45,0.3,0,Math.PI*2);ctx.stroke();
   });
   ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
   // Inner bright core hatch
@@ -107,7 +129,7 @@
       var a=startAngle+t*Math.PI*1.8;
       var r=90+t*220;
       var rx=r*1.15, ry=r*0.62;
-      pts.push([CX+Math.cos(a)*rx, CY+Math.sin(a)*ry*0.88]);
+      pts.push([CX+Math.cos(a)*rx, CY+Math.sin(a)*ry*0.45]);
     }
     ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
     ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
@@ -154,7 +176,7 @@
     ctx.beginPath();ctx.ellipse(n.cx+8,n.cy-5,n.rx*0.55,n.ry*0.55,n.rot+0.2,0,Math.PI*2);ctx.stroke();
   });
 
-  // Star dots — small circles and crosses of varying size
+  // Star dots — size proportional to depth: larger/bolder at bottom (foreground), smaller at top
   s(1.0,0.62);
   var stars=[
     [60,60,3],[110,90,2],[180,50,4],[240,80,2],[330,40,3],[400,70,2],[480,55,4],[550,80,2],[570,40,3],
@@ -165,7 +187,8 @@
     [130,160,2],[480,170,3],[100,660,2],[490,650,3],
   ];
   stars.forEach(function(st){
-    var x=st[0],y=st[1],r=st[2];
+    var x=st[0],y=st[1];
+    var r=st[2] * (0.5 + (y / H) * 1.2); // larger toward bottom (foreground)
     ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.stroke();
     // cross for larger stars
     if(r>=3){

@@ -78,6 +78,29 @@
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
 
+  // Perspective grid helper
+  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
+    for (var i = 1; i <= numCross; i++) {
+      var t = Math.pow(i / numCross, 1.7);
+      var y = vpy + t * (yFar - vpy);
+      ctx.lineWidth = 0.4 + t * 0.35;
+      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
+    }
+    ctx.lineWidth = 0.4;
+    for (var r = 0; r <= numRays; r++) {
+      var bx = 10 + (r / numRays) * (W - 20);
+      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  // Horizon line and perspective grid drawn first
+  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.12)'; ctx.lineWidth=1.0;
+  ctx.beginPath(); ctx.moveTo(15, H*0.28); ctx.lineTo(W-15, H*0.28); ctx.stroke(); ctx.restore();
+  perspGrid(W/2, H*0.28, H-10, 12, 10, 0.045);
+
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
 
   // Irregular foam cell — closed bezier blob

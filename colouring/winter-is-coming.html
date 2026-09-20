@@ -78,6 +78,29 @@
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
 
+  // Perspective grid helper
+  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
+    for (var i = 1; i <= numCross; i++) {
+      var t = Math.pow(i / numCross, 1.7);
+      var y = vpy + t * (yFar - vpy);
+      ctx.lineWidth = 0.4 + t * 0.35;
+      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
+    }
+    ctx.lineWidth = 0.4;
+    for (var r = 0; r <= numRays; r++) {
+      var bx = 10 + (r / numRays) * (W - 20);
+      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  // Sky-ground divide and perspective ground plane
+  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.10)'; ctx.lineWidth=0.9;
+  ctx.beginPath(); ctx.moveTo(15, H*0.65); ctx.lineTo(W-15, H*0.65); ctx.stroke(); ctx.restore();
+  perspGrid(W/2, H*0.65, H-10, 12, 9, 0.045);
+
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.0;}
 
   // Snowflake: cx,cy=center, r=radius, complexity 1-3
@@ -128,14 +151,20 @@
     ctx.beginPath();ctx.arc(cx,cy,r*0.12,0,Math.PI*2);ctx.stroke();
   }
 
-  // Large hero snowflakes — shadow lifts them off the page
+  // Large hero snowflakes — scaled by depth: high y (close) = bigger, low y (far) = smaller
   ctx.shadowBlur=7;ctx.shadowColor='rgba(0,0,0,0.13)';
-  snowflake(160,200, 80, 3, 1.8,0.72);
-  snowflake(430,140, 70, 3, 1.7,0.70);
-  snowflake(298,500, 90, 3, 1.9,0.74);
-  snowflake(110,580, 65, 3, 1.6,0.68);
-  snowflake(490,580, 68, 3, 1.6,0.68);
-  snowflake(298,120, 55, 3, 1.5,0.65);
+  // cy=200 < H*0.35 (280) → multiply r by 0.65
+  snowflake(160,200, 80*0.65, 3, 1.8,0.65);
+  // cy=140 < H*0.35 → multiply r by 0.65
+  snowflake(430,140, 70*0.65, 3, 1.7,0.62);
+  // cy=500 > H*0.60 (480) → multiply r by 1.25
+  snowflake(298,500, 90*1.25, 3, 1.9,0.80);
+  // cy=580 > H*0.60 → multiply r by 1.25
+  snowflake(110,580, 65*1.25, 3, 1.6,0.76);
+  // cy=580 > H*0.60 → multiply r by 1.25
+  snowflake(490,580, 68*1.25, 3, 1.6,0.76);
+  // cy=120 < H*0.35 → multiply r by 0.65
+  snowflake(298,120, 55*0.65, 3, 1.5,0.58);
   ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
 
   // Medium snowflakes
@@ -176,8 +205,9 @@
 
   frostNetwork(24,24,    Math.PI*0.18,  6, 55, 1.2, 0.45);
   frostNetwork(571,24,   Math.PI*0.82,  6, 52, 1.2, 0.45);
-  frostNetwork(24,776,   -Math.PI*0.18, 6, 50, 1.1, 0.42);
-  frostNetwork(571,776,  -Math.PI*0.82, 6, 50, 1.1, 0.42);
+  // Bottom corners are closer to viewer — wider/longer networks
+  frostNetwork(24,776,   -Math.PI*0.18, 6, 65, 1.4, 0.50);
+  frostNetwork(571,776,  -Math.PI*0.82, 6, 65, 1.4, 0.50);
   frostNetwork(298,24,   Math.PI*0.5,   5, 45, 1.0, 0.38);
   frostNetwork(24,400,   0,             5, 42, 1.0, 0.38);
   frostNetwork(571,400,  Math.PI,       5, 42, 1.0, 0.38);

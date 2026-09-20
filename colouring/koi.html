@@ -143,6 +143,24 @@
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
 
+  // Perspective grid helper
+  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
+    for (var i = 1; i <= numCross; i++) {
+      var t = Math.pow(i / numCross, 1.7);
+      var y = vpy + t * (yFar - vpy);
+      ctx.lineWidth = 0.4 + t * 0.35;
+      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
+    }
+    ctx.lineWidth = 0.4;
+    for (var r = 0; r <= numRays; r++) {
+      var bx = 10 + (r / numRays) * (W - 20);
+      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
   function s(w, a) {
     ctx.strokeStyle = a !== undefined ? 'rgba(17,17,17,' + a + ')' : '#111';
     ctx.lineWidth = w || 1.5;
@@ -310,11 +328,18 @@
 
   // ── Scene ──────────────────────────────────────────────────
 
+  // Perspective water grid — drawn first as background layer
+  perspGrid(W/2, 30, H-10, 14, 12, 0.035);
+  // Horizon ellipse suggesting water receding
+  ctx.strokeStyle='rgba(17,17,17,0.06)'; ctx.lineWidth=0.8;
+  ctx.beginPath(); ctx.ellipse(W/2, 50, W*0.38, 14, 0, 0, Math.PI*2); ctx.stroke();
+
   // Background water ripple system — concentric ovals
+  // ry adjusted by cy: smaller ry (more elliptical) near horizon (small cy = far)
   var pools = [
-    {cx: 280, cy: 320, baseR: 30, rx: 1.6, ry: 0.7},
-    {cx: 340, cy: 520, baseR: 25, rx: 1.5, ry: 0.65},
-    {cx: 180, cy: 460, baseR: 20, rx: 1.7, ry: 0.72},
+    {cx: 280, cy: 320, baseR: 30, rx: 1.6, ry: 0.55},
+    {cx: 340, cy: 520, baseR: 25, rx: 1.5, ry: 0.68},
+    {cx: 180, cy: 460, baseR: 20, rx: 1.7, ry: 0.55},
   ];
   pools.forEach(function(p) {
     for (var i = 1; i <= 8; i++) {
@@ -323,13 +348,14 @@
   });
 
   // Additional scattered single rings
+  // ry multiplier by y position: small y (far) = 0.40, mid = 0.55, large y (near) = 0.68
   var rings = [
-    [100, 200, 18, 1.4, 0.68, 0.09],
-    [480, 150, 14, 1.5, 0.70, 0.08],
-    [520, 600, 22, 1.6, 0.72, 0.10],
-    [80,  580, 16, 1.3, 0.65, 0.07],
-    [440, 400, 12, 1.4, 0.68, 0.07],
-    [210, 720, 16, 1.5, 0.70, 0.08],
+    [100, 200, 18, 1.4, 0.40, 0.09],
+    [480, 150, 14, 1.5, 0.40, 0.08],
+    [520, 600, 22, 1.6, 0.68, 0.10],
+    [80,  580, 16, 1.3, 0.68, 0.07],
+    [440, 400, 12, 1.4, 0.55, 0.07],
+    [210, 720, 16, 1.5, 0.68, 0.08],
     [380, 720, 14, 1.4, 0.68, 0.07],
   ];
   rings.forEach(function(r) {
@@ -359,13 +385,10 @@
     ctx.stroke();
   });
 
-  // Main koi fish
-  // Large fish — swimming right across the upper-middle
-  koi(310, 240, 200, -0.15, false);
-  // Medium fish — swimming left in the lower section
-  koi(280, 550, 160, Math.PI + 0.2, true);
-  // Smaller fish — tucked in lower right, swimming up-right
-  koi(430, 680, 120, -0.45, false);
+  // Main koi fish — sized by depth (smaller = farther = nearer horizon)
+  koi(310, 150, 95, -0.15, false);   // small, far, near horizon
+  koi(280, 490, 165, Math.PI + 0.2, true); // medium, mid-distance
+  koi(400, 710, 235, -0.45, false);  // large, close, in foreground
 
   // Lily pad suggestions — simple oval + stem
   s(1.1, 0.22);

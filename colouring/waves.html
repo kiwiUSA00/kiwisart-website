@@ -137,12 +137,30 @@
   var cv = document.getElementById('c');
   var ctx = cv.getContext('2d');
   var W = cv.width, H = cv.height;
-  var CX = W / 2, CY = H / 2 + 10;
+  var CX = W / 2, CY = H / 2 + 60;
 
   ctx.fillStyle = '#fff';
   ctx.fillRect(0, 0, W, H);
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
+
+  // Perspective grid helper
+  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
+    for (var i = 1; i <= numCross; i++) {
+      var t = Math.pow(i / numCross, 1.7);
+      var y = vpy + t * (yFar - vpy);
+      ctx.lineWidth = 0.4 + t * 0.35;
+      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
+    }
+    ctx.lineWidth = 0.4;
+    for (var r = 0; r <= numRays; r++) {
+      var bx = 10 + (r / numRays) * (W - 20);
+      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
+    }
+    ctx.restore();
+  }
 
   function s(w, alpha) {
     ctx.strokeStyle = alpha !== undefined ? 'rgba(17,17,17,' + alpha + ')' : '#111';
@@ -233,7 +251,13 @@
     ctx.restore();
   }
 
-  // Background concentric rings
+  // Horizon line — visible above the whirlpool
+  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.10)'; ctx.lineWidth=1.0;
+  ctx.beginPath(); ctx.moveTo(20, 90); ctx.lineTo(W-20, 90); ctx.stroke(); ctx.restore();
+  // Perspective water surface above CY
+  perspGrid(W/2, 85, CY - 10, 10, 8, 0.04);
+
+  // Background concentric rings — y-factor 0.62 for strong low-angle ellipse
   for (var ring = 1; ring <= 9; ring++) {
     var rr = ring * 36;
     s(0.7, 0.07 + ring * 0.005);
@@ -243,7 +267,7 @@
       var a = (i / steps) * Math.PI * 2;
       var wobble = Math.sin(a * 5 + ring) * 6 + Math.sin(a * 11 + ring * 2) * 3;
       var rx = CX + Math.cos(a) * (rr + wobble);
-      var ry = CY + Math.sin(a) * (rr + wobble) * 0.88;
+      var ry = CY + Math.sin(a) * (rr + wobble) * 0.62;
       i === 0 ? ctx.moveTo(rx, ry) : ctx.lineTo(rx, ry);
     }
     ctx.closePath();

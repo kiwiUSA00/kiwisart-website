@@ -78,6 +78,24 @@
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
 
+  // Perspective grid helper
+  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
+    for (var i = 1; i <= numCross; i++) {
+      var t = Math.pow(i / numCross, 1.7);
+      var y = vpy + t * (yFar - vpy);
+      ctx.lineWidth = 0.4 + t * 0.35;
+      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
+    }
+    ctx.lineWidth = 0.4;
+    for (var r = 0; r <= numRays; r++) {
+      var bx = 10 + (r / numRays) * (W - 20);
+      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
 
   // Flame tongue: base at (bx,by), tip at (tx,ty), with bezier bulge
@@ -128,6 +146,12 @@
   flame(440,270, 438,200,  8, 1.1,0.44);
   flame(110,340, 108,275, -10, 1.0,0.42);
 
+  // Perspective ground — horizon at 65% down, fire fills foreground
+  var HORIZON_Y = H * 0.65;
+  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.13)'; ctx.lineWidth=1.0;
+  ctx.beginPath(); ctx.moveTo(10, HORIZON_Y); ctx.lineTo(W-10, HORIZON_Y); ctx.stroke(); ctx.restore();
+  perspGrid(W/2, HORIZON_Y, H - 10, 10, 8, 0.06);
+
   // Base fire log / ground embers zone
   s(1.8,0.65);
   ctx.beginPath();
@@ -153,12 +177,13 @@
       cx=nx;cy=ny;driftX*=0.8;
     }
   }
-  smokeCurl(180,170, -15);
-  smokeCurl(295,95,   8);
-  smokeCurl(350,135, -10);
-  smokeCurl(440,215,  18);
-  smokeCurl(110,295, -20);
-  smokeCurl(510,270,  14);
+  // Smoke curls — slightly smaller/lighter since they're high (far) in the canvas
+  smokeCurl(180,170, -13);
+  smokeCurl(295,95,   7);
+  smokeCurl(350,135, -9);
+  smokeCurl(440,215,  15);
+  smokeCurl(110,295, -17);
+  smokeCurl(510,270,  12);
 
   // Ember sparks — small angled dashes
   s(0.8,0.45);

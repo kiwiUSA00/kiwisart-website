@@ -78,6 +78,24 @@
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
 
+  // Perspective grid helper
+  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
+    for (var i = 1; i <= numCross; i++) {
+      var t = Math.pow(i / numCross, 1.7);
+      var y = vpy + t * (yFar - vpy);
+      ctx.lineWidth = 0.4 + t * 0.35;
+      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
+    }
+    ctx.lineWidth = 0.4;
+    for (var r = 0; r <= numRays; r++) {
+      var bx = 10 + (r / numRays) * (W - 20);
+      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
 
   // Pool outline — irregular rocky oval
@@ -115,9 +133,22 @@
   });
   ctx.shadowBlur=0;ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
 
-  // Water ripple ovals inside pool
+  // Perspective water surface inside pool — clipped to pool interior
+  ctx.save();
+  ctx.beginPath();
+  ctx.ellipse(W/2, H*0.48, 190, 155, 0, 0, Math.PI*2);
+  ctx.clip();
+  perspGrid(W/2, H*0.18, H*0.82, 10, 8, 0.04);
+  ctx.restore();
+
+  // Horizon ellipse around top of pool — far rim of the tidal pool
+  s(0.9,0.12);
+  ctx.beginPath(); ctx.ellipse(W/2, H*0.26, 185, 18, 0, 0, Math.PI*2); ctx.stroke();
+
+  // Water ripple ovals inside pool — more elliptical near top (far), rounder near bottom (near)
   s(0.8,0.28);
-  [[298,400,220,160],[298,400,160,115],[298,400,100,70],[298,400,46,32]].forEach(function(r){
+  // ry values reduced for upper ovals (farther away = more elliptical)
+  [[298,400,220,90],[298,400,160,75],[298,400,100,55],[298,400,46,32]].forEach(function(r){
     ctx.beginPath();ctx.ellipse(r[0],r[1],r[2],r[3],0,0,Math.PI*2);ctx.stroke();
   });
 

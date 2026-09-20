@@ -78,6 +78,24 @@
   ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
   ctx.lineCap='round';ctx.lineJoin='round';
 
+  // Perspective grid helper
+  function perspGrid(vpx, vpy, yFar, numRays, numCross, alpha) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(17,17,17,' + alpha + ')';
+    for (var i = 1; i <= numCross; i++) {
+      var t = Math.pow(i / numCross, 1.7);
+      var y = vpy + t * (yFar - vpy);
+      ctx.lineWidth = 0.4 + t * 0.35;
+      ctx.beginPath(); ctx.moveTo(10, y); ctx.lineTo(W - 10, y); ctx.stroke();
+    }
+    ctx.lineWidth = 0.4;
+    for (var r = 0; r <= numRays; r++) {
+      var bx = 10 + (r / numRays) * (W - 20);
+      ctx.beginPath(); ctx.moveTo(vpx, vpy); ctx.lineTo(bx, yFar); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
   function s(w,a){ctx.strokeStyle=a!==undefined?'rgba(17,17,17,'+a+')':'#111';ctx.lineWidth=w||1.2;}
 
   // Draw a flower: cx,cy=center, r=petal radius, n=petals, offset angle
@@ -139,11 +157,11 @@
     ctx.lineTo(460+Math.cos(a)*22,620+Math.sin(a)*22);ctx.stroke();
   }
 
-  // Small bud upper-right
-  flower(490,130,52,5,0.8,1.4,0.58);
+  // Small bud upper-right — near top, multiply radius by 0.75 for perspective
+  flower(490,130,52*0.75,5,0.8,1.4,0.58);
 
-  // Small bud upper-left
-  flower(100,160,46,5,0.2,1.3,0.55);
+  // Small bud upper-left — near top, multiply radius by 0.75 for perspective
+  flower(100,160,46*0.75,5,0.2,1.3,0.55);
 
   // Stems
   s(1.6,0.65);
@@ -188,7 +206,17 @@
   leaf(285,660, 54, 25, 0.1);
   leaf(290,700, 48, 22, -0.15);
 
-  // Grass / ground line
+  // Grass / ground with perspective
+  var HORIZON_Y = H * 0.60;
+  ctx.save(); ctx.strokeStyle='rgba(17,17,17,0.16)'; ctx.lineWidth=1.1;
+  ctx.beginPath(); ctx.moveTo(15, HORIZON_Y); ctx.lineTo(W-15, HORIZON_Y); ctx.stroke(); ctx.restore();
+  perspGrid(W/2, HORIZON_Y, H - 10, 12, 10, 0.055);
+
+  // Distant flowers near horizon
+  [120, 150, 430].forEach(function(fx) {
+    flower(fx, HORIZON_Y - 18, 8, 5, 0, 0.6, 0.18);
+  });
+
   s(1.0,0.35);
   ctx.beginPath();ctx.moveTo(24,760);
   for(var x=24;x<=571;x+=10){
