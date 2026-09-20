@@ -21,19 +21,21 @@ var PHOTO_DY    = (CANVAS_H - PHOTO_H * PHOTO_SCALE) / 2; // ≈ -161.5
 // ── Perspective quad for the accent wall (canvas coords at scale = 1.0) ──────
 // Right side is taller (closer to camera); ceiling slopes up from left→right.
 // This defines the maximum painting area at "Large" scale.
+// Calibrated against reference photo: painting fills right accent wall,
+// top ~8px from canvas top on left, ~0 on right; left edge at x≈412.
 var QUAD = {
-  tl: [460,  45],   // top-left  — left edge of accent wall, ceiling line left
-  tr: [852,   0],   // top-right — ceiling at canvas top (rises toward right)
-  br: [852, 530],   // bottom-right — near canvas bottom (floor, right side)
-  bl: [460, 470]    // bottom-left — floor left side (higher = farther from camera)
+  tl: [412,   8],   // top-left  — left edge of accent wall at ceiling
+  tr: [856,   0],   // top-right — right corner (ceiling at canvas top)
+  br: [856, 537],   // bottom-right — right corner at canvas bottom
+  bl: [412, 462]    // bottom-left — floor at left edge of accent wall
 };
 
 // ── Vertical centre for each painting size ────────────────────────────────────
 // Smaller paintings hang higher on the wall (lower cy value = higher in canvas).
-var SIZE_CENTER_Y = { small: 219, medium: 252, large: 310 };
+var SIZE_CENTER_Y = { small: 185, medium: 215, large: 235 };
 
 // ── Canvas y where the sofa starts (used to composite sofa in front of painting)
-var SOFA_Y = 415;
+var SOFA_Y = 392;
 
 // ── Perspective-correct image draw (horizontal-strip method) ─────────────────
 // Maps img onto a quadrilateral via 50 affine-transformed horizontal strips.
