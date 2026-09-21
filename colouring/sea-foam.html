@@ -75,127 +75,196 @@
 
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
+var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+ctx.lineCap='round';ctx.lineJoin='round';
+function S(lw,a){ctx.strokeStyle='rgba(17,17,17,'+(a==null?0.85:a)+')';ctx.lineWidth=lw;}
 
-  // Ocean horizon and background waves
-  S(1.5,0.55);
-  ctx.beginPath();ctx.moveTo(30,200);ctx.lineTo(565,200);ctx.stroke();
-  S(0.8,0.35);
-  [[220,225],[230,250],[238,275],[244,300]].forEach(function(w,i){
-    ctx.beginPath();ctx.moveTo(30,w[0]);ctx.quadraticCurveTo(297,w[0]-10,565,w[0]);ctx.stroke();
-  });
-  // Distant gentle wave lines
-  S(0.9,0.40);
-  ctx.beginPath();ctx.moveTo(30,230);ctx.quadraticCurveTo(120,218,200,228);ctx.quadraticCurveTo(290,238,365,225);ctx.quadraticCurveTo(440,215,565,222);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(30,260);ctx.quadraticCurveTo(150,250,250,260);ctx.quadraticCurveTo(360,270,460,256);ctx.quadraticCurveTo(520,248,565,255);ctx.stroke();
-
-  // Seagulls (M-shapes)
-  S(1.0,0.65);
-  [[100,155,18],[180,135,14],[260,148,16],[420,140,12],[500,158,15]].forEach(function(g){
-    ctx.beginPath();
-    ctx.moveTo(g[0]-g[2],g[1]+g[2]*0.4);
-    ctx.quadraticCurveTo(g[0]-g[2]*0.5,g[1],g[0],g[1]+g[2]*0.2);
-    ctx.quadraticCurveTo(g[0]+g[2]*0.5,g[1],g[0]+g[2],g[1]+g[2]*0.4);
-    ctx.stroke();
-  });
-
-  // Large rock function
-  function rock(rx,ry,rw,rh,crags){
-    S(2.2,0.85);
-    ctx.beginPath();
-    ctx.moveTo(rx,ry+rh);
-    // jagged outline
-    var pts=[[rx-rw*0.3,ry+rh*0.6],[rx-rw*0.45,ry+rh*0.3],[rx-rw*0.3,ry+rh*0.05],
-              [rx,ry],[rx+rw*0.35,ry+rh*0.08],[rx+rw*0.5,ry+rh*0.35],[rx+rw*0.42,ry+rh*0.65],[rx+rw,ry+rh]];
-    ctx.moveTo(rx-rw,ry+rh);
-    pts.forEach(function(p){ctx.lineTo(p[0],p[1]);});
-    ctx.lineTo(rx+rw,ry+rh);
-    ctx.stroke();
-    // Surface texture lines
-    S(0.7,0.40);
-    crags.forEach(function(c){
-      ctx.beginPath();ctx.moveTo(c[0],c[1]);ctx.lineTo(c[2],c[3]);ctx.stroke();
-    });
-    // Moss/lichen patches
-    S(0.6,0.35);
-    for(var mi=0;mi<4;mi++){
-      var mx=rx-rw*0.3+mi*rw*0.22,my=ry+rh*0.4+mi*rh*0.1;
-      ctx.beginPath();ctx.arc(mx,my,8,0,Math.PI*2);ctx.stroke();
-    }
-  }
-
-  rock(160,380,130,240,
-    [[90,460,150,480],[100,510,170,530],[120,560,175,555],[80,420,140,435],[110,590,165,600]]);
-  rock(430,420,110,200,
-    [[360,500,480,510],[370,540,475,548],[380,460,450,468],[365,570,462,575]]);
-  // Third smaller rock
-  S(1.8,0.80);
-  ctx.beginPath();
-  ctx.moveTo(250,620);ctx.lineTo(230,570);ctx.lineTo(250,548);ctx.lineTo(290,542);ctx.lineTo(310,562);ctx.lineTo(305,620);ctx.stroke();
-  S(0.6,0.38);
-  [[245,575,285,580],[252,595,288,598]].forEach(function(l){ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(l[2],l[3]);ctx.stroke();});
-
-  // Wave crashing over main rock - foam blobs
-  S(1.5,0.75);
-  // Wave curl over left rock
-  ctx.beginPath();
-  ctx.moveTo(60,350);
-  ctx.bezierCurveTo(80,310,120,295,160,300);
-  ctx.bezierCurveTo(200,305,220,330,200,360);
+/* SKY */
+S(0.4,0.09);
+for(var y=28;y<280;y+=20){
+  ctx.beginPath();ctx.moveTo(28,y);
+  ctx.bezierCurveTo(150,y+3,300,y-3,450,y+2);ctx.bezierCurveTo(530,y-1,560,y,570,y);
   ctx.stroke();
-  // Foam blobs shooting up and sideways
-  var foamPts=[[165,295,20,14],[145,278,16,12],[125,270,18,13],[108,280,14,10],
-               [90,300,16,11],[75,320,12,9],[220,310,18,12],[240,300,15,10],
-               [258,295,12,9],[170,262,14,10],[150,252,12,8]];
-  foamPts.forEach(function(f){
-    S(1.2,0.68);
-    ctx.beginPath();ctx.ellipse(f[0],f[1],f[2],f[3],0,0,Math.PI*2);ctx.stroke();
-    // Foam interior
-    S(0.5,0.38);
-    ctx.beginPath();ctx.arc(f[0],f[1],f[2]*0.45,0,Math.PI*2);ctx.stroke();
-  });
-  // Foam trails and splash lines
-  S(0.8,0.52);
-  [[155,315,100,345],[135,330,85,365],[180,320,235,348]].forEach(function(l){
-    ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.quadraticCurveTo((l[0]+l[2])/2+10,(l[1]+l[3])/2-8,l[2],l[3]);ctx.stroke();
-  });
+}
 
-  // Tide pools between rocks
-  S(1.5,0.65);
-  // Pool 1
-  ctx.beginPath();ctx.ellipse(335,650,55,30,0.2,0,Math.PI*2);ctx.stroke();
-  // Pool water ripples
-  S(0.6,0.30);
-  [0.7,0.85].forEach(function(r){
-    ctx.beginPath();ctx.ellipse(335,650,55*r,30*r,0.2,0,Math.PI*2);ctx.stroke();
-  });
+/* CLOUDS */
+function cloud(cx,cy,w,h){
+  S(1.2,0.60);
+  ctx.beginPath();
+  ctx.moveTo(cx-w/2,cy+h/2);
+  ctx.bezierCurveTo(cx-w/2,cy,cx-w*0.35,cy-h*0.3,cx-w*0.18,cy-h*0.5);
+  ctx.bezierCurveTo(cx-w*0.02,cy-h*0.7,cx+w*0.12,cy-h*0.65,cx+w*0.25,cy-h*0.55);
+  ctx.bezierCurveTo(cx+w*0.35,cy-h*0.45,cx+w*0.42,cy-h*0.55,cx+w*0.42,cy-h*0.35);
+  ctx.bezierCurveTo(cx+w*0.42,cy-h*0.15,cx+w*0.5,cy,cx+w/2,cy+h/2);
+  ctx.stroke();
+}
+cloud(110,80,130,55);cloud(280,60,110,48);cloud(450,90,140,50);cloud(390,115,90,40);
 
-  // Small stones scattered
-  S(0.9,0.55);
-  [[280,680,8,5],[310,700,10,6],[360,690,7,5],[390,670,12,7],[230,660,9,5],
-   [340,720,11,6],[260,710,8,5]].forEach(function(s){
-    ctx.beginPath();ctx.ellipse(s[0],s[1],s[2],s[3],Math.random()*0.8,0,Math.PI*2);ctx.stroke();
-  });
+/* SEA HORIZON */
+S(1.8,0.58);ctx.beginPath();ctx.moveTo(28,290);ctx.lineTo(572,290);ctx.stroke();
 
-  // Foreground foam at base
-  S(1.0,0.55);
-  [[50,740,42,18],[130,752,38,16],[220,745,45,20],[330,748,40,17],[430,740,38,18],[520,750,35,16]].forEach(function(b){
-    ctx.beginPath();ctx.ellipse(b[0],b[1],b[2],b[3],0,0,Math.PI*2);ctx.stroke();
-  });
+/* DISTANT WATER */
+S(0.5,0.22);
+[310,330,350,370,392].forEach(function(y){
+  ctx.beginPath();ctx.moveTo(28,y);ctx.bezierCurveTo(200,y-4,380,y+3,572,y-2);ctx.stroke();
+});
 
-  // Credit
-  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Sea Foam  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
-  // Decorative double border
-  ctx.save();
-  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
-  ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
-  ctx.strokeRect(22,22,W-44,H-44);
-  ctx.restore();
+/* LIGHTHOUSE (far right background) */
+S(1.6,0.68);
+// tower
+ctx.beginPath();
+ctx.moveTo(478,290);ctx.lineTo(468,200);ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(488,290);ctx.lineTo(498,200);ctx.stroke();
+// top lantern room
+S(1.4,0.70);ctx.beginPath();ctx.rect(462,185,40,22);ctx.stroke();
+// light beam
+S(0.8,0.35);
+ctx.beginPath();ctx.moveTo(482,196);ctx.lineTo(540,240);ctx.stroke();
+ctx.beginPath();ctx.moveTo(482,196);ctx.lineTo(530,225);ctx.stroke();
+// gallery rail
+S(1.0,0.60);ctx.beginPath();ctx.moveTo(458,207);ctx.lineTo(506,207);ctx.stroke();
+ctx.beginPath();ctx.moveTo(460,200);ctx.lineTo(464,207);ctx.stroke();
+ctx.beginPath();ctx.moveTo(476,200);ctx.lineTo(480,207);ctx.stroke();
+ctx.beginPath();ctx.moveTo(492,200);ctx.lineTo(496,207);ctx.stroke();
+ctx.beginPath();ctx.moveTo(504,200);ctx.lineTo(508,207);ctx.stroke();
+// stripes on tower
+S(0.9,0.45);
+[230,255,278].forEach(function(y){
+  ctx.beginPath();ctx.moveTo(472,y);ctx.bezierCurveTo(480,y+2,490,y-2,492,y);ctx.stroke();
+});
+
+/* LEFT CLIFF FACE */
+S(2.2,0.82);
+ctx.beginPath();
+ctx.moveTo(28,510);
+ctx.bezierCurveTo(35,490,42,472,52,458);
+ctx.bezierCurveTo(62,444,72,435,80,420);
+ctx.bezierCurveTo(90,405,95,388,92,372);
+ctx.bezierCurveTo(89,355,80,340,72,325);
+ctx.bezierCurveTo(62,308,55,292,52,280);
+ctx.lineTo(28,280);
+ctx.closePath();ctx.stroke();
+// cliff texture – horizontal stratification
+S(0.8,0.40);
+[[28,460,78,445],[28,430,82,415],[28,400,88,383],[28,370,85,352],[28,340,78,323],[28,310,68,295]].forEach(function(l){
+  ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.bezierCurveTo(l[0]+20,l[1]-3,l[2]-20,l[3]+3,l[2],l[3]);ctx.stroke();
+});
+// cliff face vertical cracks
+S(0.6,0.35);
+[[45,280,38,355],[60,300,55,390],[35,340,30,415]].forEach(function(c){
+  ctx.beginPath();ctx.moveTo(c[0],c[1]);ctx.bezierCurveTo(c[0]+3,c[1]+30,c[2]-3,c[3]-30,c[2],c[3]);ctx.stroke();
+});
+
+/* RIGHT CLIFF FACE */
+S(2.2,0.82);
+ctx.beginPath();
+ctx.moveTo(572,480);
+ctx.bezierCurveTo(565,460,558,440,548,425);
+ctx.bezierCurveTo(538,410,528,395,520,378);
+ctx.bezierCurveTo(510,362,506,345,510,330);
+ctx.bezierCurveTo(514,315,524,302,535,290);
+ctx.lineTo(572,290);
+ctx.closePath();ctx.stroke();
+S(0.8,0.40);
+[[572,435,524,418],[572,405,518,388],[572,375,516,358],[572,345,520,328],[572,315,530,302]].forEach(function(l){
+  ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.bezierCurveTo(l[0]-20,l[1]-3,l[2]+20,l[3]+3,l[2],l[3]);ctx.stroke();
+});
+S(0.6,0.35);
+[[555,290,562,360],[540,310,548,380],[568,340,565,415]].forEach(function(c){
+  ctx.beginPath();ctx.moveTo(c[0],c[1]);ctx.bezierCurveTo(c[0]+3,c[1]+28,c[2]-3,c[3]-28,c[2],c[3]);ctx.stroke();
+});
+
+/* ROCKY BEACH / BOULDERS */
+function rock(rx,ry,rw,rh){
+  S(2.0,0.80);
+  ctx.beginPath();
+  ctx.moveTo(rx-rw,ry+rh*0.3);
+  ctx.bezierCurveTo(rx-rw*0.9,ry-rh*0.2, rx-rw*0.4,ry-rh, rx,ry-rh);
+  ctx.bezierCurveTo(rx+rw*0.4,ry-rh, rx+rw*0.85,ry-rh*0.3, rx+rw,ry+rh*0.2);
+  ctx.lineTo(rx+rw,ry+rh);ctx.lineTo(rx-rw,ry+rh);ctx.closePath();ctx.stroke();
+  // crack lines
+  S(0.7,0.38);
+  [[rx-rw*0.35,ry-rh*0.5,rx-rw*0.15,ry+rh*0.1],[rx+rw*0.1,ry-rh*0.6,rx+rw*0.25,ry-rh*0.1]].forEach(function(l){
+    ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.bezierCurveTo(l[0]+4,l[1]+20,l[2]-4,l[3]-20,l[2],l[3]);ctx.stroke();
+  });
+  // lichen patches
+  S(0.6,0.32);
+  [[-rw*0.5,0],[0,-rh*0.55],[rw*0.4,-rh*0.2]].forEach(function(p){
+    ctx.beginPath();ctx.arc(rx+p[0],ry+p[1],6,0,Math.PI*2);ctx.stroke();
+  });
+}
+rock(175,640,80,65);rock(375,620,70,58);rock(250,680,55,45);
+rock(470,660,60,52);rock(90,690,45,38);rock(505,700,40,32);
+// scattered pebbles
+S(0.8,0.55);
+[[310,710,12,7],[340,725,9,5],[285,728,10,6],[400,715,11,7],[445,730,8,5]].forEach(function(p){
+  ctx.beginPath();ctx.ellipse(p[0],p[1],p[2],p[3],Math.random()*0.8,0,Math.PI*2);ctx.stroke();
+});
+
+/* CRASHING WAVE */
+S(2.2,0.80);
+ctx.beginPath();
+ctx.moveTo(28,500);
+ctx.bezierCurveTo(80,475,130,455,180,448);
+ctx.bezierCurveTo(220,442,255,448,290,458);
+ctx.bezierCurveTo(330,470,365,482,400,488);
+ctx.bezierCurveTo(440,494,490,488,530,472);
+ctx.bezierCurveTo(555,462,568,450,572,440);
+ctx.stroke();
+// FOAM BLOBS from wave
+S(1.5,0.72);
+[[80,488,28,12],[140,478,24,10],[200,472,30,12],[260,480,26,11],
+ [320,490,28,12],[380,496,24,10],[440,490,26,11],[500,480,22,10],[550,466,24,10]].forEach(function(b){
+  ctx.beginPath();ctx.ellipse(b[0],b[1],b[2],b[3],0,0,Math.PI*2);ctx.stroke();
+  S(0.7,0.38);ctx.beginPath();ctx.arc(b[0],b[1],b[2]*0.45,0,Math.PI*2);ctx.stroke();
+  S(1.5,0.72);
+});
+// foam trails into rocks
+S(0.8,0.45);
+[[150,490,100,540],[230,500,175,560],[330,510,290,570],[420,500,380,558],[510,485,480,545]].forEach(function(l){
+  ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.quadraticCurveTo(l[0]-10,l[3]-20,l[2],l[3]);ctx.stroke();
+});
+
+/* TIDE POOL */
+S(1.5,0.65);
+ctx.beginPath();ctx.ellipse(310,595,48,24,0,0,Math.PI*2);ctx.stroke();
+S(0.6,0.28);
+ctx.beginPath();ctx.ellipse(310,595,40,18,0,0,Math.PI*2);ctx.stroke();
+ctx.beginPath();ctx.ellipse(310,595,28,12,0,0,Math.PI*2);ctx.stroke();
+
+/* SEAGULLS */
+S(1.1,0.65);
+[[120,155],[180,130],[260,148],[350,122],[440,140],[520,158]].forEach(function(g){
+  var s=15;
+  ctx.beginPath();
+  ctx.moveTo(g[0]-s,g[1]+s*0.4);ctx.quadraticCurveTo(g[0]-s*0.5,g[1],g[0],g[1]+s*0.2);
+  ctx.quadraticCurveTo(g[0]+s*0.5,g[1],g[0]+s,g[1]+s*0.4);
+  ctx.stroke();
+});
+// sitting gull on rock
+S(1.1,0.68);
+var gx=175,gy=570;
+ctx.beginPath();ctx.ellipse(gx,gy,12,7,0,0,Math.PI*2);ctx.stroke(); // body
+ctx.beginPath();ctx.arc(gx+14,gy-4,5,0,Math.PI*2);ctx.stroke(); // head
+ctx.beginPath();ctx.moveTo(gx+19,gy-3);ctx.lineTo(gx+25,gy-2);ctx.stroke(); // beak
+
+/* SEAWEED */
+S(1.0,0.60);
+[[115,650],[130,640],[455,640],[470,650]].forEach(function(b){
+  ctx.beginPath();ctx.moveTo(b[0],b[1]+20);
+  ctx.bezierCurveTo(b[0]-8,b[1]+10,b[0]+10,b[1]-5,b[0],b[1]-12);
+  ctx.bezierCurveTo(b[0]-12,b[1]-22,b[0]+8,b[1]-35,b[0]+2,b[1]-45);
+  ctx.stroke();
+});
+
+/* CREDIT & BORDER */
+ctx.save();ctx.font='italic 13px "Playfair Display",Georgia,serif';
+ctx.fillStyle='rgba(17,17,17,0.16)';ctx.textAlign='center';
+ctx.fillText('Sea Foam  ·  Kiwi\'s Art',W/2,H-22);ctx.restore();
+S(1.5,0.18);ctx.strokeRect(16,16,W-32,H-32);
+S(0.7,0.10);ctx.strokeRect(22,22,W-44,H-44);
 })();
 </script>
 

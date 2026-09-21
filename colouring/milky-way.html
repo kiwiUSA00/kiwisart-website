@@ -75,104 +75,171 @@
 
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
+var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+ctx.lineCap='round';ctx.lineJoin='round';
+function S(lw,a){ctx.strokeStyle='rgba(17,17,17,'+(a==null?0.85:a)+')';ctx.lineWidth=lw;}
 
-  // Crescent moon
-  S(1.5,0.75);
-  ctx.beginPath();ctx.arc(510,80,35,0,Math.PI*2);ctx.stroke();
-  ctx.beginPath();ctx.arc(522,74,30,0,Math.PI*2);ctx.stroke(); // inner circle for crescent
+/* SKY HATCHING — light shading to differentiate sky from ground */
+S(0.35,0.07);
+for(var y=28;y<520;y+=16){
+  ctx.beginPath();ctx.moveTo(28,y);ctx.bezierCurveTo(200,y+2,380,y-2,570,y);ctx.stroke();
+}
 
-  // Milky Way arc - band of dense dots sweeping across sky
-  // Draw as layered dot clouds
-  S(0.7,0.55);
-  var seed=42;
-  function prng(){seed=(seed*1664525+1013904223)&0xffffffff;return (seed>>>0)/0xffffffff;}
-  // Galaxy band path: sweeps from lower-left to upper-right
-  function galaxyY(x){return 580-x*0.55+Math.sin(x/120)*60;}
-  // Dense star band
-  for(var gi=0;gi<380;gi++){
-    var gx=30+prng()*535;
-    var gy=galaxyY(gx)+(prng()-0.5)*90;
-    if(gy>50&&gy<700){
-      var gr=0.4+prng()*1.2;
-      S(gr,0.35+prng()*0.45);
-      ctx.beginPath();ctx.arc(gx,gy,gr*0.5,0,Math.PI*2);ctx.stroke();
-    }
-  }
-  // Wispy nebula cloud lines following galaxy arc
-  S(0.6,0.20);
-  for(var ni=0;ni<8;ni++){
-    var nx=60+ni*65;
-    var ny=galaxyY(nx);
-    ctx.beginPath();ctx.moveTo(nx-30,ny+15*prng());
-    ctx.quadraticCurveTo(nx,ny-20+prng()*40,nx+30,ny+15*prng());ctx.stroke();
-  }
+/* MILKY WAY BAND — dense arc of dots and short dashes */
+// The band arcs from lower-left to upper-right
+S(0.5,0.50);
+var bandPts=[
+  [28,480],[80,420],[130,370],[185,328],[240,295],[298,272],[355,258],[408,252],[460,254],[510,264],[555,280],[572,290]
+];
+// draw the band as two curved boundaries
+ctx.beginPath();
+ctx.moveTo(bandPts[0][0],bandPts[0][1]-18);
+bandPts.forEach(function(p,i){if(i>0)ctx.lineTo(p[0],p[1]-18);});
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(bandPts[0][0],bandPts[0][1]+18);
+bandPts.forEach(function(p,i){if(i>0)ctx.lineTo(p[0],p[1]+18);});
+ctx.stroke();
 
-  // Regular stars scattered across sky
-  S(0.8,0.50);
-  var starPts=[];
-  for(var si2=0;si2<120;si2++){
-    var sx=30+prng()*535,sy=30+prng()*570;
-    starPts.push([sx,sy]);
-    var sr=0.5+prng()*1.5;
-    ctx.beginPath();ctx.arc(sx,sy,sr,0,Math.PI*2);ctx.stroke();
-  }
+// fill band with dots
+S(0.6,0.45);
+for(var bi=0;bi<320;bi++){
+  var t=bi/319;
+  var idx=t*(bandPts.length-1);
+  var lo=Math.floor(idx),hi=Math.min(lo+1,bandPts.length-1);
+  var ft=idx-lo;
+  var bx=bandPts[lo][0]*(1-ft)+bandPts[hi][0]*ft;
+  var by=bandPts[lo][1]*(1-ft)+bandPts[hi][1]*ft;
+  var spread=16*(1-Math.abs(t-0.5)*0.6);
+  var jx=bx+(Math.random()-0.5)*spread*3;
+  var jy=by+(Math.random()-0.5)*spread;
+  var r=0.5+Math.random()*1.2;
+  ctx.beginPath();ctx.arc(jx,jy,r,0,Math.PI*2);ctx.stroke();
+}
 
-  // Large bright stars with 4-pointed sparkles
-  S(1.2,0.78);
-  [[80,180,14],[195,95,12],[340,140,10],[130,310,11],[450,200,13],[520,320,10]].forEach(function(st){
-    var sx=st[0],sy=st[1],sr=st[2];
-    // 4-pointed cross
-    [0,90,45,135].forEach(function(deg,i){
-      var a=deg*Math.PI/180;
-      var len2=i<2?sr:sr*0.65;
-      ctx.beginPath();ctx.moveTo(sx-Math.cos(a)*len2,sy-Math.sin(a)*len2);
-      ctx.lineTo(sx+Math.cos(a)*len2,sy+Math.sin(a)*len2);ctx.stroke();
+/* STARS — various sizes */
+function star4(sx,sy,r){
+  // 4-point sparkle
+  S(0.8,0.72);
+  ctx.beginPath();ctx.moveTo(sx,sy-r);ctx.lineTo(sx,sy+r);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(sx-r,sy);ctx.lineTo(sx+r,sy);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(sx-r*0.6,sy-r*0.6);ctx.lineTo(sx+r*0.6,sy+r*0.6);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(sx+r*0.6,sy-r*0.6);ctx.lineTo(sx-r*0.6,sy+r*0.6);ctx.stroke();
+}
+function dot(sx,sy,r){
+  S(0.7,0.65);ctx.beginPath();ctx.arc(sx,sy,r,0,Math.PI*2);ctx.stroke();
+}
+// Large sparkle stars
+[[80,65,6],[155,108,5],[240,52,7],[340,80,5],[430,48,6],[510,90,5],[558,58,6],
+ [48,145,5],[195,170,4],[372,145,5],[490,155,4],[80,220,5],[450,210,4],[555,185,5]].forEach(function(s){star4(s[0],s[1],s[2]);});
+// Medium dots
+[[110,88,2.5],[178,55,2],[265,110,2.5],[315,65,2],[400,100,2.5],[468,72,2],[528,118,2.5],
+ [65,170,2],[140,188,2.5],[222,135,2],[290,152,2.5],[358,118,2],[418,168,2],[480,130,2.5],[540,148,2]].forEach(function(s){dot(s[0],s[1],s[2]);});
+// Small dots scattered
+[[95,42,1.2],[132,70,1],[198,38,1.5],[262,82,1.2],[322,44,1],[382,70,1.2],[444,38,1.5],
+ [504,60,1],[562,82,1.2],[50,95,1],[174,128,1.2],[248,158,1],[328,100,1.5],[412,128,1],[472,102,1.2],
+ [542,108,1],[72,195,1.2],[202,208,1],[358,195,1.5],[428,240,1],[502,198,1.2],[48,248,1]].forEach(function(s){dot(s[0],s[1],s[2]);});
+
+/* CRESCENT MOON */
+S(1.8,0.75);
+ctx.beginPath();ctx.arc(460,115,35,Math.PI*0.3,Math.PI*1.70);ctx.stroke();
+S(1.5,0.70);
+ctx.beginPath();ctx.arc(478,108,30,Math.PI*0.25,Math.PI*1.75,true);ctx.stroke();
+
+/* HORIZON LINE */
+S(1.8,0.60);ctx.beginPath();ctx.moveTo(28,522);ctx.lineTo(572,522);ctx.stroke();
+
+/* STILL LAKE / GROUND REFLECTION */
+S(0.40,0.10);
+for(var y=540;y<760;y+=18){
+  ctx.beginPath();ctx.moveTo(28,y);ctx.bezierCurveTo(200,y-2,380,y+2,570,y);ctx.stroke();
+}
+// Moon reflection on water
+S(1.2,0.40);
+ctx.beginPath();ctx.ellipse(460,620,22,8,0,0,Math.PI*2);ctx.stroke();
+ctx.beginPath();ctx.ellipse(460,640,16,5,0,0,Math.PI*2);ctx.stroke();
+ctx.beginPath();ctx.ellipse(460,655,10,3,0,0,Math.PI*2);ctx.stroke();
+// Star reflections
+S(0.6,0.28);
+[[80,570,8,3],[155,590,7,3],[240,580,9,3],[340,565,7,3],[510,575,8,3],[558,590,6,2]].forEach(function(r){
+  ctx.beginPath();ctx.ellipse(r[0],r[1],r[2],r[3],0,0,Math.PI*2);ctx.stroke();
+});
+
+/* PINE TREES silhouetted against sky */
+function silhouettePine(tx,ty,h,w){
+  S(2.0,0.78);
+  var layers=6;
+  var trunkY=ty+h;
+  for(var l=0;l<layers;l++){
+    var t=l/layers;
+    var ly=ty+h*(0.10+t*0.90);
+    var lw=w*(0.12+t*0.88);
+    var prevY=l===0?ty:ty+h*(0.10+(l-1)/layers*0.90);
+    ctx.beginPath();
+    ctx.moveTo(tx,prevY);
+    ctx.lineTo(tx-lw,ly+h*0.18);
+    ctx.lineTo(tx,ly);
+    ctx.lineTo(tx+lw,ly+h*0.18);
+    ctx.closePath();ctx.stroke();
+    // subtle branch droops
+    S(1.0,0.60);
+    [-lw*0.60,-lw*0.20,lw*0.20,lw*0.60].forEach(function(ox){
+      var bx=tx+ox, by=ly+h*0.18;
+      ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+(ox>0?1:-1)*lw*0.18,by+8);ctx.stroke();
     });
-    ctx.beginPath();ctx.arc(sx,sy,2,0,Math.PI*2);ctx.stroke();
-  });
+    S(2.0,0.78);
+  }
+  // trunk
+  S(1.8,0.72);ctx.beginPath();ctx.rect(tx-w*0.06,trunkY,w*0.12,15);ctx.stroke();
+}
 
-  // Silhouetted treeline at bottom third
-  function silTree(tx,ty,height,sw){
-    S(sw||1.8,0.82);
-    // Pine silhouette
-    ctx.beginPath();ctx.moveTo(tx,ty);
-    ctx.lineTo(tx-height*0.30,ty+height*0.38);ctx.lineTo(tx-height*0.18,ty+height*0.38);
-    ctx.lineTo(tx-height*0.40,ty+height*0.65);ctx.lineTo(tx-height*0.22,ty+height*0.65);
-    ctx.lineTo(tx-height*0.50,ty+height);ctx.lineTo(tx+height*0.50,ty+height);
-    ctx.lineTo(tx+height*0.22,ty+height*0.65);ctx.lineTo(tx+height*0.40,ty+height*0.65);
-    ctx.lineTo(tx+height*0.18,ty+height*0.38);ctx.lineTo(tx+height*0.30,ty+height*0.38);
+/* Reflection of trees in water (inverted, below horizon) */
+function reflectPine(tx,ty,h,w){
+  S(1.4,0.32);
+  var layers=6;
+  for(var l=0;l<layers;l++){
+    var t=l/layers;
+    var ly=ty-h*(0.10+t*0.90);
+    var lw=w*(0.12+t*0.88);
+    var prevY=l===0?ty:ty-h*(0.10+(l-1)/layers*0.90);
+    ctx.beginPath();
+    ctx.moveTo(tx,prevY);ctx.lineTo(tx-lw,ly-h*0.18);ctx.lineTo(tx,ly);ctx.lineTo(tx+lw,ly-h*0.18);
     ctx.closePath();ctx.stroke();
   }
-  silTree(60,620,140,2.0);
-  silTree(140,640,110,1.8);
-  silTree(220,650,130,2.0);
-  silTree(330,635,150,2.2);
-  silTree(440,648,120,1.8);
-  silTree(510,630,135,2.0);
-  silTree(570,645,105,1.8);
+}
 
-  // Rolling hills silhouette
-  S(2.0,0.78);
-  ctx.beginPath();ctx.moveTo(0,760);
-  ctx.bezierCurveTo(80,730,160,750,240,740);
-  ctx.bezierCurveTo(320,730,400,745,480,738);
-  ctx.bezierCurveTo(540,732,580,740,595,738);
-  ctx.lineTo(595,800);ctx.lineTo(0,800);ctx.closePath();ctx.stroke();
+silhouettePine(80,290,232,60);
+silhouettePine(160,320,200,50);
+silhouettePine(462,295,218,55);
+silhouettePine(538,310,195,48);
+silhouettePine(28,350,172,42);
+silhouettePine(572,340,180,44);
+silhouettePine(230,400,140,35);
+silhouettePine(355,390,145,36);
 
-  // Credit
-  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Milky Way  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
-  // Decorative double border
-  ctx.save();
-  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
-  ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
-  ctx.strokeRect(22,22,W-44,H-44);
-  ctx.restore();
+reflectPine(80,522,160,50);
+reflectPine(160,522,140,42);
+reflectPine(462,522,150,46);
+reflectPine(538,522,138,40);
+
+/* FOREGROUND ROCKS */
+S(1.8,0.72);
+function fgRock(rx,ry,rw,rh){
+  ctx.beginPath();
+  ctx.moveTo(rx-rw,ry);
+  ctx.bezierCurveTo(rx-rw*0.9,ry-rh*0.5,rx-rw*0.3,ry-rh,rx,ry-rh);
+  ctx.bezierCurveTo(rx+rw*0.3,ry-rh,rx+rw*0.88,ry-rh*0.5,rx+rw,ry);
+  ctx.closePath();ctx.stroke();
+}
+fgRock(110,522,65,30);fgRock(300,522,50,22);fgRock(480,522,60,28);
+
+/* CREDIT & BORDER */
+ctx.save();ctx.font='italic 13px "Playfair Display",Georgia,serif';
+ctx.fillStyle='rgba(17,17,17,0.14)';ctx.textAlign='center';
+ctx.fillText('Milky Way  ·  Kiwi\'s Art',W/2,H-22);ctx.restore();
+S(1.5,0.18);ctx.strokeRect(16,16,W-32,H-32);
+S(0.7,0.10);ctx.strokeRect(22,22,W-44,H-44);
 })();
 </script>
 

@@ -75,144 +75,198 @@
 
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
+var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+ctx.lineCap='round';ctx.lineJoin='round';
+function S(lw,a){ctx.strokeStyle='rgba(17,17,17,'+(a==null?0.85:a)+')';ctx.lineWidth=lw;}
 
-  // Background: silhouetted bare tree branches
-  S(1.5,0.55);
-  function bareBranch(bx,by,dir,len,depth){
-    if(depth===0||len<8)return;
-    var ex=bx+Math.cos(dir)*len,ey=by+Math.sin(dir)*len;
-    S(Math.max(0.5,1.5*(depth/4)),0.50+depth*0.08);
-    ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(ex,ey);ctx.stroke();
-    bareBranch(ex,ey,dir-0.4+Math.random()*0.1,len*0.65,depth-1);
-    bareBranch(ex,ey,dir+0.4+Math.random()*0.1,len*0.65,depth-1);
-    if(depth>2)bareBranch(ex,ey,dir+Math.random()*0.2-0.1,len*0.55,depth-2);
-  }
-  // Left tree
-  S(2.0,0.55);ctx.beginPath();ctx.moveTo(60,800);ctx.lineTo(60,550);ctx.stroke();
-  bareBranch(60,550,-Math.PI/2,80,4);
-  // Right tree
-  ctx.beginPath();ctx.moveTo(535,800);ctx.lineTo(535,580);ctx.stroke();
-  bareBranch(535,580,-Math.PI/2,70,4);
-  // Distant forest suggestion
-  S(0.6,0.30);
-  [100,140,180,420,460,500].forEach(function(tx){
-    ctx.beginPath();ctx.moveTo(tx,800);ctx.lineTo(tx,650+Math.sin(tx)*20);ctx.stroke();
-    bareBranch(tx,650+Math.sin(tx)*20,-Math.PI/2,40,3);
-  });
+/* NIGHT SKY (cross-hatch) */
+S(0.35,0.08);
+for(var y=28;y<380;y+=20){ctx.beginPath();ctx.moveTo(28,y);ctx.lineTo(572,y);ctx.stroke();}
+// stars in night sky
+S(0.6,0.48);
+[[60,45],[120,80],[200,38],[280,62],[365,42],[445,75],[520,50],[555,90],
+ [85,130],[185,105],[320,118],[460,110],[542,138],[45,180],[165,158],[398,145],[520,165]].forEach(function(s){
+  ctx.beginPath();ctx.arc(s[0],s[1],1.5,0,Math.PI*2);ctx.stroke();
+});
+S(0.5,0.35);
+[[100,55],[250,95],[410,60],[560,70],[140,140],[455,130],[80,195]].forEach(function(s){
+  ctx.beginPath();ctx.moveTo(s[0],s[1]-5);ctx.lineTo(s[0],s[1]+5);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(s[0]-5,s[1]);ctx.lineTo(s[0]+5,s[1]);ctx.stroke();
+});
 
-  // Heat shimmer lines radiating from fire
-  S(0.6,0.18);
-  var fireX=297,fireBase=700;
-  for(var hi=0;hi<16;hi++){
-    var ha=-Math.PI*0.7+hi*Math.PI*1.4/15;
-    var hr1=120,hr2=200;
-    ctx.beginPath();
-    ctx.moveTo(fireX+hr1*Math.cos(ha),fireBase+hr1*Math.sin(ha)*0.3);
-    ctx.quadraticCurveTo(fireX+(hr1+30)*Math.cos(ha+0.05),fireBase+(hr1+30)*Math.sin(ha+0.05)*0.3,
-                         fireX+hr2*Math.cos(ha),fireBase+hr2*Math.sin(ha)*0.3);ctx.stroke();
-  }
-
-  // Log pile at base
-  S(2.0,0.82);
-  // 4 logs in cross-hatch arrangement
-  function log(lx,ly,llen,angle){
-    var c=Math.cos(angle),s=Math.sin(angle);
-    var lw2=14;
-    ctx.beginPath();
-    ctx.moveTo(lx-llen*c-lw2*s,ly-llen*s+lw2*c);
-    ctx.lineTo(lx+llen*c-lw2*s,ly+llen*s+lw2*c);
-    ctx.lineTo(lx+llen*c+lw2*s,ly+llen*s-lw2*c);
-    ctx.lineTo(lx-llen*c+lw2*s,ly-llen*s-lw2*c);
-    ctx.closePath();ctx.stroke();
-    // End circles
-    ctx.beginPath();ctx.ellipse(lx-llen*c,ly-llen*s,lw2,lw2*0.55,angle,0,Math.PI*2);ctx.stroke();
-    // Bark texture
-    S(0.7,0.45);
-    for(var bi=0;bi<5;bi++){
-      var bt=-0.8+bi*0.4;
-      ctx.beginPath();ctx.moveTo(lx+(bt*llen)*c,ly+(bt*llen)*s);
-      ctx.quadraticCurveTo(lx+(bt*llen+5)*c-8*s,ly+(bt*llen+5)*s+8*c,
-                           lx+(bt*llen+10)*c,ly+(bt*llen+10)*s);ctx.stroke();
-    }
-  }
-  S(2.0,0.82);
-  log(220,728,70,0.15);
-  log(375,728,70,-0.18);
-  log(260,748,65,0.05);
-  log(340,748,65,-0.08);
-
-  // Flame tongues - tall teardrop/leaf shapes
-  function flame(fx,fy,fw,fh,lean){
-    S(2.0,0.90);
-    ctx.beginPath();
-    ctx.moveTo(fx,fy+fh*0.5); // base
-    ctx.bezierCurveTo(fx-fw,fy+fh*0.2,fx-fw*0.5+lean,fy-fh*0.3,fx+lean,fy-fh*0.5); // left side up to tip
-    ctx.bezierCurveTo(fx+fw*0.5+lean,fy-fh*0.3,fx+fw,fy+fh*0.2,fx,fy+fh*0.5); // right side back to base
+/* TREE SILHOUETTES — bare winter trees framing scene */
+function bareTree(tx,ty,h,w){
+  S(2.5,0.80);
+  // trunk
+  ctx.beginPath();ctx.moveTo(tx-w*0.08,ty);ctx.lineTo(tx-w*0.08,ty-h*0.45);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(tx+w*0.08,ty);ctx.lineTo(tx+w*0.08,ty-h*0.45);ctx.stroke();
+  // main limbs
+  S(2.0,0.78);
+  var limbs=[[-w*0.55,-h*0.55],[-w*0.35,-h*0.70],[w*0.50,-h*0.58],[w*0.30,-h*0.72]];
+  limbs.forEach(function(l){
+    ctx.beginPath();ctx.moveTo(tx,ty-h*0.42);
+    ctx.bezierCurveTo(tx+l[0]*0.4,ty+l[1]*0.4,tx+l[0]*0.7,ty+l[1]*0.7,tx+l[0],ty+l[1]);
     ctx.stroke();
-    // Inner convection lines
-    S(0.8,0.60);
-    for(var ci=0;ci<4;ci++){
-      var ct=0.2+ci*0.18;
-      ctx.beginPath();
-      ctx.moveTo(fx+lean*ct,fy-fh*ct+fh*0.5);
-      ctx.bezierCurveTo(fx-fw*0.3+lean*ct,fy-fh*ct-fh*0.1,
-                         fx+lean*ct,fy-fh*ct-fh*0.25,
-                         fx+lean*ct,fy-fh*(ct+0.08)-fh*0.1);ctx.stroke();
-    }
-  }
-  flame(297,700,55,340,-10);  // center tallest
-  flame(240,710,42,280,18);   // left
-  flame(355,710,40,265,-22);  // right
-  flame(200,720,32,210,30);   // far left
-  flame(395,718,35,225,-28);  // far right
-  flame(297,715,30,195,5);    // inner short
-
-  // Embers and sparks floating up
-  S(0.8,0.65);
-  var emberPts=[[280,420],[310,390],[265,360],[325,375],[297,340],[285,310],[308,330],
-                [275,455],[320,440],[340,410],[260,480],[330,470],[297,500],[270,390]];
-  emberPts.forEach(function(e,i){
-    if(i%3===0){
-      // Ember circle
-      ctx.beginPath();ctx.arc(e[0],e[1],2+Math.random()*2,0,Math.PI*2);ctx.stroke();
-    } else {
-      // Spark line
-      var sa=(-0.3+Math.random()*0.6)*Math.PI-Math.PI/2;
-      ctx.beginPath();ctx.moveTo(e[0],e[1]);ctx.lineTo(e[0]+Math.cos(sa)*8,e[1]+Math.sin(sa)*8);ctx.stroke();
-    }
+    // secondary branches from each limb
+    S(1.2,0.72);
+    var sl=l[0]*0.45,sh=l[1]*0.42;
+    ctx.beginPath();ctx.moveTo(tx+l[0]*0.6,ty+l[1]*0.6);
+    ctx.lineTo(tx+l[0]*0.6+sl,ty+l[1]*0.6+sh);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(tx+l[0]*0.6,ty+l[1]*0.6);
+    ctx.lineTo(tx+l[0]*0.6-sl*0.8,ty+l[1]*0.6+sh*0.85);ctx.stroke();
+    S(0.8,0.65);
+    ctx.beginPath();ctx.moveTo(tx+l[0]*0.8,ty+l[1]*0.8);
+    ctx.lineTo(tx+l[0]*0.8+sl*0.5,ty+l[1]*0.8+sh*0.5);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(tx+l[0]*0.8,ty+l[1]*0.8);
+    ctx.lineTo(tx+l[0]*0.8-sl*0.4,ty+l[1]*0.8+sh*0.45);ctx.stroke();
+    S(2.0,0.78);
   });
+}
+bareTree(72,520,340,90);
+bareTree(522,520,310,82);
+bareTree(155,480,250,65);
+bareTree(442,485,240,62);
+bareTree(28,540,220,55);
+bareTree(568,545,210,52);
 
-  // Smoke plumes
-  S(1.0,0.28);
-  ctx.beginPath();ctx.moveTo(285,360);
-  ctx.bezierCurveTo(260,310,280,260,255,210);
-  ctx.bezierCurveTo(235,165,270,125,250,80);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(310,350);
-  ctx.bezierCurveTo(340,295,315,245,345,195);
-  ctx.bezierCurveTo(370,148,340,100,365,55);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(297,355);
-  ctx.bezierCurveTo(320,300,295,245,320,190);
-  ctx.bezierCurveTo(340,140,310,90,335,45);ctx.stroke();
-  // Smoke plume widening
-  S(0.6,0.18);
-  [[240,80,310,68],[200,120,360,108],[165,160,400,150],[130,200,440,192]].forEach(function(l){
-    ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.quadraticCurveTo(297,l[1]-10,l[2],l[3]);ctx.stroke();
-  });
+/* GROUND */
+S(1.8,0.65);
+ctx.beginPath();ctx.moveTo(28,540);
+ctx.bezierCurveTo(120,528,240,532,298,530);
+ctx.bezierCurveTo(358,528,478,532,572,538);
+ctx.stroke();
+// foreground ground
+S(1.4,0.58);
+ctx.beginPath();ctx.moveTo(28,590);
+ctx.bezierCurveTo(150,578,300,582,450,578);ctx.bezierCurveTo(520,575,555,580,572,585);
+ctx.stroke();
+// ground hatching
+S(0.5,0.20);
+for(var gx=40;gx<570;gx+=18){
+  ctx.beginPath();ctx.moveTo(gx,540);ctx.lineTo(gx+6,590);ctx.stroke();
+}
 
-  // Credit
-  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Fire is Raging  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
-  // Decorative double border
-  ctx.save();
-  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
-  ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
-  ctx.strokeRect(22,22,W-44,H-44);
-  ctx.restore();
+/* LOG PILE */
+// Bottom logs (3 thick logs crossing)
+S(2.2,0.80);
+// Log 1 (left-leaning)
+ctx.beginPath();
+ctx.moveTo(180,530);ctx.bezierCurveTo(200,518,248,508,298,506);
+ctx.bezierCurveTo(348,504,396,510,415,520);ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(180,545);ctx.bezierCurveTo(200,533,248,522,298,520);
+ctx.bezierCurveTo(348,518,396,524,415,534);ctx.stroke();
+// log end grain
+S(1.5,0.70);ctx.beginPath();ctx.ellipse(178,537,8,14,0.15,0,Math.PI*2);ctx.stroke();
+S(0.7,0.45);ctx.beginPath();ctx.ellipse(178,537,4,8,0.15,0,Math.PI*2);ctx.stroke();
+S(0.5,0.35);ctx.beginPath();ctx.arc(178,537,2,0,Math.PI*2);ctx.stroke();
+// right end
+S(1.5,0.70);ctx.beginPath();ctx.ellipse(416,527,8,14,0.15,0,Math.PI*2);ctx.stroke();
+
+// Log 2 (right-leaning)
+S(2.2,0.80);
+ctx.beginPath();
+ctx.moveTo(190,520);ctx.bezierCurveTo(210,515,252,512,298,514);
+ctx.bezierCurveTo(345,516,388,520,408,528);ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(188,535);ctx.bezierCurveTo(210,530,252,527,298,529);
+ctx.bezierCurveTo(345,531,388,535,408,543);ctx.stroke();
+// bark texture
+S(0.7,0.38);
+[210,238,265,292,318,345,372,400].forEach(function(x){
+  ctx.beginPath();ctx.moveTo(x,516+Math.random()*2);ctx.lineTo(x+5,535+Math.random()*2);ctx.stroke();
+});
+
+// Upper crossed logs
+S(2.0,0.78);
+ctx.beginPath();
+ctx.moveTo(218,515);ctx.bezierCurveTo(248,508,278,504,298,504);
+ctx.bezierCurveTo(318,504,345,510,378,520);ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(218,528);ctx.bezierCurveTo(248,521,278,517,298,517);
+ctx.bezierCurveTo(318,517,345,523,378,533);ctx.stroke();
+
+/* FLAME FORMS */
+function flame(fx,fy,fh,fw,curveDir){
+  S(1.8,0.85);
+  ctx.beginPath();
+  ctx.moveTo(fx-fw,fy);
+  ctx.bezierCurveTo(fx-fw*0.8,fy-fh*0.28,fx+curveDir*fw*0.5,fy-fh*0.55,fx+curveDir*fw*0.3,fy-fh*0.80);
+  ctx.bezierCurveTo(fx+curveDir*fw*0.1,fy-fh*0.92,fx+curveDir*fw*0.05,fy-fh,fx,fy-fh*1.05);
+  ctx.bezierCurveTo(fx-curveDir*fw*0.05,fy-fh,fx-curveDir*fw*0.2,fy-fh*0.88,fx-curveDir*fw*0.3,fy-fh*0.78);
+  ctx.bezierCurveTo(fx-curveDir*fw*0.5,fy-fh*0.55,fx+fw*0.8,fy-fh*0.28,fx+fw,fy);
+  ctx.stroke();
+  // inner flame shape
+  S(1.1,0.65);
+  ctx.beginPath();
+  ctx.moveTo(fx-fw*0.5,fy);
+  ctx.bezierCurveTo(fx-fw*0.4,fy-fh*0.30,fx+curveDir*fw*0.3,fy-fh*0.55,fx+curveDir*fw*0.18,fy-fh*0.78);
+  ctx.bezierCurveTo(fx,fy-fh*0.95,fx-curveDir*fw*0.2,fy-fh*0.80,fx-curveDir*fw*0.12,fy-fh*0.58);
+  ctx.bezierCurveTo(fx-curveDir*fw*0.4,fy-fh*0.35,fx+fw*0.5,fy-fh*0.18,fx+fw*0.5,fy);
+  ctx.stroke();
+}
+// Multiple overlapping flame tongues
+flame(298,505,220,55,1);
+flame(255,510,185,42,-1);
+flame(342,510,195,40,1);
+flame(298,510,265,30,-0.5);  // tall central flame
+flame(210,520,145,32,1);
+flame(385,518,158,35,-1);
+flame(268,512,105,28,-1);
+flame(328,512,118,28,1);
+
+/* HEAT SHIMMER LINES around fire */
+S(0.6,0.25);
+[[-65,-50],[-45,-30],[-25,-12],[0,0],[25,-12],[45,-30],[65,-50]].forEach(function(off){
+  ctx.beginPath();
+  ctx.moveTo(298+off[0],390+off[1]);
+  ctx.bezierCurveTo(298+off[0]-5,355+off[1],298+off[0]+5,320+off[1],298+off[0]-3,288+off[1]);
+  ctx.stroke();
+});
+
+/* EMBERS & SPARKS rising */
+S(0.7,0.58);
+[[262,460],[298,445],[335,458],[240,430],[355,425],[220,400],[375,390],[285,380],[310,370],[250,352],[345,355],[298,345],[275,325],[320,318]].forEach(function(e){
+  ctx.beginPath();ctx.arc(e[0],e[1],2,0,Math.PI*2);ctx.stroke();
+});
+// rising trails
+S(0.5,0.35);
+[[262,460,258,440],[298,445,295,420],[335,458,340,435],[285,380,282,358],[310,370,308,348]].forEach(function(l){
+  ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.bezierCurveTo(l[0]-2,l[1]-8,l[2]+2,l[3]+8,l[2],l[3]);ctx.stroke();
+});
+
+/* SMOKE PLUMES */
+S(1.0,0.30);
+ctx.beginPath();ctx.moveTo(298,285);
+ctx.bezierCurveTo(285,258,268,232,275,208);
+ctx.bezierCurveTo(282,184,305,172,298,148);
+ctx.bezierCurveTo(290,126,268,112,272,90);
+ctx.bezierCurveTo(276,68,295,58,298,40);
+ctx.stroke();
+S(0.7,0.22);
+ctx.beginPath();ctx.moveTo(268,300);
+ctx.bezierCurveTo(248,272,228,245,235,222);
+ctx.bezierCurveTo(242,200,262,192,255,170);
+ctx.bezierCurveTo(248,150,230,138,235,118);
+ctx.stroke();
+ctx.beginPath();ctx.moveTo(328,295);
+ctx.bezierCurveTo(348,268,368,242,360,218);
+ctx.bezierCurveTo(352,196,332,185,340,162);
+ctx.bezierCurveTo(348,140,365,132,360,112);
+ctx.stroke();
+// smoke puffs
+S(0.6,0.18);
+[[298,260,28],[282,228,22],[270,196,18],[295,165,20],[288,135,16]].forEach(function(p){
+  ctx.beginPath();ctx.arc(p[0],p[1],p[2],0,Math.PI*2);ctx.stroke();
+});
+
+/* CREDIT & BORDER */
+ctx.save();ctx.font='italic 13px "Playfair Display",Georgia,serif';
+ctx.fillStyle='rgba(17,17,17,0.14)';ctx.textAlign='center';
+ctx.fillText('Fire Is Raging  ·  Kiwi\'s Art',W/2,H-22);ctx.restore();
+S(1.5,0.18);ctx.strokeRect(16,16,W-32,H-32);
+S(0.7,0.10);ctx.strokeRect(22,22,W-44,H-44);
 })();
 </script>
 

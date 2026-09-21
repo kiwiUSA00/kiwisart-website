@@ -75,165 +75,258 @@
 
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
+var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+ctx.lineCap='round';ctx.lineJoin='round';
+function S(lw,a){ctx.strokeStyle='rgba(17,17,17,'+(a==null?0.85:a)+')';ctx.lineWidth=lw;}
 
-  // Low moon near horizon casting long shadows
-  S(1.5,0.68);
-  ctx.beginPath();ctx.arc(80,480,45,0,Math.PI*2);ctx.stroke();
-  S(0.6,0.30);
-  ctx.beginPath();ctx.arc(80,480,38,0,Math.PI*2);ctx.stroke();
-  // Moon glow rings
-  S(0.4,0.15);
-  [55,65,75].forEach(function(r){ctx.beginPath();ctx.arc(80,480,r,0,Math.PI*2);ctx.stroke();});
+/* DRAMATIC SKY — heavy storm hatching */
+S(0.38,0.10);
+for(var y=28;y<380;y+=16){ctx.beginPath();ctx.moveTo(28,y);ctx.bezierCurveTo(180,y+3,380,y-3,572,y);ctx.stroke();}
+// Storm cloud masses
+S(1.0,0.48);
+[[100,85,160,60],[260,60,180,55],[420,75,170,58],[100,130,140,50],[340,115,160,52],[520,105,120,48]].forEach(function(c){
+  var cx2=c[0],cy2=c[1],cw=c[2],ch=c[3];
+  ctx.beginPath();
+  ctx.moveTo(cx2-cw/2,cy2+ch/2);
+  ctx.bezierCurveTo(cx2-cw/2,cy2-ch*0.1,cx2-cw*0.35,cy2-ch*0.65,cx2-cw*0.1,cy2-ch*0.75);
+  ctx.bezierCurveTo(cx2+cw*0.1,cy2-ch*0.88,cx2+cw*0.3,cy2-ch*0.65,cx2+cw*0.35,cy2-ch*0.42);
+  ctx.bezierCurveTo(cx2+cw*0.45,cy2-ch*0.55,cx2+cw/2,cy2-ch*0.15,cx2+cw/2,cy2+ch/2);
+  ctx.stroke();
+});
 
-  // Background pine trees
-  function bgPine(tx,ty,h){
-    S(1.2,0.55);
-    ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(tx-h*0.28,ty+h*0.4);ctx.lineTo(tx-h*0.18,ty+h*0.4);
-    ctx.lineTo(tx-h*0.38,ty+h*0.7);ctx.lineTo(tx-h*0.22,ty+h*0.7);
-    ctx.lineTo(tx-h*0.48,ty+h);ctx.lineTo(tx+h*0.48,ty+h);
-    ctx.lineTo(tx+h*0.22,ty+h*0.7);ctx.lineTo(tx+h*0.38,ty+h*0.7);
-    ctx.lineTo(tx+h*0.18,ty+h*0.4);ctx.lineTo(tx+h*0.28,ty+h*0.4);
-    ctx.closePath();ctx.stroke();
-  }
-  bgPine(450,380,160);bgPine(520,400,130);bgPine(560,420,110);bgPine(580,430,90);
+/* DISTANT TREE LINE */
+S(0.8,0.38);
+ctx.beginPath();
+ctx.moveTo(28,380);
+[50,82,115,148,180,215,248,282,315,348,382,415,450,485,520,555,572].forEach(function(x){
+  var h=30+Math.abs(Math.sin(x*0.08))*28;
+  ctx.lineTo(x,380-h);ctx.lineTo(x+18,380);
+});
+ctx.stroke();
 
-  // Bare deciduous trees - left and right
-  function bareTree(tx,ty,trunkH,trunkW){
-    // Trunk
-    S(trunkW,0.88);
-    ctx.beginPath();ctx.moveTo(tx-trunkW*3,ty);ctx.bezierCurveTo(tx-trunkW*2,ty-trunkH*0.3,tx-trunkW,ty-trunkH*0.6,tx,ty-trunkH);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(tx+trunkW*3,ty);ctx.bezierCurveTo(tx+trunkW*2,ty-trunkH*0.3,tx+trunkW,ty-trunkH*0.6,tx,ty-trunkH);ctx.stroke();
-    // Bark texture
-    S(0.6,0.42);
-    for(var bi=0;bi<6;bi++){
-      var by=ty-bi*trunkH/6;
-      ctx.beginPath();ctx.moveTo(tx-trunkW*(3-bi*0.4),by);ctx.lineTo(tx-trunkW*(2.5-bi*0.35),by-trunkH*0.08);ctx.stroke();
-    }
-    // Main branches
-    S(2.0,0.80);
-    var branchData=[
-      [tx,ty-trunkH,tx-120,ty-trunkH-80,tx-180,ty-trunkH-55],
-      [tx,ty-trunkH,tx+110,ty-trunkH-85,tx+170,ty-trunkH-60],
-      [tx,ty-trunkH*0.8,tx-90,ty-trunkH*0.8-60,tx-140,ty-trunkH*0.8-40],
-      [tx,ty-trunkH*0.8,tx+80,ty-trunkH*0.8-55,tx+135,ty-trunkH*0.8-35]
-    ];
-    branchData.forEach(function(b){
-      S(1.8,0.80);
-      ctx.beginPath();ctx.moveTo(b[0],b[1]);ctx.quadraticCurveTo(b[2],b[3],b[3-3+3],b[4-3+4]);
-      ctx.moveTo(b[0],b[1]);ctx.bezierCurveTo(b[2],b[3],b[3],b[4],b[3],b[4]);ctx.stroke();
-      // Secondary branches
+/* FROZEN POND */
+S(2.0,0.65);
+ctx.beginPath();
+ctx.moveTo(88,615);ctx.bezierCurveTo(115,600,158,594,200,592);
+ctx.bezierCurveTo(248,590,300,592,352,594);ctx.bezierCurveTo(398,596,445,604,478,618);
+ctx.bezierCurveTo(502,630,508,645,490,655);ctx.bezierCurveTo(468,665,432,668,390,668);
+ctx.bezierCurveTo(338,668,280,664,232,660);ctx.bezierCurveTo(178,656,128,648,98,638);
+ctx.bezierCurveTo(75,630,72,622,88,615);
+ctx.stroke();
+// Ice surface cracks
+S(1.0,0.45);
+[[165,620,220,638],[198,635,248,652],[280,618,338,640],[312,642,360,658],
+ [360,620,410,638],[400,632,445,648],[155,648,200,658],[250,618,290,630]].forEach(function(l){
+  ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.bezierCurveTo(l[0]+12,l[1]+5,l[2]-12,l[3]-5,l[2],l[3]);ctx.stroke();
+});
+// Ice sheen hatching
+S(0.4,0.15);
+[600,610,620,630,640,650].forEach(function(y){
+  ctx.beginPath();ctx.moveTo(95,y);ctx.bezierCurveTo(200,y-2,350,y+2,490,y-1);ctx.stroke();
+});
+
+/* SNOW GROUND */
+S(1.8,0.62);
+ctx.beginPath();ctx.moveTo(28,540);
+ctx.bezierCurveTo(100,528,200,524,298,526);ctx.bezierCurveTo(398,528,498,532,572,538);
+ctx.stroke();
+S(1.5,0.55);
+ctx.beginPath();ctx.moveTo(28,700);
+ctx.bezierCurveTo(120,688,240,684,298,686);ctx.bezierCurveTo(360,688,470,692,572,698);
+ctx.stroke();
+// snow surface hatching
+S(0.4,0.12);
+for(var gx=38;gx<568;gx+=16){
+  var sy=540+(gx-298)*0.04*(gx-298>0?1:-1)*0.08;
+  ctx.beginPath();ctx.moveTo(gx,sy+8);ctx.lineTo(gx+5,sy+58);ctx.stroke();
+}
+
+/* BARE OAK TREES */
+function bareOak(tx,ty,h,spread){
+  S(3.5,0.88);
+  // main trunk forks
+  ctx.beginPath();ctx.moveTo(tx-spread*0.12,ty);ctx.bezierCurveTo(tx-spread*0.10,ty-h*0.38,tx-spread*0.08,ty-h*0.50,tx,ty-h*0.58);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(tx+spread*0.12,ty);ctx.bezierCurveTo(tx+spread*0.10,ty-h*0.38,tx+spread*0.08,ty-h*0.50,tx,ty-h*0.58);ctx.stroke();
+  S(2.5,0.84);
+  // Main 4 limbs from fork
+  var limbs=[[-spread*0.60,-h*0.78],[-spread*0.38,-h*0.88],[spread*0.55,-h*0.80],[spread*0.35,-h*0.90]];
+  limbs.forEach(function(l){
+    ctx.beginPath();ctx.moveTo(tx,ty-h*0.58);
+    ctx.bezierCurveTo(tx+l[0]*0.42,ty+l[1]*0.42,tx+l[0]*0.72,ty+l[1]*0.72,tx+l[0],ty+l[1]);
+    ctx.stroke();
+    // Secondary sub-limbs
+    S(1.6,0.78);
+    [[-0.48,0.44],[0.42,0.40]].forEach(function(sl){
+      var slx=tx+l[0]*(0.55+sl[0]*0.25),sly=ty+l[1]*(0.55+sl[1]*0.25);
+      var el2x=slx+l[0]*sl[0]*0.65,el2y=sly+l[1]*sl[1]*0.65;
+      ctx.beginPath();ctx.moveTo(slx,sly);ctx.lineTo(el2x,el2y);ctx.stroke();
       S(1.0,0.70);
-      for(var si2=0;si2<4;si2++){
-        var st=(si2+1)/5;
-        var sx2=b[0]+(b[3]-b[0])*st,sy2=b[1]+(b[4]-b[1])*st;
-        var sdir=(b[4]>b[1]?-1:1)*(si2%2===0?1:-1);
-        ctx.beginPath();ctx.moveTo(sx2,sy2);ctx.lineTo(sx2+sdir*30,sy2-25);ctx.stroke();
-        // Fine twigs
-        S(0.5,0.55);
-        ctx.beginPath();ctx.moveTo(sx2+sdir*30,sy2-25);ctx.lineTo(sx2+sdir*45,sy2-35);ctx.stroke();
-        ctx.beginPath();ctx.moveTo(sx2+sdir*30,sy2-25);ctx.lineTo(sx2+sdir*38,sy2-38);ctx.stroke();
-      }
+      ctx.beginPath();ctx.moveTo(el2x,el2y);ctx.lineTo(el2x+l[0]*sl[0]*0.4,el2y+l[1]*sl[1]*0.4);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(el2x,el2y);ctx.lineTo(el2x-l[0]*sl[0]*0.3,el2y+l[1]*sl[1]*0.35);ctx.stroke();
+      S(1.6,0.78);
     });
-  }
-  bareTree(155,720,200,3.0);
-  bareTree(440,720,180,2.5);
-
-  // Long shadows from moon
-  S(0.5,0.15);
-  [[155,720,250,760],[440,720,540,760]].forEach(function(sh){
-    ctx.beginPath();ctx.moveTo(sh[0],sh[1]);ctx.lineTo(sh[2],sh[3]);ctx.stroke();
+    S(2.5,0.84);
   });
-
-  // Frozen pond/stream - parallel lines and cracked ice at edges
-  S(1.5,0.60);
-  ctx.beginPath();ctx.ellipse(297,680,180,45,0,0,Math.PI*2);ctx.stroke();
-  // Ice surface parallel lines
-  S(0.6,0.30);
-  for(var il=0;il<8;il++){
-    var iy=680-30+il*8;
-    var ix=Math.sqrt(Math.max(0,1-(iy-680)*(iy-680)/(45*45)))*180;
-    ctx.beginPath();ctx.moveTo(297-ix,iy);ctx.lineTo(297+ix,iy);ctx.stroke();
-  }
-  // Cracked ice at edges
+  // A few dangling last leaves
   S(0.8,0.55);
-  [[120,678,145,665,158,672],[145,665,152,658,165,660],
-   [460,678,445,668,438,658],[445,668,455,660,448,652],
-   [200,700,215,710,205,718],[390,702,375,712,382,722]].forEach(function(c){
-    ctx.beginPath();ctx.moveTo(c[0],c[1]);ctx.lineTo(c[2],c[3]);ctx.lineTo(c[4],c[5]);ctx.stroke();
+  [[-spread*0.58,-h*0.80],[-spread*0.35,-h*0.90],[spread*0.52,-h*0.82],[spread*0.33,-h*0.92],[tx-tx+tx*0.02,-h*0.95]].forEach(function(l){
+    var lx=tx+l[0],ly=ty+l[1];
+    ctx.beginPath();ctx.moveTo(lx,ly);
+    ctx.bezierCurveTo(lx-5,ly+8,lx-4,ly+18,lx-2,ly+22);
+    ctx.stroke();
+    ctx.beginPath();ctx.ellipse(lx-2,ly+24,4,6,0.2,0,Math.PI*2);ctx.stroke();
   });
-
-  // Snow banks with drift curves
-  S(2.0,0.75);
-  ctx.beginPath();ctx.moveTo(0,730);ctx.bezierCurveTo(80,718,160,725,240,715);ctx.bezierCurveTo(297,708,350,715,420,710);ctx.bezierCurveTo(490,705,545,718,595,712);ctx.lineTo(595,800);ctx.lineTo(0,800);ctx.closePath();ctx.stroke();
-  // Drift shadow lines
-  S(0.7,0.38);
-  [[60,722,150,725],[200,718,310,718],[370,712,470,715],[520,714,590,716]].forEach(function(d){
-    ctx.beginPath();ctx.moveTo(d[0],d[1]);ctx.quadraticCurveTo((d[0]+d[2])/2,(d[1]+d[3])/2-5,d[2],d[3]);ctx.stroke();
+}
+bareOak(110,540,270,140);   // left tree
+bareOak(490,540,255,128);   // right tree
+// Smaller trees at distance
+S(1.8,0.72);
+function smallBare(tx,ty,h,sp){
+  S(2.0,0.72);ctx.beginPath();ctx.moveTo(tx-4,ty);ctx.lineTo(tx-3,ty-h*0.55);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(tx+4,ty);ctx.lineTo(tx+3,ty-h*0.55);ctx.stroke();
+  S(1.4,0.68);
+  [[-sp,-h*0.85],[sp,-h*0.82],[-sp*0.5,-h*0.90],[sp*0.5,-h*0.88]].forEach(function(l){
+    ctx.beginPath();ctx.moveTo(tx,ty-h*0.55);ctx.lineTo(tx+l[0],ty+l[1]);ctx.stroke();
+    S(0.9,0.62);
+    ctx.beginPath();ctx.moveTo(tx+l[0],ty+l[1]);ctx.lineTo(tx+l[0]+l[0]*0.45,ty+l[1]+l[1]*0.4);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(tx+l[0],ty+l[1]);ctx.lineTo(tx+l[0]-l[0]*0.35,ty+l[1]+l[1]*0.4);ctx.stroke();
+    S(1.4,0.68);
   });
+}
+smallBare(210,525,160,45);smallBare(388,525,155,42);smallBare(298,528,148,40);
 
-  // Deer in mid-distance
-  S(1.5,0.80);
-  var dx=310,dy=610;
-  // Body
-  ctx.beginPath();ctx.ellipse(dx,dy,38,22,0.15,0,Math.PI*2);ctx.stroke();
-  // Neck
-  ctx.beginPath();ctx.moveTo(dx+30,dy-8);ctx.bezierCurveTo(dx+40,dy-30,dx+45,dy-45,dx+42,dy-58);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(dx+40,dy-5);ctx.bezierCurveTo(dx+50,dy-25,dx+55,dy-42,dx+52,dy-58);ctx.stroke();
-  // Head
-  ctx.beginPath();ctx.ellipse(dx+47,dy-65,12,9,0.5,0,Math.PI*2);ctx.stroke();
-  // Snout
-  ctx.beginPath();ctx.ellipse(dx+57,dy-63,6,5,0.2,0,Math.PI*2);ctx.stroke();
-  // Eye
-  S(1.0,0.85);ctx.beginPath();ctx.arc(dx+50,dy-68,2,0,Math.PI*2);ctx.stroke();
-  // Ear
-  S(1.2,0.78);
-  ctx.beginPath();ctx.moveTo(dx+43,dy-72);ctx.bezierCurveTo(dx+40,dy-82,dx+48,dy-88,dx+52,dy-78);ctx.stroke();
-  // Antlers
-  S(1.0,0.75);
-  ctx.beginPath();ctx.moveTo(dx+45,dy-72);ctx.lineTo(dx+38,dy-88);ctx.lineTo(dx+32,dy-80);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(dx+38,dy-88);ctx.lineTo(dx+35,dy-98);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(dx+45,dy-72);ctx.lineTo(dx+50,dy-90);ctx.lineTo(dx+56,dy-82);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(dx+50,dy-90);ctx.lineTo(dx+52,dy-100);ctx.stroke();
-  // Legs
-  S(1.2,0.78);
-  [[dx+15,dy+18,dx+12,dy+50],[dx+5,dy+20,dx+2,dy+52],[dx-10,dy+18,dx-12,dy+50],[dx-22,dy+16,dx-24,dy+50]].forEach(function(l){
-    ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.bezierCurveTo(l[0]+2,l[1]+18,l[2]+2,l[3]-15,l[2],l[3]);ctx.stroke();
-    // Hoof
-    ctx.beginPath();ctx.moveTo(l[2]-4,l[3]);ctx.lineTo(l[2]+4,l[3]);ctx.stroke();
-  });
-  // Tail
-  S(0.9,0.65);
-  ctx.beginPath();ctx.ellipse(dx-38,dy-5,7,5,2.5,0,Math.PI*2);ctx.stroke();
+/* DEER — front-facing, alert stance */
+S(2.2,0.85);
+var dx=298,dy=542;
+// Body
+ctx.beginPath();
+ctx.moveTo(dx-32,dy);
+ctx.bezierCurveTo(dx-35,dy-25,dx-30,dy-52,dx-22,dy-65);
+ctx.bezierCurveTo(dx-15,dy-78,dx-5,dy-82,dx,dy-80);
+ctx.bezierCurveTo(dx+5,dy-82,dx+15,dy-78,dx+22,dy-65);
+ctx.bezierCurveTo(dx+30,dy-52,dx+35,dy-25,dx+32,dy);
+ctx.stroke();
+// Rump/haunches
+ctx.beginPath();ctx.moveTo(dx-32,dy);ctx.bezierCurveTo(dx-32,dy-12,dx-28,dy-22,dx-22,dy-28);ctx.stroke();
+ctx.beginPath();ctx.moveTo(dx+32,dy);ctx.bezierCurveTo(dx+32,dy-12,dx+28,dy-22,dx+22,dy-28);ctx.stroke();
+// Neck
+S(2.0,0.84);
+ctx.beginPath();
+ctx.moveTo(dx-10,dy-80);
+ctx.bezierCurveTo(dx-12,dy-92,dx-10,dy-108,dx-6,dy-118);
+ctx.bezierCurveTo(dx-2,dy-128,dx+4,dy-130,dx+8,dy-125);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(dx+10,dy-80);
+ctx.bezierCurveTo(dx+12,dy-92,dx+10,dy-108,dx+6,dy-118);
+ctx.bezierCurveTo(dx+2,dy-128,dx-4,dy-130,dx-8,dy-125);
+ctx.stroke();
+// Head
+S(2.0,0.84);
+ctx.beginPath();ctx.ellipse(dx,dy-138,16,18,0,0,Math.PI*2);ctx.stroke();
+// Snout
+ctx.beginPath();ctx.ellipse(dx,dy-120,10,8,0,0,Math.PI*2);ctx.stroke();
+// Nostrils
+S(0.8,0.62);
+ctx.beginPath();ctx.ellipse(dx-4,dy-118,2.5,2,0,0,Math.PI*2);ctx.stroke();
+ctx.beginPath();ctx.ellipse(dx+4,dy-118,2.5,2,0,0,Math.PI*2);ctx.stroke();
+// Eyes
+S(1.5,0.80);
+ctx.beginPath();ctx.arc(dx-10,dy-140,4.5,0,Math.PI*2);ctx.stroke();
+ctx.beginPath();ctx.arc(dx+10,dy-140,4.5,0,Math.PI*2);ctx.stroke();
+S(1.0,0.72);ctx.beginPath();ctx.arc(dx-10,dy-140,2,0,Math.PI*2);ctx.stroke();
+ctx.beginPath();ctx.arc(dx+10,dy-140,2,0,Math.PI*2);ctx.stroke();
+// EARS
+S(1.5,0.78);
+ctx.beginPath();
+ctx.moveTo(dx-12,dy-150);
+ctx.bezierCurveTo(dx-22,dy-162,dx-32,dy-155,dx-28,dy-142);
+ctx.bezierCurveTo(dx-24,dy-132,dx-14,dy-132,dx-12,dy-150);
+ctx.stroke();
+S(0.8,0.52);
+ctx.beginPath();
+ctx.moveTo(dx-14,dy-148);ctx.bezierCurveTo(dx-22,dy-158,dx-28,dy-152,dx-25,dy-143);ctx.stroke();
+S(1.5,0.78);
+ctx.beginPath();
+ctx.moveTo(dx+12,dy-150);
+ctx.bezierCurveTo(dx+22,dy-162,dx+32,dy-155,dx+28,dy-142);
+ctx.bezierCurveTo(dx+24,dy-132,dx+14,dy-132,dx+12,dy-150);
+ctx.stroke();
+S(0.8,0.52);
+ctx.beginPath();ctx.moveTo(dx+14,dy-148);ctx.bezierCurveTo(dx+22,dy-158,dx+28,dy-152,dx+25,dy-143);ctx.stroke();
 
-  // Snowflakes
-  function snowflake(sx,sy,r){
-    S(0.8,0.65);
-    for(var si=0;si<6;si++){
-      var a=si*Math.PI/3;
-      ctx.beginPath();ctx.moveTo(sx,sy);ctx.lineTo(sx+r*Math.cos(a),sy+r*Math.sin(a));ctx.stroke();
-      var bx=sx+r*0.55*Math.cos(a),by=sy+r*0.55*Math.sin(a);
-      ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+r*0.3*Math.cos(a+Math.PI/3),by+r*0.3*Math.sin(a+Math.PI/3));ctx.stroke();
-      ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+r*0.3*Math.cos(a-Math.PI/3),by+r*0.3*Math.sin(a-Math.PI/3));ctx.stroke();
-    }
+/* ANTLERS */
+S(2.0,0.82);
+// Left antler main beam
+ctx.beginPath();
+ctx.moveTo(dx-12,dy-152);
+ctx.bezierCurveTo(dx-20,dy-168,dx-30,dy-180,dx-38,dy-195);
+ctx.bezierCurveTo(dx-44,dy-208,dx-46,dy-218,dx-44,dy-225);
+ctx.stroke();
+// Left tines
+S(1.5,0.78);
+ctx.beginPath();ctx.moveTo(dx-32,dy-192);ctx.bezierCurveTo(dx-28,dy-205,dx-24,dy-215,dx-20,dy-222);ctx.stroke();
+ctx.beginPath();ctx.moveTo(dx-40,dy-205);ctx.bezierCurveTo(dx-48,dy-215,dx-54,dy-220,dx-56,dy-228);ctx.stroke();
+ctx.beginPath();ctx.moveTo(dx-44,dy-215);ctx.bezierCurveTo(dx-38,dy-226,ctx-32,dy-232,dx-28,dy-238);
+ctx.moveTo(dx-44,dy-215);ctx.bezierCurveTo(dx-38,dy-226,dx-32,dy-232,dx-28,dy-238);ctx.stroke();
+// Left brow tine
+ctx.beginPath();ctx.moveTo(dx-22,dy-175);ctx.bezierCurveTo(dx-14,dy-185,dx-10,dy-192,dx-8,dy-200);ctx.stroke();
+
+S(2.0,0.82);
+// Right antler main beam
+ctx.beginPath();
+ctx.moveTo(dx+12,dy-152);
+ctx.bezierCurveTo(dx+20,dy-168,dx+30,dy-180,dx+38,dy-195);
+ctx.bezierCurveTo(dx+44,dy-208,dx+46,dy-218,dx+44,dy-225);
+ctx.stroke();
+S(1.5,0.78);
+ctx.beginPath();ctx.moveTo(dx+32,dy-192);ctx.bezierCurveTo(dx+28,dy-205,dx+24,dy-215,dx+20,dy-222);ctx.stroke();
+ctx.beginPath();ctx.moveTo(dx+40,dy-205);ctx.bezierCurveTo(dx+48,dy-215,dx+54,dy-220,dx+56,dy-228);ctx.stroke();
+ctx.beginPath();ctx.moveTo(dx+44,dy-215);ctx.bezierCurveTo(dx+38,dy-226,dx+32,dy-232,dx+28,dy-238);ctx.stroke();
+ctx.beginPath();ctx.moveTo(dx+22,dy-175);ctx.bezierCurveTo(dx+14,dy-185,dx+10,dy-192,dx+8,dy-200);ctx.stroke();
+
+// WHITE TAIL patch suggestion
+S(0.8,0.50);ctx.beginPath();ctx.ellipse(dx,dy-72,10,14,0,0,Math.PI*2);ctx.stroke();
+// Legs
+S(1.8,0.80);
+[[-20,0],[-8,0],[8,0],[20,0]].forEach(function(l){
+  ctx.beginPath();ctx.moveTo(dx+l[0],dy);ctx.lineTo(dx+l[0],dy+60);ctx.stroke();
+  S(1.2,0.70);ctx.beginPath();ctx.moveTo(dx+l[0],dy+60);ctx.lineTo(dx+l[0]+l[0]*0.15,dy+80);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(dx+l[0]+l[0]*0.15,dy+80);ctx.lineTo(dx+l[0]+l[0]*0.18,dy+90);ctx.stroke();
+  // hoof split
+  S(0.8,0.60);ctx.beginPath();ctx.moveTo(dx+l[0]+l[0]*0.18,dy+90);ctx.lineTo(dx+l[0]+l[0]*0.25,dy+95);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(dx+l[0]+l[0]*0.18,dy+90);ctx.lineTo(dx+l[0]+l[0]*0.10,dy+95);ctx.stroke();
+  S(1.8,0.80);
+});
+
+/* SNOWFLAKES */
+function flake(sx,sy,r){
+  S(0.7,0.58);
+  for(var arm=0;arm<6;arm++){
+    var ang=arm*Math.PI/3;
+    ctx.beginPath();ctx.moveTo(sx,sy);ctx.lineTo(sx+r*Math.cos(ang),sy+r*Math.sin(ang));ctx.stroke();
+    var mx=sx+r*0.45*Math.cos(ang),my=sy+r*0.45*Math.sin(ang);
+    var perp=ang+Math.PI/2;
+    ctx.beginPath();ctx.moveTo(mx+r*0.18*Math.cos(perp),my+r*0.18*Math.sin(perp));
+    ctx.lineTo(mx-r*0.18*Math.cos(perp),my-r*0.18*Math.sin(perp));ctx.stroke();
   }
-  [[60,60,12],[200,80,8],[380,55,14],[530,90,10],[480,140,8],[560,50,11],[100,160,7],[300,140,9],[450,180,7]].forEach(function(f){snowflake(f[0],f[1],f[2]);});
-  S(0.6,0.45);
-  [[150,45],[250,110],[420,100],[550,150],[80,220],[350,200]].forEach(function(d){ctx.beginPath();ctx.arc(d[0],d[1],2,0,Math.PI*2);ctx.stroke();});
+}
+[[50,60,10],[110,40,12],[180,80,9],[258,50,11],[338,65,10],[418,42,12],[498,70,9],[555,52,11],
+ [78,148,9],[168,118,11],[248,138,10],[358,125,12],[448,140,9],[530,128,11],
+ [42,228,8],[145,205,10],[238,215,9],[355,200,11],[458,210,9],[545,225,10]].forEach(function(f){flake(f[0],f[1],f[2]);});
+// small dots
+S(0.6,0.40);
+[[88,95,2],[145,160,2],[220,100,2.5],[310,145,2],[405,100,2.5],[480,155,2],[552,108,2.5],[62,178,2]].forEach(function(d){
+  ctx.beginPath();ctx.arc(d[0],d[1],d[2],0,Math.PI*2);ctx.stroke();
+});
 
-  // Credit
-  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Winter is Coming  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
-  // Decorative double border
-  ctx.save();
-  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
-  ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
-  ctx.strokeRect(22,22,W-44,H-44);
-  ctx.restore();
+/* CREDIT & BORDER */
+ctx.save();ctx.font='italic 13px "Playfair Display",Georgia,serif';
+ctx.fillStyle='rgba(17,17,17,0.14)';ctx.textAlign='center';
+ctx.fillText('Winter Is Coming  ·  Kiwi\'s Art',W/2,H-22);ctx.restore();
+S(1.5,0.18);ctx.strokeRect(16,16,W-32,H-32);
+S(0.7,0.10);ctx.strokeRect(22,22,W-44,H-44);
 })();
 </script>
 

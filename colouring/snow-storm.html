@@ -135,153 +135,225 @@
 
 <script>
 (function(){
-  var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-  ctx.lineCap='round';ctx.lineJoin='round';
-  function S(lw,alpha){ctx.strokeStyle='rgba(17,17,17,'+(alpha||0.85)+')';ctx.lineWidth=lw||2;}
+var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+ctx.lineCap='round';ctx.lineJoin='round';
+function S(lw,a){ctx.strokeStyle='rgba(17,17,17,'+(a==null?0.85:a)+')';ctx.lineWidth=lw;}
 
-  // Sky diagonal storm lines (wind-driven snow)
-  S(0.5,0.15);
-  for(var si=0;si<30;si++){
-    var sx=si*22-50,sy=30+si*5;
-    ctx.beginPath();ctx.moveTo(sx,sy);ctx.lineTo(sx+60,sy+25);ctx.stroke();
-  }
+/* SKY HATCHING suggesting storm */
+S(0.4,0.10);
+for(var y=28;y<320;y+=18){
+  ctx.beginPath();ctx.moveTo(28,y);
+  ctx.bezierCurveTo(100,y+4,200,y-4,320,y+3);ctx.bezierCurveTo(420,y-3,520,y+2,570,y);
+  ctx.stroke();
+}
+// diagonal wind lines
+S(0.5,0.12);
+[[30,80,200,55],[80,130,280,100],[140,60,320,30],[250,120,430,85],[380,70,560,40]].forEach(function(l){
+  ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(l[2],l[3]);ctx.stroke();
+});
 
-  // Background hills
-  S(1.0,0.35);
-  ctx.beginPath();ctx.moveTo(0,500);ctx.quadraticCurveTo(150,440,300,460);ctx.quadraticCurveTo(450,480,595,455);ctx.lineTo(595,520);ctx.lineTo(0,520);ctx.closePath();ctx.stroke();
+/* DISTANT MOUNTAIN SILHOUETTE */
+S(0.9,0.40);
+ctx.beginPath();
+ctx.moveTo(28,300);ctx.lineTo(85,248);ctx.lineTo(120,262);ctx.lineTo(160,230);
+ctx.lineTo(200,245);ctx.lineTo(245,215);ctx.lineTo(295,232);ctx.lineTo(340,220);
+ctx.lineTo(390,240);ctx.lineTo(430,225);ctx.lineTo(475,245);ctx.lineTo(515,232);
+ctx.lineTo(572,255);ctx.lineTo(572,305);ctx.stroke();
 
-  // Snow-covered ground with drifts
-  S(2.0,0.75);
-  ctx.beginPath();ctx.moveTo(0,680);
-  ctx.bezierCurveTo(80,660,160,670,240,658);
-  ctx.bezierCurveTo(320,646,380,655,440,645);
-  ctx.bezierCurveTo(500,635,550,648,595,640);
-  ctx.lineTo(595,800);ctx.lineTo(0,800);ctx.closePath();ctx.stroke();
-  // Drift detail lines
-  S(0.8,0.40);
-  [[80,668],[180,660],[320,648],[450,640]].forEach(function(p){
-    ctx.beginPath();ctx.moveTo(p[0]-40,p[1]+8);ctx.quadraticCurveTo(p[0],p[1],p[0]+50,p[1]+10);ctx.stroke();
-  });
+/* SNOW GROUND LAYERS */
+S(1.8,0.72);
+// main snow surface (undulating)
+ctx.beginPath();
+ctx.moveTo(28,680);
+ctx.bezierCurveTo(80,672,120,676,160,668);
+ctx.bezierCurveTo(200,660,230,664,265,672);
+ctx.bezierCurveTo(305,680,340,668,380,660);
+ctx.bezierCurveTo(420,652,460,662,500,672);
+ctx.bezierCurveTo(535,680,558,675,572,670);
+ctx.lineTo(572,800);ctx.lineTo(28,800);ctx.closePath();ctx.stroke();
+// foreground snow drift
+S(1.5,0.65);
+ctx.beginPath();
+ctx.moveTo(28,740);
+ctx.bezierCurveTo(70,728,100,732,135,725);
+ctx.bezierCurveTo(170,718,195,724,230,732);
+ctx.bezierCurveTo(270,740,310,728,350,720);
+ctx.bezierCurveTo(390,712,430,722,470,732);
+ctx.bezierCurveTo(510,742,545,738,572,735);
+ctx.stroke();
 
-  // Winding path through snow
-  S(1.2,0.50);
-  ctx.beginPath();
-  ctx.moveTo(240,800);ctx.bezierCurveTo(260,740,280,700,295,660);
-  ctx.bezierCurveTo(305,630,300,600,310,580);ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(355,800);ctx.bezierCurveTo(350,740,340,700,330,660);
-  ctx.bezierCurveTo(320,630,322,600,315,580);ctx.stroke();
+/* PINE-TREE DRAWING FUNCTION */
+function pine(tx, ty, totalH, baseW, snowLoad) {
+  var layers = 5;
+  for(var l=0; l<layers; l++){
+    var t = l/layers; // 0=top, 1=bottom
+    var layerY = ty + totalH * (0.12 + t*0.88);
+    var layerW = baseW * (0.18 + t*0.82);
+    var layerH = totalH * 0.22;
+    var prevY = ty + totalH * (0.12 + (t-1/layers)*0.88);
+    if(l===0) prevY = ty;
 
-  // Small cabin in mid-distance
-  S(1.5,0.70);
-  var hx=310,hy=520,hw2=55,hh=40;
-  ctx.strokeRect(hx-hw2,hy,hw2*2,hh); // walls
-  // Roof
-  ctx.beginPath();ctx.moveTo(hx-hw2-5,hy);ctx.lineTo(hx,hy-30);ctx.lineTo(hx+hw2+5,hy);ctx.stroke();
-  // Snow on roof
-  S(1.0,0.55);
-  ctx.beginPath();ctx.moveTo(hx-hw2-5,hy);ctx.quadraticCurveTo(hx,hy-36,hx+hw2+5,hy);ctx.stroke();
-  // Door
-  S(1.0,0.65);
-  ctx.strokeRect(hx-8,hy+12,16,28);
-  // Window
-  ctx.strokeRect(hx+20,hy+8,16,14);
-  ctx.beginPath();ctx.moveTo(hx+28,hy+8);ctx.lineTo(hx+28,hy+22);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(hx+20,hy+15);ctx.lineTo(hx+36,hy+15);ctx.stroke();
-  // Chimney
-  S(1.5,0.70);
-  ctx.strokeRect(hx+28,hy-38,10,12);
-  // Smoke curl
-  S(0.8,0.40);
-  ctx.beginPath();ctx.moveTo(hx+33,hy-38);
-  ctx.bezierCurveTo(hx+22,hy-55,hx+45,hy-68,hx+35,hy-82);
-  ctx.bezierCurveTo(hx+25,hy-96,hx+48,hy-108,hx+38,hy-118);ctx.stroke();
+    // Tree layer (triangular sweep downward)
+    S(1.8,0.82);
+    ctx.beginPath();
+    ctx.moveTo(tx, prevY);
+    ctx.lineTo(tx-layerW, layerY+layerH*0.35);
+    ctx.lineTo(tx, layerY);  // slight upturn at edges
+    ctx.lineTo(tx+layerW, layerY+layerH*0.35);
+    ctx.closePath(); ctx.stroke();
 
-  // Pine trees - function
-  function pineTree(tx,ty,height,snowyRatio){
-    S(2.0,0.85);
-    // Trunk
-    ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(tx,ty+height*0.18);ctx.stroke();
-    // Layered branches from bottom to top
-    var layers=7;
-    for(var li=0;li<layers;li++){
-      var t=1-li/layers;
-      var bw=height*0.4*t+10;
-      var by=ty-li*(height/layers);
-      var leftTip=tx-bw,rightTip=tx+bw;
-      var branchY=by-(height*0.08);
-      S(1.8,0.80);
-      // Main branch lines
-      ctx.beginPath();ctx.moveTo(tx,branchY+height*0.04);
-      ctx.quadraticCurveTo(tx-bw*0.5,branchY+8,leftTip,branchY+15+li*2);ctx.stroke();
-      ctx.beginPath();ctx.moveTo(tx,branchY+height*0.04);
-      ctx.quadraticCurveTo(tx+bw*0.5,branchY+8,rightTip,branchY+15+li*2);ctx.stroke();
-      // Snow on branch - drooping curve
-      if(snowyRatio>0.3){
-        S(1.0,0.55);
-        ctx.beginPath();ctx.moveTo(leftTip,branchY+15+li*2);
-        ctx.quadraticCurveTo(leftTip+bw*0.3,branchY+22+li*2,tx-bw*0.15,branchY+25+li*2);ctx.stroke();
-        ctx.beginPath();ctx.moveTo(rightTip,branchY+15+li*2);
-        ctx.quadraticCurveTo(rightTip-bw*0.3,branchY+22+li*2,tx+bw*0.15,branchY+25+li*2);ctx.stroke();
-      }
-      // Needle tick marks
-      S(0.5,0.35);
-      var tickCount=6;
-      for(var ti=0;ti<tickCount;ti++){
-        var tRat=(ti+1)/(tickCount+1);
-        var tbx=leftTip+bw*2*tRat;
-        var tby=branchY+15+li*2-(ti<tickCount/2?ti*2:(tickCount-ti)*2);
-        ctx.beginPath();ctx.moveTo(tbx,tby);ctx.lineTo(tbx-5,tby-6);ctx.stroke();
-        ctx.beginPath();ctx.moveTo(tbx,tby);ctx.lineTo(tbx+5,tby-6);ctx.stroke();
-      }
+    // Snow on branch (drooping blob)
+    if(snowLoad) {
+      S(1.5,0.65);
+      ctx.beginPath();
+      ctx.moveTo(tx-layerW, layerY+layerH*0.35);
+      ctx.bezierCurveTo(tx-layerW*0.5, layerY+layerH*0.5, tx, layerY+layerH*0.45, tx+layerW*0.5, layerY+layerH*0.5);
+      ctx.bezierCurveTo(tx+layerW*0.8, layerY+layerH*0.52, tx+layerW, layerY+layerH*0.38, tx+layerW, layerY+layerH*0.35);
+      ctx.stroke();
+      // snow lumps
+      [-layerW*0.65, -layerW*0.25, layerW*0.10, layerW*0.48].forEach(function(ox){
+        ctx.beginPath();ctx.arc(tx+ox, layerY+layerH*0.48, layerW*0.10+2, Math.PI, Math.PI*2);ctx.stroke();
+      });
     }
-    // Tip spike
-    S(1.5,0.80);
-    ctx.beginPath();ctx.moveTo(tx,ty-height*0.92);ctx.lineTo(tx,ty);ctx.stroke();
-  }
 
-  pineTree(80,680,280,0.9);
-  pineTree(150,700,320,0.85);
-  pineTree(460,670,260,0.88);
-  pineTree(530,690,300,0.90);
-  // Smaller mid-distance trees
-  S(1.0,0.60);
-  pineTree(220,580,130,0.7);
-  pineTree(390,575,110,0.7);
-
-  // Falling snowflakes
-  function snowflake(sx,sy,r){
-    S(0.8,0.70);
-    for(var si=0;si<6;si++){
-      var a=si*Math.PI/3;
-      ctx.beginPath();ctx.moveTo(sx,sy);ctx.lineTo(sx+r*Math.cos(a),sy+r*Math.sin(a));ctx.stroke();
-      // Branch arms
-      var bx=sx+r*0.55*Math.cos(a),by=sy+r*0.55*Math.sin(a);
-      ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+r*0.28*Math.cos(a+Math.PI/3),by+r*0.28*Math.sin(a+Math.PI/3));ctx.stroke();
-      ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+r*0.28*Math.cos(a-Math.PI/3),by+r*0.28*Math.sin(a-Math.PI/3));ctx.stroke();
+    // Branch detail lines
+    S(0.7,0.48);
+    var nbr = 3;
+    for(var b=0; b<nbr; b++){
+      var bt = (b+1)/(nbr+1);
+      var bx = tx - layerW + bt*layerW*2;
+      ctx.beginPath();ctx.moveTo(bx, layerY + (layerY-prevY)*bt);
+      // short drooping branch
+      ctx.lineTo(bx + (bx<tx?-1:1)*layerW*0.22, layerY + layerH*0.28);
+      ctx.stroke();
     }
   }
-  var flakes=[[60,80,12],[150,120,8],[250,60,14],[370,100,10],[480,70,12],[540,140,8],
-              [100,200,6],[200,180,10],[420,160,7],[510,200,9],[45,320,5],[580,280,6],
-              [330,250,8],[170,300,6],[460,300,9]];
-  flakes.forEach(function(f){snowflake(f[0],f[1],f[2]);});
-  // Small dot snowflakes
-  S(0.6,0.45);
-  [[120,90],[290,130],[430,85],[80,160],[360,55],[520,110],[200,250],[450,220]].forEach(function(d){
-    ctx.beginPath();ctx.arc(d[0],d[1],2,0,Math.PI*2);ctx.stroke();
-  });
+  // Trunk
+  S(1.8,0.78);
+  ctx.beginPath();
+  ctx.moveTo(tx-baseW*0.06,ty+totalH*0.90);
+  ctx.lineTo(tx-baseW*0.06,ty+totalH+10);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(tx+baseW*0.06,ty+totalH*0.90);
+  ctx.lineTo(tx+baseW*0.06,ty+totalH+10);
+  ctx.stroke();
+}
 
-  // Credit
-  ctx.save();ctx.font='italic 600 15px "Playfair Display",Georgia,serif';ctx.fillStyle='rgba(17,17,17,0.18)';
-  ctx.textAlign='center';ctx.fillText('Snow Storm  ·  Kiwi\'s Art',W/2,H-28);ctx.restore();
-  // Decorative double border
-  ctx.save();
-  ctx.strokeStyle='rgba(17,17,17,0.20)';ctx.lineWidth=1.5;
-  ctx.strokeRect(16,16,W-32,H-32);
-  ctx.strokeStyle='rgba(17,17,17,0.10)';ctx.lineWidth=0.8;
-  ctx.strokeRect(22,22,W-44,H-44);
-  ctx.restore();
+/* DRAW TREES */
+pine(120, 300, 340, 85, true);   // left large
+pine(240, 360, 280, 68, true);   // left-center
+pine(390, 340, 310, 78, true);   // right-center large
+pine(500, 380, 255, 60, true);   // right
+pine(52,  420, 200, 50, true);   // far left, partly cut
+pine(560, 410, 220, 52, true);   // far right, partly cut
+pine(310, 500, 170, 42, true);   // small foreground
+
+/* CABIN in background */
+S(1.8,0.78);
+// Cabin walls
+ctx.beginPath();ctx.rect(168,570,98,80);ctx.stroke();
+// Door
+S(1.4,0.70);
+ctx.beginPath();ctx.rect(198,618,28,32);ctx.stroke();
+ctx.beginPath();ctx.arc(226,634,3,0,Math.PI*2);ctx.stroke(); // doorknob
+// Window
+ctx.beginPath();ctx.rect(172,588,22,22);ctx.stroke();
+S(0.8,0.55);
+ctx.beginPath();ctx.moveTo(183,588);ctx.lineTo(183,610);ctx.stroke(); // window cross
+ctx.beginPath();ctx.moveTo(172,599);ctx.lineTo(194,599);ctx.stroke();
+// Roof (snow-covered)
+S(2.0,0.82);
+ctx.beginPath();
+ctx.moveTo(155,570);ctx.lineTo(217,530);ctx.lineTo(279,570);ctx.stroke();
+// Snow on roof
+S(1.5,0.68);
+ctx.beginPath();
+ctx.moveTo(155,570);
+ctx.bezierCurveTo(170,565,190,558,217,555);
+ctx.bezierCurveTo(244,552,262,562,279,570);
+ctx.stroke();
+// snow lumps on roof ridge
+S(1.0,0.60);
+[165,185,205,225,245,265].forEach(function(x){
+  var ry = 570 - (217-x < 0 ? (x-217) : (217-x)) * 0.62;
+  ctx.beginPath();ctx.arc(x, ry-4, 5, Math.PI, Math.PI*2);ctx.stroke();
+});
+// Chimney
+S(1.6,0.75);ctx.beginPath();ctx.rect(238,518,16,32);ctx.stroke();
+// Smoke
+S(0.9,0.38);
+ctx.beginPath();
+ctx.moveTo(246,518);
+ctx.bezierCurveTo(252,505,240,495,248,482);
+ctx.bezierCurveTo(256,469,244,458,250,445);
+ctx.bezierCurveTo(256,432,244,422,248,410);
+ctx.stroke();
+// cabin wall planks
+S(0.6,0.35);
+[590,605,620,635,650].forEach(function(y){
+  ctx.beginPath();ctx.moveTo(168,y);ctx.lineTo(266,y);ctx.stroke();
+});
+
+/* WOODEN FENCE buried in snow */
+S(1.3,0.65);
+// fence posts
+[310,330,350,370,390,410,430,450].forEach(function(x){
+  var postH = 30;
+  var groundY = 675 - (x-297)*0.04; // slight slope
+  ctx.beginPath();ctx.moveTo(x,groundY);ctx.lineTo(x,groundY-postH);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x-5,groundY-postH);ctx.lineTo(x+5,groundY-postH);ctx.stroke(); // top
+});
+// fence rails
+S(0.9,0.55);
+ctx.beginPath();ctx.moveTo(310,660);ctx.lineTo(450,655);ctx.stroke();
+ctx.beginPath();ctx.moveTo(310,650);ctx.lineTo(450,645);ctx.stroke();
+
+/* ANIMAL TRACKS (rabbit) in snow */
+S(0.8,0.58);
+var tracks=[[355,722,0],[370,735,0.3],[385,720,-0.2],[400,733,0.1],[415,718,-0.1]];
+tracks.forEach(function(t){
+  var tx2=t[0],ty2=t[1],ang=t[2];
+  // two small ovals side by side
+  ctx.beginPath();ctx.ellipse(tx2-4,ty2,5,3,ang,0,Math.PI*2);ctx.stroke();
+  ctx.beginPath();ctx.ellipse(tx2+4,ty2,5,3,ang,0,Math.PI*2);ctx.stroke();
+});
+
+/* SNOWFLAKES */
+function snowflake(sx,sy,r){
+  for(var arm=0;arm<6;arm++){
+    var ang=arm*Math.PI/3;
+    ctx.beginPath();
+    ctx.moveTo(sx,sy);
+    ctx.lineTo(sx+r*Math.cos(ang),sy+r*Math.sin(ang));
+    ctx.stroke();
+    // cross bars
+    var mid=r*0.45;
+    var cx2=sx+mid*Math.cos(ang),cy2=sy+mid*Math.sin(ang);
+    var perp=ang+Math.PI/2;
+    ctx.beginPath();ctx.moveTo(cx2+r*0.18*Math.cos(perp),cy2+r*0.18*Math.sin(perp));
+    ctx.lineTo(cx2-r*0.18*Math.cos(perp),cy2-r*0.18*Math.sin(perp));ctx.stroke();
+  }
+}
+S(0.7,0.62);
+[[68,58,12],[145,95,9],[230,42,14],[310,78,10],[420,55,13],[505,88,8],[560,45,11],
+ [88,170,8],[175,145,11],[295,160,9],[445,148,12],[530,162,8]].forEach(function(f){
+  snowflake(f[0],f[1],f[2]);
+});
+// small snow dots
+S(0.6,0.45);
+[[120,220,4],[200,240,3],[310,200,4],[440,230,3],[490,210,4],[350,250,3],
+ [80,310,3],[260,290,4],[470,300,3],[155,340,3],[420,350,4]].forEach(function(d){
+  ctx.beginPath();ctx.arc(d[0],d[1],d[2],0,Math.PI*2);ctx.stroke();
+});
+
+/* CREDIT & BORDER */
+ctx.save();ctx.font='italic 13px "Playfair Display",Georgia,serif';
+ctx.fillStyle='rgba(17,17,17,0.16)';ctx.textAlign='center';
+ctx.fillText('Snow Storm  ·  Kiwi\'s Art',W/2,H-22);ctx.restore();
+S(1.5,0.18);ctx.strokeRect(16,16,W-32,H-32);
+S(0.7,0.10);ctx.strokeRect(22,22,W-44,H-44);
 })();
 </script>
 
