@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Snow Storm — Free Colouring Page | Kiwi's Art</title>
-<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Snow Storm' — wind streams, snowflakes and bare trees to colour your own way.">
+<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Snow Storm': a snowy owl in flight through swirling wind and snowflakes.">
 <meta name="author" content="Kiwi">
 <link rel="canonical" href="https://kiwisart.com/colouring/snow-storm.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Snow Storm — Free Colouring Page | Kiwi's Art">
-<meta property="og:description" content="A free printable colouring page inspired by Kiwi's original painting 'Snow Storm'. Print and colour your own way.">
+<meta property="og:description" content="A free printable colouring page inspired by Kiwi's original painting 'Snow Storm': a snowy owl in flight through swirling wind and snowflakes.">
 <meta property="og:url" content="https://kiwisart.com/colouring/snow-storm.html">
-<meta property="og:image" content="https://kiwisart.com/images/snow-storm.jpg">
+<meta property="og:image" content="https://kiwisart.com/colouring/img/snow-storm.jpg">
 <meta property="og:site_name" content="Kiwi's Art">
-<meta property="og:image:alt" content="Snow Storm — original painting by Kiwi">
+<meta property="og:image:alt" content="Snow Storm colouring page by Kiwi">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://kiwisart.com/images/snow-storm.jpg">
+<meta name="twitter:image" content="https://kiwisart.com/colouring/img/snow-storm.jpg">
 <script type="application/ld+json">
 [
   {
@@ -47,7 +47,7 @@
     "@type": "CreativeWork",
     "name": "Snow Storm — Colouring Page",
     "url": "https://kiwisart.com/colouring/snow-storm.html",
-    "description": "A free printable colouring page inspired by Kiwi's original painting 'Snow Storm' — wind streams, snowflakes and bare trees to colour your own way.",
+    "description": "A free printable colouring page inspired by Kiwi's original painting 'Snow Storm': a snowy owl in flight through swirling wind and snowflakes.",
     "isAccessibleForFree": true,
     "inLanguage": "en",
     "genre": "Colouring page",
@@ -88,34 +88,25 @@
 .colouring-intro { max-width: 600px; }
 .colouring-intro p { font-size: 1.05rem; line-height: 1.75; color: #3d4455; }
 .sheet-wrap {
-  max-width: 560px;
+  max-width: 640px;
   margin: 36px auto 24px;
   background: #fff;
+  padding: 4%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.10), 0 24px 64px rgba(0,0,0,0.06);
   border-radius: 1px;
-  overflow: hidden;
 }
-.sheet-wrap canvas { display: block; width: 100%; height: auto; }
-.colouring-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: 28px 0 12px;
-}
-.colouring-hint {
-  font-size: 0.85rem;
-  color: var(--lede);
-  margin-bottom: 48px;
-  line-height: 1.6;
-}
+.sheet-wrap img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+.sheet-credit { display: none; }
+.colouring-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 12px; }
+.colouring-hint { font-size: 0.85rem; color: var(--lede); margin-bottom: 48px; line-height: 1.6; }
 @media print {
-  @page { margin: 0; }
+  @page { margin: 12mm; }
   .site-header, .skip-link, .colouring-intro, .colouring-actions, .colouring-hint, .site-footer, .page-eyebrow, .section-alt, h1 { display: none !important; }
   body, html { margin: 0 !important; padding: 0 !important; background: white; }
-  main, section, .wrap { padding: 0 !important; margin: 0 !important; }
-  section { display: block; }
-  .sheet-wrap { box-shadow: none; max-width: 100%; width: 100%; margin: 0; border-radius: 0; }
-  .sheet-wrap canvas{display:block;width:auto!important;height:100vh!important;max-width:100%!important}
+  main, section, .wrap { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+  .sheet-wrap { box-shadow: none; max-width: 100%; width: 100%; margin: 0; padding: 0; border-radius: 0; break-inside: avoid; }
+  .sheet-wrap img { width: 100%; max-height: 240mm; object-fit: contain; }
+  .sheet-credit { display: block; margin-top: 6mm; text-align: center; font: 9pt Georgia, serif; color: #555; }
 }
 </style>
 </head>
@@ -143,11 +134,12 @@
       <div class="eyebrow page-eyebrow">Free Colouring Page</div>
       <h1>Snow Storm</h1>
       <div class="colouring-intro">
-        <p>A printable line drawing inspired by the original painting — the wind moves left to right. Follow it, or fight it with colour.</p>
+        <p>A printable colouring page inspired by the original painting: a snowy owl flying through the heart of a blizzard, wind spiralling around it and snowflakes caught in every gust. Colour it however you like.</p>
       </div>
 
       <div class="sheet-wrap">
-        <canvas id="c" width="595" height="800"></canvas>
+        <img src="/colouring/img/snow-storm.jpg" width="2048" height="2048" alt="Snow Storm colouring page: a snowy owl in flight through swirling wind and snowflakes.">
+        <p class="sheet-credit">Snow Storm &middot; Kiwi's Art &middot; kiwisart.com &middot; Free for personal use</p>
       </div>
 
       <div class="colouring-actions">
@@ -189,230 +181,5 @@
 </footer>
 
 <script src="/js/nav.js"></script>
-
-<script>
-(function(){
-var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-ctx.lineCap='round';ctx.lineJoin='round';
-function S(lw,a){ctx.strokeStyle='rgba(17,17,17,'+(a==null?0.85:a)+')';ctx.lineWidth=lw;}
-
-/* SKY HATCHING suggesting storm */
-S(0.4,0.10);
-for(var y=28;y<320;y+=18){
-  ctx.beginPath();ctx.moveTo(28,y);
-  ctx.bezierCurveTo(100,y+4,200,y-4,320,y+3);ctx.bezierCurveTo(420,y-3,520,y+2,570,y);
-  ctx.stroke();
-}
-// diagonal wind lines
-S(0.5,0.12);
-[[30,80,200,55],[80,130,280,100],[140,60,320,30],[250,120,430,85],[380,70,560,40]].forEach(function(l){
-  ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.lineTo(l[2],l[3]);ctx.stroke();
-});
-
-/* DISTANT MOUNTAIN SILHOUETTE */
-S(0.9,0.40);
-ctx.beginPath();
-ctx.moveTo(28,300);ctx.lineTo(85,248);ctx.lineTo(120,262);ctx.lineTo(160,230);
-ctx.lineTo(200,245);ctx.lineTo(245,215);ctx.lineTo(295,232);ctx.lineTo(340,220);
-ctx.lineTo(390,240);ctx.lineTo(430,225);ctx.lineTo(475,245);ctx.lineTo(515,232);
-ctx.lineTo(572,255);ctx.lineTo(572,305);ctx.stroke();
-
-/* SNOW GROUND LAYERS */
-S(1.8,0.72);
-// main snow surface (undulating)
-ctx.beginPath();
-ctx.moveTo(28,680);
-ctx.bezierCurveTo(80,672,120,676,160,668);
-ctx.bezierCurveTo(200,660,230,664,265,672);
-ctx.bezierCurveTo(305,680,340,668,380,660);
-ctx.bezierCurveTo(420,652,460,662,500,672);
-ctx.bezierCurveTo(535,680,558,675,572,670);
-ctx.lineTo(572,800);ctx.lineTo(28,800);ctx.closePath();ctx.stroke();
-// foreground snow drift
-S(1.5,0.65);
-ctx.beginPath();
-ctx.moveTo(28,740);
-ctx.bezierCurveTo(70,728,100,732,135,725);
-ctx.bezierCurveTo(170,718,195,724,230,732);
-ctx.bezierCurveTo(270,740,310,728,350,720);
-ctx.bezierCurveTo(390,712,430,722,470,732);
-ctx.bezierCurveTo(510,742,545,738,572,735);
-ctx.stroke();
-
-/* PINE-TREE DRAWING FUNCTION */
-function pine(tx, ty, totalH, baseW, snowLoad) {
-  var layers = 5;
-  for(var l=0; l<layers; l++){
-    var t = l/layers; // 0=top, 1=bottom
-    var layerY = ty + totalH * (0.12 + t*0.88);
-    var layerW = baseW * (0.18 + t*0.82);
-    var layerH = totalH * 0.22;
-    var prevY = ty + totalH * (0.12 + (t-1/layers)*0.88);
-    if(l===0) prevY = ty;
-
-    // Tree layer (triangular sweep downward)
-    S(1.8,0.82);
-    ctx.beginPath();
-    ctx.moveTo(tx, prevY);
-    ctx.lineTo(tx-layerW, layerY+layerH*0.35);
-    ctx.lineTo(tx, layerY);  // slight upturn at edges
-    ctx.lineTo(tx+layerW, layerY+layerH*0.35);
-    ctx.closePath(); ctx.stroke();
-
-    // Snow on branch (drooping blob)
-    if(snowLoad) {
-      S(1.5,0.65);
-      ctx.beginPath();
-      ctx.moveTo(tx-layerW, layerY+layerH*0.35);
-      ctx.bezierCurveTo(tx-layerW*0.5, layerY+layerH*0.5, tx, layerY+layerH*0.45, tx+layerW*0.5, layerY+layerH*0.5);
-      ctx.bezierCurveTo(tx+layerW*0.8, layerY+layerH*0.52, tx+layerW, layerY+layerH*0.38, tx+layerW, layerY+layerH*0.35);
-      ctx.stroke();
-      // snow lumps
-      [-layerW*0.65, -layerW*0.25, layerW*0.10, layerW*0.48].forEach(function(ox){
-        ctx.beginPath();ctx.arc(tx+ox, layerY+layerH*0.48, layerW*0.10+2, Math.PI, Math.PI*2);ctx.stroke();
-      });
-    }
-
-    // Branch detail lines
-    S(0.7,0.48);
-    var nbr = 3;
-    for(var b=0; b<nbr; b++){
-      var bt = (b+1)/(nbr+1);
-      var bx = tx - layerW + bt*layerW*2;
-      ctx.beginPath();ctx.moveTo(bx, layerY + (layerY-prevY)*bt);
-      // short drooping branch
-      ctx.lineTo(bx + (bx<tx?-1:1)*layerW*0.22, layerY + layerH*0.28);
-      ctx.stroke();
-    }
-  }
-  // Trunk
-  S(1.8,0.78);
-  ctx.beginPath();
-  ctx.moveTo(tx-baseW*0.06,ty+totalH*0.90);
-  ctx.lineTo(tx-baseW*0.06,ty+totalH+10);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(tx+baseW*0.06,ty+totalH*0.90);
-  ctx.lineTo(tx+baseW*0.06,ty+totalH+10);
-  ctx.stroke();
-}
-
-/* DRAW TREES */
-pine(120, 300, 340, 85, true);   // left large
-pine(240, 360, 280, 68, true);   // left-center
-pine(390, 340, 310, 78, true);   // right-center large
-pine(500, 380, 255, 60, true);   // right
-pine(52,  420, 200, 50, true);   // far left, partly cut
-pine(560, 410, 220, 52, true);   // far right, partly cut
-pine(310, 500, 170, 42, true);   // small foreground
-
-/* CABIN in background */
-S(1.8,0.78);
-// Cabin walls
-ctx.beginPath();ctx.rect(168,570,98,80);ctx.stroke();
-// Door
-S(1.4,0.70);
-ctx.beginPath();ctx.rect(198,618,28,32);ctx.stroke();
-ctx.beginPath();ctx.arc(226,634,3,0,Math.PI*2);ctx.stroke(); // doorknob
-// Window
-ctx.beginPath();ctx.rect(172,588,22,22);ctx.stroke();
-S(0.8,0.55);
-ctx.beginPath();ctx.moveTo(183,588);ctx.lineTo(183,610);ctx.stroke(); // window cross
-ctx.beginPath();ctx.moveTo(172,599);ctx.lineTo(194,599);ctx.stroke();
-// Roof (snow-covered)
-S(2.0,0.82);
-ctx.beginPath();
-ctx.moveTo(155,570);ctx.lineTo(217,530);ctx.lineTo(279,570);ctx.stroke();
-// Snow on roof
-S(1.5,0.68);
-ctx.beginPath();
-ctx.moveTo(155,570);
-ctx.bezierCurveTo(170,565,190,558,217,555);
-ctx.bezierCurveTo(244,552,262,562,279,570);
-ctx.stroke();
-// snow lumps on roof ridge
-S(1.0,0.60);
-[165,185,205,225,245,265].forEach(function(x){
-  var ry = 570 - (217-x < 0 ? (x-217) : (217-x)) * 0.62;
-  ctx.beginPath();ctx.arc(x, ry-4, 5, Math.PI, Math.PI*2);ctx.stroke();
-});
-// Chimney
-S(1.6,0.75);ctx.beginPath();ctx.rect(238,518,16,32);ctx.stroke();
-// Smoke
-S(0.9,0.38);
-ctx.beginPath();
-ctx.moveTo(246,518);
-ctx.bezierCurveTo(252,505,240,495,248,482);
-ctx.bezierCurveTo(256,469,244,458,250,445);
-ctx.bezierCurveTo(256,432,244,422,248,410);
-ctx.stroke();
-// cabin wall planks
-S(0.6,0.35);
-[590,605,620,635,650].forEach(function(y){
-  ctx.beginPath();ctx.moveTo(168,y);ctx.lineTo(266,y);ctx.stroke();
-});
-
-/* WOODEN FENCE buried in snow */
-S(1.3,0.65);
-// fence posts
-[310,330,350,370,390,410,430,450].forEach(function(x){
-  var postH = 30;
-  var groundY = 675 - (x-297)*0.04; // slight slope
-  ctx.beginPath();ctx.moveTo(x,groundY);ctx.lineTo(x,groundY-postH);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(x-5,groundY-postH);ctx.lineTo(x+5,groundY-postH);ctx.stroke(); // top
-});
-// fence rails
-S(0.9,0.55);
-ctx.beginPath();ctx.moveTo(310,660);ctx.lineTo(450,655);ctx.stroke();
-ctx.beginPath();ctx.moveTo(310,650);ctx.lineTo(450,645);ctx.stroke();
-
-/* ANIMAL TRACKS (rabbit) in snow */
-S(0.8,0.58);
-var tracks=[[355,722,0],[370,735,0.3],[385,720,-0.2],[400,733,0.1],[415,718,-0.1]];
-tracks.forEach(function(t){
-  var tx2=t[0],ty2=t[1],ang=t[2];
-  // two small ovals side by side
-  ctx.beginPath();ctx.ellipse(tx2-4,ty2,5,3,ang,0,Math.PI*2);ctx.stroke();
-  ctx.beginPath();ctx.ellipse(tx2+4,ty2,5,3,ang,0,Math.PI*2);ctx.stroke();
-});
-
-/* SNOWFLAKES */
-function snowflake(sx,sy,r){
-  for(var arm=0;arm<6;arm++){
-    var ang=arm*Math.PI/3;
-    ctx.beginPath();
-    ctx.moveTo(sx,sy);
-    ctx.lineTo(sx+r*Math.cos(ang),sy+r*Math.sin(ang));
-    ctx.stroke();
-    // cross bars
-    var mid=r*0.45;
-    var cx2=sx+mid*Math.cos(ang),cy2=sy+mid*Math.sin(ang);
-    var perp=ang+Math.PI/2;
-    ctx.beginPath();ctx.moveTo(cx2+r*0.18*Math.cos(perp),cy2+r*0.18*Math.sin(perp));
-    ctx.lineTo(cx2-r*0.18*Math.cos(perp),cy2-r*0.18*Math.sin(perp));ctx.stroke();
-  }
-}
-S(0.7,0.62);
-[[68,58,12],[145,95,9],[230,42,14],[310,78,10],[420,55,13],[505,88,8],[560,45,11],
- [88,170,8],[175,145,11],[295,160,9],[445,148,12],[530,162,8]].forEach(function(f){
-  snowflake(f[0],f[1],f[2]);
-});
-// small snow dots
-S(0.6,0.45);
-[[120,220,4],[200,240,3],[310,200,4],[440,230,3],[490,210,4],[350,250,3],
- [80,310,3],[260,290,4],[470,300,3],[155,340,3],[420,350,4]].forEach(function(d){
-  ctx.beginPath();ctx.arc(d[0],d[1],d[2],0,Math.PI*2);ctx.stroke();
-});
-
-/* CREDIT & BORDER */
-ctx.save();ctx.font='italic 13px "Playfair Display",Georgia,serif';
-ctx.fillStyle='rgba(17,17,17,0.16)';ctx.textAlign='center';
-ctx.fillText('Snow Storm  ·  Kiwi\'s Art',W/2,H-22);ctx.restore();
-S(1.5,0.18);ctx.strokeRect(16,16,W-32,H-32);
-S(0.7,0.10);ctx.strokeRect(22,22,W-44,H-44);
-})();
-</script>
-
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
 </html>

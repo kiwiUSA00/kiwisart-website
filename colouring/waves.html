@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Waves — Free Colouring Page | Kiwi's Art</title>
-<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Waves' — spiralling forms and wave crests to colour your own way.">
+<meta name="description" content="A free printable colouring page inspired by Kiwi's original painting 'Waves': a great curling wave crest surrounded by spiralling foam and seashells.">
 <meta name="author" content="Kiwi">
 <link rel="canonical" href="https://kiwisart.com/colouring/waves.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Waves — Free Colouring Page | Kiwi's Art">
-<meta property="og:description" content="A free printable colouring page inspired by Kiwi's original painting 'Waves'. Print and colour your own way.">
+<meta property="og:description" content="A free printable colouring page inspired by Kiwi's original painting 'Waves': a great curling wave crest surrounded by spiralling foam and seashells.">
 <meta property="og:url" content="https://kiwisart.com/colouring/waves.html">
-<meta property="og:image" content="https://kiwisart.com/images/waves.jpg">
+<meta property="og:image" content="https://kiwisart.com/colouring/img/waves.jpg">
 <meta property="og:site_name" content="Kiwi's Art">
-<meta property="og:image:alt" content="Waves — original painting by Kiwi">
+<meta property="og:image:alt" content="Waves colouring page by Kiwi">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://kiwisart.com/images/waves.jpg">
+<meta name="twitter:image" content="https://kiwisart.com/colouring/img/waves.jpg">
 <script type="application/ld+json">
 [
   {
@@ -47,7 +47,7 @@
     "@type": "CreativeWork",
     "name": "Waves — Colouring Page",
     "url": "https://kiwisart.com/colouring/waves.html",
-    "description": "A free printable colouring page inspired by Kiwi's original painting 'Waves' — spiralling forms and wave crests to colour your own way.",
+    "description": "A free printable colouring page inspired by Kiwi's original painting 'Waves': a great curling wave crest surrounded by spiralling foam and seashells.",
     "isAccessibleForFree": true,
     "inLanguage": "en",
     "genre": "Colouring page",
@@ -88,34 +88,25 @@
 .colouring-intro { max-width: 600px; }
 .colouring-intro p { font-size: 1.05rem; line-height: 1.75; color: #3d4455; }
 .sheet-wrap {
-  max-width: 560px;
+  max-width: 640px;
   margin: 36px auto 24px;
   background: #fff;
+  padding: 4%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.10), 0 24px 64px rgba(0,0,0,0.06);
   border-radius: 1px;
-  overflow: hidden;
 }
-.sheet-wrap canvas { display: block; width: 100%; height: auto; }
-.colouring-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: 28px 0 12px;
-}
-.colouring-hint {
-  font-size: 0.85rem;
-  color: var(--lede);
-  margin-bottom: 48px;
-  line-height: 1.6;
-}
+.sheet-wrap img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+.sheet-credit { display: none; }
+.colouring-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 12px; }
+.colouring-hint { font-size: 0.85rem; color: var(--lede); margin-bottom: 48px; line-height: 1.6; }
 @media print {
-  @page { margin: 0; }
+  @page { margin: 12mm; }
   .site-header, .skip-link, .colouring-intro, .colouring-actions, .colouring-hint, .site-footer, .page-eyebrow, .section-alt, h1 { display: none !important; }
   body, html { margin: 0 !important; padding: 0 !important; background: white; }
-  main, section, .wrap { padding: 0 !important; margin: 0 !important; }
-  section { display: block; }
-  .sheet-wrap { box-shadow: none; max-width: 100%; width: 100%; margin: 0; border-radius: 0; }
-  .sheet-wrap canvas{display:block;width:auto!important;height:100vh!important;max-width:100%!important}
+  main, section, .wrap { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+  .sheet-wrap { box-shadow: none; max-width: 100%; width: 100%; margin: 0; padding: 0; border-radius: 0; break-inside: avoid; }
+  .sheet-wrap img { width: 100%; max-height: 240mm; object-fit: contain; }
+  .sheet-credit { display: block; margin-top: 6mm; text-align: center; font: 9pt Georgia, serif; color: #555; }
 }
 </style>
 </head>
@@ -143,11 +134,12 @@
       <div class="eyebrow page-eyebrow">Free Colouring Page</div>
       <h1>Waves</h1>
       <div class="colouring-intro">
-        <p>A printable line drawing inspired by the original painting — spiralling ribbons and breaking crests. Colour from the centre outward, or outward in.</p>
+        <p>A printable colouring page inspired by the original painting: a great wave curling at full crest, spiralling foam radiating outward and seashells tumbling in the swirl. Colour it however you like.</p>
       </div>
 
       <div class="sheet-wrap">
-        <canvas id="c" width="595" height="800"></canvas>
+        <img src="/colouring/img/waves.jpg" width="2048" height="2048" alt="Waves colouring page: a great curling wave crest surrounded by spiralling foam and seashells.">
+        <p class="sheet-credit">Waves &middot; Kiwi's Art &middot; kiwisart.com &middot; Free for personal use</p>
       </div>
 
       <div class="colouring-actions">
@@ -189,208 +181,5 @@
 </footer>
 
 <script src="/js/nav.js"></script>
-
-<script>
-(function(){
-var cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
-ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
-ctx.lineCap='round';ctx.lineJoin='round';
-function S(lw,a){ctx.strokeStyle='rgba(17,17,17,'+(a==null?0.85:a)+')';ctx.lineWidth=lw;}
-
-/* SKY — hatching lines to suggest overcast light */
-S(0.4,0.08);
-for(var y=30;y<340;y+=22){
-  ctx.beginPath();ctx.moveTo(30,y);
-  ctx.bezierCurveTo(150,y-3,300,y+3,450,y-2);ctx.bezierCurveTo(520,y+2,560,y,570,y);
-  ctx.stroke();
-}
-
-/* DISTANT MOUNTAINS */
-S(1.0,0.45);
-// Fuji-like volcano
-ctx.beginPath();ctx.moveTo(320,335);ctx.lineTo(395,248);ctx.lineTo(470,335);ctx.stroke();
-// Snow cap
-S(0.8,0.42);
-ctx.beginPath();ctx.moveTo(382,264);ctx.lineTo(395,248);ctx.lineTo(408,264);ctx.stroke();
-// Snow cap inner
-ctx.beginPath();ctx.moveTo(387,272);ctx.lineTo(395,258);ctx.lineTo(403,272);ctx.stroke();
-// Distant mountain ridgeline
-S(0.7,0.35);
-ctx.beginPath();
-ctx.moveTo(30,338);ctx.lineTo(100,312);ctx.lineTo(148,320);ctx.lineTo(200,305);
-ctx.lineTo(280,315);ctx.lineTo(315,335);ctx.stroke();
-ctx.beginPath();
-ctx.moveTo(470,335);ctx.lineTo(510,318);ctx.lineTo(555,325);ctx.lineTo(575,335);ctx.stroke();
-
-/* HORIZON LINE */
-S(1.5,0.55);
-ctx.beginPath();ctx.moveTo(28,338);ctx.lineTo(572,338);ctx.stroke();
-
-/* FAR OCEAN LINES */
-S(0.6,0.28);
-[360,385,410,435,460,480,500,520].forEach(function(y){
-  ctx.beginPath();ctx.moveTo(28,y);
-  ctx.bezierCurveTo(180,y-6,350,y+5,572,y-3);
-  ctx.stroke();
-});
-
-/* TWO SMALL FISHING BOATS in background */
-S(1.0,0.52);
-// Boat 1
-ctx.beginPath();ctx.moveTo(55,348);ctx.bezierCurveTo(60,355,80,357,100,355);ctx.bezierCurveTo(120,353,130,348,135,348);ctx.stroke();
-ctx.beginPath();ctx.moveTo(95,355);ctx.lineTo(95,338);ctx.stroke(); // mast
-ctx.beginPath();ctx.moveTo(95,338);ctx.lineTo(118,350);ctx.stroke(); // sail right
-ctx.beginPath();ctx.moveTo(95,338);ctx.lineTo(76,350);ctx.stroke(); // sail left
-// Boat 2
-ctx.beginPath();ctx.moveTo(185,342);ctx.bezierCurveTo(190,348,205,350,220,348);ctx.bezierCurveTo(232,346,238,342,240,342);ctx.stroke();
-ctx.beginPath();ctx.moveTo(215,348);ctx.lineTo(215,332);ctx.stroke();
-ctx.beginPath();ctx.moveTo(215,332);ctx.lineTo(232,344);ctx.stroke();
-ctx.beginPath();ctx.moveTo(215,332);ctx.lineTo(200,344);ctx.stroke();
-
-/* ========== GREAT WAVE ========== */
-
-/* WAVE BASE SWELL — dark deep body from left sweeping right+up */
-S(2.8,0.90);
-ctx.beginPath();
-ctx.moveTo(28,620);
-ctx.bezierCurveTo(80,598, 140,572, 200,548);
-ctx.bezierCurveTo(260,524, 315,498, 360,468);
-ctx.bezierCurveTo(395,445, 420,418, 440,388);
-ctx.bezierCurveTo(455,365, 460,342, 455,318);
-ctx.bezierCurveTo(450,295, 438,278, 428,262);
-ctx.stroke();
-
-/* WAVE BODY LOWER BOUNDARY */
-S(2.0,0.82);
-ctx.beginPath();
-ctx.moveTo(28,660);
-ctx.bezierCurveTo(90,638, 155,614, 218,590);
-ctx.bezierCurveTo(278,568, 330,545, 375,518);
-ctx.bezierCurveTo(410,496, 438,470, 458,440);
-ctx.bezierCurveTo(472,418, 478,392, 472,368);
-ctx.stroke();
-
-/* WAVE STRIATIONS — flow lines suggesting movement inside body */
-S(1.0,0.45);
-var stripes=[
-  [[60,640],[140,608],[220,578],[295,550],[360,522],[405,498],[430,475],[445,452],[450,428]],
-  [[90,658],[170,628],[248,598],[318,570],[378,544],[422,520],[445,498],[460,475]],
-  [[120,676],[200,648],[278,618],[345,590],[402,564],[440,542],[460,520]],
-  [[155,692],[235,663],[310,634],[374,606],[428,580],[462,555]],
-];
-stripes.forEach(function(pts){
-  ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
-  for(var i=1;i<pts.length;i++) ctx.lineTo(pts[i][0],pts[i][1]);
-  ctx.stroke();
-});
-
-/* WAVE CREST — the curling tube (the famous part) */
-S(3.0,0.92);
-ctx.beginPath();
-ctx.moveTo(428,262);
-// arch curling over
-ctx.bezierCurveTo(440,238, 455,215, 462,192);
-ctx.bezierCurveTo(468,170, 462,150, 448,138);
-ctx.bezierCurveTo(434,126, 412,122, 388,128);
-ctx.bezierCurveTo(358,136, 328,155, 302,178);
-ctx.bezierCurveTo(275,202, 252,230, 238,262);
-ctx.bezierCurveTo(225,292, 222,325, 232,358);
-ctx.bezierCurveTo(240,385, 255,405, 272,418);
-ctx.stroke();
-
-/* BARREL INNER CURVE */
-S(2.0,0.78);
-ctx.beginPath();
-ctx.moveTo(388,128);
-ctx.bezierCurveTo(365,135, 342,148, 322,168);
-ctx.bezierCurveTo(300,190, 282,218, 272,250);
-ctx.bezierCurveTo(262,278, 262,308, 272,334);
-ctx.bezierCurveTo(280,355, 295,370, 312,378);
-ctx.stroke();
-
-/* FOAM CLAWS at crest top — the finger-like foam tips */
-S(2.0,0.88);
-var clawBase=[
-  [448,138],[435,130],[420,124],[405,122],[390,122],[376,124],[362,128]
-];
-var clawTips=[
-  [468,108],[460,98],[448,90],[432,86],[416,84],[400,86],[386,92]
-];
-clawBase.forEach(function(b,i){
-  var t=clawTips[i];
-  ctx.beginPath();ctx.moveTo(b[0],b[1]);
-  ctx.bezierCurveTo(b[0]+5,b[1]-10,t[0]+3,t[1]+8,t[0],t[1]);
-  ctx.stroke();
-});
-// connect claw tips with wavy arc
-S(1.8,0.85);
-ctx.beginPath();ctx.moveTo(468,108);
-ctx.bezierCurveTo(460,100,450,92,440,88);
-ctx.bezierCurveTo(430,84,418,82,405,82);
-ctx.bezierCurveTo(395,82,384,86,374,92);
-ctx.stroke();
-
-/* FOAM BLOBS at crest and around barrel */
-S(1.3,0.72);
-[[462,195,18,10],[448,175,14,8],[432,162,16,9],[415,153,12,7],
- [250,265,16,9],[242,298,14,8],[240,330,18,10],[248,358,14,8]].forEach(function(b){
-  ctx.beginPath();ctx.ellipse(b[0],b[1],b[2],b[3],0,0,Math.PI*2);ctx.stroke();
-  S(0.6,0.38);ctx.beginPath();ctx.arc(b[0],b[1],b[2]*0.42,0,Math.PI*2);ctx.stroke();
-  S(1.3,0.72);
-});
-
-/* SPRAY DROPLETS off crest */
-S(0.9,0.68);
-[[465,168,475,148],[472,178,484,162],[475,190,488,175],
- [460,155,468,135],[450,145,454,122],[440,135,440,112]].forEach(function(sp){
-  ctx.beginPath();ctx.moveTo(sp[0],sp[1]);ctx.lineTo(sp[2],sp[3]);ctx.stroke();
-});
-// spray dots
-S(0.8,0.62);
-[[478,145],[485,158],[490,172],[472,130],[462,120],[450,112],[480,132]].forEach(function(d){
-  ctx.beginPath();ctx.arc(d[0],d[1],1.8,0,Math.PI*2);ctx.fill();
-});
-
-/* CHURNING WHITE WATER at base of wave */
-S(1.5,0.68);
-var foamBase=[
-  [45,698,40,16],[115,708,34,14],[185,715,38,15],[255,718,42,16],
-  [325,714,36,15],[395,708,40,16],[465,700,34,14],[525,692,38,15],
-  [80,735,45,14],[180,742,38,12],[280,742,42,14],[375,738,36,12],[465,730,40,14],
-  [140,762,50,13],[265,768,44,12],[385,762,46,13],[500,755,38,12]
-];
-foamBase.forEach(function(b){
-  ctx.beginPath();ctx.ellipse(b[0],b[1],b[2],b[3],0,0,Math.PI*2);ctx.stroke();
-  S(0.7,0.38);ctx.beginPath();ctx.moveTo(b[0]-b[2]*0.55,b[1]);
-  ctx.quadraticCurveTo(b[0],b[1]-b[3]*0.55,b[0]+b[2]*0.55,b[1]);ctx.stroke();
-  S(1.5,0.68);
-});
-
-/* WAVE → base white water connecting lines */
-S(0.9,0.42);
-[[230,410,165,480],[280,480,220,548],[338,540,285,600]].forEach(function(l){
-  ctx.beginPath();ctx.moveTo(l[0],l[1]);ctx.quadraticCurveTo(l[0]-18,l[3]-20,l[2],l[3]);ctx.stroke();
-});
-
-/* FOREGROUND SWIRLING FOAM VORTEX (bottom right) */
-S(1.0,0.50);
-ctx.beginPath();
-ctx.moveTo(480,720);ctx.bezierCurveTo(530,700,555,650,540,618);
-ctx.bezierCurveTo(525,588,495,578,478,592);
-ctx.bezierCurveTo(462,606,460,628,472,642);
-ctx.bezierCurveTo(482,654,500,655,510,645);
-ctx.stroke();
-S(0.7,0.38);
-ctx.beginPath();ctx.moveTo(488,635);ctx.bezierCurveTo(505,625,516,612,510,600);ctx.stroke();
-
-/* CREDIT & BORDER */
-ctx.save();ctx.font='italic 13px "Playfair Display",Georgia,serif';
-ctx.fillStyle='rgba(17,17,17,0.16)';ctx.textAlign='center';
-ctx.fillText('Waves  ·  Kiwi\'s Art',W/2,H-22);ctx.restore();
-S(1.5,0.18);ctx.strokeRect(16,16,W-32,H-32);
-S(0.7,0.10);ctx.strokeRect(22,22,W-44,H-44);
-})();
-</script>
-
 <script>(function(){var p=window.location.pathname;document.querySelectorAll(".acg-btn").forEach(function(a){if(a.getAttribute("href")===p||a.getAttribute("href")===p.replace(/\/$/,"")){a.classList.add("active");a.style.pointerEvents="none";}});})();</script></body>
 </html>
