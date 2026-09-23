@@ -1,6 +1,7 @@
 // Painting enquiries — contact.html?painting=<slug> pre-fills the form for that painting.
 (function () {
   var PAINTINGS = {
+    'ebb-and-flow':        ['Ebb and Flow',        ''],
     'waves':               ['Waves',               '46½ × 30¾ in'],
     'koi':                 ['Koi',                 '46½ × 30¾ in'],
     'snow-storm':          ['Snow Storm',          '78¾ × 55 in'],
@@ -38,7 +39,7 @@
     '<span><strong></strong><span class="enquiry-dims"></span><span class="enquiry-change">Original painting · view details</span></span>';
   card.querySelector('img').src = '/images/' + slug + '.jpg';
   card.querySelector('strong').textContent = title;
-  card.querySelector('.enquiry-dims').textContent = dims;
+  card.querySelector('.enquiry-dims').textContent = dims || 'New original painting';
   form.parentNode.insertBefore(card, form);
 
   // "Interested in" choice
@@ -62,11 +63,11 @@
     i.value = value;
   }
   hidden('_subject', 'Painting enquiry: ' + title + ' — Kiwi\'s Art');
-  hidden('painting', title + ' (' + dims + ') — https://kiwisart.com/gallery/' + slug + '.html');
+  hidden('painting', title + (dims ? ' (' + dims + ')' : '') + ' — https://kiwisart.com/gallery/' + slug + '.html');
 
   var msg = document.getElementById('ct-message');
   if (msg && !msg.value) {
-    msg.value = 'Hi Kiwi, I’m interested in “' + title + '” (' + dims + '). ';
+    msg.value = 'Hi Kiwi, I’m interested in “' + title + '”' + (dims ? ' (' + dims + ')' : '') + '. ';
   }
   var btn = form.querySelector('button[type="submit"]');
   if (btn) btn.textContent = 'Send Enquiry';

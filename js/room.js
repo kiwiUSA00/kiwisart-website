@@ -131,7 +131,7 @@ function buildWallControls() {
       '<label for="wall-size">Painting size</label>' +
       '<input type="range" id="wall-size" min="8" max="95" value="' + wallSizePct + '">' +
     '</div>' +
-    '<div class="wall-tool">' +
+    '<div class="wall-tool"' + (PAINT_W_IN ? '' : ' hidden') + '>' +
       '<label for="wall-width">Wall width in photo <span class="wall-opt">(optional, for true scale)</span></label>' +
       '<span class="wall-width-row"><input type="number" id="wall-width" min="1" max="200" step="0.5" inputmode="decimal" placeholder="e.g. 12"> ft</span>' +
     '</div>' +

@@ -1,5 +1,6 @@
 (function () {
   var images = [
+    "/images/ebb-and-flow.jpg",
     "/images/waves.jpg",
     "/images/koi.jpg",
     "/images/snow-storm.jpg",
