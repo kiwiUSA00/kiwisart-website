@@ -568,6 +568,7 @@ section.tight + section.tight { padding-top: 0; }
   background: #fff; border-radius: 14px;
   overflow: hidden; width: min(900px,100%);
   max-height: calc(100vh - 32px);
+  overflow-y: auto;
   display: flex; flex-direction: column;
   box-shadow: 0 32px 80px rgba(0,0,0,0.7);
 }
@@ -796,3 +797,31 @@ section.tight + section.tight { padding-top: 0; }
   .form-row { grid-template-columns: 1fr; }
   .room-ctrls { gap: 12px; }
 }
+
+/* ── Room preview: own wall ─────────────────────────────── */
+.rcb-upload { display: inline-flex; align-items: center; gap: 6px; border-color: var(--clay); color: var(--clay); font-weight: 600; }
+.rcb-upload:hover { background: var(--clay); color: #fff; border-color: var(--clay); }
+.rcb-upload:focus-within, .rcb:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+.room-overlay.wall-mode #room-canvas { cursor: grab; touch-action: none; }
+.room-overlay.wall-mode #room-canvas.dragging { cursor: grabbing; }
+.wall-tools { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: flex-end; padding: 0 20px 16px; background: #faf9f7; flex-shrink: 0; }
+.wall-tools[hidden] { display: none; }
+.wall-tool { display: flex; flex-direction: column; gap: 6px; }
+.wall-tool label { font-size: 0.73rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #999; }
+.wall-opt { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.wall-tool input[type=range] { width: 200px; max-width: 100%; accent-color: var(--forest-dark); }
+.wall-tool.is-off { opacity: 0.4; }
+.wall-width-row { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #666; }
+.wall-width-row input { width: 80px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+.wall-hint { flex-basis: 100%; margin: 0; font-size: 0.8rem; color: #777; line-height: 1.5; }
+
+/* ── Painting enquiry ─────────────────────────────────────── */
+.enquiry-piece { display: flex; align-items: center; gap: 16px; max-width: 600px; margin-top: 28px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); text-decoration: none; }
+.enquiry-piece:hover { text-decoration: none; border-color: var(--clay); }
+.enquiry-piece img { width: 120px; height: 80px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+.enquiry-piece > span { display: flex; flex-direction: column; gap: 2px; }
+.enquiry-piece strong { font-family: "Playfair Display", Georgia, serif; font-size: 1.1rem; color: var(--forest-dark); }
+.enquiry-dims { font-size: 0.88rem; color: #666; }
+.enquiry-change { font-size: 0.78rem; color: var(--clay); }
+.inquiry-card .btn + .inquiry-sub { display: block; margin-top: 12px; font-size: 0.88rem; color: #f0b98f; }
+.inquiry-card .inquiry-sub:hover { color: #fff; }
