@@ -1,7 +1,7 @@
 // Painting enquiries — contact.html?painting=<slug> pre-fills the form for that painting.
 (function () {
   var PAINTINGS = {
-    'ebb-and-flow':        ['Ebb and Flow',        '30¾ × 46½ in'],
+    'ebb-and-flow':        ['Ebb and Flow',        '46½ × 30¾ in'],
     'waves':               ['Waves',               '46½ × 30¾ in'],
     'koi':                 ['Koi',                 '46½ × 30¾ in'],
     'snow-storm':          ['Snow Storm',          '78¾ × 55 in'],
