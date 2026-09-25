@@ -1,7 +1,7 @@
 // Painting enquiries — contact.html?painting=<slug> pre-fills the form for that painting.
 (function () {
   var PAINTINGS = {
-    'ice-melt':            ['Ice Melt',            ''],
+    'ice-melt':            ['Ice Melt',            '46½ × 30¾ in'],
     'ebb-and-flow':        ['Ebb and Flow',        '46½ × 30¾ in'],
     'waves':               ['Waves',               '46½ × 30¾ in'],
     'koi':                 ['Koi',                 '46½ × 30¾ in'],
