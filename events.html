@@ -58,6 +58,20 @@
         <p class="lede">A living list of what's on nearby — exhibitions, music, festivals, markets and time outdoors. Every listing links to the organizer's own page for full details.</p>
       </div>
 
+      <div class="ev-cal" aria-labelledby="cal-title">
+        <div class="ev-cal-head">
+          <button type="button" class="ev-cal-nav" id="cal-prev" aria-label="Previous month">&lsaquo;</button>
+          <h2 class="ev-cal-title" id="cal-title" aria-live="polite">This month</h2>
+          <button type="button" class="ev-cal-nav" id="cal-next" aria-label="Next month">&rsaquo;</button>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+        <p class="ev-cal-hint">Tap an icon to jump to that event, or a date to see everything on that day.</p>
+      </div>
+      <div class="ev-search" role="search">
+        <label for="ev-search" class="sr-only">Search events</label>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input type="search" id="ev-search" placeholder="Search events, places or organizers" autocomplete="off" spellcheck="false">
+      </div>
       <div class="ev-filters" role="group" aria-label="Filter events">
         <button class="rcb active" data-filter="all">All</button>
         <button class="rcb" data-filter="arts">Arts &amp; Music</button>
@@ -73,6 +87,8 @@
 
   <section class="tight">
     <div class="wrap">
+      <p class="ev-count" id="ev-count" aria-live="polite" hidden></p>
+      <p class="ev-cal-sel" id="cal-sel" hidden>Showing events on <strong></strong> &middot; <button type="button">Show all dates</button></p>
       <div id="ev-list" aria-live="polite">
         <p class="ev-status">Loading events…</p>
       </div>
