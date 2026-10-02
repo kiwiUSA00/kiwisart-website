@@ -168,7 +168,11 @@ async function collect(fixtures) {
       try {
         const text = fixtures ? await readFile(u, "utf8") : await get(u);
         out.push(...fromICS(text, key));
-      } catch (err) { errors.push(`${key}: ${err.message}`); }
+      } catch (err) {
+        // These calendars answer 404 for dates with nothing posted yet; that isn't a failure.
+        if (/^404 /.test(err.message)) continue;
+        errors.push(`${key}: ${err.message}`);
+      }
     }
   }
 
