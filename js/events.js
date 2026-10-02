@@ -37,6 +37,12 @@
     return e.tags.some(function (t) { return g.indexOf(t) > -1; });
   }
 
+  // Feed data comes from outside sites: only ever use plain web links.
+  function webUrl(u) {
+    try { var x = new URL(u, location.href); return /^https?:$/.test(x.protocol) ? x.href : null; }
+    catch (err) { return null; }
+  }
+
   function el(tag, cls, text) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -47,13 +53,14 @@
   function card(e) {
     var s = parts(e.start), en = parts(e.end);
     var a = el("a", "ev-card");
-    a.href = e.url;
+    a.href = webUrl(e.url) || webUrl((data.sources[e.source] || {}).home) || "#";
     a.target = "_blank";
     a.rel = "noopener";
 
-    if (e.image) {
+    var imgUrl = webUrl(e.image);
+    if (imgUrl) {
       var img = el("img", "ev-thumb");
-      img.src = e.image;
+      img.src = imgUrl;
       img.alt = "";
       img.loading = "lazy";
       img.referrerPolicy = "no-referrer";
