@@ -8,7 +8,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 
-const DAYS_AHEAD = 30;   // how far ahead to list events
+const DAYS_AHEAD = 92;   // how far ahead to list events (about 3 months)
 const TZ = "America/New_York";
 
 const SOURCES = {
@@ -17,7 +17,7 @@ const SOURCES = {
     home: "https://www.prospectpark.org/events/",
     // The feed only returns a few days at a time, so request several start dates.
     urls: (start) =>
-      [0, 4, 8, 12, 16, 20, 24, 28].map(
+      steps(4).map(
         (d) => `https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=${ymd(addDays(start, d))}`
       ),
   },
@@ -25,7 +25,7 @@ const SOURCES = {
     name: "Brooklyn Borough President",
     home: "https://www.brooklynbp.nyc.gov/events/",
     urls: (start) =>
-      [0, 10, 20].map(
+      steps(10).map(
         (d) => `https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=${ymd(addDays(start, d))}`
       ),
   },
@@ -40,6 +40,9 @@ const PERMIT_TYPES = [
   "Street Festival", "Single Block Festival", "Block Party", "Parade",
   "Farmers Market", "Plaza Event", "Plaza Partner Event", "Open Street Partner Event",
 ];
+
+// Day offsets 0, n, 2n, … covering the whole DAYS_AHEAD window.
+function steps(n) { const out = []; for (let d = 0; d < DAYS_AHEAD; d += n) out.push(d); return out; }
 
 // ---------- dates (all times treated as New York local) ----------
 function addDays(d, n) { const x = new Date(d); x.setUTCDate(x.getUTCDate() + n); return x; }

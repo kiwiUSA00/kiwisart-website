@@ -252,7 +252,7 @@
       else if (mk < curMonth) msg = "Past events aren’t kept on this page.";
       else if (selectedDay) msg = "Nothing listed on " + longDay(selectedDay) + (filter !== "all" || freeOnly.checked ? " for this filter" : "") + ". Pick another day, or show the whole month.";
       else if (filter !== "all" || freeOnly.checked) msg = "Nothing in " + mName + " matches that filter — try another.";
-      else msg = "Nothing listed for " + mName + " yet. Listings appear about a month ahead, so check back soon.";
+      else msg = "Nothing listed for " + mName + " yet. Listings run about three months ahead, so check back closer to the time.";
       list.appendChild(el("p", "ev-status", msg));
       return;
     }
