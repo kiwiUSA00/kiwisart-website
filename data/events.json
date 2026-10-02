@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T17:43:50.273Z",
+ "updated": "2026-10-02T22:18:37.784Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -420,6 +420,23 @@
    "canceled": false
   },
   {
+   "id": "permits:954967",
+   "title": "Polhemus Place Block Party",
+   "start": "2026-10-03T10:30:00",
+   "end": "2026-10-03T18:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Polhemus Place between Carroll Street and Garfield Place",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:966504",
    "title": "Schaefer Street Block Party",
    "start": "2026-10-03T10:30:00",
@@ -598,6 +615,23 @@
    "summary": "",
    "tags": [
     "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:981325",
+   "title": "Holiday Crafts - Music in the Plaza",
+   "start": "2026-10-03T11:30:00",
+   "end": "2026-10-03T17:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -928,6 +962,23 @@
    "canceled": false
   },
   {
+   "id": "permits:954634",
+   "title": "Youth in the move",
+   "start": "2026-10-03T16:00:00",
+   "end": "2026-10-03T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Winthrop Street between East 51 Street and East 52 Street",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:893705",
    "title": "Down to Earth Park Slope Farmers Market",
    "start": "2026-10-04T06:00:00",
@@ -1097,6 +1148,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
    "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-04/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:899559",
+   "title": "Third Avenue Festival",
+   "start": "2026-10-04T10:00:00",
+   "end": "2026-10-04T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "3 Avenue between 69 Street and 94 Street",
+   "summary": "",
+   "tags": [
+    "Street Festival"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -1535,7 +1603,7 @@
    "end": "2026-10-07T16:00:00",
    "allDay": false,
    "location": "",
-   "summary": "",
+   "summary": "Join us to explore how to strengthen civic engagement in Brooklyn, and learn about volunteer opportunities in government, cultural institutions, healthcare, and more.",
    "tags": [],
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/civic-engagement-fair/",
@@ -1762,6 +1830,23 @@
    "canceled": false
   },
   {
+   "id": "permits:936839",
+   "title": "CHIPS Distribution",
+   "start": "2026-10-09T11:30:00",
+   "end": "2026-10-09T12:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024814-1791547200-1791565200@www.prospectpark.org",
    "title": "Carousel Rides",
    "start": "2026-10-09T12:00:00",
@@ -1809,6 +1894,23 @@
    "summary": "",
    "tags": [
     "Plaza Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:974096",
+   "title": "Panamanian Heritage Family Day",
+   "start": "2026-10-09T17:00:00",
+   "end": "2026-10-09T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Hillel Plaza: Hillel Plaza Hillel Pl between Kenilworth Pl and Flatbush Ave",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -1980,6 +2082,23 @@
    "canceled": false
   },
   {
+   "id": "permits:925469",
+   "title": "The Junction Neighborhood Association Block Party",
+   "start": "2026-10-10T11:00:00",
+   "end": "2026-10-10T17:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Herkimer Street between Eastern Parkway and Sherlock Place",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:971234",
    "title": "9th St Block Party",
    "start": "2026-10-10T12:00:00",
@@ -2124,6 +2243,23 @@
    "allDay": false,
    "timesArePermitWindow": true,
    "location": "Butler Street between Gregory Place and 4 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:964416",
+   "title": "Celebration of Life",
+   "start": "2026-10-10T13:00:00",
+   "end": "2026-10-10T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "13 Street between 7 Avenue and 8 Avenue",
    "summary": "",
    "tags": [
     "Block Party"
@@ -2431,6 +2567,23 @@
    "canceled": false
   },
   {
+   "id": "permits:959556",
+   "title": "Carnival 2026",
+   "start": "2026-10-11T16:00:00",
+   "end": "2026-10-11T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "East 10 Street between Avenue I and Avenue J",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024534-1791799200-1791824400@www.prospectpark.org",
    "title": "Indigenous People’s Day School Holiday in Prospect Park",
    "start": "2026-10-12T10:00:00",
@@ -2612,6 +2765,20 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/49/ad/49ad000c-9861-4afe-9c5a-cd6a6db508f5/bird.jpg",
    "url": "https://www.prospectpark.org/event/prospect-park-fall-migration-walks-5/2026-10-15/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:84840-1792058400-1792080000@www.brooklynbp.nyc.gov",
+   "title": "Challenging Ice Detention Through Habeas",
+   "start": "2026-10-15T10:00:00",
+   "end": "2026-10-15T16:00:00",
+   "allDay": false,
+   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
+   "summary": "Attorneys: join us for a training to learn how to support members of our community facing immigration detention and expand access to legal representation for individuals seeking to challenge their detention through…",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/challenging-ice-detention-through-habeas/",
+   "source": "bp",
    "canceled": false
   },
   {
@@ -2942,6 +3109,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
    "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-17/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:963718",
+   "title": "E4th Block Party",
+   "start": "2026-10-17T11:00:00",
+   "end": "2026-10-17T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "East 4 Street between Greenwood Avenue and Vanderbilt Street",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -3299,6 +3483,20 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23.png",
    "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside/2026-10-19/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:84844-1792501200-1792513800@www.brooklynbp.nyc.gov",
+   "title": "Free Legal Clinic for Tenants",
+   "start": "2026-10-20T13:00:00",
+   "end": "2026-10-20T16:30:00",
+   "allDay": false,
+   "location": "",
+   "summary": "Dealing with landlord issues? Come to this clinic to get your questions answered by an attorney.",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/free-legal-clinic-for-tenants/",
+   "source": "bp",
    "canceled": false
   },
   {
@@ -3680,6 +3878,23 @@
    "canceled": false
   },
   {
+   "id": "permits:967244",
+   "title": "McDonough st Block Party",
+   "start": "2026-10-24T11:00:00",
+   "end": "2026-10-24T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Macdonough Street between Thomas Boyland Street and Saratoga Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024536-1792839600-1792850400@www.prospectpark.org",
    "title": "Park Pitch In: World Sustainability Day",
    "start": "2026-10-24T11:00:00",
@@ -3694,6 +3909,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/02/RS4043_Volunteer_060-scaled.jpg",
    "url": "https://www.prospectpark.org/event/park-pitch-in-world-sustainability-day-3/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:952461",
+   "title": "16th Street Block Party",
+   "start": "2026-10-24T12:00:00",
+   "end": "2026-10-24T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "16 Street between 7 Avenue and 8 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
