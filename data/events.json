@@ -1,0 +1,171 @@
+{
+ "updated": "2026-10-02T16:49:46.789Z",
+ "sources": {
+  "ppa": {
+   "name": "Prospect Park Alliance",
+   "home": "https://www.prospectpark.org/events/"
+  },
+  "bp": {
+   "name": "Brooklyn Borough President",
+   "home": "https://www.brooklynbp.nyc.gov/events/"
+  },
+  "permits": {
+   "name": "NYC Permitted Events",
+   "home": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx"
+  }
+ },
+ "errors": [],
+ "events": [
+  {
+   "id": "ppa:10024567-1790935200-1790953200@www.prospectpark.org",
+   "title": "October Weekday Nature Exploration",
+   "start": "2026-10-02T10:00:00",
+   "end": "2026-10-02T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance for nature education programs on Thursdays and Fridays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am –3 pm: Let’s have fun exploring the…",
+   "tags": [
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/october-weekday-nature-exploration-3/2026-10-02/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:976214",
+   "title": "Jesus Is King",
+   "start": "2026-10-02T14:30:00",
+   "end": "2026-10-02T16:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "850 Grand Street",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:930759",
+   "title": "East New York Farmers Market",
+   "start": "2026-10-03T07:00:00",
+   "end": "2026-10-03T17:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Schenck Avenue between New Lots Avenue and Livonia Avenue",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:911543",
+   "title": "4th Avenue Sunset Park Greenmarket Saturday",
+   "start": "2026-10-03T08:00:00",
+   "end": "2026-10-03T17:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "60 Street between 3 Avenue and 4 Avenue",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024876-1791021600-1791054000@www.prospectpark.org",
+   "title": "Third United Lenape / Lunáapeew Nations Pow Wow",
+   "start": "2026-10-03T10:00:00",
+   "end": "2026-10-03T19:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance, Éenda-Lŭnaapeewáhkiing Collective and American Indian Community House for the Third United Lenape / Lunaapeew Nations Pow Wow at the LeFrak Center at Lakeside in Prospect Park. This free,…",
+   "tags": [
+    "Community Engagement",
+    "Education",
+    "History",
+    "Kids",
+    "Music",
+    "Performing Arts"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/08/DSC05893-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/third-united-lenape-lunaapeew-nations-pow-wow/2026-10-03/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10023000-1791111600-1791136800@www.prospectpark.org",
+   "title": "Smorgasburg",
+   "start": "2026-10-04T11:00:00",
+   "end": "2026-10-04T18:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Smorgasburg, presented in partnership with Prospect Park Alliance, is considered the “Woodstock of Eating.” Over 60 local businesses will gather on Breeze Hill, near the Lincoln Road entrance, to offer a range of food…",
+   "tags": [
+    "Food",
+    "Smorgasburg"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/03/20210613-SMORGASBURG-Prospect-Park-0085-scaled-e1680536663418.jpg",
+   "url": "https://www.prospectpark.org/event/smorgasburg-4/2026-10-04/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:84831-1791374400-1791388800@www.brooklynbp.nyc.gov",
+   "title": "Civic Engagement Fair",
+   "start": "2026-10-07T12:00:00",
+   "end": "2026-10-07T16:00:00",
+   "allDay": false,
+   "location": "",
+   "summary": "",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/civic-engagement-fair/",
+   "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "bp:82780-1792000800-1792008000@www.brooklynbp.nyc.gov",
+   "title": "ULURP Public Hearing Meeting",
+   "start": "2026-10-14T18:00:00",
+   "end": "2026-10-14T20:00:00",
+   "allDay": false,
+   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
+   "summary": "364 Coney Island Avenue Rezoning A Zoning Map Amendment from C8-2 (OP) and R5B (OP) to C4-4D (OP)",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-9/",
+   "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024898-1792231200-1792245600@www.prospectpark.org",
+   "title": "OHNY: Soldiers' and Sailors' Memorial Arch Tours",
+   "start": "2026-10-17T10:00:00",
+   "end": "2026-10-17T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Have you ever wondered what the inside of the arch at Grand Army Plaza looks like? On this Open House New York tour led by the Urban Park Rangers, visitors can view the interior of the Soldiers’ and Sailors’ Memorial…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS29690_photo-174-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/ohny-soldiers-and-sailors-memorial-arch-tours/",
+   "source": "ppa",
+   "canceled": false
+  }
+ ]
+}
