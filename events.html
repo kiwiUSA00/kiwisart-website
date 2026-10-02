@@ -65,7 +65,7 @@
           <button type="button" class="ev-cal-nav" id="cal-next" aria-label="Next month">&rsaquo;</button>
         </div>
         <div class="cal-grid" id="cal-grid"></div>
-        <p class="ev-cal-hint">Tap an icon to jump to that event, or a date to see everything on that day.</p>
+        <p class="ev-cal-hint" id="cal-hint" aria-live="polite">Tap a date to see that day, or an icon to jump straight to an event.</p>
       </div>
       <div class="ev-search" role="search">
         <label for="ev-search" class="sr-only">Search events</label>
@@ -88,7 +88,7 @@
   <section class="tight">
     <div class="wrap">
       <p class="ev-count" id="ev-count" aria-live="polite" hidden></p>
-      <p class="ev-cal-sel" id="cal-sel" hidden>Showing events on <strong></strong> &middot; <button type="button">Show all dates</button></p>
+      <p class="ev-cal-sel" id="cal-sel" aria-live="polite"></p>
       <div id="ev-list" aria-live="polite">
         <p class="ev-status">Loading events…</p>
       </div>

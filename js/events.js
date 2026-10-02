@@ -12,6 +12,8 @@
   var calPrev = document.getElementById("cal-prev");
   var calNext = document.getElementById("cal-next");
   var calSel = document.getElementById("cal-sel");
+  var calHint = document.getElementById("cal-hint");
+  var HINT = "Tap a date to see that day, or an icon to jump straight to an event.";
   var narrow = window.matchMedia("(max-width: 640px)");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -69,7 +71,7 @@
     if (e.allDay && e.end && e.end.length === 10 && en > s) en = dayAdd(en, -1); // iCal all-day end is exclusive
     if (en < s) en = s;
     var days = [];
-    for (var d = s < today ? today : s; d <= en && d <= last && days.length < 62; d = dayAdd(d, 1)) days.push(d);
+    for (var d = s < today ? today : s; d <= en && d <= last && days.length < 130; d = dayAdd(d, 1)) days.push(d);
     return days;
   }
 
@@ -177,47 +179,102 @@
     return h;
   }
 
-  function renderList(base, byDay, today) {
-    list.innerHTML = "";
-    calSel.hidden = !selectedDay;
-    if (selectedDay) calSel.querySelector("strong").textContent = longDay(selectedDay);
+  function monthKey() { return calYear + "-" + pad(calMonth + 1); }
+  function monthName(y, m) { return fmt(new Date(Date.UTC(y, m, 1)), { month: "long" }); }
+  function countText(n) { return n + (n === 1 ? " event" : " events"); }
 
-    var shown = selectedDay ? (byDay[selectedDay] || []) : base;
-    if (!shown.length) {
-      list.appendChild(el("p", "ev-status", words.length
-        ? "No events match \u201C" + search.value.trim() + "\u201D" + (selectedDay ? " on that day" : "") + ". Try a different word, or clear the search."
-        : "Nothing matches that filter right now — try another, or check back soon."));
-      return;
+  // A line of text with a bold lead and an optional link-style button.
+  function fillLine(node, lead, rest, btnText, onClick) {
+    node.innerHTML = "";
+    node.appendChild(el("strong", null, lead));
+    if (rest) node.appendChild(document.createTextNode(" · " + rest));
+    if (btnText) {
+      node.appendChild(document.createTextNode(" "));
+      var b = el("button", "ev-linkbtn", btnText);
+      b.type = "button";
+      b.addEventListener("click", onClick);
+      node.appendChild(b);
     }
+  }
+
+  function goToday() {
+    var t = nowNY();
+    calYear = +t.slice(0, 4); calMonth = +t.slice(5, 7) - 1;
+    selectedDay = null; focusId = null;
+    render();
+  }
+
+  // Groups to list: the selected day, or every upcoming day of the shown month.
+  function listGroups(byDay, today) {
+    if (selectedDay) return [[selectedDay, byDay[selectedDay] || []]];
+    var groups = [], seen = {}, mk = monthKey();
+    var dim = new Date(Date.UTC(calYear, calMonth + 1, 0)).getUTCDate();
+    for (var d = 1; d <= dim; d++) {
+      var day = mk + "-" + pad(d);
+      if (day < today) continue;
+      var evs = (byDay[day] || []).filter(function (e) { return !seen[e.id]; });
+      evs.forEach(function (e) { seen[e.id] = 1; });
+      if (evs.length) groups.push([day, evs]);
+    }
+    return groups;
+  }
+
+  function renderList(byDay, today) {
+    var mk = monthKey(), mName = monthName(calYear, calMonth);
+    var curMonth = today.slice(0, 7);
+    var thisMonthName = monthName(+today.slice(0, 4), +today.slice(5, 7) - 1);
+    var groups = listGroups(byDay, today);
+    var total = groups.reduce(function (n, g) { return n + g[1].length; }, 0);
+    var showMonth = function () { selectDay(null); };
+
+    // Bar above the list, and the line under the calendar
     if (selectedDay) {
-      list.appendChild(dayHeading(selectedDay, today));
-      var g = el("div", "ev-group");
-      shown.forEach(function (e) { g.appendChild(card(e)); });
-      list.appendChild(g);
+      fillLine(calSel, longDay(selectedDay), total ? countText(total) : null, "Show all of " + mName, showMonth);
+      fillLine(calHint, "Showing " + longDay(selectedDay) + ".", null, "Show all of " + mName, showMonth);
+    } else if (mk < curMonth) {
+      fillLine(calSel, mName + " has passed", "only upcoming events are listed", "Back to " + thisMonthName, goToday);
+      calHint.textContent = HINT;
+    } else {
+      fillLine(calSel, (mk === curMonth ? "Coming up in " : "All of ") + mName, total ? countText(total) : null);
+      calHint.textContent = HINT;
+    }
+
+    countEl.hidden = !words.length;
+    if (words.length) {
+      countEl.textContent = (total ? countText(total) + (total === 1 ? " matches " : " match ") : "No events match ") +
+        "“" + search.value.trim() + "” " + (selectedDay ? "on " + longDay(selectedDay) : "in " + mName) + ".";
+    }
+
+    list.innerHTML = "";
+    if (!total) {
+      var msg;
+      if (words.length) msg = "No events match “" + search.value.trim() + "” " + (selectedDay ? "on that day" : "in " + mName) + ". Try a different word, or clear the search.";
+      else if (mk < curMonth) msg = "Past events aren’t kept on this page.";
+      else if (selectedDay) msg = "Nothing listed on " + longDay(selectedDay) + (filter !== "all" || freeOnly.checked ? " for this filter" : "") + ". Pick another day, or show the whole month.";
+      else if (filter !== "all" || freeOnly.checked) msg = "Nothing in " + mName + " matches that filter — try another.";
+      else msg = "Nothing listed for " + mName + " yet. Listings appear about a month ahead, so check back soon.";
+      list.appendChild(el("p", "ev-status", msg));
       return;
     }
-    var currentDay = null, group = null;
-    shown.forEach(function (e) {
-      var p = parts(e.start);
-      var day = p.day < today ? today : p.day;   // multi-day events that started earlier show under today
-      if (day !== currentDay) {
-        currentDay = day;
-        list.appendChild(dayHeading(day, today));
-        group = el("div", "ev-group");
-        list.appendChild(group);
-      }
-      group.appendChild(card(e));
+    groups.forEach(function (g) {
+      list.appendChild(dayHeading(g[0], today));
+      var box = el("div", "ev-group");
+      g[1].forEach(function (e) { box.appendChild(card(e)); });
+      list.appendChild(box);
     });
   }
 
   // ── calendar ──────────────────────────────────────────────────────────────
-  function renderCal(byDay, today, last) {
-    if (calYear === null) { calYear = +today.slice(0, 4); calMonth = +today.slice(5, 7) - 1; }
+  function renderCal(byDay, today) {
     var first = new Date(Date.UTC(calYear, calMonth, 1));
-    var month = first.toISOString().slice(0, 7);
+    var month = monthKey();
+    var idx = calYear * 12 + calMonth;
+    var todayIdx = +today.slice(0, 4) * 12 + (+today.slice(5, 7) - 1);
     calTitle.textContent = fmt(first, { month: "long", year: "numeric" });
-    calPrev.disabled = month <= today.slice(0, 7);
-    calNext.disabled = month >= last.slice(0, 7);
+    calPrev.disabled = idx <= todayIdx - 12;
+    calNext.disabled = idx >= todayIdx + 12;
+    calPrev.setAttribute("aria-label", "Previous month, " + fmt(new Date(Date.UTC(calYear, calMonth - 1, 1)), { month: "long", year: "numeric" }));
+    calNext.setAttribute("aria-label", "Next month, " + fmt(new Date(Date.UTC(calYear, calMonth + 1, 1)), { month: "long", year: "numeric" }));
 
     calGrid.innerHTML = "";
     ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(function (w) {
@@ -231,22 +288,32 @@
     var cap = narrow.matches ? 3 : 7;
     for (var d = 1; d <= daysInMonth; d++) {
       (function (day, n) {
-        var evs = byDay[day] || [];
-        var inRange = day >= today && day <= last;
+        var upcoming = day >= today;
+        var evs = upcoming ? (byDay[day] || []) : [];
         var cell = el("div", "cal-cell");
-        if (!inRange) cell.classList.add("is-out");
+        if (!upcoming) cell.classList.add("is-out");
+        else cell.classList.add("is-pick");
         if (day === today) cell.classList.add("is-today");
         if (day === selectedDay) cell.classList.add("is-selected");
+        var toggle = function () { selectDay(day === selectedDay ? null : day); };
 
         var num = el("button", "cal-num", String(n));
         num.type = "button";
-        num.setAttribute("aria-label", longDay(day) + ", " + (evs.length && inRange ? evs.length + (evs.length === 1 ? " event" : " events") : "no events"));
+        num.setAttribute("aria-label", longDay(day) + ", " + (evs.length ? countText(evs.length) : upcoming ? "nothing listed" : "past"));
         num.setAttribute("aria-pressed", day === selectedDay ? "true" : "false");
-        if (!evs.length || !inRange) num.disabled = true;
-        num.addEventListener("click", function () { selectDay(day === selectedDay ? null : day); });
+        if (!upcoming) num.disabled = true;
+        num.addEventListener("click", toggle);
         cell.appendChild(num);
 
-        if (evs.length && inRange) {
+        if (upcoming) {
+          // Clicking anywhere in the square (other than an icon) picks the day.
+          cell.addEventListener("click", function (ev) {
+            if (ev.target.closest(".cal-ev, .cal-more, .cal-num")) return;
+            toggle();
+          });
+        }
+
+        if (evs.length) {
           var icons = el("div", "cal-icons");
           evs.slice(0, evs.length > cap ? cap - 1 : cap).forEach(function (e) {
             var cat = category(e);
@@ -276,9 +343,8 @@
     if (!data) return;
     var now = nowNY();
     var today = now.slice(0, 10);
-    var last = dayAdd(today, 31);
-    var lastListed = data.events.reduce(function (m, e) { var d = e.start.slice(0, 10); return d > m ? d : m; }, today);
-    if (lastListed < last) last = lastListed;
+    if (calYear === null) { calYear = +today.slice(0, 4); calMonth = +today.slice(5, 7) - 1; }
+    var last = dayAdd(today, 120);
     var base = data.events.filter(function (e) {
       return (e.end || e.start) >= (e.end && e.end.length > 10 ? now : today) && matches(e);
     });
@@ -286,13 +352,8 @@
     base.forEach(function (e) {
       spanDays(e, today, last).forEach(function (d) { (byDay[d] = byDay[d] || []).push(e); });
     });
-    renderCal(byDay, today, last);
-    renderList(base, byDay, today);
-    countEl.hidden = !words.length;
-    if (words.length) {
-      countEl.textContent = (base.length ? base.length + (base.length === 1 ? " event matches " : " events match ") : "No events match ") +
-        "\u201C" + search.value.trim() + "\u201D in the next month.";
-    }
+    renderCal(byDay, today);
+    renderList(byDay, today);
   }
 
   function selectDay(day, evId) {
@@ -310,8 +371,16 @@
         }
       }
     } else if (day) {
-      list.scrollIntoView({ behavior: behavior, block: "start" });
+      calSel.scrollIntoView({ behavior: behavior, block: "start" });
     }
+  }
+
+  function moveMonth(step) {
+    calMonth += step;
+    if (calMonth < 0) { calMonth = 11; calYear--; }
+    if (calMonth > 11) { calMonth = 0; calYear++; }
+    selectedDay = null; focusId = null;
+    render();
   }
 
   // ── controls ──────────────────────────────────────────────────────────────
@@ -341,9 +410,8 @@
   search.addEventListener("keydown", function (ev) {
     if (ev.key === "Escape" && search.value) { search.value = ""; words = []; render(); }
   });
-  calPrev.addEventListener("click", function () { calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } render(); });
-  calNext.addEventListener("click", function () { calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; } render(); });
-  calSel.querySelector("button").addEventListener("click", function () { selectDay(null); });
+  calPrev.addEventListener("click", function () { moveMonth(-1); });
+  calNext.addEventListener("click", function () { moveMonth(1); });
   if (narrow.addEventListener) narrow.addEventListener("change", render);
 
   fetch("/data/events.json", { cache: "no-cache" })
