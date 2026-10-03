@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03T16:26:55.686Z",
+ "updated": "2026-10-03T21:22:46.208Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -875,6 +875,23 @@
    "canceled": false
   },
   {
+   "id": "permits:979105",
+   "title": "Stree Co-naming Ceremony",
+   "start": "2026-10-03T15:00:00",
+   "end": "2026-10-03T16:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Knickerbocker Plaza: Knickerbocker Plaza Myrtle Avenue between Knickerbocker Avenue and Greene Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:954634",
    "title": "Youth in the move",
    "start": "2026-10-03T16:00:00",
@@ -1023,6 +1040,40 @@
    "summary": "",
    "tags": [
     "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:901432",
+   "title": "51st Annual Atlantic Antic Festival",
+   "start": "2026-10-04T10:00:00",
+   "end": "2026-10-04T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Atlantic Avenue between Hicks Street and Fourth Avenue",
+   "summary": "",
+   "tags": [
+    "Street Festival"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:901421",
+   "title": "51st Annual Atlantic Avenue Festival",
+   "start": "2026-10-04T10:00:00",
+   "end": "2026-10-04T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Boerum Place between Pacific Street and State Street",
+   "summary": "",
+   "tags": [
+    "Single Block Festival"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -2023,6 +2074,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
    "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-10/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:958394",
+   "title": "Bed-Stuy Gateway BID Sustainable Saturday",
+   "start": "2026-10-10T11:00:00",
+   "end": "2026-10-10T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Marcy Avenue Plaza: Marcy Avenue Plaza Marcy Avenue between Fulton Street and Macdonough Street",
+   "summary": "",
+   "tags": [
+    "Plaza Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -3912,6 +3980,40 @@
    "canceled": false
   },
   {
+   "id": "permits:971408",
+   "title": "Terrace Place Block Party",
+   "start": "2026-10-24T12:00:00",
+   "end": "2026-10-24T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Terrace Place between Prospect Avenue and Prospect Park Southwest",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:962985",
+   "title": "11th St Fall Block Party",
+   "start": "2026-10-24T12:30:00",
+   "end": "2026-10-24T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "11 Street between 5 Avenue and 6 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:970531",
    "title": "Catrina Alebrije Parade",
    "start": "2026-10-24T12:30:00",
@@ -4290,6 +4392,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23.png",
    "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside/2026-10-28/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:969952",
+   "title": "3rd Annual Sea of Pink",
+   "start": "2026-10-29T10:00:00",
+   "end": "2026-10-29T12:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Riverdale Avenue between Mother Gaston Boulevard and Rockaway Avenue",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
