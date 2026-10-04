@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T05:59:57.103Z",
+ "updated": "2026-10-04T11:50:23.629Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -6578,61 +6578,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-12-31/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10001095-1798876800-1798905600@www.prospectpark.org",
-   "title": "Greenmarket at Grand Army Plaza",
-   "start": "2027-01-02T08:00:00",
-   "end": "2027-01-02T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
-   "tags": [
-    "Food",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2027-01-02/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024618-1798884000-1798891200@www.prospectpark.org",
-   "title": "Introduction to Birdwatching Outings",
-   "start": "2027-01-02T10:00:00",
-   "end": "2027-01-02T12:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
-   "tags": [
-    "Audubon Center",
-    "Birdwatching",
-    "Free",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2027-01-02/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024664-1798970400-1798983000@www.prospectpark.org",
-   "title": "Birdwatching: First Sunday Outings",
-   "start": "2027-01-03T10:00:00",
-   "end": "2027-01-03T13:30:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join a member of the Brooklyn Bird Club to explore Prospect Park in search of the many bird species found throughout the year. Along the way, you’ll learn about the park’s diverse habitats, the birds that depend on them…",
-   "tags": [
-    "Audubon Center",
-    "Birdwatching",
-    "Free",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/87/33/8733fc50-b84f-43b9-9aa2-587be973a6d8/bird_watching_elizabeth_keegin_colley_dsc_4889-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/birdwatching-first-sunday-outings-6/2027-01-03/",
    "source": "ppa",
    "canceled": false
   }
