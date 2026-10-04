@@ -8,8 +8,14 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 
-const DAYS_AHEAD = 92;   // how far ahead to list events (about 3 months)
+const MONTHS_AHEAD = 3; // this month plus the next two; the window rolls forward each month
 const TZ = "America/New_York";
+// Days from today up to (not including) the 1st of the month after the window.
+const DAYS_AHEAD = (() => {
+  const s = nyToday();
+  const end = new Date(Date.UTC(s.getUTCFullYear(), s.getUTCMonth() + MONTHS_AHEAD, 1));
+  return Math.round((end - s) / 86400000);
+})();
 
 const SOURCES = {
   ppa: {

@@ -13,6 +13,7 @@
   var calNext = document.getElementById("cal-next");
   var calSel = document.getElementById("cal-sel");
   var calHint = document.getElementById("cal-hint");
+  var MONTHS_SHOWN = 3;   // this month plus the next two
   var HINT = "Tap a date to see that day, or an icon to jump straight to an event.";
   var narrow = window.matchMedia("(max-width: 640px)");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -252,7 +253,7 @@
       else if (mk < curMonth) msg = "Past events aren’t kept on this page.";
       else if (selectedDay) msg = "Nothing listed on " + longDay(selectedDay) + (filter !== "all" || freeOnly.checked ? " for this filter" : "") + ". Pick another day, or show the whole month.";
       else if (filter !== "all" || freeOnly.checked) msg = "Nothing in " + mName + " matches that filter — try another.";
-      else msg = "Nothing listed for " + mName + " yet. Listings run about three months ahead, so check back closer to the time.";
+      else msg = "Nothing listed for " + mName + " yet. More listings appear as the date gets closer, so check back soon.";
       list.appendChild(el("p", "ev-status", msg));
       return;
     }
@@ -271,8 +272,8 @@
     var idx = calYear * 12 + calMonth;
     var todayIdx = +today.slice(0, 4) * 12 + (+today.slice(5, 7) - 1);
     calTitle.textContent = fmt(first, { month: "long", year: "numeric" });
-    calPrev.disabled = idx <= todayIdx - 12;
-    calNext.disabled = idx >= todayIdx + 12;
+    calPrev.disabled = idx <= todayIdx;                       // never before this month
+    calNext.disabled = idx >= todayIdx + MONTHS_SHOWN - 1;    // this month + the next two
     calPrev.setAttribute("aria-label", "Previous month, " + fmt(new Date(Date.UTC(calYear, calMonth - 1, 1)), { month: "long", year: "numeric" }));
     calNext.setAttribute("aria-label", "Next month, " + fmt(new Date(Date.UTC(calYear, calMonth + 1, 1)), { month: "long", year: "numeric" }));
 
@@ -343,8 +344,11 @@
     if (!data) return;
     var now = nowNY();
     var today = now.slice(0, 10);
-    if (calYear === null) { calYear = +today.slice(0, 4); calMonth = +today.slice(5, 7) - 1; }
-    var last = dayAdd(today, 120);
+    // Keep the calendar inside the rolling window (also covers a page left open past month end).
+    var tY = +today.slice(0, 4), tM = +today.slice(5, 7) - 1, tIdx = tY * 12 + tM;
+    var idx = calYear === null ? -1 : calYear * 12 + calMonth;
+    if (idx < tIdx || idx > tIdx + MONTHS_SHOWN - 1) { calYear = tY; calMonth = tM; selectedDay = null; }
+    var last = dayAdd(new Date(Date.UTC(tY, tM + MONTHS_SHOWN, 1)).toISOString().slice(0, 10), -1);
     var base = data.events.filter(function (e) {
       return (e.end || e.start) >= (e.end && e.end.length > 10 ? now : today) && matches(e);
     });
