@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T23:59:10.568Z",
+ "updated": "2026-10-05T05:48:56.986Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,555 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "permits:893705",
-   "title": "Down to Earth Park Slope Farmers Market",
-   "start": "2026-10-04T06:00:00",
-   "end": "2026-10-04T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "4 Street between 5 Avenue and Dead End",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024661-1791100800-1791113400@www.prospectpark.org",
-   "title": "Birdwatching: First Sunday Outings",
-   "start": "2026-10-04T08:00:00",
-   "end": "2026-10-04T11:30:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join a member of the Brooklyn Bird Club to explore Prospect Park in search of the many bird species found throughout the year. Along the way, you’ll learn about the park’s diverse habitats, the birds that depend on them…",
-   "tags": [
-    "Audubon Center",
-    "Birdwatching",
-    "Free",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/87/33/8733fc50-b84f-43b9-9aa2-587be973a6d8/bird_watching_elizabeth_keegin_colley_dsc_4889-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/birdwatching-first-sunday-outings-6/2026-10-04/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:898942",
-   "title": "Carroll Gardens Greenmarket Sunday",
-   "start": "2026-10-04T08:00:00",
-   "end": "2026-10-04T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Carroll Street between Smith Street and Court Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:898937",
-   "title": "Cortelyou Greenmarket Sunday",
-   "start": "2026-10-04T08:00:00",
-   "end": "2026-10-04T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Cortelyou Road between Rugby Road and Argyle Road",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:967906",
-   "title": "Jewish Sukot",
-   "start": "2026-10-04T08:00:00",
-   "end": "2026-10-04T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Gravesend Neck Road between Village Road East and Mcdonald Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:923926",
-   "title": "RiseBoro Farmers Markets at Irving Square Park",
-   "start": "2026-10-04T09:00:00",
-   "end": "2026-10-04T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022380-1791104400-1791122400@www.prospectpark.org",
-   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-10-04T09:00:00",
-   "end": "2026-10-04T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-10-04/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:961325",
-   "title": "2026 MPPOA Block Party",
-   "start": "2026-10-04T10:00:00",
-   "end": "2026-10-04T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "East 18 Street between Foster Avenue and Glenwood Road",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:901432",
-   "title": "51st Annual Atlantic Antic Festival",
-   "start": "2026-10-04T10:00:00",
-   "end": "2026-10-04T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Atlantic Avenue between Hicks Street and Fourth Avenue",
-   "summary": "",
-   "tags": [
-    "Street Festival"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:901421",
-   "title": "51st Annual Atlantic Avenue Festival",
-   "start": "2026-10-04T10:00:00",
-   "end": "2026-10-04T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Boerum Place between Pacific Street and State Street",
-   "summary": "",
-   "tags": [
-    "Single Block Festival"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:962166",
-   "title": "Autumn Block Party 2026",
-   "start": "2026-10-04T10:00:00",
-   "end": "2026-10-04T19:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "First Street between Fifth Avenue and Sixth Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024553-1791108000-1791135000@www.prospectpark.org",
-   "title": "Spooktober! At Prospect Park Zoo",
-   "start": "2026-10-04T10:00:00",
-   "end": "2026-10-04T17:30:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Go batty every weekend in October at the Prospect Park Zoo! Visit the tombstones of extinct animals in Sea Lion Court and learn why extinction isn’t inevitable with your help. Our Spooky Trail will show you some of our…",
-   "tags": [
-    "Kids",
-    "Zoo"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
-   "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-04/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:899559",
-   "title": "Third Avenue Festival",
-   "start": "2026-10-04T10:00:00",
-   "end": "2026-10-04T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "3 Avenue between 69 Street and 94 Street",
-   "summary": "",
-   "tags": [
-    "Street Festival"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024877-1791108000-1791129600@www.prospectpark.org",
-   "title": "Third United Lenape / Lunáapeew Nations Pow Wow",
-   "start": "2026-10-04T10:00:00",
-   "end": "2026-10-04T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance, Éenda-Lŭnaapeewáhkiing Collective and American Indian Community House for the Third United Lenape / Lunaapeew Nations Pow Wow at the LeFrak Center at Lakeside in Prospect Park. This free,…",
-   "tags": [
-    "Community Engagement",
-    "Education",
-    "History",
-    "Kids",
-    "Music",
-    "Performing Arts"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/08/DSC05893-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/third-united-lenape-lunaapeew-nations-pow-wow/2026-10-04/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024896-1791108000-1791122400@www.prospectpark.org",
-   "title": "University Open Air",
-   "start": "2026-10-04T10:00:00",
-   "end": "2026-10-04T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Brooklyn Public Library in collaboration with Prospect Park Alliance for University Open Air! University Open Air provides immigrant teachers, professors, and academics, who were trained outside of the U.S., an…",
-   "tags": [
-    "Community Engagement",
-    "Education",
-    "Free"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/5c/a8/5ca8084f-f1c1-485f-85f5-b459efaca52b/uoa_fall_20_640x300.png",
-   "url": "https://www.prospectpark.org/event/university-open-air-4/2026-10-04/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:921591",
-   "title": "17th Street 2026 Block Party",
-   "start": "2026-10-04T11:00:00",
-   "end": "2026-10-04T19:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "17 Street between Prospect Park West and 10 Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:961871",
-   "title": "2026 Chinese MOON CAKE Festival",
-   "start": "2026-10-04T11:00:00",
-   "end": "2026-10-04T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "8 Avenue between 59 Street and 60 Street",
-   "summary": "",
-   "tags": [
-    "Parade"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024652-1791111600-1791118800@www.prospectpark.org",
-   "title": "Park Pitch In: Street Tree Care",
-   "start": "2026-10-04T11:00:00",
-   "end": "2026-10-04T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Help Prospect Park Alliance care for our trees! Volunteers will support our urban forest by tending to the hundreds of park perimeter trees, and learning skills such as weeding, mulching and aerating tree beds, which you…",
-   "tags": [
-    "Environment",
-    "Free",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2022/08/DSC_5234-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/park-pitch-in-street-tree-care-4/2026-10-04/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10023000-1791111600-1791136800@www.prospectpark.org",
-   "title": "Smorgasburg",
-   "start": "2026-10-04T11:00:00",
-   "end": "2026-10-04T18:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Smorgasburg, presented in partnership with Prospect Park Alliance, is considered the “Woodstock of Eating.” The celebrated open-air food fair is back in Prospect Park for the 2026 season! Over 60 local businesses will…",
-   "tags": [
-    "Food",
-    "Smorgasburg"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2022/03/20210613-SMORGASBURG-Prospect-Park-0085-scaled-e1680536663418.jpg",
-   "url": "https://www.prospectpark.org/event/smorgasburg-4/2026-10-04/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:963281",
-   "title": "Tiffany Place Block Party",
-   "start": "2026-10-04T11:00:00",
-   "end": "2026-10-04T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Tiffany Place between Degraw Street and Kane Street",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:966181",
-   "title": "73rd Street Annual Block Party",
-   "start": "2026-10-04T12:00:00",
-   "end": "2026-10-04T19:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "73 Street between 3 Avenue and Ridge Boulevard",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:948220",
-   "title": "83 street block party",
-   "start": "2026-10-04T12:00:00",
-   "end": "2026-10-04T20:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "83 Street between 10 Avenue and 11 Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:963379",
-   "title": "Annual Fashion Week Brooklyn - Block Party Family Day",
-   "start": "2026-10-04T12:00:00",
-   "end": "2026-10-04T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "7 Street between 4 Avenue and 5 Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:963408",
-   "title": "Bergen Street Block Party",
-   "start": "2026-10-04T12:00:00",
-   "end": "2026-10-04T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Bergen Street between 4 Avenue and 5 Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024812-1791115200-1791133200@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-10-04T12:00:00",
-   "end": "2026-10-04T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-04/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:973872",
-   "title": "Cobble Hill Potluck Dinner The Longest Table",
-   "start": "2026-10-04T12:00:00",
-   "end": "2026-10-04T19:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Verandah Place between Clinton Street and Henry Street",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:966906",
-   "title": "Jewish Kids/Party",
-   "start": "2026-10-04T12:00:00",
-   "end": "2026-10-04T19:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Avenue X between Hubbard Street and East 7 Street",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:951412",
-   "title": "Stoopfest",
-   "start": "2026-10-04T12:00:00",
-   "end": "2026-10-04T19:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Lorimer Street between Norman Avenue and Nassau Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:960085",
-   "title": "Washington Park Party",
-   "start": "2026-10-04T12:30:00",
-   "end": "2026-10-04T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Washington Park between Willoughby Avenue and Dekalb Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:978919",
-   "title": "Volunteer Fair",
-   "start": "2026-10-04T13:00:00",
-   "end": "2026-10-04T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Bedford Avenue - Nassau Avenue To Manhattan Avenue: Bedford Avenue - Nassau Avenue To Manhattan Avenue",
-   "summary": "",
-   "tags": [
-    "Open Street Partner Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:978056",
-   "title": "DJ MAGIC Breast Cancer Awareness Ride",
-   "start": "2026-10-04T14:00:00",
-   "end": "2026-10-04T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Flatbush Avenue between Avenue T and Avenue U",
-   "summary": "",
-   "tags": [
-    "Parade"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "bp:84753-1791122400-1791129600@www.brooklynbp.nyc.gov",
-   "title": "Street Tree Care",
-   "start": "2026-10-04T14:00:00",
-   "end": "2026-10-04T16:00:00",
-   "allDay": false,
-   "location": "",
-   "summary": "",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/street-tree-care/",
-   "source": "bp",
-   "canceled": false
-  },
   {
    "id": "permits:978290",
    "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
@@ -1573,6 +1024,74 @@
    "summary": "",
    "tags": [
     "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:898942",
+   "title": "Carroll Gardens Greenmarket Sunday",
+   "start": "2026-10-11T06:00:00",
+   "end": "2026-10-11T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Carroll Street between Smith Street and Court Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:898937",
+   "title": "Cortelyou Greenmarket Sunday",
+   "start": "2026-10-11T06:00:00",
+   "end": "2026-10-11T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Cortelyou Road between Rugby Road and Argyle Road",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:893705",
+   "title": "Down to Earth Park Slope Farmers Market",
+   "start": "2026-10-11T06:00:00",
+   "end": "2026-10-11T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "4 Street between 5 Avenue and Dead End",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:923926",
+   "title": "RiseBoro Farmers Markets at Irving Square Park",
+   "start": "2026-10-11T09:00:00",
+   "end": "2026-10-11T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
