@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T06:28:10.288Z",
+ "updated": "2026-10-06T15:59:57.279Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -701,6 +701,20 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "bp:84852-1791630000-1791640800@www.brooklynbp.nyc.gov",
+   "title": "Cypress Hills Know Your Rights Canvassing",
+   "start": "2026-10-10T11:00:00",
+   "end": "2026-10-10T14:00:00",
+   "allDay": false,
+   "location": "",
+   "summary": "",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/cypress-hills-know-your-rights-canvassing/",
+   "source": "bp",
    "canceled": false
   },
   {
