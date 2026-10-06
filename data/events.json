@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T15:59:57.279Z",
+ "updated": "2026-10-06T22:41:16.698Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -909,6 +909,23 @@
    "canceled": false
   },
   {
+   "id": "permits:962135",
+   "title": "annual 81st street block party",
+   "start": "2026-10-10T13:00:00",
+   "end": "2026-10-10T21:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "81 Street between 4 Avenue and 5 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:964298",
    "title": "Butler Street Block Party",
    "start": "2026-10-10T13:00:00",
@@ -1692,6 +1709,23 @@
    "canceled": false
   },
   {
+   "id": "permits:973020",
+   "title": "Dumbo Fashion Show",
+   "start": "2026-10-16T17:00:00",
+   "end": "2026-10-16T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Pearl Street Plaza: Archway (Pearl Street Plaza) Water Street between Anchorage Pl and Adams St",
+   "summary": "",
+   "tags": [
+    "Plaza Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10001084-1792224000-1792252800@www.prospectpark.org",
    "title": "Greenmarket at Grand Army Plaza",
    "start": "2026-10-17T08:00:00",
@@ -1801,6 +1835,23 @@
    "canceled": false
   },
   {
+   "id": "permits:945401",
+   "title": "Montgomery Street Block Party",
+   "start": "2026-10-17T10:00:00",
+   "end": "2026-10-17T17:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Montgomery Street between Nostrand Avenue and Rogers Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024585-1792231200-1792242000@www.prospectpark.org",
    "title": "October Weekend Nature Exploration",
    "start": "2026-10-17T10:00:00",
@@ -1890,6 +1941,23 @@
    "canceled": false
   },
   {
+   "id": "permits:962517",
+   "title": "Blocktober Fest October Block Party",
+   "start": "2026-10-17T12:00:00",
+   "end": "2026-10-17T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Monroe Street between Lewis Avenue and Marcus Garvey Boulevard",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024819-1792238400-1792256400@www.prospectpark.org",
    "title": "Carousel Rides",
    "start": "2026-10-17T12:00:00",
@@ -1959,6 +2027,23 @@
    "canceled": false
   },
   {
+   "id": "permits:969796",
+   "title": "Oak Street Block Party",
+   "start": "2026-10-17T15:00:00",
+   "end": "2026-10-17T20:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Oak Street between Guernsey Street and Franklin Street",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10022382-1792314000-1792332000@www.prospectpark.org",
    "title": "Sunday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-10-18T09:00:00",
@@ -1973,6 +2058,40 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-10-18/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:967952",
+   "title": "Annual Westminster Rd Block Party",
+   "start": "2026-10-18T09:30:00",
+   "end": "2026-10-18T18:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Westminster Road between Beverley Road and Slocum Place",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:970324",
+   "title": "10th Street block party",
+   "start": "2026-10-18T10:00:00",
+   "end": "2026-10-18T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "10 Street between 6 Avenue and 7 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -2021,6 +2140,23 @@
    "allDay": false,
    "timesArePermitWindow": true,
    "location": "15 Street between 8 Avenue and Prospect Park West",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:963048",
+   "title": "Get To The Point - 5K Run",
+   "start": "2026-10-18T10:30:00",
+   "end": "2026-10-18T14:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Driggs Avenue between Diamond Street and Newell Street",
    "summary": "",
    "tags": [
     "Block Party"
@@ -2121,6 +2257,23 @@
    "canceled": false
   },
   {
+   "id": "permits:977660",
+   "title": "Eagle Street Social",
+   "start": "2026-10-18T12:00:00",
+   "end": "2026-10-18T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Eagle Street between Manhattan Avenue and Franklin Street",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10022314-1792324800-1792342800@www.prospectpark.org",
    "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
    "start": "2026-10-18T12:00:00",
@@ -2132,6 +2285,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
    "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-18/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:978735",
+   "title": "PHOS presents HONKtober",
+   "start": "2026-10-18T12:00:00",
+   "end": "2026-10-18T17:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
