@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-05T22:03:46.450Z",
+ "updated": "2026-10-06T06:28:10.288Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -19,8 +19,8 @@
   {
    "id": "permits:978290",
    "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
-   "start": "2026-10-05T08:00:00",
-   "end": "2026-10-05T19:30:00",
+   "start": "2026-10-06T08:00:00",
+   "end": "2026-10-06T19:30:00",
    "allDay": false,
    "timesArePermitWindow": true,
    "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
@@ -31,40 +31,6 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024675-1791194400-1791201600@www.prospectpark.org",
-   "title": "It’s My Park Day",
-   "start": "2026-10-05T10:00:00",
-   "end": "2026-10-05T12:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Looking to get involved in a park clean-up effort? Join Prospect Park Alliance for It’s My Park Day to care for the park after busy weekends. All necessary tools will be provided for your volunteer experience. Join It’s…",
-   "tags": [
-    "Environment",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2023/12/Volunteers-at-the-Lake-2023-c-Marcia-Williams.jpg",
-   "url": "https://www.prospectpark.org/event/its-my-park-day-22/2026-10-05/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10020049-1791194400-1791212400@www.prospectpark.org",
-   "title": "Sexual Health Mobile Medical Unit",
-   "start": "2026-10-05T10:00:00",
-   "end": "2026-10-05T15:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
-   "tags": [
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
-   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-10-05/",
-   "source": "ppa",
    "canceled": false
   },
   {
@@ -2957,37 +2923,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024824-1792929600-1792947600@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-10-25T12:00:00",
-   "end": "2026-10-25T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-25/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022316-1792929600-1792947600@www.prospectpark.org",
-   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
-   "start": "2026-10-25T12:00:00",
-   "end": "2026-10-25T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
-   "tags": [],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
-   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-25/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10024925-1792929600-1792944000@www.prospectpark.org",
    "title": "Pop-Up Audubon I",
    "start": "2026-10-25T12:00:00",
@@ -3007,25 +2942,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024938-1792929600-1792944000@www.prospectpark.org",
-   "title": "Pop-Up Audubon II",
-   "start": "2026-10-25T12:00:00",
-   "end": "2026-10-25T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
-   "tags": [
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Pop-Up Audubon"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-25/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "permits:912603",
    "title": "Day of the Dead Parade",
    "start": "2026-10-25T13:30:00",
@@ -3040,25 +2956,6 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024537-1792936800-1792944000@www.prospectpark.org",
-   "title": "Legend of Sleepy Hollow",
-   "start": "2026-10-25T14:00:00",
-   "end": "2026-10-25T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance for a community reading of Washington Irving’s “Legend of Sleepy Hollow” on the porch of Lefferts Historic House. The full version of this famous ghost story, written in 1820 but set in 1790,…",
-   "tags": [
-    "Education",
-    "Free",
-    "History",
-    "Lefferts Historic House"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2023/08/RS24648_DSC02000-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/legend-of-sleepy-hollow-2/",
-   "source": "ppa",
    "canceled": false
   },
   {
