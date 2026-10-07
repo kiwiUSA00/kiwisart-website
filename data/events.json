@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T13:32:09.516Z",
+ "updated": "2026-10-07T20:39:53.824Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -596,6 +596,23 @@
    "canceled": false
   },
   {
+   "id": "permits:904160",
+   "title": "Flatbush Frolic",
+   "start": "2026-10-10T10:00:00",
+   "end": "2026-10-10T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Cortelyou Road between Ocean Avenue and Coney Island Avenue",
+   "summary": "",
+   "tags": [
+    "Street Festival"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10021105-1791626400-1791633600@www.prospectpark.org",
    "title": "Introduction to Birdwatching Outings",
    "start": "2026-10-10T10:00:00",
@@ -633,6 +650,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
    "url": "https://www.prospectpark.org/event/october-weekend-nature-exploration-5/2026-10-10/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:920050",
+   "title": "Panamanian Pre-Independence Day Festival",
+   "start": "2026-10-10T10:00:00",
+   "end": "2026-10-10T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Classon Avenue between Eastern Parkway and Union Street",
+   "summary": "",
+   "tags": [
+    "Single Block Festival"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -1347,6 +1381,23 @@
    "canceled": false
   },
   {
+   "id": "permits:951842",
+   "title": "Columbus day",
+   "start": "2026-10-12T15:00:00",
+   "end": "2026-10-12T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Devoe Street between Manhattan Avenue and Leonard Street",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024959-1791820800-1791842400@www.prospectpark.org",
    "title": "Fall Festival at Lakeside",
    "start": "2026-10-12T16:00:00",
@@ -1884,6 +1935,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
    "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-17/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:980646",
+   "title": "Anti- Bullying Power walk",
+   "start": "2026-10-17T11:00:00",
+   "end": "2026-10-17T14:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "1545 Flatbush Avenue",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -3743,6 +3811,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
    "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-31/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:981551",
+   "title": "Halloween Parade",
+   "start": "2026-10-31T17:30:00",
+   "end": "2026-10-31T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Glenwood Road between Rugby Road and Westminster Road",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
