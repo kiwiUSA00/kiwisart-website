@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T01:03:14.429Z",
+ "updated": "2026-10-08T10:41:22.474Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,123 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "permits:930126",
-   "title": "HHFM Kings County Hospital Market",
-   "start": "2026-10-07T08:00:00",
-   "end": "2026-10-07T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:978290",
-   "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
-   "start": "2026-10-07T08:00:00",
-   "end": "2026-10-07T19:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10000759-1791360000-1791381600@www.prospectpark.org",
-   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-10-07T08:00:00",
-   "end": "2026-10-07T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-10-07/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024681-1791367200-1791378000@www.prospectpark.org",
-   "title": "Fall Fix-Up",
-   "start": "2026-10-07T10:00:00",
-   "end": "2026-10-07T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
-   "tags": [
-    "Environment",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
-   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-10-07/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:973021",
-   "title": "Dumbo Delights",
-   "start": "2026-10-07T11:30:00",
-   "end": "2026-10-07T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Pearl Street Plaza: Archway (Pearl Street Plaza) Water Street between Anchorage Pl and Adams St",
-   "summary": "",
-   "tags": [
-    "Plaza Partner Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "bp:84831-1791374400-1791388800@www.brooklynbp.nyc.gov",
-   "title": "Civic Engagement Fair",
-   "start": "2026-10-07T12:00:00",
-   "end": "2026-10-07T16:00:00",
-   "allDay": false,
-   "location": "",
-   "summary": "Join us to explore how to strengthen civic engagement in Brooklyn, and learn about volunteer opportunities in government, cultural institutions, healthcare, and more.",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/civic-engagement-fair/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
-   "id": "permits:915778",
-   "title": "Dumbo After Hours Party",
-   "start": "2026-10-07T12:00:00",
-   "end": "2026-10-07T21:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Pearl Street Plaza: Archway (Pearl Street Plaza) Water Street between Anchorage Pl and Adams St",
-   "summary": "",
-   "tags": [
-    "Plaza Partner Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "ppa:10024700-1791444600-1791460800@www.prospectpark.org",
    "title": "Prospect Park Fall Migration Walks",
@@ -163,6 +46,23 @@
    "summary": "",
    "tags": [
     "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:978290",
+   "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
+   "start": "2026-10-08T08:00:00",
+   "end": "2026-10-08T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -1472,6 +1372,23 @@
    "canceled": false
   },
   {
+   "id": "permits:930126",
+   "title": "HHFM Kings County Hospital Market",
+   "start": "2026-10-14T08:00:00",
+   "end": "2026-10-14T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10000760-1791964800-1791986400@www.prospectpark.org",
    "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-10-14T08:00:00",
@@ -2291,6 +2208,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024820-1792324800-1792342800@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-10-18T12:00:00",
+   "end": "2026-10-18T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-18/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:977660",
    "title": "Eagle Street Social",
    "start": "2026-10-18T12:00:00",
@@ -2305,6 +2239,20 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022314-1792324800-1792342800@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-10-18T12:00:00",
+   "end": "2026-10-18T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-18/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -2340,6 +2288,25 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
    "url": "https://www.prospectpark.org/event/pop-up-audubon-i-11/2026-10-18/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024936-1792324800-1792339200@www.prospectpark.org",
+   "title": "Pop-Up Audubon II",
+   "start": "2026-10-18T12:00:00",
+   "end": "2026-10-18T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Pop-Up Audubon"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-18/",
    "source": "ppa",
    "canceled": false
   },
