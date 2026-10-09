@@ -927,3 +927,7 @@ section.tight + section.tight { padding-top: 0; }
 .ev-cal-sel { margin: 18px 0 0; padding: 10px 14px; background: var(--paper-alt); border-radius: 8px; font-size: 0.95rem; color: #47505e; }
 .ev-cal-sel strong { color: var(--forest-dark); }
 .ev-cal-sel:empty { display: none; }
+
+/* About: purchase + gallery buttons */
+.about-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.about-actions-note { margin-top: 12px; font-size: 0.88rem; color: #6a7080; }
