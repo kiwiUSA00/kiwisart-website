@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T18:53:36.245Z",
+ "updated": "2026-10-09T01:15:32.947Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -453,6 +453,23 @@
    "summary": "",
    "tags": [
     "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:876533",
+   "title": "Bed Stuy Alive",
+   "start": "2026-10-10T10:00:00",
+   "end": "2026-10-10T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Fulton Street between Brooklyn Avenue and Marcy Avenue",
+   "summary": "",
+   "tags": [
+    "Single Block Festival"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -1156,6 +1173,23 @@
    "canceled": false
   },
   {
+   "id": "permits:966181",
+   "title": "73rd Street Annual Block Party",
+   "start": "2026-10-11T12:00:00",
+   "end": "2026-10-11T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "73 Street between 3 Avenue and Ridge Boulevard",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024816-1791720000-1791738000@www.prospectpark.org",
    "title": "Carousel Rides",
    "start": "2026-10-11T12:00:00",
@@ -1264,6 +1298,23 @@
    "canceled": false
   },
   {
+   "id": "permits:903369",
+   "title": "North Brooklyn Development Corp Pop Up Fair",
+   "start": "2026-10-12T10:00:00",
+   "end": "2026-10-12T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Bedford Avenue between Metropolitan Avenue and North 12 Street",
+   "summary": "",
+   "tags": [
+    "Street Festival"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10020050-1791799200-1791817200@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2026-10-12T10:00:00",
@@ -1278,6 +1329,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-10-12/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:979932",
+   "title": "Outdoor Dining",
+   "start": "2026-10-12T11:00:00",
+   "end": "2026-10-12T23:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Hoyt Street between Atlantic Avenue and State Street",
+   "summary": "",
+   "tags": [
+    "Open Street Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -1825,13 +1893,17 @@
   },
   {
    "id": "ppa:10024898-1792231200-1792245600@www.prospectpark.org",
-   "title": "OHNY: Soldiers' and Sailors' Memorial Arch Tours",
+   "title": "Open House New York: Grand Army Plaza",
    "start": "2026-10-17T10:00:00",
    "end": "2026-10-17T14:00:00",
    "allDay": false,
    "location": "Prospect Park",
    "summary": "Have you ever wondered what the inside of the arch at Grand Army Plaza looks like? On this Open House New York tour led by the Urban Park Rangers in partnership with Prospect Park Alliance, visitors can view the interior…",
-   "tags": [],
+   "tags": [
+    "Free",
+    "Tours",
+    "Urban Park Rangers"
+   ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS29690_photo-174-scaled.jpg",
    "url": "https://www.prospectpark.org/event/ohny-soldiers-and-sailors-memorial-arch-tours/",
    "source": "ppa",
@@ -1954,6 +2026,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
    "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-17/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:977081",
+   "title": "Greene Ave Block Party",
+   "start": "2026-10-17T12:00:00",
+   "end": "2026-10-17T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Greene Avenue between Malcom X Boulevard and Stuyvesant Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -2308,6 +2397,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
    "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-18/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:967873",
+   "title": "Co-naming celebration for Billy Jones",
+   "start": "2026-10-18T17:00:00",
+   "end": "2026-10-18T17:45:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "George B. Post Plaza: George B. Post Plaza Broadway between Berry Street and Driggs Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -2777,6 +2883,23 @@
    "canceled": false
   },
   {
+   "id": "permits:964596",
+   "title": "Hendrickson Block Party 2026",
+   "start": "2026-10-24T11:00:00",
+   "end": "2026-10-24T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Hendrickson Street between Avenue R and Quentin Road",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:967244",
    "title": "McDonough st Block Party",
    "start": "2026-10-24T11:00:00",
@@ -3091,6 +3214,25 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2022/03/20210613-SMORGASBURG-Prospect-Park-0085-scaled-e1680536663418.jpg",
    "url": "https://www.prospectpark.org/event/smorgasburg-4/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025029-1792926000-1792931400@www.prospectpark.org",
+   "title": "Urban Park Ranger | Fall Foliage Canoeing",
+   "start": "2026-10-25T11:00:00",
+   "end": "2026-10-25T12:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the NYC Urban Park Rangers for a scenic autumn paddle on Prospect Park Lake! Enjoy a peaceful excursion on the water as you explore the park’s vibrant seasonal foliage and local wildlife from a unique perspective.…",
+   "tags": [
+    "Audubon Center",
+    "Free",
+    "Kids",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/RS3061_058_A©2013-Elizabeth-Keegin-Colley-DSC_1212-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-ranger-fall-foliage-canoeing/",
    "source": "ppa",
    "canceled": false
   },
@@ -3801,6 +3943,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025030-1793451600-1793455200@www.prospectpark.org",
+   "title": "Urban Park Rangers | Folklore Tales on the Trail Hike",
+   "start": "2026-10-31T13:00:00",
+   "end": "2026-10-31T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Gather at the Washington Irving statue and join the Urban Park Rangers for a hike learning about the folklore and history surrounding Sleepy Hollow while enjoying a nature walk through Prospect Park. While on this hike,…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-folklore-tales-on-the-trail-hike/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:981551",
    "title": "Halloween Parade",
    "start": "2026-10-31T17:30:00",
@@ -4280,6 +4439,23 @@
    "canceled": false
   },
   {
+   "id": "permits:930192",
+   "title": "8th Annual Veterans Appreciation Parade And Resource Fair",
+   "start": "2026-11-07T11:00:00",
+   "end": "2026-11-07T16:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "1676 Park Place",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024992-1794049200-1794088800@www.prospectpark.org",
    "title": "Fall Festival at Lakeside",
    "start": "2026-11-07T11:00:00",
@@ -4315,6 +4491,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
    "url": "https://www.prospectpark.org/event/park-pitch-in-trail-care/2026-11-07/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:903060",
+   "title": "2026 Brooklyn Veterans Appreciation Parade",
+   "start": "2026-11-07T12:00:00",
+   "end": "2026-11-07T14:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Eastern Parkway between Nostrand Avenue and Rogers Avenue",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -4421,6 +4614,23 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
    "url": "https://www.prospectpark.org/event/park-pitch-in-trail-care/2026-11-08/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025031-1794135600-1794139200@www.prospectpark.org",
+   "title": "Urban Park Rangers | Fantastic Fungi Mushroom ID Hike",
+   "start": "2026-11-08T11:00:00",
+   "end": "2026-11-08T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "This Urban Park Ranger led hike will take you through the forest in Prospect Park to learn how to identify fungi. Participants will learn about the crucial role that mushrooms play in an ecosystem and how natural…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-fantastic-fungi-mushroom-id-hike/",
    "source": "ppa",
    "canceled": false
   },
@@ -4820,6 +5030,23 @@
    "tags": [],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
    "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-14/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025032-1794661200-1794666600@www.prospectpark.org",
+   "title": "Urban Park Rangers | Fall Foliage Hike",
+   "start": "2026-11-14T13:00:00",
+   "end": "2026-11-14T14:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Urban Park Rangers on a beautiful stroll around Prospect Park as we celebrate the changing of the seasons! Learn about the ecology of a fall forest and the science of the changing colors all while enjoying one…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-fall-foliage-hike/",
    "source": "ppa",
    "canceled": false
   },
@@ -5362,6 +5589,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025033-1795359600-1795365000@www.prospectpark.org",
+   "title": "Urban Park Rangers | Freedom Seekers: Stories by the Fire",
+   "start": "2026-11-22T15:00:00",
+   "end": "2026-11-22T16:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Urban Park Rangers for an outdoor storytelling program exploring the history of the Underground Railroad. Hear poems, accounts, and stories shared by freedom seekers during their journeys, and learn how these…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/RS14574_DSC_3323-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-freedom-seekers-stories-by-the-fire/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10020056-1795428000-1795446000@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2026-11-23T10:00:00",
@@ -5529,6 +5773,23 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
    "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside/2026-11-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025034-1795780800-1795788000@www.prospectpark.org",
+   "title": "Urban Park Rangers | Post-Thanksgiving Day Super Hike",
+   "start": "2026-11-27T12:00:00",
+   "end": "2026-11-27T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "On this Friday, work off your Thanksgiving feast while enjoying the great outdoors. Scramble your way through autumnal Prospect Park with the rangers and your neighbors. Witness plants and wildlife preparing for colder…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-post-thanksgiving-day-super-hike/",
    "source": "ppa",
    "canceled": false
   },
