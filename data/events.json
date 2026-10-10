@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10T00:56:53.117Z",
+ "updated": "2026-10-10T09:56:28.755Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,164 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "permits:978290",
-   "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
-   "start": "2026-10-09T08:00:00",
-   "end": "2026-10-09T19:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:978196",
-   "title": "LES Walkathon",
-   "start": "2026-10-09T09:00:00",
-   "end": "2026-10-09T13:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "440 Ovington Avenue",
-   "summary": "",
-   "tags": [
-    "Parade"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024569-1791540000-1791558000@www.prospectpark.org",
-   "title": "October Weekday Nature Exploration",
-   "start": "2026-10-09T10:00:00",
-   "end": "2026-10-09T15:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance for nature education programs on Thursdays and Fridays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am –3 pm: Let’s have fun exploring the…",
-   "tags": [
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/october-weekday-nature-exploration-3/2026-10-09/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022677-1791540000-1791547200@www.prospectpark.org",
-   "title": "Prospect Park Wellness Walk",
-   "start": "2026-10-09T10:00:00",
-   "end": "2026-10-09T12:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance at the Prospect Park Audubon Center for an uplifting and energizing morning walk including scenic trails along the Lullwater, Peninsula, Midwood or Waterfall. Please note, this walk leaves…",
-   "tags": [
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/09/RS6211_Fall-Foliage_2015_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/prospect-park-wellness-walk-5/2026-10-09/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:936839",
-   "title": "CHIPS Distribution",
-   "start": "2026-10-09T11:30:00",
-   "end": "2026-10-09T12:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024814-1791547200-1791565200@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-10-09T12:00:00",
-   "end": "2026-10-09T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-09/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024954-1791561600-1791583200@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-10-09T16:00:00",
-   "end": "2026-10-09T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside/2026-10-09/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:915777",
-   "title": "Dumbo Dance Party",
-   "start": "2026-10-09T17:00:00",
-   "end": "2026-10-09T21:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Pearl Street Plaza: Archway (Pearl Street Plaza) Water Street between Anchorage Pl and Adams St",
-   "summary": "",
-   "tags": [
-    "Plaza Partner Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:974096",
-   "title": "Panamanian Heritage Family Day",
-   "start": "2026-10-09T17:00:00",
-   "end": "2026-10-09T19:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Hillel Plaza: Hillel Plaza Hillel Pl between Kenilworth Pl and Flatbush Ave",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "permits:930759",
    "title": "East New York Farmers Market",
@@ -1120,6 +962,23 @@
    "summary": "",
    "tags": [
     "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:978290",
+   "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
+   "start": "2026-10-12T08:00:00",
+   "end": "2026-10-12T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -3048,26 +2907,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024976-1792926000-1792965600@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-10-25T11:00:00",
-   "end": "2026-10-25T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-7/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10024653-1792926000-1792933200@www.prospectpark.org",
    "title": "Park Pitch In: Street Tree Care",
    "start": "2026-10-25T11:00:00",
@@ -3122,75 +2961,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024824-1792929600-1792947600@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-10-25T12:00:00",
-   "end": "2026-10-25T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-25/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022316-1792929600-1792947600@www.prospectpark.org",
-   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
-   "start": "2026-10-25T12:00:00",
-   "end": "2026-10-25T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
-   "tags": [],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
-   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-25/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024925-1792929600-1792944000@www.prospectpark.org",
-   "title": "Pop-Up Audubon I",
-   "start": "2026-10-25T12:00:00",
-   "end": "2026-10-25T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate Autumn in Prospect Park by supporting migratory birds! Join Prospect Park Alliance Naturalists to design your own colorful autumn leaf window cling. These fun, decorative clings help prevent bird-window…",
-   "tags": [
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Pop-Up Audubon"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/pop-up-audubon-i-11/2026-10-25/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024938-1792929600-1792944000@www.prospectpark.org",
-   "title": "Pop-Up Audubon II",
-   "start": "2026-10-25T12:00:00",
-   "end": "2026-10-25T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
-   "tags": [
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Pop-Up Audubon"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-25/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "permits:912603",
    "title": "Day of the Dead Parade",
    "start": "2026-10-25T13:30:00",
@@ -3205,25 +2975,6 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024537-1792936800-1792944000@www.prospectpark.org",
-   "title": "Legend of Sleepy Hollow",
-   "start": "2026-10-25T14:00:00",
-   "end": "2026-10-25T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance for a community reading of Washington Irving’s “Legend of Sleepy Hollow” on the porch of Lefferts Historic House. The full version of this famous ghost story, written in 1820 but set in 1790,…",
-   "tags": [
-    "Education",
-    "Free",
-    "History",
-    "Lefferts Historic House"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2023/08/RS24648_DSC02000-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/legend-of-sleepy-hollow-2/",
-   "source": "ppa",
    "canceled": false
   },
   {
@@ -3969,6 +3720,37 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
    "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-01/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022318-1793534400-1793552400@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-11-01T12:00:00",
+   "end": "2026-11-01T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-01/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024543-1793534400-1793552400@www.prospectpark.org",
+   "title": "Haunted Carousel",
+   "start": "2026-11-01T12:00:00",
+   "end": "2026-11-01T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Don’t be scared when you see the haunted carousel! Take a spin on the spooky ride to your favorite Halloween jams at the beloved Prospect Park Carousel. Children’s Corner, $3 per ride; $13 for a book of 5 tickets; Free…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/RS13740_DSC_3329-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/haunted-carousel-4/2026-11-01/",
    "source": "ppa",
    "canceled": false
   },
