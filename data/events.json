@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10T17:22:35.600Z",
+ "updated": "2026-10-10T21:49:31.380Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -2832,6 +2832,23 @@
    "canceled": false
   },
   {
+   "id": "permits:971569",
+   "title": "Saint James block party",
+   "start": "2026-10-24T12:30:00",
+   "end": "2026-10-24T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Saint James Place between Greene Avenue and Gates Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024949-1792918800-1792929600@www.prospectpark.org",
    "title": "2nd Annual Play Day Fest",
    "start": "2026-10-25T09:00:00",
@@ -3593,6 +3610,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
    "url": "https://www.prospectpark.org/event/urban-park-rangers-folklore-tales-on-the-trail-hike/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:973119",
+   "title": "Franklin Ave Block Party",
+   "start": "2026-10-31T14:00:00",
+   "end": "2026-10-31T16:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Dean Street between Bedford Avenue and Franklin Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
