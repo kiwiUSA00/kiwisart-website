@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T18:24:07.331Z",
+ "updated": "2026-10-10T00:56:53.117Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -1949,6 +1949,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
    "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-17/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:965724",
+   "title": "Van Siclen block party",
+   "start": "2026-10-17T12:00:00",
+   "end": "2026-10-17T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Van Siclen Avenue between Dumont Avenue and Blake Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
