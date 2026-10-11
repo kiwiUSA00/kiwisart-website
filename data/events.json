@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-11T12:58:36.528Z",
+ "updated": "2026-10-11T19:35:34.871Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -289,44 +289,6 @@
    "tags": [],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
    "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-11/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024921-1791720000-1791734400@www.prospectpark.org",
-   "title": "Pop-Up Audubon I",
-   "start": "2026-10-11T12:00:00",
-   "end": "2026-10-11T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate Autumn in Prospect Park by supporting migratory birds! Join Prospect Park Alliance Naturalists to design your own colorful autumn leaf window cling. These fun, decorative clings help prevent bird-window…",
-   "tags": [
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Pop-Up Audubon"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/pop-up-audubon-i-11/2026-10-11/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024934-1791720000-1791734400@www.prospectpark.org",
-   "title": "Pop-Up Audubon II",
-   "start": "2026-10-11T12:00:00",
-   "end": "2026-10-11T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
-   "tags": [
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Pop-Up Audubon"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-11/",
    "source": "ppa",
    "canceled": false
   },
