@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13T06:51:47.356Z",
+ "updated": "2026-10-13T16:59:22.691Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -2905,7 +2905,7 @@
    "end": "2026-11-01T16:00:00",
    "allDay": false,
    "location": "Prospect Park",
-   "summary": "Prospect Park Alliance and Brooklyn FAM invite you to celebrate Indigenous voices across North, Central, and South America. Brooklyn FAM’s flagship festival returns for its sixth year with the theme “Shine Your Light,”…",
+   "summary": "Brooklyn FAM’s flagship festival is back for its 6th year! Presented in partnership with the Prospect Park Alliance, this year’s free, family-friendly event celebrates our North, Central, and South American indigenous…",
    "tags": [
     "Art",
     "Audubon Center",
@@ -3569,7 +3569,7 @@
    "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
    "summary": "",
    "tags": [],
-   "image": "https://www.brooklynbp.nyc.gov/wp-content/uploads/2026/01/FINAL-ULURP-2026-Schedule-2-scaled-e1769702027860.jpg",
+   "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-tuesday/",
    "source": "bp",
    "canceled": false
