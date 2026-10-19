@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T13:27:55.385Z",
+ "updated": "2026-10-19T20:37:19.353Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -1661,17 +1661,17 @@
   },
   {
    "id": "ppa:10022680-1793354400-1793361600@www.prospectpark.org",
-   "title": "Prospect Park Wellness Walk",
+   "title": "Older Adult Wellness Walk",
    "start": "2026-10-30T10:00:00",
    "end": "2026-10-30T12:00:00",
    "allDay": false,
    "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance at the Prospect Park Audubon Center for an uplifting and energizing morning walk including scenic trails along the Lullwater, Peninsula, Midwood or Waterfall. Please note, this walk leaves…",
+   "summary": "Join Prospect Park Alliance and Public Health Solutions for a special Wellness Walk in Prospect Park geared for Older Adults in timing with fall foliage season. PHS staff will also be on hand to discuss health benefits…",
    "tags": [
     "Wellness"
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/09/RS6211_Fall-Foliage_2015_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/prospect-park-wellness-walk-5/2026-10-30/",
+   "url": "https://www.prospectpark.org/event/prospect-park-wellness-walk-5-5/",
    "source": "ppa",
    "canceled": false
   },
