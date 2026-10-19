@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-18T23:18:41.678Z",
+ "updated": "2026-10-19T04:49:08.030Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,407 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "permits:898942",
-   "title": "Carroll Gardens Greenmarket Sunday",
-   "start": "2026-10-18T06:00:00",
-   "end": "2026-10-18T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Carroll Street between Smith Street and Court Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:898937",
-   "title": "Cortelyou Greenmarket Sunday",
-   "start": "2026-10-18T06:00:00",
-   "end": "2026-10-18T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Cortelyou Road between Rugby Road and Argyle Road",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:893705",
-   "title": "Down to Earth Park Slope Farmers Market",
-   "start": "2026-10-18T06:00:00",
-   "end": "2026-10-18T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "4th Street between Fifth Avenue and Dead End",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:923926",
-   "title": "RiseBoro Farmers Markets at Irving Square Park",
-   "start": "2026-10-18T09:00:00",
-   "end": "2026-10-18T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022382-1792314000-1792332000@www.prospectpark.org",
-   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-10-18T09:00:00",
-   "end": "2026-10-18T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-10-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:967952",
-   "title": "Annual Westminster Rd Block Party",
-   "start": "2026-10-18T09:30:00",
-   "end": "2026-10-18T18:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Westminster Road between Beverley Road and Slocum Place",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:970324",
-   "title": "10th Street block party",
-   "start": "2026-10-18T10:00:00",
-   "end": "2026-10-18T19:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "10 Street between 6 Avenue and 7 Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024586-1792317600-1792328400@www.prospectpark.org",
-   "title": "October Weekend Nature Exploration",
-   "start": "2026-10-18T10:00:00",
-   "end": "2026-10-18T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/october-weekend-nature-exploration-5/2026-10-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024557-1792317600-1792344600@www.prospectpark.org",
-   "title": "Spooktober! At Prospect Park Zoo",
-   "start": "2026-10-18T10:00:00",
-   "end": "2026-10-18T17:30:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Go batty every weekend in October at the Prospect Park Zoo! Visit the tombstones of extinct animals in Sea Lion Court and learn why extinction isn’t inevitable with your help. Our Spooky Trail will show you some of our…",
-   "tags": [
-    "Kids",
-    "Zoo"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
-   "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:968091",
-   "title": "15th St Blook Party",
-   "start": "2026-10-18T10:30:00",
-   "end": "2026-10-18T17:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "15 Street between 8 Avenue and Prospect Park West",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:963048",
-   "title": "Get To The Point - 5K Run",
-   "start": "2026-10-18T10:30:00",
-   "end": "2026-10-18T14:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Driggs Avenue between Diamond Street and Newell Street",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024967-1792321200-1792360800@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-10-18T11:00:00",
-   "end": "2026-10-18T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-5/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10023002-1792321200-1792346400@www.prospectpark.org",
-   "title": "Smorgasburg",
-   "start": "2026-10-18T11:00:00",
-   "end": "2026-10-18T18:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Smorgasburg, presented in partnership with Prospect Park Alliance, is considered the “Woodstock of Eating.” The celebrated open-air food fair is back in Prospect Park for the 2026 season! Over 60 local businesses will…",
-   "tags": [
-    "Food",
-    "Smorgasburg"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2022/03/20210613-SMORGASBURG-Prospect-Park-0085-scaled-e1680536663418.jpg",
-   "url": "https://www.prospectpark.org/event/smorgasburg-4/2026-10-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024535-1792321200-1792346400@www.prospectpark.org",
-   "title": "Smorgasburg - Diwali: Festival of Bites",
-   "start": "2026-10-18T11:00:00",
-   "end": "2026-10-18T18:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Smorgasburg, presented in partnership with Prospect Park Alliance, for a Diwali celebration unlike any other, representing the diaspora through food and fun! Find a curated lineup of standout South Asian restaurants…",
-   "tags": [
-    "Food",
-    "Smorgasburg"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/08/Screenshot-2026-08-19-at-3.52.10-PM.png",
-   "url": "https://www.prospectpark.org/event/smorgasburg-diwali-festival-of-bites/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024843-1792321200-1792328400@www.prospectpark.org",
-   "title": "Teen Service Series: Green Prospect Park",
-   "start": "2026-10-18T11:00:00",
-   "end": "2026-10-18T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Looking to complete your school service hours? Join other teens and Prospect Park Alliance to help care for Brooklyn’s Backyard! Gain hands-on experience using gardening tools while assisting with invasive plant removal,…",
-   "tags": [
-    "Environment",
-    "Free",
-    "Kids",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/07/RS23234_DSC_6306.jpg",
-   "url": "https://www.prospectpark.org/event/teen-service-series-green-prospect-park-3/2026-10-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024820-1792324800-1792342800@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-10-18T12:00:00",
-   "end": "2026-10-18T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:977660",
-   "title": "Eagle Street Social",
-   "start": "2026-10-18T12:00:00",
-   "end": "2026-10-18T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Eagle Street between Manhattan Avenue and Franklin Street",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022314-1792324800-1792342800@www.prospectpark.org",
-   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
-   "start": "2026-10-18T12:00:00",
-   "end": "2026-10-18T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
-   "tags": [],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
-   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:978735",
-   "title": "PHOS presents HONKtober",
-   "start": "2026-10-18T12:00:00",
-   "end": "2026-10-18T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024923-1792324800-1792339200@www.prospectpark.org",
-   "title": "Pop-Up Audubon I",
-   "start": "2026-10-18T12:00:00",
-   "end": "2026-10-18T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate Autumn in Prospect Park by supporting migratory birds! Join Prospect Park Alliance Naturalists to design your own colorful autumn leaf window cling. These fun, decorative clings help prevent bird-window…",
-   "tags": [
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Pop-Up Audubon"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/pop-up-audubon-i-11/2026-10-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024936-1792324800-1792339200@www.prospectpark.org",
-   "title": "Pop-Up Audubon II",
-   "start": "2026-10-18T12:00:00",
-   "end": "2026-10-18T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
-   "tags": [
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Pop-Up Audubon"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:981184",
-   "title": "Rosebud Art Studio Watercolor Class",
-   "start": "2026-10-18T13:00:00",
-   "end": "2026-10-18T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Albemarle Road - Marlborough Road To Argyle Road: Albemarle Road - Marlborough Road To Argyle Road",
-   "summary": "",
-   "tags": [
-    "Open Street Partner Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:967873",
-   "title": "Co-naming celebration for Billy Jones",
-   "start": "2026-10-18T17:00:00",
-   "end": "2026-10-18T17:45:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "George B. Post Plaza: George B. Post Plaza Broadway between Berry Street and Driggs Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "permits:978290",
    "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
@@ -1412,6 +1011,57 @@
    "canceled": false
   },
   {
+   "id": "permits:898942",
+   "title": "Carroll Gardens Greenmarket Sunday",
+   "start": "2026-10-25T06:00:00",
+   "end": "2026-10-25T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Carroll Street between Smith Street and Court Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:898937",
+   "title": "Cortelyou Greenmarket Sunday",
+   "start": "2026-10-25T06:00:00",
+   "end": "2026-10-25T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Cortelyou Road between Rugby Road and Argyle Road",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:893705",
+   "title": "Down to Earth Park Slope Farmers Market",
+   "start": "2026-10-25T06:00:00",
+   "end": "2026-10-25T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "4th Street between Fifth Avenue and Dead End",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024949-1792918800-1792929600@www.prospectpark.org",
    "title": "2nd Annual Play Day Fest",
    "start": "2026-10-25T09:00:00",
@@ -1429,6 +1079,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/image.webp",
    "url": "https://www.prospectpark.org/event/2nd-annual-play-day-fest/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:923926",
+   "title": "RiseBoro Farmers Markets at Irving Square Park",
+   "start": "2026-10-25T09:00:00",
+   "end": "2026-10-25T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -1504,6 +1171,26 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024976-1792926000-1792965600@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-10-25T11:00:00",
+   "end": "2026-10-25T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-7/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024653-1792926000-1792933200@www.prospectpark.org",
    "title": "Park Pitch In: Street Tree Care",
    "start": "2026-10-25T11:00:00",
@@ -1558,6 +1245,75 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024824-1792929600-1792947600@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-10-25T12:00:00",
+   "end": "2026-10-25T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022316-1792929600-1792947600@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-10-25T12:00:00",
+   "end": "2026-10-25T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024925-1792929600-1792944000@www.prospectpark.org",
+   "title": "Pop-Up Audubon I",
+   "start": "2026-10-25T12:00:00",
+   "end": "2026-10-25T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate Autumn in Prospect Park by supporting migratory birds! Join Prospect Park Alliance Naturalists to design your own colorful autumn leaf window cling. These fun, decorative clings help prevent bird-window…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Pop-Up Audubon"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pop-up-audubon-i-11/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024938-1792929600-1792944000@www.prospectpark.org",
+   "title": "Pop-Up Audubon II",
+   "start": "2026-10-25T12:00:00",
+   "end": "2026-10-25T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Pop-Up Audubon"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:969379",
    "title": "The Longest Table: Gowanus",
    "start": "2026-10-25T12:00:00",
@@ -1589,6 +1345,25 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024537-1792936800-1792944000@www.prospectpark.org",
+   "title": "Legend of Sleepy Hollow",
+   "start": "2026-10-25T14:00:00",
+   "end": "2026-10-25T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance for a community reading of Washington Irving’s “Legend of Sleepy Hollow” on the porch of Lefferts Historic House. The full version of this famous ghost story, written in 1820 but set in 1790,…",
+   "tags": [
+    "Education",
+    "Free",
+    "History",
+    "Lefferts Historic House"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/08/RS24648_DSC02000-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/legend-of-sleepy-hollow-2/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -1639,26 +1414,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-10-26/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024977-1793030400-1793052000@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-10-26T16:00:00",
-   "end": "2026-10-26T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside/2026-10-26/",
    "source": "ppa",
    "canceled": false
   },
