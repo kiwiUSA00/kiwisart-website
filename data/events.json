@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T19:20:16.734Z",
+ "updated": "2026-10-20T23:56:30.734Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -701,6 +701,23 @@
    "canceled": false
   },
   {
+   "id": "permits:978030",
+   "title": "Wyckoff Fall Fest Resource Fair",
+   "start": "2026-10-24T11:00:00",
+   "end": "2026-10-24T16:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Baltic Street between Nevins Street and 3 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:952461",
    "title": "16th Street Block Party",
    "start": "2026-10-24T12:00:00",
@@ -1344,6 +1361,23 @@
    "canceled": false
   },
   {
+   "id": "permits:959556",
+   "title": "Carnival 2026",
+   "start": "2026-10-25T16:00:00",
+   "end": "2026-10-25T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "East 10 Street between Avenue I and Avenue J",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024678-1793008800-1793016000@www.prospectpark.org",
    "title": "It’s My Park Day",
    "start": "2026-10-26T10:00:00",
@@ -1910,6 +1944,23 @@
    "canceled": false
   },
   {
+   "id": "permits:944614",
+   "title": "Degraw Street Block Party 26",
+   "start": "2026-10-31T12:00:00",
+   "end": "2026-10-31T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Degraw Street between 4 Avenue and 5 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10022317-1793448000-1793466000@www.prospectpark.org",
    "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
    "start": "2026-10-31T12:00:00",
@@ -1996,6 +2047,23 @@
    "canceled": false
   },
   {
+   "id": "permits:978324",
+   "title": "The Stoop Community Trunk Or Treat",
+   "start": "2026-10-31T12:00:00",
+   "end": "2026-10-31T17:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "1787 Fulton Street between Rochester Avenue and Ralph Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:977727",
    "title": "77th Street Block Party",
    "start": "2026-10-31T12:30:00",
@@ -2074,6 +2142,57 @@
    "summary": "",
    "tags": [
     "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:957570",
+   "title": "Garfield Place Autumn Block Party",
+   "start": "2026-10-31T15:00:00",
+   "end": "2026-10-31T22:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Garfield Place between 6 Avenue and 7 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:980167",
+   "title": "Halloween Block Party",
+   "start": "2026-10-31T16:00:00",
+   "end": "2026-10-31T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Lincoln Place between New York Avenue and Nostrand Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:975651",
+   "title": "Grand Avenue Halloween Block Party",
+   "start": "2026-10-31T17:00:00",
+   "end": "2026-10-31T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Grand Avenue between Clifton Place and Greene Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
