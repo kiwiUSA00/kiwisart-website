@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T20:37:19.353Z",
+ "updated": "2026-10-20T00:25:05.691Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -2338,6 +2338,20 @@
    "canceled": false
   },
   {
+   "id": "bp:85443-1793750400-1793836799@www.brooklynbp.nyc.gov",
+   "title": "Call For Projects Is Now Open",
+   "start": "2026-11-04T00:00:00",
+   "end": "2026-11-04T23:59:59",
+   "allDay": false,
+   "location": "",
+   "summary": "Apply by November 4, 2026. learn More & Apply The East Williamsburg DRI is seeking capital projects that advance the community’s vision and goals and support a vibrant neighborhood.",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/85443/",
+   "source": "bp",
+   "canceled": false
+  },
+  {
    "id": "ppa:10000763-1793779200-1793800800@www.prospectpark.org",
    "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-11-04T08:00:00",
@@ -2858,6 +2872,20 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
    "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside/2026-11-09/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:85439-1794315600-1794324600@www.brooklynbp.nyc.gov",
+   "title": "Estate Planning Essentials",
+   "start": "2026-11-10T13:00:00",
+   "end": "2026-11-10T15:30:00",
+   "allDay": false,
+   "location": "",
+   "summary": "Register Join us for Part One of our Estate Planning Forum. This forum will provide an overview of the essential documents and important steps you should take to prepare and protect your estate. Participants will learn…",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/estate-planning-essentials/",
+   "source": "bp",
    "canceled": false
   },
   {
