@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T17:17:57.953Z",
+ "updated": "2026-10-21T21:47:04.100Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -65,26 +65,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-10-21/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024970-1792598400-1792620000@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-10-21T16:00:00",
-   "end": "2026-10-21T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-21/",
    "source": "ppa",
    "canceled": false
   },
@@ -650,23 +630,6 @@
    "canceled": false
   },
   {
-   "id": "permits:978030",
-   "title": "Wyckoff Fall Fest Resource Fair",
-   "start": "2026-10-24T11:00:00",
-   "end": "2026-10-24T16:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Baltic Street between Nevins Street and 3 Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
    "id": "permits:952461",
    "title": "16th Street Block Party",
    "start": "2026-10-24T12:00:00",
@@ -903,6 +866,23 @@
    "canceled": false
   },
   {
+   "id": "permits:953497",
+   "title": "Saba Street Jamboree",
+   "start": "2026-10-24T13:00:00",
+   "end": "2026-10-24T18:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Schenck Avenue between Linden Boulevard and Hegeman Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:966957",
    "title": "Da de los muertos community block party",
    "start": "2026-10-24T14:00:00",
@@ -1039,6 +1019,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-10-25/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:905391",
+   "title": "Court Street Spectacular",
+   "start": "2026-10-25T10:00:00",
+   "end": "2026-10-25T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Court Street between Atlantic Avenue and Joralemon Street",
+   "summary": "",
+   "tags": [
+    "Street Festival"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -1690,6 +1687,23 @@
    "canceled": false
   },
   {
+   "id": "permits:980214",
+   "title": "Trick-or-Streets",
+   "start": "2026-10-30T14:30:00",
+   "end": "2026-10-30T16:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Gates Ave Plaza: Gates Avenue Plaza Gates Ave between Fulton Street and Vanderbilt Ave",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024981-1793376000-1793397600@www.prospectpark.org",
    "title": "Fall Festival at Lakeside",
    "start": "2026-10-30T16:00:00",
@@ -1941,6 +1955,23 @@
    "canceled": false
   },
   {
+   "id": "permits:978441",
+   "title": "Fete O Ween",
+   "start": "2026-10-31T12:00:00",
+   "end": "2026-10-31T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Washington Avenue - Empire Boulevard To Sterling Street: Washington Avenue - Empire Boulevard To Sterling Street",
+   "summary": "",
+   "tags": [
+    "Open Street Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:973126",
    "title": "Halloween Block Closed",
    "start": "2026-10-31T12:00:00",
@@ -2098,6 +2129,23 @@
    "canceled": false
   },
   {
+   "id": "permits:938074",
+   "title": "Bed-Stuy Gateway BID Trick or Street",
+   "start": "2026-10-31T15:00:00",
+   "end": "2026-10-31T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Marcy Avenue Plaza: Marcy Avenue Plaza Marcy Avenue between Fulton Street and Macdonough Street",
+   "summary": "",
+   "tags": [
+    "Plaza Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:978235",
    "title": "Cobble Hill Association Halloween Parade",
    "start": "2026-10-31T15:00:00",
@@ -2132,6 +2180,40 @@
    "canceled": false
   },
   {
+   "id": "permits:973066",
+   "title": "Community and Kids Halloween Block Party",
+   "start": "2026-10-31T15:30:00",
+   "end": "2026-10-31T21:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Gates Avenue between Washington Avenue and St James Place",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:970561",
+   "title": "Trick-or-Streets 2026",
+   "start": "2026-10-31T15:30:00",
+   "end": "2026-10-31T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Jefferson Avenue - Malcolm X Boulevard To Patchen Avenue: Jefferson Avenue - Malcolm X Boulevard To Patchen Avenue",
+   "summary": "",
+   "tags": [
+    "Open Street Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:980167",
    "title": "Halloween Block Party",
    "start": "2026-10-31T16:00:00",
@@ -2142,6 +2224,23 @@
    "summary": "",
    "tags": [
     "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:978111",
+   "title": "Trick or streets",
+   "start": "2026-10-31T16:30:00",
+   "end": "2026-10-31T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Polhemus Place between Garfield Place and Carroll Street",
+   "summary": "",
+   "tags": [
+    "Open Street Partner Event"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -2585,6 +2684,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-11-07/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:967958",
+   "title": "Annual Play Day",
+   "start": "2026-11-07T09:30:00",
+   "end": "2026-11-07T18:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "252 Westminster Road between Beverley Road and Slocum Place",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -3203,26 +3319,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10025001-1794654000-1794693600@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-11-14T11:00:00",
-   "end": "2026-11-14T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-13/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10024835-1794657600-1794675600@www.prospectpark.org",
    "title": "Carousel Rides",
    "start": "2026-11-14T12:00:00",
@@ -3305,26 +3401,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
    "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-15/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10025003-1794740400-1794780000@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-11-15T11:00:00",
-   "end": "2026-11-15T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-15/",
    "source": "ppa",
    "canceled": false
   },
@@ -3661,26 +3737,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10025010-1795258800-1795298400@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-11-21T11:00:00",
-   "end": "2026-11-21T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-12/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10024597-1795258800-1795269600@www.prospectpark.org",
    "title": "Park Pitch In: Fall Leaf Raking",
    "start": "2026-11-21T11:00:00",
@@ -3750,26 +3806,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
    "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-22/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10025012-1795345200-1795384800@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-11-22T11:00:00",
-   "end": "2026-11-22T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-16/",
    "source": "ppa",
    "canceled": false
   },
@@ -4091,26 +4127,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10025019-1795863600-1795903200@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-11-28T11:00:00",
-   "end": "2026-11-28T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-17/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10022388-1795942800-1795960800@www.prospectpark.org",
    "title": "Sunday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-11-29T09:00:00",
@@ -4145,26 +4161,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
    "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-29/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10025021-1795950000-1795989600@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-11-29T11:00:00",
-   "end": "2026-11-29T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-14/",
    "source": "ppa",
    "canceled": false
   },
