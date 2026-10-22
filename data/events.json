@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T17:15:55.452Z",
+ "updated": "2026-10-22T21:42:05.298Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -1634,6 +1634,23 @@
    "canceled": false
   },
   {
+   "id": "permits:966456",
+   "title": "3rd Street Block Party",
+   "start": "2026-10-31T10:00:00",
+   "end": "2026-10-31T17:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "3 Street between 6 Avenue and 7 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024538-1793440800-1793462400@www.prospectpark.org",
    "title": "Creepy Crawly Halloween",
    "start": "2026-10-31T10:00:00",
@@ -1674,6 +1691,23 @@
    "canceled": false
   },
   {
+   "id": "permits:915891",
+   "title": "Halloween",
+   "start": "2026-10-31T10:00:00",
+   "end": "2026-10-31T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Pearl Street Plaza: Archway (Pearl Street Plaza) Water Street between Anchorage Pl and Adams St",
+   "summary": "",
+   "tags": [
+    "Plaza Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10021108-1793440800-1793448000@www.prospectpark.org",
    "title": "Introduction to Birdwatching Outings",
    "start": "2026-10-31T10:00:00",
@@ -1707,6 +1741,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
    "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-31/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:973038",
+   "title": "6th Street Fall 2026 Block Party",
+   "start": "2026-10-31T10:30:00",
+   "end": "2026-10-31T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "6 Street between 8 Avenue and Prospect Park West",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -1774,6 +1825,23 @@
    "summary": "",
    "tags": [
     "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:927906",
+   "title": "50th St block party 2",
+   "start": "2026-10-31T12:00:00",
+   "end": "2026-10-31T21:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "50 Street between 2 Avenue and 3 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -1952,6 +2020,23 @@
    "canceled": false
   },
   {
+   "id": "permits:971999",
+   "title": "Block Party",
+   "start": "2026-10-31T13:00:00",
+   "end": "2026-10-31T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "State Street between Nevins Street and 3 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:973176",
    "title": "Halloween Block Party Saturday 2026",
    "start": "2026-10-31T13:00:00",
@@ -1996,6 +2081,23 @@
    "summary": "",
    "tags": [
     "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:915890",
+   "title": "Halloween",
+   "start": "2026-10-31T14:00:00",
+   "end": "2026-10-31T21:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Washington Street between Water Street and Front Street",
+   "summary": "",
+   "tags": [
+    "Open Street Partner Event"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -2088,6 +2190,23 @@
    "canceled": false
   },
   {
+   "id": "permits:970950",
+   "title": "Halloween Block Closure for Trick or Treating",
+   "start": "2026-10-31T16:00:00",
+   "end": "2026-10-31T22:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "3 Street between 7 Avenue and 8 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "permits:980167",
    "title": "Halloween Block Party",
    "start": "2026-10-31T16:00:00",
@@ -2132,6 +2251,23 @@
    "summary": "",
    "tags": [
     "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:980201",
+   "title": "Halloween parade",
+   "start": "2026-10-31T17:30:00",
+   "end": "2026-10-31T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Albemarle Road between Argyle Road and Rugby Road",
+   "summary": "",
+   "tags": [
+    "Parade"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -2295,6 +2431,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/RS13740_DSC_3329-scaled.jpg",
    "url": "https://www.prospectpark.org/event/haunted-carousel-4/2026-11-01/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:973129",
+   "title": "St Johns Places 7-8 Fall Block Party",
+   "start": "2026-11-01T13:00:00",
+   "end": "2026-11-01T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "St Johns Place between 7 Avenue and 8 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
