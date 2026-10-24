@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T21:28:32.515Z",
+ "updated": "2026-10-24T04:43:52.814Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -14,78 +14,8 @@
    "home": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx"
   }
  },
- "errors": [
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-10-23",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-10-27",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-10-31",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-11-04",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-11-08",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-11-12",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-11-16",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-11-20",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-11-24",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-11-28",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-12-02",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-12-06",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-12-10",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-12-14",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-12-18",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-12-22",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-12-26",
-  "ppa: 403 https://www.prospectpark.org/events/list/?ical=1&tribe-bar-date=2026-12-30"
- ],
+ "errors": [],
  "events": [
-  {
-   "id": "permits:978290",
-   "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
-   "start": "2026-10-23T08:00:00",
-   "end": "2026-10-23T19:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:978952",
-   "title": "Street Renaming Brooklyn Chinatown Day",
-   "start": "2026-10-23T10:00:00",
-   "end": "2026-10-23T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "8 Avenue between 60 Street and 61 Street",
-   "summary": "",
-   "tags": [
-    "Parade"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:936845",
-   "title": "CHIPS Distribution",
-   "start": "2026-10-23T11:30:00",
-   "end": "2026-10-23T12:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "permits:911543",
    "title": "4th Avenue Sunset Park Greenmarket Saturday",
@@ -101,6 +31,23 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001085-1792828800-1792857600@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-10-24T08:00:00",
+   "end": "2026-10-24T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-10-24/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -138,6 +85,44 @@
    "canceled": false
   },
   {
+   "id": "ppa:10022747-1792836000-1792839600@www.prospectpark.org",
+   "title": "Dance Fitness with Shape Up NYC at the Boathouse",
+   "start": "2026-10-24T10:00:00",
+   "end": "2026-10-24T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shape-up NYC for a fun-filled dance fitness zumba class at the Boathouse! Zumba is a fusion of Latin, International and popular music dance themes creating a dynamic, exciting, effective…",
+   "tags": [
+    "Audubon Center",
+    "Fitness",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/06/Boathouse1_Retouched_2-copy.jpg",
+   "url": "https://www.prospectpark.org/event/dance-fitness-with-shape-up-nyc-at-the-boathouse-8/2026-10-24/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10021107-1792836000-1792843200@www.prospectpark.org",
+   "title": "Introduction to Birdwatching Outings",
+   "start": "2026-10-24T10:00:00",
+   "end": "2026-10-24T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-10-24/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:939256",
    "title": "Legion Street Block Party Ii",
    "start": "2026-10-24T10:00:00",
@@ -152,6 +137,64 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024587-1792836000-1792846800@www.prospectpark.org",
+   "title": "October Weekend Nature Exploration",
+   "start": "2026-10-24T10:00:00",
+   "end": "2026-10-24T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/october-weekend-nature-exploration-5/2026-10-24/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024558-1792836000-1792863000@www.prospectpark.org",
+   "title": "Spooktober! At Prospect Park Zoo",
+   "start": "2026-10-24T10:00:00",
+   "end": "2026-10-24T17:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Go batty every weekend in October at the Prospect Park Zoo! Visit the tombstones of extinct animals in Sea Lion Court and learn why extinction isn’t inevitable with your help. Our Spooky Trail will show you some of our…",
+   "tags": [
+    "Kids",
+    "Zoo"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
+   "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-24/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024974-1792839600-1792879200@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-10-24T11:00:00",
+   "end": "2026-10-24T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-6/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -186,6 +229,23 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024536-1792839600-1792850400@www.prospectpark.org",
+   "title": "Park Pitch In: World Sustainability Day",
+   "start": "2026-10-24T11:00:00",
+   "end": "2026-10-24T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "World Sustainability Day was created to teach people about the importance of caring for the environment and the steps on how to sustain our earth. Join Prospect Park Alliance as we sustain and maintain Prospect Park for…",
+   "tags": [
+    "Environment",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/02/RS4043_Volunteer_060-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/park-pitch-in-world-sustainability-day-3/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -240,6 +300,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024823-1792843200-1792861200@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-10-24T12:00:00",
+   "end": "2026-10-24T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-24/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:939917",
    "title": "Clinton Street Block Party 2026",
    "start": "2026-10-24T12:00:00",
@@ -254,6 +331,20 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022315-1792843200-1792861200@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-10-24T12:00:00",
+   "end": "2026-10-24T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-24/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -285,6 +376,44 @@
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/gowanus-fall-fest/",
    "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024924-1792843200-1792857600@www.prospectpark.org",
+   "title": "Pop-Up Audubon I",
+   "start": "2026-10-24T12:00:00",
+   "end": "2026-10-24T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate Autumn in Prospect Park by supporting migratory birds! Join Prospect Park Alliance Naturalists to design your own colorful autumn leaf window cling. These fun, decorative clings help prevent bird-window…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Pop-Up Audubon"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pop-up-audubon-i-11/2026-10-24/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024937-1792843200-1792857600@www.prospectpark.org",
+   "title": "Pop-Up Audubon II",
+   "start": "2026-10-24T12:00:00",
+   "end": "2026-10-24T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Pop-Up Audubon"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-24/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -475,6 +604,26 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024949-1792918800-1792929600@www.prospectpark.org",
+   "title": "2nd Annual Play Day Fest",
+   "start": "2026-10-25T09:00:00",
+   "end": "2026-10-25T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "The 2nd Annual Play Day Fest is coming to Brooklyn! This isn’t your average park day — it’s PLAY DAY FEST, the ultimate dad-powered playdate. This year Rolling With Dads is teaming up with Good+ Foundation and Prospect…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Prospect Park Alliance"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/image.webp",
+   "url": "https://www.prospectpark.org/event/2nd-annual-play-day-fest/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:923926",
    "title": "RiseBoro Farmers Markets at Irving Square Park",
    "start": "2026-10-25T09:00:00",
@@ -489,6 +638,23 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022383-1792918800-1792936800@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-10-25T09:00:00",
+   "end": "2026-10-25T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-10-25/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -509,6 +675,44 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024588-1792922400-1792933200@www.prospectpark.org",
+   "title": "October Weekend Nature Exploration",
+   "start": "2026-10-25T10:00:00",
+   "end": "2026-10-25T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/october-weekend-nature-exploration-5/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024559-1792922400-1792949400@www.prospectpark.org",
+   "title": "Spooktober! At Prospect Park Zoo",
+   "start": "2026-10-25T10:00:00",
+   "end": "2026-10-25T17:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Go batty every weekend in October at the Prospect Park Zoo! Visit the tombstones of extinct animals in Sea Lion Court and learn why extinction isn’t inevitable with your help. Our Spooky Trail will show you some of our…",
+   "tags": [
+    "Kids",
+    "Zoo"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
+   "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:971593",
    "title": "Warren Street Block Party",
    "start": "2026-10-25T10:00:00",
@@ -523,6 +727,149 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024976-1792926000-1792965600@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-10-25T11:00:00",
+   "end": "2026-10-25T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-7/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024653-1792926000-1792933200@www.prospectpark.org",
+   "title": "Park Pitch In: Street Tree Care",
+   "start": "2026-10-25T11:00:00",
+   "end": "2026-10-25T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Help Prospect Park Alliance care for our trees! Volunteers will support our urban forest by tending to the hundreds of park perimeter trees, and learning skills such as weeding, mulching and aerating tree beds, which you…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/08/DSC_5234-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/park-pitch-in-street-tree-care-4/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10023003-1792926000-1792951200@www.prospectpark.org",
+   "title": "Smorgasburg",
+   "start": "2026-10-25T11:00:00",
+   "end": "2026-10-25T18:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Smorgasburg, presented in partnership with Prospect Park Alliance, is considered the “Woodstock of Eating.” The celebrated open-air food fair is back in Prospect Park for the 2026 season! Over 60 local businesses will…",
+   "tags": [
+    "Food",
+    "Smorgasburg"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/03/20210613-SMORGASBURG-Prospect-Park-0085-scaled-e1680536663418.jpg",
+   "url": "https://www.prospectpark.org/event/smorgasburg-4/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025029-1792926000-1792931400@www.prospectpark.org",
+   "title": "Urban Park Ranger | Fall Foliage Canoeing",
+   "start": "2026-10-25T11:00:00",
+   "end": "2026-10-25T12:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the NYC Urban Park Rangers for a scenic autumn paddle on Prospect Park Lake! Enjoy a peaceful excursion on the water as you explore the park’s vibrant seasonal foliage and local wildlife from a unique perspective.…",
+   "tags": [
+    "Audubon Center",
+    "Free",
+    "Kids",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/RS3061_058_A©2013-Elizabeth-Keegin-Colley-DSC_1212-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-ranger-fall-foliage-canoeing/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024824-1792929600-1792947600@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-10-25T12:00:00",
+   "end": "2026-10-25T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022316-1792929600-1792947600@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-10-25T12:00:00",
+   "end": "2026-10-25T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024925-1792929600-1792944000@www.prospectpark.org",
+   "title": "Pop-Up Audubon I",
+   "start": "2026-10-25T12:00:00",
+   "end": "2026-10-25T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate Autumn in Prospect Park by supporting migratory birds! Join Prospect Park Alliance Naturalists to design your own colorful autumn leaf window cling. These fun, decorative clings help prevent bird-window…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Pop-Up Audubon"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pop-up-audubon-i-11/2026-10-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024938-1792929600-1792944000@www.prospectpark.org",
+   "title": "Pop-Up Audubon II",
+   "start": "2026-10-25T12:00:00",
+   "end": "2026-10-25T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Pop-Up Audubon"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-25/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -560,6 +907,25 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024537-1792936800-1792944000@www.prospectpark.org",
+   "title": "Legend of Sleepy Hollow",
+   "start": "2026-10-25T14:00:00",
+   "end": "2026-10-25T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance for a community reading of Washington Irving’s “Legend of Sleepy Hollow” on the porch of Lefferts Historic House. The full version of this famous ghost story, written in 1820 but set in 1790,…",
+   "tags": [
+    "Education",
+    "Free",
+    "History",
+    "Lefferts Historic House"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/08/RS24648_DSC02000-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/legend-of-sleepy-hollow-2/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:912609",
    "title": "Day of the Dead Festival",
    "start": "2026-10-25T14:30:00",
@@ -591,6 +957,97 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:978290",
+   "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
+   "start": "2026-10-26T08:00:00",
+   "end": "2026-10-26T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024678-1793008800-1793016000@www.prospectpark.org",
+   "title": "It’s My Park Day",
+   "start": "2026-10-26T10:00:00",
+   "end": "2026-10-26T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Looking to get involved in a park clean-up effort? Join Prospect Park Alliance for It’s My Park Day to care for the park after busy weekends. All necessary tools will be provided for your volunteer experience. Join It’s…",
+   "tags": [
+    "Environment",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/12/Volunteers-at-the-Lake-2023-c-Marcia-Williams.jpg",
+   "url": "https://www.prospectpark.org/event/its-my-park-day-22/2026-10-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10020052-1793008800-1793026800@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-10-26T10:00:00",
+   "end": "2026-10-26T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-10-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024977-1793030400-1793052000@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-10-26T16:00:00",
+   "end": "2026-10-26T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024978-1793116800-1793138400@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-10-27T16:00:00",
+   "end": "2026-10-27T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-27/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -628,6 +1085,61 @@
    "canceled": false
   },
   {
+   "id": "ppa:10000762-1793174400-1793196000@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-10-28T08:00:00",
+   "end": "2026-10-28T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-10-28/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024683-1793181600-1793192400@www.prospectpark.org",
+   "title": "Fall Fix-Up",
+   "start": "2026-10-28T10:00:00",
+   "end": "2026-10-28T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
+   "tags": [
+    "Environment",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
+   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-10-28/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024979-1793203200-1793224800@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-10-28T16:00:00",
+   "end": "2026-10-28T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-28/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:911549",
    "title": "Borough Park Greenmarket Thursday",
    "start": "2026-10-29T08:00:00",
@@ -662,6 +1174,99 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024574-1793268000-1793286000@www.prospectpark.org",
+   "title": "October Weekday Nature Exploration",
+   "start": "2026-10-29T10:00:00",
+   "end": "2026-10-29T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance for nature education programs on Thursdays and Fridays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am –3 pm: Let’s have fun exploring the…",
+   "tags": [
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/october-weekday-nature-exploration-3/2026-10-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022263-1793268000-1793271600@www.prospectpark.org",
+   "title": "Prospect Park Stroller Walk",
+   "start": "2026-10-29T10:00:00",
+   "end": "2026-10-29T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
+   "tags": [
+    "Audubon Center",
+    "Environment",
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Running + Walking",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-10-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019484-1793268000-1793286000@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-10-29T10:00:00",
+   "end": "2026-10-29T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-10-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024825-1793275200-1793293200@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-10-29T12:00:00",
+   "end": "2026-10-29T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024540-1793275200-1793293200@www.prospectpark.org",
+   "title": "Haunted Carousel",
+   "start": "2026-10-29T12:00:00",
+   "end": "2026-10-29T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Don’t be scared when you see the haunted carousel! Take a spin on the spooky ride to your favorite Halloween jams at the beloved Prospect Park Carousel. Children’s Corner, $3 per ride; $13 for a book of 5 tickets; Free…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/RS13740_DSC_3329-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/haunted-carousel-4/2026-10-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:979831",
    "title": "14th Annual Barnacle Day Parade",
    "start": "2026-10-29T15:30:00",
@@ -676,6 +1281,96 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024980-1793289600-1793311200@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-10-29T16:00:00",
+   "end": "2026-10-29T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024575-1793354400-1793372400@www.prospectpark.org",
+   "title": "October Weekday Nature Exploration",
+   "start": "2026-10-30T10:00:00",
+   "end": "2026-10-30T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance for nature education programs on Thursdays and Fridays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am –3 pm: Let’s have fun exploring the…",
+   "tags": [
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/october-weekday-nature-exploration-3/2026-10-30/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022680-1793354400-1793361600@www.prospectpark.org",
+   "title": "Older Adult Wellness Walk",
+   "start": "2026-10-30T10:00:00",
+   "end": "2026-10-30T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Public Health Solutions for a special Wellness Walk in Prospect Park geared for Older Adults in timing with fall foliage season. PHS staff will also be on hand to discuss health benefits…",
+   "tags": [
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/09/RS6211_Fall-Foliage_2015_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/prospect-park-wellness-walk-5-5/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024826-1793361600-1793379600@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-10-30T12:00:00",
+   "end": "2026-10-30T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-30/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024541-1793361600-1793379600@www.prospectpark.org",
+   "title": "Haunted Carousel",
+   "start": "2026-10-30T12:00:00",
+   "end": "2026-10-30T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Don’t be scared when you see the haunted carousel! Take a spin on the spooky ride to your favorite Halloween jams at the beloved Prospect Park Carousel. Children’s Corner, $3 per ride; $13 for a book of 5 tickets; Free…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/RS13740_DSC_3329-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/haunted-carousel-4/2026-10-30/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -696,6 +1391,62 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024981-1793376000-1793397600@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-10-30T16:00:00",
+   "end": "2026-10-30T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-30/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024951-1793383200-1793390400@www.prospectpark.org",
+   "title": "Alfreda's Cinema, Ten Minutes to Live (1932) w/ Live Vinyl Score",
+   "start": "2026-10-30T18:00:00",
+   "end": "2026-10-30T20:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Alfreda’s Cinema for the 2026 Open-Air Film Sessions, where Black stories breathe under open skies. Experience Oscar Micheaux’s classic 1932 mystery-thriller, Ten Minutes to Live,…",
+   "tags": [
+    "Audubon Center",
+    "Film",
+    "Free",
+    "History"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/image-2.webp",
+   "url": "https://www.prospectpark.org/event/alfredas-cinema-ten-minuets-to-live-1932-w-live-vinyl-score/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001086-1793433600-1793462400@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-10-31T08:00:00",
+   "end": "2026-10-31T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-10-31/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:966456",
    "title": "3rd Street Block Party",
    "start": "2026-10-31T10:00:00",
@@ -710,6 +1461,46 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024538-1793440800-1793462400@www.prospectpark.org",
+   "title": "Creepy Crawly Halloween",
+   "start": "2026-10-31T10:00:00",
+   "end": "2026-10-31T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Take a second look at the creatures that give you the creeps, you may find you like them! Participate in fun activities and experiments that will make your spine tingle at Prospect Park Alliance’s Creepy Crawly…",
+   "tags": [
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Holiday",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/03/RS6172_2015-10-18-09.59.47-2-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/creepy-crawly-halloween-4/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022748-1793440800-1793444400@www.prospectpark.org",
+   "title": "Dance Fitness with Shape Up NYC at the Boathouse",
+   "start": "2026-10-31T10:00:00",
+   "end": "2026-10-31T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shape-up NYC for a fun-filled dance fitness zumba class at the Boathouse! Zumba is a fusion of Latin, International and popular music dance themes creating a dynamic, exciting, effective…",
+   "tags": [
+    "Audubon Center",
+    "Fitness",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/06/Boathouse1_Retouched_2-copy.jpg",
+   "url": "https://www.prospectpark.org/event/dance-fitness-with-shape-up-nyc-at-the-boathouse-8/2026-10-31/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -730,6 +1521,42 @@
    "canceled": false
   },
   {
+   "id": "ppa:10021108-1793440800-1793448000@www.prospectpark.org",
+   "title": "Introduction to Birdwatching Outings",
+   "start": "2026-10-31T10:00:00",
+   "end": "2026-10-31T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-10-31/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024560-1793440800-1793467800@www.prospectpark.org",
+   "title": "Spooktober! At Prospect Park Zoo",
+   "start": "2026-10-31T10:00:00",
+   "end": "2026-10-31T17:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Go batty every weekend in October at the Prospect Park Zoo! Visit the tombstones of extinct animals in Sea Lion Court and learn why extinction isn’t inevitable with your help. Our Spooky Trail will show you some of our…",
+   "tags": [
+    "Kids",
+    "Zoo"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/27/dd/27ddfbb2-df9f-4023-b605-1295b36d63de/zoo_julie_larsen_maher_3261_sea_lion_pool_with_visitors_ppz_08_20_14.jpg",
+   "url": "https://www.prospectpark.org/event/spooktober-at-prospect-park-zoo-2/2026-10-31/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:973038",
    "title": "6th Street Fall 2026 Block Party",
    "start": "2026-10-31T10:30:00",
@@ -744,6 +1571,43 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024983-1793444400-1793484000@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-10-31T11:00:00",
+   "end": "2026-10-31T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-8/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024845-1793444400-1793455200@www.prospectpark.org",
+   "title": "Park Pitch In: Nethermead Care",
+   "start": "2026-10-31T11:00:00",
+   "end": "2026-10-31T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance to help beautify the Nethermead. Located in the heart of the park, the Nethermead is a rolling meadow where the sights and sounds of the city fade away. Volunteers will be mulching, clearing…",
+   "tags": [
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/05/RS4043_Volunteer_060-768x513-1.jpg",
+   "url": "https://www.prospectpark.org/event/park-pitch-in-nethermead-care/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -798,6 +1662,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024827-1793448000-1793466000@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-10-31T12:00:00",
+   "end": "2026-10-31T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-10-31/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:944614",
    "title": "Degraw Street Block Party 26",
    "start": "2026-10-31T12:00:00",
@@ -812,6 +1693,20 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022317-1793448000-1793466000@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-10-31T12:00:00",
+   "end": "2026-10-31T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-10-31/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -846,6 +1741,61 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024542-1793448000-1793466000@www.prospectpark.org",
+   "title": "Haunted Carousel",
+   "start": "2026-10-31T12:00:00",
+   "end": "2026-10-31T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Don’t be scared when you see the haunted carousel! Take a spin on the spooky ride to your favorite Halloween jams at the beloved Prospect Park Carousel. Children’s Corner, $3 per ride; $13 for a book of 5 tickets; Free…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/RS13740_DSC_3329-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/haunted-carousel-4/2026-10-31/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024926-1793448000-1793462400@www.prospectpark.org",
+   "title": "Pop-Up Audubon I",
+   "start": "2026-10-31T12:00:00",
+   "end": "2026-10-31T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate Autumn in Prospect Park by supporting migratory birds! Join Prospect Park Alliance Naturalists to design your own colorful autumn leaf window cling. These fun, decorative clings help prevent bird-window…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Pop-Up Audubon"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pop-up-audubon-i-11/2026-10-31/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024939-1793448000-1793462400@www.prospectpark.org",
+   "title": "Pop-Up Audubon II",
+   "start": "2026-10-31T12:00:00",
+   "end": "2026-10-31T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Pop-Up Audubon"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-31/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -914,6 +1864,23 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025030-1793451600-1793455200@www.prospectpark.org",
+   "title": "Urban Park Rangers | Folklore Tales on the Trail Hike",
+   "start": "2026-10-31T13:00:00",
+   "end": "2026-10-31T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Gather at the Washington Irving statue and join the Urban Park Rangers for a hike learning about the folklore and history surrounding Sleepy Hollow while enjoying a nature walk through Prospect Park. While on this hike,…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-folklore-tales-on-the-trail-hike/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -1155,6 +2122,131 @@
    "canceled": false
   },
   {
+   "id": "ppa:10022384-1793523600-1793541600@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-11-01T09:00:00",
+   "end": "2026-11-01T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-01/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024662-1793527200-1793539800@www.prospectpark.org",
+   "title": "Birdwatching: First Sunday Outings",
+   "start": "2026-11-01T10:00:00",
+   "end": "2026-11-01T13:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join a member of the Brooklyn Bird Club to explore Prospect Park in search of the many bird species found throughout the year. Along the way, you’ll learn about the park’s diverse habitats, the birds that depend on them…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/87/33/8733fc50-b84f-43b9-9aa2-587be973a6d8/bird_watching_elizabeth_keegin_colley_dsc_4889-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/birdwatching-first-sunday-outings-6/2026-11-01/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025027-1793530800-1793548800@www.prospectpark.org",
+   "title": "Brooklyn FAM 6th Annual Flagship Festival: Shine Your Light",
+   "start": "2026-11-01T11:00:00",
+   "end": "2026-11-01T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Brooklyn FAM’s flagship festival is back for its 6th year! Presented in partnership with the Prospect Park Alliance, this year’s free, family-friendly event celebrates our North, Central, and South American indigenous…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Community Engagement",
+    "Education",
+    "Free",
+    "History"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/BKFAM26_PPA-events-webpage-graphic-1.png",
+   "url": "https://www.prospectpark.org/event/brooklyn-fam-6th-annual-flagship-festival-shine-your-light/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024985-1793530800-1793570400@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-01T11:00:00",
+   "end": "2026-11-01T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-9/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024828-1793534400-1793552400@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-01T12:00:00",
+   "end": "2026-11-01T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-01/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022318-1793534400-1793552400@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-11-01T12:00:00",
+   "end": "2026-11-01T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-01/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024543-1793534400-1793552400@www.prospectpark.org",
+   "title": "Haunted Carousel",
+   "start": "2026-11-01T12:00:00",
+   "end": "2026-11-01T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Don’t be scared when you see the haunted carousel! Take a spin on the spooky ride to your favorite Halloween jams at the beloved Prospect Park Carousel. Children’s Corner, $3 per ride; $13 for a book of 5 tickets; Free…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/RS13740_DSC_3329-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/haunted-carousel-4/2026-11-01/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:973129",
    "title": "St Johns Places 7-8 Fall Block Party",
    "start": "2026-11-01T13:00:00",
@@ -1172,6 +2264,84 @@
    "canceled": false
   },
   {
+   "id": "ppa:10020053-1793613600-1793631600@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-11-02T10:00:00",
+   "end": "2026-11-02T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-02/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024986-1793635200-1793656800@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-02T16:00:00",
+   "end": "2026-11-02T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-02/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024589-1793700000-1793725200@www.prospectpark.org",
+   "title": "Election Day School Holiday in Prospect Park",
+   "start": "2026-11-03T10:00:00",
+   "end": "2026-11-03T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance for family friendly programming on the school holiday for Election Day! Nature Exploration Prospect Park Audubon Center, Free, 10 am–3 pm Join Prospect Park Alliance for nature education…",
+   "tags": [
+    "Audubon Center",
+    "Carousel",
+    "Free",
+    "Holiday",
+    "Kids",
+    "Lefferts Historic House"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/03/RS6172_2015-10-18-09.59.47-2-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/election-day-school-holiday-in-prospect-park-4/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024987-1793721600-1793743200@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-03T16:00:00",
+   "end": "2026-11-03T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-03/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "bp:85443-1793750400-1793836799@www.brooklynbp.nyc.gov",
    "title": "Call For Projects Is Now Open",
    "start": "2026-11-04T00:00:00",
@@ -1183,6 +2353,208 @@
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/85443/",
    "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10000763-1793779200-1793800800@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-11-04T08:00:00",
+   "end": "2026-11-04T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-11-04/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024684-1793786400-1793797200@www.prospectpark.org",
+   "title": "Fall Fix-Up",
+   "start": "2026-11-04T10:00:00",
+   "end": "2026-11-04T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
+   "tags": [
+    "Environment",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
+   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-11-04/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024988-1793808000-1793829600@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-04T16:00:00",
+   "end": "2026-11-04T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-04/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024751-1793872800-1793876400@www.prospectpark.org",
+   "title": "Prospect Park Stroller Walk",
+   "start": "2026-11-05T10:00:00",
+   "end": "2026-11-05T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
+   "tags": [
+    "Audubon Center",
+    "Environment",
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Running + Walking",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-11-05/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019485-1793872800-1793890800@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-11-05T10:00:00",
+   "end": "2026-11-05T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-11-05/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024829-1793880000-1793898000@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-05T12:00:00",
+   "end": "2026-11-05T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-05/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024989-1793894400-1793916000@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-05T16:00:00",
+   "end": "2026-11-05T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-05/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024830-1793966400-1793984400@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-06T12:00:00",
+   "end": "2026-11-06T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-06/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024990-1793980800-1794002400@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-06T16:00:00",
+   "end": "2026-11-06T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-06/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024641-1794036600-1794040200@www.prospectpark.org",
+   "title": "FIDO Coffee Bark",
+   "start": "2026-11-07T07:30:00",
+   "end": "2026-11-07T08:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Coffee Bark is an opportunity for Brooklyn dog owners to chat over coffee and pastries while their dogs romp and play over dog biscuits. With dozens of dogs and people, Coffee Bark is an amazing sight. Look for coffee,…",
+   "tags": [
+    "Dogs",
+    "Free"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/06/RS1097_182-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/fido-coffee-bark-3/2026-11-07/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001087-1794038400-1794067200@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-11-07T08:00:00",
+   "end": "2026-11-07T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-11-07/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -1203,6 +2575,46 @@
    "canceled": false
   },
   {
+   "id": "ppa:10021109-1794045600-1794052800@www.prospectpark.org",
+   "title": "Introduction to Birdwatching Outings",
+   "start": "2026-11-07T10:00:00",
+   "end": "2026-11-07T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-11-07/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024607-1794045600-1794056400@www.prospectpark.org",
+   "title": "November Weekend Nature Exploration",
+   "start": "2026-11-07T10:00:00",
+   "end": "2026-11-07T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-07/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:930192",
    "title": "8th Annual Veterans Appreciation Parade And Resource Fair",
    "start": "2026-11-07T11:00:00",
@@ -1217,6 +2629,44 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024992-1794049200-1794088800@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-07T11:00:00",
+   "end": "2026-11-07T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-10/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024591-1794049200-1794060000@www.prospectpark.org",
+   "title": "Park Pitch In: Trail Care",
+   "start": "2026-11-07T11:00:00",
+   "end": "2026-11-07T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park is home to several miles of trails, including areas such as the Peninsula, the Midwood and Lookout Hill. Join Prospect Park Alliance to help care for our trails system. Volunteers will help to mulch and…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/park-pitch-in-trail-care/2026-11-07/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -1237,6 +2687,130 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024831-1794052800-1794070800@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-07T12:00:00",
+   "end": "2026-11-07T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-07/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022319-1794052800-1794070800@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-11-07T12:00:00",
+   "end": "2026-11-07T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-07/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022385-1794128400-1794146400@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-11-08T09:00:00",
+   "end": "2026-11-08T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-08/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024608-1794132000-1794142800@www.prospectpark.org",
+   "title": "November Weekend Nature Exploration",
+   "start": "2026-11-08T10:00:00",
+   "end": "2026-11-08T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-08/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024994-1794135600-1794175200@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-08T11:00:00",
+   "end": "2026-11-08T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-11/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024592-1794135600-1794146400@www.prospectpark.org",
+   "title": "Park Pitch In: Trail Care",
+   "start": "2026-11-08T11:00:00",
+   "end": "2026-11-08T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park is home to several miles of trails, including areas such as the Peninsula, the Midwood and Lookout Hill. Join Prospect Park Alliance to help care for our trails system. Volunteers will help to mulch and…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/park-pitch-in-trail-care/2026-11-08/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025031-1794135600-1794139200@www.prospectpark.org",
+   "title": "Urban Park Rangers | Fantastic Fungi Mushroom ID Hike",
+   "start": "2026-11-08T11:00:00",
+   "end": "2026-11-08T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "This Urban Park Ranger led hike will take you through the forest in Prospect Park to learn how to identify fungi. Participants will learn about the crucial role that mushrooms play in an ecosystem and how natural…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-fantastic-fungi-mushroom-id-hike/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "permits:901890",
    "title": "Walk to End Alzheimers - Brooklyn",
    "start": "2026-11-08T11:00:00",
@@ -1254,6 +2828,74 @@
    "canceled": false
   },
   {
+   "id": "ppa:10024832-1794139200-1794157200@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-08T12:00:00",
+   "end": "2026-11-08T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-08/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022320-1794139200-1794157200@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-11-08T12:00:00",
+   "end": "2026-11-08T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-08/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10020054-1794218400-1794236400@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-11-09T10:00:00",
+   "end": "2026-11-09T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-09/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024995-1794240000-1794261600@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-09T16:00:00",
+   "end": "2026-11-09T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-09/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "bp:85439-1794315600-1794324600@www.brooklynbp.nyc.gov",
    "title": "Estate Planning Essentials",
    "start": "2026-11-10T13:00:00",
@@ -1265,6 +2907,26 @@
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/estate-planning-essentials/",
    "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024996-1794326400-1794348000@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-10T16:00:00",
+   "end": "2026-11-10T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-10/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -1282,6 +2944,1298 @@
    "canceled": false
   },
   {
+   "id": "ppa:10000764-1794384000-1794405600@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-11-11T08:00:00",
+   "end": "2026-11-11T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-11-11/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024593-1794391200-1794416400@www.prospectpark.org",
+   "title": "Veterans Day School Holiday in Prospect Park",
+   "start": "2026-11-11T10:00:00",
+   "end": "2026-11-11T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance for family friendly programming on the school holiday for Veterans Day. Nature Exploration Prospect Park Audubon Center, Free, 10 am–3 pm Join Prospect Park Alliance for nature education…",
+   "tags": [
+    "Audubon Center",
+    "Carousel",
+    "Free",
+    "Holiday",
+    "Kids",
+    "Lefferts Historic House"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/02/RS13739_DSC_3327-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/veterans-day-school-holiday-in-prospect-park-4/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024997-1794412800-1794434400@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-11T16:00:00",
+   "end": "2026-11-11T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-11/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024685-1794477600-1794488400@www.prospectpark.org",
+   "title": "Fall Fix-Up",
+   "start": "2026-11-12T10:00:00",
+   "end": "2026-11-12T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
+   "tags": [
+    "Environment",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
+   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-11-12/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024752-1794477600-1794481200@www.prospectpark.org",
+   "title": "Prospect Park Stroller Walk",
+   "start": "2026-11-12T10:00:00",
+   "end": "2026-11-12T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
+   "tags": [
+    "Audubon Center",
+    "Environment",
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Running + Walking",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-11-12/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019486-1794477600-1794495600@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-11-12T10:00:00",
+   "end": "2026-11-12T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-11-12/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024833-1794484800-1794502800@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-12T12:00:00",
+   "end": "2026-11-12T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-12/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024998-1794499200-1794520800@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-12T16:00:00",
+   "end": "2026-11-12T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-12/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024834-1794571200-1794589200@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-13T12:00:00",
+   "end": "2026-11-13T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-13/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024999-1794585600-1794607200@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-13T16:00:00",
+   "end": "2026-11-13T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-13/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001088-1794643200-1794672000@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-11-14T08:00:00",
+   "end": "2026-11-14T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-11-14/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10021110-1794650400-1794657600@www.prospectpark.org",
+   "title": "Introduction to Birdwatching Outings",
+   "start": "2026-11-14T10:00:00",
+   "end": "2026-11-14T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-11-14/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024609-1794650400-1794661200@www.prospectpark.org",
+   "title": "November Weekend Nature Exploration",
+   "start": "2026-11-14T10:00:00",
+   "end": "2026-11-14T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-14/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024835-1794657600-1794675600@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-14T12:00:00",
+   "end": "2026-11-14T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-14/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022321-1794657600-1794675600@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-11-14T12:00:00",
+   "end": "2026-11-14T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-14/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025032-1794661200-1794666600@www.prospectpark.org",
+   "title": "Urban Park Rangers | Fall Foliage Hike",
+   "start": "2026-11-14T13:00:00",
+   "end": "2026-11-14T14:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Urban Park Rangers on a beautiful stroll around Prospect Park as we celebrate the changing of the seasons! Learn about the ecology of a fall forest and the science of the changing colors all while enjoying one…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-fall-foliage-hike/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022386-1794733200-1794751200@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-11-15T09:00:00",
+   "end": "2026-11-15T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-15/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024610-1794736800-1794747600@www.prospectpark.org",
+   "title": "November Weekend Nature Exploration",
+   "start": "2026-11-15T10:00:00",
+   "end": "2026-11-15T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-15/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024836-1794744000-1794762000@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-15T12:00:00",
+   "end": "2026-11-15T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-15/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022322-1794744000-1794762000@www.prospectpark.org",
+   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
+   "start": "2026-11-15T12:00:00",
+   "end": "2026-11-15T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
+   "tags": [],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
+   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-15/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024594-1794747600-1794754800@www.prospectpark.org",
+   "title": "Junior Volunteer Corps",
+   "start": "2026-11-15T13:00:00",
+   "end": "2026-11-15T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance for our fall Junior Volunteer Corps! On select weekends, families and youth groups are invited to rake leaves at various locations around the park. All necessary tools will be provided. Open…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Kids",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/11/RS2268_S06A1442-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/junior-volunteer-corps-7/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10020055-1794823200-1794841200@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-11-16T10:00:00",
+   "end": "2026-11-16T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-16/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025004-1794844800-1794866400@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-16T16:00:00",
+   "end": "2026-11-16T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-16/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025005-1794931200-1794952800@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-17T16:00:00",
+   "end": "2026-11-17T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-17/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10000765-1794988800-1795010400@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-11-18T08:00:00",
+   "end": "2026-11-18T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-11-18/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024686-1794996000-1795006800@www.prospectpark.org",
+   "title": "Fall Fix-Up",
+   "start": "2026-11-18T10:00:00",
+   "end": "2026-11-18T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
+   "tags": [
+    "Environment",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
+   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-11-18/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025006-1795017600-1795039200@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-18T16:00:00",
+   "end": "2026-11-18T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-18/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024753-1795082400-1795086000@www.prospectpark.org",
+   "title": "Prospect Park Stroller Walk",
+   "start": "2026-11-19T10:00:00",
+   "end": "2026-11-19T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
+   "tags": [
+    "Audubon Center",
+    "Environment",
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Running + Walking",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-11-19/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019487-1795082400-1795100400@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-11-19T10:00:00",
+   "end": "2026-11-19T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-11-19/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024837-1795089600-1795107600@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-19T12:00:00",
+   "end": "2026-11-19T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-19/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025007-1795104000-1795125600@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-19T16:00:00",
+   "end": "2026-11-19T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-19/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024838-1795176000-1795194000@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-20T12:00:00",
+   "end": "2026-11-20T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-20/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025008-1795190400-1795212000@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-20T16:00:00",
+   "end": "2026-11-20T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-20/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001089-1795248000-1795276800@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-11-21T08:00:00",
+   "end": "2026-11-21T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-11-21/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10021111-1795255200-1795262400@www.prospectpark.org",
+   "title": "Introduction to Birdwatching Outings",
+   "start": "2026-11-21T10:00:00",
+   "end": "2026-11-21T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-11-21/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024611-1795255200-1795266000@www.prospectpark.org",
+   "title": "November Weekend Nature Exploration",
+   "start": "2026-11-21T10:00:00",
+   "end": "2026-11-21T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-21/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024597-1795258800-1795269600@www.prospectpark.org",
+   "title": "Park Pitch In: Fall Leaf Raking",
+   "start": "2026-11-21T11:00:00",
+   "end": "2026-11-21T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance during leaf-peeping season to care for Brooklyn’s Backyard! Volunteers will help to rake leaves from pathways and other areas around the 3rd St and Willink Entrances to ensure safe and easy…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/park-pitch-in-fall-leaf-raking/2026-11-21/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024839-1795262400-1795280400@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-21T12:00:00",
+   "end": "2026-11-21T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-21/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022387-1795338000-1795356000@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-11-22T09:00:00",
+   "end": "2026-11-22T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-22/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024612-1795341600-1795352400@www.prospectpark.org",
+   "title": "November Weekend Nature Exploration",
+   "start": "2026-11-22T10:00:00",
+   "end": "2026-11-22T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-22/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024598-1795345200-1795356000@www.prospectpark.org",
+   "title": "Park Pitch In: Fall Leaf Raking",
+   "start": "2026-11-22T11:00:00",
+   "end": "2026-11-22T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance during leaf-peeping season to care for Brooklyn’s Backyard! Volunteers will help to rake leaves from pathways and other areas around the 3rd St and Willink Entrances to ensure safe and easy…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/park-pitch-in-fall-leaf-raking/2026-11-22/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024840-1795348800-1795366800@www.prospectpark.org",
+   "title": "Carousel Rides",
+   "start": "2026-11-22T12:00:00",
+   "end": "2026-11-22T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
+   "tags": [
+    "Carousel",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-22/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025033-1795359600-1795365000@www.prospectpark.org",
+   "title": "Urban Park Rangers | Freedom Seekers: Stories by the Fire",
+   "start": "2026-11-22T15:00:00",
+   "end": "2026-11-22T16:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Urban Park Rangers for an outdoor storytelling program exploring the history of the Underground Railroad. Hear poems, accounts, and stories shared by freedom seekers during their journeys, and learn how these…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/RS14574_DSC_3323-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-freedom-seekers-stories-by-the-fire/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10020056-1795428000-1795446000@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-11-23T10:00:00",
+   "end": "2026-11-23T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-23/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025013-1795449600-1795471200@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-23T16:00:00",
+   "end": "2026-11-23T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-23/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025014-1795536000-1795557600@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-24T16:00:00",
+   "end": "2026-11-24T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-24/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10000766-1795593600-1795615200@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-11-25T08:00:00",
+   "end": "2026-11-25T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-11-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024687-1795600800-1795611600@www.prospectpark.org",
+   "title": "Fall Fix-Up",
+   "start": "2026-11-25T10:00:00",
+   "end": "2026-11-25T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
+   "tags": [
+    "Environment",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
+   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-11-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025015-1795622400-1795644000@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-25T16:00:00",
+   "end": "2026-11-25T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-25/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024754-1795687200-1795690800@www.prospectpark.org",
+   "title": "Prospect Park Stroller Walk",
+   "start": "2026-11-26T10:00:00",
+   "end": "2026-11-26T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
+   "tags": [
+    "Audubon Center",
+    "Environment",
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Running + Walking",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-11-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019488-1795687200-1795705200@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-11-26T10:00:00",
+   "end": "2026-11-26T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-11-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025016-1795708800-1795730400@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-26T16:00:00",
+   "end": "2026-11-26T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025034-1795780800-1795788000@www.prospectpark.org",
+   "title": "Urban Park Rangers | Post-Thanksgiving Day Super Hike",
+   "start": "2026-11-27T12:00:00",
+   "end": "2026-11-27T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "On this Friday, work off your Thanksgiving feast while enjoying the great outdoors. Scramble your way through autumnal Prospect Park with the rangers and your neighbors. Witness plants and wildlife preparing for colder…",
+   "tags": [
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-post-thanksgiving-day-super-hike/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025017-1795795200-1795816800@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-27T16:00:00",
+   "end": "2026-11-27T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-27/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001090-1795852800-1795881600@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-11-28T08:00:00",
+   "end": "2026-11-28T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-11-28/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10021112-1795860000-1795867200@www.prospectpark.org",
+   "title": "Introduction to Birdwatching Outings",
+   "start": "2026-11-28T10:00:00",
+   "end": "2026-11-28T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-11-28/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024613-1795860000-1795870800@www.prospectpark.org",
+   "title": "November Weekend Nature Exploration",
+   "start": "2026-11-28T10:00:00",
+   "end": "2026-11-28T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-28/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022388-1795942800-1795960800@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-11-29T09:00:00",
+   "end": "2026-11-29T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024614-1795946400-1795957200@www.prospectpark.org",
+   "title": "November Weekend Nature Exploration",
+   "start": "2026-11-29T10:00:00",
+   "end": "2026-11-29T13:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
+   "tags": [
+    "Art",
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10020057-1796032800-1796050800@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-11-30T10:00:00",
+   "end": "2026-11-30T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-30/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025022-1796054400-1796076000@www.prospectpark.org",
+   "title": "Fall Festival at Lakeside",
+   "start": "2026-11-30T16:00:00",
+   "end": "2026-11-30T22:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
+   "tags": [
+    "Community Engagement",
+    "Food",
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
+   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-30/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10000767-1796198400-1796220000@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-12-02T08:00:00",
+   "end": "2026-12-02T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-02/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024755-1796292000-1796295600@www.prospectpark.org",
+   "title": "Prospect Park Stroller Walk",
+   "start": "2026-12-03T10:00:00",
+   "end": "2026-12-03T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
+   "tags": [
+    "Audubon Center",
+    "Environment",
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Running + Walking",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-12-03/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019489-1796292000-1796310000@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-12-03T10:00:00",
+   "end": "2026-12-03T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-12-03/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024642-1796455800-1796459400@www.prospectpark.org",
+   "title": "FIDO Coffee Bark",
+   "start": "2026-12-05T07:30:00",
+   "end": "2026-12-05T08:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Coffee Bark is an opportunity for Brooklyn dog owners to chat over coffee and pastries while their dogs romp and play over dog biscuits. With dozens of dogs and people, Coffee Bark is an amazing sight. Look for coffee,…",
+   "tags": [
+    "Dogs",
+    "Free"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2021/06/RS1097_182-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/fido-coffee-bark-3/2026-12-05/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001091-1796457600-1796486400@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-12-05T08:00:00",
+   "end": "2026-12-05T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-12-05/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024615-1796464800-1796472000@www.prospectpark.org",
+   "title": "Introduction to Birdwatching Outings",
+   "start": "2026-12-05T10:00:00",
+   "end": "2026-12-05T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-12-05/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022389-1796547600-1796565600@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-12-06T09:00:00",
+   "end": "2026-12-06T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-12-06/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024663-1796551200-1796563800@www.prospectpark.org",
+   "title": "Birdwatching: First Sunday Outings",
+   "start": "2026-12-06T10:00:00",
+   "end": "2026-12-06T13:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join a member of the Brooklyn Bird Club to explore Prospect Park in search of the many bird species found throughout the year. Along the way, you’ll learn about the park’s diverse habitats, the birds that depend on them…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/87/33/8733fc50-b84f-43b9-9aa2-587be973a6d8/bird_watching_elizabeth_keegin_colley_dsc_4889-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/birdwatching-first-sunday-outings-6/2026-12-06/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10020058-1796637600-1796655600@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-12-07T10:00:00",
+   "end": "2026-12-07T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-12-07/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "bp:82782-1796803200-1796835600@www.brooklynbp.nyc.gov",
    "title": "ULURP Public Hearing Meeting",
    "start": "2026-12-09T08:00:00",
@@ -1293,6 +4247,400 @@
    "image": "https://www.brooklynbp.nyc.gov/wp-content/uploads/2026/01/FINAL-ULURP-2026-Schedule-2-scaled-e1769702027860.jpg",
    "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-10/",
    "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10000768-1796803200-1796824800@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-12-09T08:00:00",
+   "end": "2026-12-09T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-09/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024756-1796896800-1796900400@www.prospectpark.org",
+   "title": "Prospect Park Stroller Walk",
+   "start": "2026-12-10T10:00:00",
+   "end": "2026-12-10T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
+   "tags": [
+    "Audubon Center",
+    "Environment",
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Running + Walking",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-12-10/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019490-1796896800-1796914800@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-12-10T10:00:00",
+   "end": "2026-12-10T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-12-10/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001092-1797062400-1797091200@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-12-12T08:00:00",
+   "end": "2026-12-12T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-12-12/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024616-1797069600-1797076800@www.prospectpark.org",
+   "title": "Introduction to Birdwatching Outings",
+   "start": "2026-12-12T10:00:00",
+   "end": "2026-12-12T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-12-12/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022390-1797152400-1797170400@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-12-13T09:00:00",
+   "end": "2026-12-13T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-12-13/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10020059-1797242400-1797260400@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-12-14T10:00:00",
+   "end": "2026-12-14T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-12-14/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10000769-1797408000-1797429600@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-12-16T08:00:00",
+   "end": "2026-12-16T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-16/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024757-1797501600-1797505200@www.prospectpark.org",
+   "title": "Prospect Park Stroller Walk",
+   "start": "2026-12-17T10:00:00",
+   "end": "2026-12-17T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
+   "tags": [
+    "Audubon Center",
+    "Environment",
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Running + Walking",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-12-17/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019491-1797501600-1797519600@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-12-17T10:00:00",
+   "end": "2026-12-17T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-12-17/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001093-1797667200-1797696000@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-12-19T08:00:00",
+   "end": "2026-12-19T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-12-19/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10024617-1797674400-1797681600@www.prospectpark.org",
+   "title": "Introduction to Birdwatching Outings",
+   "start": "2026-12-19T10:00:00",
+   "end": "2026-12-19T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-12-19/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022391-1797757200-1797775200@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-12-20T09:00:00",
+   "end": "2026-12-20T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-12-20/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10020060-1797847200-1797865200@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-12-21T10:00:00",
+   "end": "2026-12-21T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-12-21/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10000770-1798012800-1798034400@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-12-23T08:00:00",
+   "end": "2026-12-23T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-23/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019492-1798106400-1798124400@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-12-24T10:00:00",
+   "end": "2026-12-24T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-12-24/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10001094-1798272000-1798300800@www.prospectpark.org",
+   "title": "Greenmarket at Grand Army Plaza",
+   "start": "2026-12-26T08:00:00",
+   "end": "2026-12-26T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-12-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10022392-1798362000-1798380000@www.prospectpark.org",
+   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-12-27T09:00:00",
+   "end": "2026-12-27T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-12-27/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10020061-1798452000-1798470000@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-12-28T10:00:00",
+   "end": "2026-12-28T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-12-28/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10000771-1798617600-1798639200@www.prospectpark.org",
+   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
+   "start": "2026-12-30T08:00:00",
+   "end": "2026-12-30T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
+   "tags": [
+    "Food",
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-30/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10019493-1798711200-1798729200@www.prospectpark.org",
+   "title": "Sexual Health Mobile Medical Unit",
+   "start": "2026-12-31T10:00:00",
+   "end": "2026-12-31T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
+   "tags": [
+    "Free",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
+   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-12-31/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025035-1798754400-1798763400@www.prospectpark.org",
+   "title": "New Year's Eve Fireworks in Prospect Park",
+   "start": "2026-12-31T22:00:00",
+   "end": "2027-01-01T00:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Prospect Park Alliance, the non-profit organization that sustain’s Brooklyn’s flagship park, will present Brooklyn’s most spectacular New Year’s Eve Fireworks celebration at the iconic Grand Army Plaza. Join tens of…",
+   "tags": [
+    "Free",
+    "Holiday",
+    "Music",
+    "Performing Arts"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/11/RS6190_Prospect-Park-Grand-Army-Plaza-c-2012-Andrew-Gardner3.jpg",
+   "url": "https://www.prospectpark.org/event/new-years-eve-fireworks-in-prospect-park-3/",
+   "source": "ppa",
    "canceled": false
   }
  ]
