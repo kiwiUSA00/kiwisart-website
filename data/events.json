@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T09:07:01.502Z",
+ "updated": "2026-10-27T15:24:31.778Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -14,12 +14,7 @@
    "home": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx"
   }
  },
- "errors": [
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-11-26",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-06",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-16",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-26"
- ],
+ "errors": [],
  "events": [
   {
    "id": "permits:968371",
