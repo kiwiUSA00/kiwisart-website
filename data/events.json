@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T15:24:31.778Z",
+ "updated": "2026-10-27T22:20:21.040Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -1481,6 +1481,23 @@
    "canceled": false
   },
   {
+   "id": "permits:984402",
+   "title": "Chess on Underhill Plaza",
+   "start": "2026-11-03T18:30:00",
+   "end": "2026-11-03T21:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "bp:85443-1793750400-1793836799@www.brooklynbp.nyc.gov",
    "title": "Call For Projects Is Now Open",
    "start": "2026-11-04T00:00:00",
@@ -2392,6 +2409,24 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
    "url": "https://www.prospectpark.org/event/urban-park-rangers-fall-foliage-hike/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025037-1794729600-1794744000@www.prospectpark.org",
+   "title": "Pre-Thanksgiving Birding in Prospect Park",
+   "start": "2026-11-15T08:00:00",
+   "end": "2026-11-15T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Prospect Park Alliance and the Brooklyn Bird Club for a morning bird walk exploring the transition from fall to winter in Prospect Park. As seasonal shifts bring new activity to the park’s woodlands and…",
+   "tags": [
+    "Birdwatching",
+    "Free",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/pre-thanksgiving-birding-in-prospect-park/",
    "source": "ppa",
    "canceled": false
   },
