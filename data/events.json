@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T00:31:00.697Z",
+ "updated": "2026-10-27T09:07:01.502Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -14,7 +14,12 @@
    "home": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx"
   }
  },
- "errors": [],
+ "errors": [
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-11-26",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-06",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-16",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-26"
+ ],
  "events": [
   {
    "id": "permits:968371",
@@ -36,8 +41,8 @@
   {
    "id": "permits:978290",
    "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
-   "start": "2026-10-26T08:00:00",
-   "end": "2026-10-26T19:30:00",
+   "start": "2026-10-27T08:00:00",
+   "end": "2026-10-27T19:30:00",
    "allDay": false,
    "timesArePermitWindow": true,
    "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
@@ -48,60 +53,6 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024678-1793008800-1793016000@www.prospectpark.org",
-   "title": "It’s My Park Day",
-   "start": "2026-10-26T10:00:00",
-   "end": "2026-10-26T12:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Looking to get involved in a park clean-up effort? Join Prospect Park Alliance for It’s My Park Day to care for the park after busy weekends. All necessary tools will be provided for your volunteer experience. Join It’s…",
-   "tags": [
-    "Environment",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2023/12/Volunteers-at-the-Lake-2023-c-Marcia-Williams.jpg",
-   "url": "https://www.prospectpark.org/event/its-my-park-day-22/2026-10-26/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10020052-1793008800-1793026800@www.prospectpark.org",
-   "title": "Sexual Health Mobile Medical Unit",
-   "start": "2026-10-26T10:00:00",
-   "end": "2026-10-26T15:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
-   "tags": [
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
-   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-10-26/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024977-1793030400-1793052000@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-10-26T16:00:00",
-   "end": "2026-10-26T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-26/",
-   "source": "ppa",
    "canceled": false
   },
   {
