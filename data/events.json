@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T13:04:08.246Z",
+ "updated": "2026-10-28T20:20:21.712Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -157,26 +157,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024574-1793268000-1793286000@www.prospectpark.org",
-   "title": "October Weekday Nature Exploration",
-   "start": "2026-10-29T10:00:00",
-   "end": "2026-10-29T15:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance for nature education programs on Thursdays and Fridays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am –3 pm: Let’s have fun exploring the…",
-   "tags": [
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/october-weekday-nature-exploration-3/2026-10-29/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10022263-1793268000-1793271600@www.prospectpark.org",
    "title": "Prospect Park Stroller Walk",
    "start": "2026-10-29T10:00:00",
@@ -283,26 +263,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
    "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-29/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024575-1793354400-1793372400@www.prospectpark.org",
-   "title": "October Weekday Nature Exploration",
-   "start": "2026-10-30T10:00:00",
-   "end": "2026-10-30T15:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance for nature education programs on Thursdays and Fridays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am –3 pm: Let’s have fun exploring the…",
-   "tags": [
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/october-weekday-nature-exploration-3/2026-10-30/",
    "source": "ppa",
    "canceled": false
   },
@@ -515,25 +475,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2022/03/RS6172_2015-10-18-09.59.47-2-scaled.jpg",
    "url": "https://www.prospectpark.org/event/creepy-crawly-halloween-4/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022748-1793440800-1793444400@www.prospectpark.org",
-   "title": "Dance Fitness with Shape Up NYC at the Boathouse",
-   "start": "2026-10-31T10:00:00",
-   "end": "2026-10-31T11:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance and Shape-up NYC for a fun-filled dance fitness zumba class at the Boathouse! Zumba is a fusion of Latin, International and popular music dance themes creating a dynamic, exciting, effective…",
-   "tags": [
-    "Audubon Center",
-    "Fitness",
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/06/Boathouse1_Retouched_2-copy.jpg",
-   "url": "https://www.prospectpark.org/event/dance-fitness-with-shape-up-nyc-at-the-boathouse-8/2026-10-31/",
    "source": "ppa",
    "canceled": false
   },
@@ -795,44 +736,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024926-1793448000-1793462400@www.prospectpark.org",
-   "title": "Pop-Up Audubon I",
-   "start": "2026-10-31T12:00:00",
-   "end": "2026-10-31T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate Autumn in Prospect Park by supporting migratory birds! Join Prospect Park Alliance Naturalists to design your own colorful autumn leaf window cling. These fun, decorative clings help prevent bird-window…",
-   "tags": [
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Pop-Up Audubon"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/pop-up-audubon-i-11/2026-10-31/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024939-1793448000-1793462400@www.prospectpark.org",
-   "title": "Pop-Up Audubon II",
-   "start": "2026-10-31T12:00:00",
-   "end": "2026-10-31T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Have you ever wondered what lives beneath your feet on the forest floor? Join Prospect Park Alliance naturalists to explore the hidden world of leaf litter. Through hands-on observation, you’ll uncover insects,…",
-   "tags": [
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Pop-Up Audubon"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/09/RS10464_PPA_ADG_Photography_10_23_16-7-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/pop-up-audubon-ii-8/2026-10-31/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "permits:978324",
    "title": "The Stoop Community Trunk Or Treat",
    "start": "2026-10-31T12:00:00",
@@ -945,6 +848,23 @@
    "summary": "",
    "tags": [
     "Open Street Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:973890",
+   "title": "Treats on Fillmore",
+   "start": "2026-10-31T14:00:00",
+   "end": "2026-10-31T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Fillmore Place between Driggs Avenue and Roebling Street",
+   "summary": "",
+   "tags": [
+    "Block Party"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -1466,7 +1386,7 @@
    "start": "2026-11-04T00:00:00",
    "end": "2026-11-04T23:59:59",
    "allDay": false,
-   "location": "",
+   "location": "NY",
    "summary": "Apply by November 4, 2026. learn More & Apply The East Williamsburg DRI is seeking capital projects that advance the community’s vision and goals and support a vibrant neighborhood.",
    "tags": [],
    "image": null,
@@ -1713,27 +1633,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024607-1794045600-1794056400@www.prospectpark.org",
-   "title": "November Weekend Nature Exploration",
-   "start": "2026-11-07T10:00:00",
-   "end": "2026-11-07T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-07/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "permits:930192",
    "title": "8th Annual Veterans Appreciation Parade And Resource Fair",
    "start": "2026-11-07T11:00:00",
@@ -1869,27 +1768,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-08/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024608-1794132000-1794142800@www.prospectpark.org",
-   "title": "November Weekend Nature Exploration",
-   "start": "2026-11-08T10:00:00",
-   "end": "2026-11-08T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-08/",
    "source": "ppa",
    "canceled": false
   },
@@ -2034,12 +1912,26 @@
    "canceled": false
   },
   {
+   "id": "bp:85468-1794304800-1794324600@www.brooklynbp.nyc.gov",
+   "title": "Brooklyn Missing Person day",
+   "start": "2026-11-10T10:00:00",
+   "end": "2026-11-10T15:30:00",
+   "allDay": false,
+   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
+   "summary": "Appointments",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/brooklyn-missing-person-day/",
+   "source": "bp",
+   "canceled": false
+  },
+  {
    "id": "bp:85439-1794315600-1794324600@www.brooklynbp.nyc.gov",
    "title": "Estate Planning Essentials",
    "start": "2026-11-10T13:00:00",
    "end": "2026-11-10T15:30:00",
    "allDay": false,
-   "location": "",
+   "location": "NY",
    "summary": "Register Join us for Part One of our Estate Planning Forum. This forum will provide an overview of the essential documents and important steps you should take to prepare and protect your estate. Participants will learn…",
    "tags": [],
    "image": null,
@@ -2307,27 +2199,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024609-1794650400-1794661200@www.prospectpark.org",
-   "title": "November Weekend Nature Exploration",
-   "start": "2026-11-14T10:00:00",
-   "end": "2026-11-14T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-14/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10024835-1794657600-1794675600@www.prospectpark.org",
    "title": "Carousel Rides",
    "start": "2026-11-14T12:00:00",
@@ -2407,27 +2278,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-15/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024610-1794736800-1794747600@www.prospectpark.org",
-   "title": "November Weekend Nature Exploration",
-   "start": "2026-11-15T10:00:00",
-   "end": "2026-11-15T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-15/",
    "source": "ppa",
    "canceled": false
   },
@@ -2743,27 +2593,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024611-1795255200-1795266000@www.prospectpark.org",
-   "title": "November Weekend Nature Exploration",
-   "start": "2026-11-21T10:00:00",
-   "end": "2026-11-21T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-21/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10024597-1795258800-1795269600@www.prospectpark.org",
    "title": "Park Pitch In: Fall Leaf Raking",
    "start": "2026-11-21T11:00:00",
@@ -2812,27 +2641,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-22/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024612-1795341600-1795352400@www.prospectpark.org",
-   "title": "November Weekend Nature Exploration",
-   "start": "2026-11-22T10:00:00",
-   "end": "2026-11-22T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-22/",
    "source": "ppa",
    "canceled": false
   },
@@ -3077,6 +2885,23 @@
    "canceled": false
   },
   {
+   "id": "permits:944322",
+   "title": "Lang Qi Mei Ling Culture Event",
+   "start": "2026-11-27T15:00:00",
+   "end": "2026-11-27T17:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "841 58 Street",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10025017-1795795200-1795816800@www.prospectpark.org",
    "title": "Fall Festival at Lakeside",
    "start": "2026-11-27T16:00:00",
@@ -3133,27 +2958,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024613-1795860000-1795870800@www.prospectpark.org",
-   "title": "November Weekend Nature Exploration",
-   "start": "2026-11-28T10:00:00",
-   "end": "2026-11-28T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-28/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10022388-1795942800-1795960800@www.prospectpark.org",
    "title": "Sunday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-11-29T09:00:00",
@@ -3167,27 +2971,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-29/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024614-1795946400-1795957200@www.prospectpark.org",
-   "title": "November Weekend Nature Exploration",
-   "start": "2026-11-29T10:00:00",
-   "end": "2026-11-29T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Prospect Park Alliance for nature education programs on Saturdays and Sundays at the Prospect Park Audubon Center, the first urban Audubon Center in the nation. Leaf Art, 10 am–12 pm: Let’s have fun exploring…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Education",
-    "Free",
-    "Kids",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
-   "url": "https://www.prospectpark.org/event/november-weekend-nature-exploration-2/2026-11-29/",
    "source": "ppa",
    "canceled": false
   },
