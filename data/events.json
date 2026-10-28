@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T22:20:21.040Z",
+ "updated": "2026-10-28T05:50:09.094Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -34,60 +34,6 @@
    "canceled": false
   },
   {
-   "id": "permits:978290",
-   "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
-   "start": "2026-10-27T08:00:00",
-   "end": "2026-10-27T19:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024978-1793116800-1793138400@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-10-27T16:00:00",
-   "end": "2026-10-27T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-27/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:965826",
-   "title": "Chess on Underhill Plaza",
-   "start": "2026-10-27T18:30:00",
-   "end": "2026-10-27T21:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
    "id": "permits:930126",
    "title": "HHFM Kings County Hospital Market",
    "start": "2026-10-28T08:00:00",
@@ -98,6 +44,23 @@
    "summary": "",
    "tags": [
     "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:978290",
+   "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
+   "start": "2026-10-28T08:00:00",
+   "end": "2026-10-28T19:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
