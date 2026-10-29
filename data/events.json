@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T01:01:14.568Z",
+ "updated": "2026-10-29T10:05:36.724Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -34,13 +34,13 @@
    "canceled": false
   },
   {
-   "id": "permits:930126",
-   "title": "HHFM Kings County Hospital Market",
-   "start": "2026-10-28T08:00:00",
-   "end": "2026-10-28T15:00:00",
+   "id": "permits:911549",
+   "title": "Borough Park Greenmarket Thursday",
+   "start": "2026-10-29T08:00:00",
+   "end": "2026-10-29T16:00:00",
    "allDay": false,
    "timesArePermitWindow": true,
-   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
+   "location": "14 Avenue between 49 Street and 50 Street",
    "summary": "",
    "tags": [
     "Farmers Market"
@@ -53,86 +53,14 @@
   {
    "id": "permits:978290",
    "title": "Immigrant Culture Month at Avenue C Plaza Extension - September",
-   "start": "2026-10-28T08:00:00",
-   "end": "2026-10-28T19:30:00",
+   "start": "2026-10-29T08:00:00",
+   "end": "2026-10-29T19:30:00",
    "allDay": false,
    "timesArePermitWindow": true,
    "location": "Avenue C Plaza: Avenue C Plaza Mcdonald Avenue between Avenue C and Church Avenue",
    "summary": "",
    "tags": [
     "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10000762-1793174400-1793196000@www.prospectpark.org",
-   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-10-28T08:00:00",
-   "end": "2026-10-28T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-10-28/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024683-1793181600-1793192400@www.prospectpark.org",
-   "title": "Fall Fix-Up",
-   "start": "2026-10-28T10:00:00",
-   "end": "2026-10-28T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
-   "tags": [
-    "Environment",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
-   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-10-28/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024979-1793203200-1793224800@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-10-28T16:00:00",
-   "end": "2026-10-28T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-10-28/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:911549",
-   "title": "Borough Park Greenmarket Thursday",
-   "start": "2026-10-29T08:00:00",
-   "end": "2026-10-29T16:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "14 Avenue between 49 Street and 50 Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -1238,37 +1166,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10022318-1793534400-1793552400@www.prospectpark.org",
-   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
-   "start": "2026-11-01T12:00:00",
-   "end": "2026-11-01T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
-   "tags": [],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
-   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-01/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024543-1793534400-1793552400@www.prospectpark.org",
-   "title": "Haunted Carousel",
-   "start": "2026-11-01T12:00:00",
-   "end": "2026-11-01T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Don’t be scared when you see the haunted carousel! Take a spin on the spooky ride to your favorite Halloween jams at the beloved Prospect Park Carousel. Children’s Corner, $3 per ride; $13 for a book of 5 tickets; Free…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/RS13740_DSC_3329-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/haunted-carousel-4/2026-11-01/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "permits:973129",
    "title": "St Johns Places 7-8 Fall Block Party",
    "start": "2026-11-01T13:00:00",
@@ -1392,6 +1289,23 @@
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/85443/",
    "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "permits:930126",
+   "title": "HHFM Kings County Hospital Market",
+   "start": "2026-11-04T08:00:00",
+   "end": "2026-11-04T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
