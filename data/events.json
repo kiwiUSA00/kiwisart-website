@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T18:03:52.409Z",
+ "updated": "2026-10-30T22:26:05.124Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -1862,6 +1862,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/02/RS13739_DSC_3327-scaled.jpg",
    "url": "https://www.prospectpark.org/event/veterans-day-school-holiday-in-prospect-park-4/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:986905",
+   "title": "Veterans Day Parade",
+   "start": "2026-11-11T10:30:00",
+   "end": "2026-11-11T12:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Whitney Avenue between Plumb 2 Street and Gerritsen Avenue",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
