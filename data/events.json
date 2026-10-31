@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T12:41:26.416Z",
+ "updated": "2026-10-31T19:20:45.782Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -1235,6 +1235,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
    "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-18/2026-11-05/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:936848",
+   "title": "CHIPS Distribution",
+   "start": "2026-11-06T11:30:00",
+   "end": "2026-11-06T12:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
