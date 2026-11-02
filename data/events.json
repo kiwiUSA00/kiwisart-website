@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T00:48:49.845Z",
+ "updated": "2026-11-02T11:19:44.676Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,216 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "permits:898942",
-   "title": "Carroll Gardens Greenmarket Sunday",
-   "start": "2026-11-01T06:00:00",
-   "end": "2026-11-01T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Carroll Street between Smith Street and Court Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:898937",
-   "title": "Cortelyou Greenmarket Sunday",
-   "start": "2026-11-01T06:00:00",
-   "end": "2026-11-01T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Cortelyou Road between Rugby Road and Argyle Road",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:893705",
-   "title": "Down to Earth Park Slope Farmers Market",
-   "start": "2026-11-01T06:00:00",
-   "end": "2026-11-01T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "4th Street between Fifth Avenue and Dead End",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:923926",
-   "title": "RiseBoro Farmers Markets at Irving Square Park",
-   "start": "2026-11-01T09:00:00",
-   "end": "2026-11-01T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022384-1793523600-1793541600@www.prospectpark.org",
-   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-11-01T09:00:00",
-   "end": "2026-11-01T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-01/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024662-1793527200-1793539800@www.prospectpark.org",
-   "title": "Birdwatching: First Sunday Outings",
-   "start": "2026-11-01T10:00:00",
-   "end": "2026-11-01T13:30:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join a member of the Brooklyn Bird Club to explore Prospect Park in search of the many bird species found throughout the year. Along the way, you’ll learn about the park’s diverse habitats, the birds that depend on them…",
-   "tags": [
-    "Audubon Center",
-    "Birdwatching",
-    "Free",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/87/33/8733fc50-b84f-43b9-9aa2-587be973a6d8/bird_watching_elizabeth_keegin_colley_dsc_4889-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/birdwatching-first-sunday-outings-6/2026-11-01/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10025027-1793530800-1793548800@www.prospectpark.org",
-   "title": "Brooklyn FAM 6th Annual Flagship Festival: Shine Your Light",
-   "start": "2026-11-01T11:00:00",
-   "end": "2026-11-01T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Brooklyn FAM’s flagship festival is back for its 6th year! Presented in partnership with the Prospect Park Alliance, this year’s free, family-friendly event celebrates our North, Central, and South American indigenous…",
-   "tags": [
-    "Art",
-    "Audubon Center",
-    "Community Engagement",
-    "Education",
-    "Free",
-    "History"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/BKFAM26_PPA-events-webpage-graphic-1.png",
-   "url": "https://www.prospectpark.org/event/brooklyn-fam-6th-annual-flagship-festival-shine-your-light/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024985-1793530800-1793570400@www.prospectpark.org",
-   "title": "Fall Festival at Lakeside",
-   "start": "2026-11-01T11:00:00",
-   "end": "2026-11-01T22:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Celebrate the season at the Lakeside Fall Festival, a month-long fall experience filled with pumpkins, Haunted Hotel experience, carnival games, family activities, seasonal treats, photo ops, and Halloween fun in the…",
-   "tags": [
-    "Community Engagement",
-    "Food",
-    "Holiday",
-    "Kids",
-    "Lakeside"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/Untitled-design-23-e1791470659533.png",
-   "url": "https://www.prospectpark.org/event/fall-festival-at-lakeside-9/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024828-1793534400-1793552400@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-11-01T12:00:00",
-   "end": "2026-11-01T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-01/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022318-1793534400-1793552400@www.prospectpark.org",
-   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
-   "start": "2026-11-01T12:00:00",
-   "end": "2026-11-01T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
-   "tags": [],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
-   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-01/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024543-1793534400-1793552400@www.prospectpark.org",
-   "title": "Haunted Carousel",
-   "start": "2026-11-01T12:00:00",
-   "end": "2026-11-01T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Don’t be scared when you see the haunted carousel! Take a spin on the spooky ride to your favorite Halloween jams at the beloved Prospect Park Carousel. Children’s Corner, $3 per ride; $13 for a book of 5 tickets; Free…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/07/RS13740_DSC_3329-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/haunted-carousel-4/2026-11-01/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:973129",
-   "title": "St Johns Places 7-8 Fall Block Party",
-   "start": "2026-11-01T13:00:00",
-   "end": "2026-11-01T20:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "St Johns Place between 7 Avenue and 8 Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "ppa:10020053-1793613600-1793631600@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
@@ -812,6 +602,74 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2023/08/RS24648_DSC02000-scaled.jpg",
    "url": "https://www.prospectpark.org/event/battle-of-brooklyn-walking-tour/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:898942",
+   "title": "Carroll Gardens Greenmarket Sunday",
+   "start": "2026-11-08T06:00:00",
+   "end": "2026-11-08T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Carroll Street between Smith Street and Court Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:898937",
+   "title": "Cortelyou Greenmarket Sunday",
+   "start": "2026-11-08T06:00:00",
+   "end": "2026-11-08T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Cortelyou Road between Rugby Road and Argyle Road",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:893705",
+   "title": "Down to Earth Park Slope Farmers Market",
+   "start": "2026-11-08T06:00:00",
+   "end": "2026-11-08T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "4th Street between Fifth Avenue and Dead End",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:923926",
+   "title": "RiseBoro Farmers Markets at Irving Square Park",
+   "start": "2026-11-08T09:00:00",
+   "end": "2026-11-08T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
