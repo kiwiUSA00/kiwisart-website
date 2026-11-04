@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T06:34:28.565Z",
+ "updated": "2026-11-04T17:19:32.280Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -1559,6 +1559,25 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025074-1796475600-1796482800@www.prospectpark.org",
+   "title": "Junior Volunteer Corps",
+   "start": "2026-12-05T13:00:00",
+   "end": "2026-12-05T15:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance for our fall Junior Volunteer Corps! On select weekends, families and youth groups are invited to rake leaves at various locations around the park. All necessary tools will be provided. Open…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Kids",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/11/RS2268_S06A1442-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/junior-volunteer-corps-8/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10022389-1796547600-1796565600@www.prospectpark.org",
    "title": "Sunday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-12-06T09:00:00",
@@ -2001,13 +2020,13 @@
    "canceled": false
   },
   {
-   "id": "ppa:10025035-1798754400-1798763400@www.prospectpark.org",
+   "id": "ppa:10025035-1798754400-1798754400@www.prospectpark.org",
    "title": "New Year's Eve Fireworks in Prospect Park",
    "start": "2026-12-31T22:00:00",
-   "end": "2027-01-01T00:30:00",
+   "end": "2026-12-31T22:00:00",
    "allDay": false,
    "location": "Prospect Park",
-   "summary": "Prospect Park Alliance, the non-profit organization that sustain’s Brooklyn’s flagship park, will present Brooklyn’s most spectacular New Year’s Eve Fireworks celebration at the iconic Grand Army Plaza. Join tens of…",
+   "summary": "Prospect Park Alliance, the non-profit organization that sustains Brooklyn’s flagship park, will present Brooklyn’s most spectacular New Year’s Eve Fireworks celebration at the iconic Grand Army Plaza. Join tens of…",
    "tags": [
     "Free",
     "Holiday",
