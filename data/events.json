@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T23:28:01.524Z",
+ "updated": "2026-11-04T06:34:28.565Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,44 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "ppa:10024589-1793700000-1793725200@www.prospectpark.org",
-   "title": "Election Day School Holiday in Prospect Park",
-   "start": "2026-11-03T10:00:00",
-   "end": "2026-11-03T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance for family friendly programming on the school holiday for Election Day! Nature Exploration Prospect Park Audubon Center, Free, 10 am–3 pm Join Prospect Park Alliance for nature education…",
-   "tags": [
-    "Audubon Center",
-    "Carousel",
-    "Free",
-    "Holiday",
-    "Kids",
-    "Lefferts Historic House"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2022/03/RS6172_2015-10-18-09.59.47-2-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/election-day-school-holiday-in-prospect-park-4/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:984402",
-   "title": "Chess on Underhill Plaza",
-   "start": "2026-11-03T18:30:00",
-   "end": "2026-11-03T21:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "bp:85443-1793750400-1793836799@www.brooklynbp.nyc.gov",
    "title": "Call For Projects Is Now Open",
@@ -692,6 +654,23 @@
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-tuesday/",
    "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "permits:984402",
+   "title": "Chess on Underhill Plaza",
+   "start": "2026-11-10T18:30:00",
+   "end": "2026-11-10T21:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
