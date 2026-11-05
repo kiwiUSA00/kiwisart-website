@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T17:27:38.798Z",
+ "updated": "2026-11-05T23:40:59.986Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -219,6 +219,23 @@
    "summary": "",
    "tags": [
     "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:972926",
+   "title": "Friendsgiving",
+   "start": "2026-11-07T10:00:00",
+   "end": "2026-11-07T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Banker'S Anchor: Banker'S Anchor North 15th Street between Nassau Avenue and Bankers Street",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -818,6 +835,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
    "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-11-14/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:983580",
+   "title": "Holiday Crafts - Music in the Plaza",
+   "start": "2026-11-14T11:30:00",
+   "end": "2026-11-14T17:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
