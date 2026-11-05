@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T23:44:30.255Z",
+ "updated": "2026-11-05T06:56:22.114Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,72 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "bp:85443-1793750400-1793836799@www.brooklynbp.nyc.gov",
-   "title": "Call For Projects Is Now Open",
-   "start": "2026-11-04T00:00:00",
-   "end": "2026-11-04T23:59:59",
-   "allDay": false,
-   "location": "",
-   "summary": "Apply by November 4, 2026. learn More & Apply The East Williamsburg DRI is seeking capital projects that advance the community’s vision and goals and support a vibrant neighborhood.",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/85443/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
-   "id": "permits:930126",
-   "title": "HHFM Kings County Hospital Market",
-   "start": "2026-11-04T08:00:00",
-   "end": "2026-11-04T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10000763-1793779200-1793800800@www.prospectpark.org",
-   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-11-04T08:00:00",
-   "end": "2026-11-04T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-11-04/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024684-1793786400-1793797200@www.prospectpark.org",
-   "title": "Fall Fix-Up",
-   "start": "2026-11-04T10:00:00",
-   "end": "2026-11-04T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
-   "tags": [
-    "Environment",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
-   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-11-04/",
-   "source": "ppa",
-   "canceled": false
-  },
   {
    "id": "permits:911549",
    "title": "Borough Park Greenmarket Thursday",
@@ -667,6 +601,23 @@
    "summary": "",
    "tags": [
     "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:930126",
+   "title": "HHFM Kings County Hospital Market",
+   "start": "2026-11-11T08:00:00",
+   "end": "2026-11-11T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
