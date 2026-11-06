@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T16:48:30.670Z",
+ "updated": "2026-11-06T23:14:14.961Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -169,6 +169,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
    "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-11-07/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:971221",
+   "title": "Playback Festival",
+   "start": "2026-11-07T10:00:00",
+   "end": "2026-11-07T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Lafayette Avenue between Saint Felix Street and Ashland Place",
+   "summary": "",
+   "tags": [
+    "Single Block Festival"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -709,6 +726,23 @@
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/estate-planning-essentials-2/",
    "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "permits:986784",
+   "title": "Fall Artwork",
+   "start": "2026-11-13T10:00:00",
+   "end": "2026-11-19T20:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Banker'S Anchor: Banker'S Anchor North 15th Street between Nassau Avenue and Bankers Street",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -1496,6 +1530,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
    "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-12-05/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:967826",
+   "title": "Santa Land 7th Annual Community Parade",
+   "start": "2026-12-05T12:00:00",
+   "end": "2026-12-05T16:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Washington Avenue between Atlantic Avenue and Dean Street",
+   "summary": "",
+   "tags": [
+    "Parade"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
