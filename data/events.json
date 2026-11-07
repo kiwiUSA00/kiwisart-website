@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T23:14:14.961Z",
+ "updated": "2026-11-07T06:06:49.065Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,23 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "permits:936848",
-   "title": "CHIPS Distribution",
-   "start": "2026-11-06T11:30:00",
-   "end": "2026-11-06T12:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "ppa:10024641-1794036600-1794040200@www.prospectpark.org",
    "title": "FIDO Coffee Bark",
