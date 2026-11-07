@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T13:11:55.804Z",
+ "updated": "2026-11-07T19:28:39.794Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -642,28 +642,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024752-1794477600-1794481200@www.prospectpark.org",
-   "title": "Prospect Park Stroller Walk",
-   "start": "2026-11-12T10:00:00",
-   "end": "2026-11-12T11:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
-   "tags": [
-    "Audubon Center",
-    "Environment",
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Running + Walking",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-11-12/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10019486-1794477600-1794495600@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2026-11-12T10:00:00",
@@ -998,28 +976,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024753-1795082400-1795086000@www.prospectpark.org",
-   "title": "Prospect Park Stroller Walk",
-   "start": "2026-11-19T10:00:00",
-   "end": "2026-11-19T11:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
-   "tags": [
-    "Audubon Center",
-    "Environment",
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Running + Walking",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-11-19/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10019487-1795082400-1795100400@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2026-11-19T10:00:00",
@@ -1263,28 +1219,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024754-1795687200-1795690800@www.prospectpark.org",
-   "title": "Prospect Park Stroller Walk",
-   "start": "2026-11-26T10:00:00",
-   "end": "2026-11-26T11:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
-   "tags": [
-    "Audubon Center",
-    "Environment",
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Running + Walking",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-11-26/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10019488-1795687200-1795705200@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2026-11-26T10:00:00",
@@ -1420,28 +1354,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-02/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024755-1796292000-1796295600@www.prospectpark.org",
-   "title": "Prospect Park Stroller Walk",
-   "start": "2026-12-03T10:00:00",
-   "end": "2026-12-03T11:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
-   "tags": [
-    "Audubon Center",
-    "Environment",
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Running + Walking",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-12-03/",
    "source": "ppa",
    "canceled": false
   },
@@ -1637,28 +1549,6 @@
    "canceled": false
   },
   {
-   "id": "ppa:10024756-1796896800-1796900400@www.prospectpark.org",
-   "title": "Prospect Park Stroller Walk",
-   "start": "2026-12-10T10:00:00",
-   "end": "2026-12-10T11:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
-   "tags": [
-    "Audubon Center",
-    "Environment",
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Running + Walking",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-12-10/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
    "id": "ppa:10019490-1796896800-1796914800@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2026-12-10T10:00:00",
@@ -1760,28 +1650,6 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-16/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024757-1797501600-1797505200@www.prospectpark.org",
-   "title": "Prospect Park Stroller Walk",
-   "start": "2026-12-17T10:00:00",
-   "end": "2026-12-17T11:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Calling all parents and caregivers with children! Join a Prospect Park Alliance Naturalist for a leisurely stroll along Prospect Park’s waterways. Embrace the sound of streams and songs of birds, while enjoying fragrant…",
-   "tags": [
-    "Audubon Center",
-    "Environment",
-    "Free",
-    "Kids",
-    "Nature Programs",
-    "Running + Walking",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2025/02/RS28243_Summer-2024_116-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/prospect-park-stroller-walk-5/2026-12-17/",
    "source": "ppa",
    "canceled": false
   },
