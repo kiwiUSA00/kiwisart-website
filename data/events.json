@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T00:42:58.269Z",
+ "updated": "2026-11-08T10:30:52.872Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,280 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "ppa:10024641-1794036600-1794040200@www.prospectpark.org",
-   "title": "FIDO Coffee Bark",
-   "start": "2026-11-07T07:30:00",
-   "end": "2026-11-07T08:30:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Coffee Bark is an opportunity for Brooklyn dog owners to chat over coffee and pastries while their dogs romp and play over dog biscuits. With dozens of dogs and people, Coffee Bark is an amazing sight. Look for coffee,…",
-   "tags": [
-    "Dogs",
-    "Free"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2021/06/RS1097_182-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/fido-coffee-bark-3/2026-11-07/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:911543",
-   "title": "4th Avenue Sunset Park Greenmarket Saturday",
-   "start": "2026-11-07T08:00:00",
-   "end": "2026-11-07T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "60 Street between 3 Avenue and 4 Avenue",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10001087-1794038400-1794067200@www.prospectpark.org",
-   "title": "Greenmarket at Grand Army Plaza",
-   "start": "2026-11-07T08:00:00",
-   "end": "2026-11-07T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
-   "tags": [
-    "Food",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-11-07/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:923923",
-   "title": "RiseBoro Farmers Markets at Maria Hernandez Park",
-   "start": "2026-11-07T08:00:00",
-   "end": "2026-11-07T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:960998",
-   "title": "Youth Led Farmers Market",
-   "start": "2026-11-07T09:00:00",
-   "end": "2026-11-07T16:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Nostrand Avenue between Flatbush Avenue and Glenwood Road",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:967958",
-   "title": "Annual Play Day",
-   "start": "2026-11-07T09:30:00",
-   "end": "2026-11-07T18:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "252 Westminster Road between Beverley Road and Slocum Place",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:972926",
-   "title": "Friendsgiving",
-   "start": "2026-11-07T10:00:00",
-   "end": "2026-11-07T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Banker'S Anchor: Banker'S Anchor North 15th Street between Nassau Avenue and Bankers Street",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10021109-1794045600-1794052800@www.prospectpark.org",
-   "title": "Introduction to Birdwatching Outings",
-   "start": "2026-11-07T10:00:00",
-   "end": "2026-11-07T12:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
-   "tags": [
-    "Audubon Center",
-    "Birdwatching",
-    "Free",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-11-07/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:971221",
-   "title": "Playback Festival",
-   "start": "2026-11-07T10:00:00",
-   "end": "2026-11-07T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Lafayette Avenue between Saint Felix Street and Ashland Place",
-   "summary": "",
-   "tags": [
-    "Single Block Festival"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:966527",
-   "title": "Recordando a los Ancestros/Remembering Ancestors",
-   "start": "2026-11-07T10:00:00",
-   "end": "2026-11-07T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "44 Street between 5 Avenue and 6 Avenue",
-   "summary": "",
-   "tags": [
-    "Single Block Festival"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:930192",
-   "title": "8th Annual Veterans Appreciation Parade And Resource Fair",
-   "start": "2026-11-07T11:00:00",
-   "end": "2026-11-07T16:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "1676 Park Place",
-   "summary": "",
-   "tags": [
-    "Parade"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024591-1794049200-1794060000@www.prospectpark.org",
-   "title": "Park Pitch In: Trail Care",
-   "start": "2026-11-07T11:00:00",
-   "end": "2026-11-07T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Prospect Park is home to several miles of trails, including areas such as the Peninsula, the Midwood and Lookout Hill. Join Prospect Park Alliance to help care for our trails system. Volunteers will help to mulch and…",
-   "tags": [
-    "Environment",
-    "Free",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/park-pitch-in-trail-care/2026-11-07/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:903060",
-   "title": "2026 Brooklyn Veterans Appreciation Parade",
-   "start": "2026-11-07T12:00:00",
-   "end": "2026-11-07T14:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Eastern Parkway between Nostrand Avenue and Rogers Avenue",
-   "summary": "",
-   "tags": [
-    "Parade"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024831-1794052800-1794070800@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-11-07T12:00:00",
-   "end": "2026-11-07T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-07/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022319-1794052800-1794070800@www.prospectpark.org",
-   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
-   "start": "2026-11-07T12:00:00",
-   "end": "2026-11-07T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
-   "tags": [],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
-   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-07/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10025036-1794060000-1794065400@www.prospectpark.org",
-   "title": "Battle of Brooklyn Walking Tour",
-   "start": "2026-11-07T14:00:00",
-   "end": "2026-11-07T15:30:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Flatbush Library and Prospect Park Alliance for a free tour of the park to learn about the Battle of Brooklyn, the first and largest battle of the American War for Independence. This 90 minute tour begins and ends…",
-   "tags": [
-    "Free",
-    "History",
-    "Lefferts Historic House",
-    "Tours"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2023/08/RS24648_DSC02000-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/battle-of-brooklyn-walking-tour/",
-   "source": "ppa",
-   "canceled": false
-  },
   {
    "id": "permits:898942",
    "title": "Carroll Gardens Greenmarket Sunday",
@@ -724,6 +450,23 @@
    "canceled": false
   },
   {
+   "id": "permits:911543",
+   "title": "4th Avenue Sunset Park Greenmarket Saturday",
+   "start": "2026-11-14T08:00:00",
+   "end": "2026-11-14T17:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "60 Street between 3 Avenue and 4 Avenue",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10001088-1794643200-1794672000@www.prospectpark.org",
    "title": "Greenmarket at Grand Army Plaza",
    "start": "2026-11-14T08:00:00",
@@ -738,6 +481,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-11-14/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:923923",
+   "title": "RiseBoro Farmers Markets at Maria Hernandez Park",
+   "start": "2026-11-14T08:00:00",
+   "end": "2026-11-14T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
