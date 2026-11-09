@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T22:12:50.425Z",
+ "updated": "2026-11-09T06:47:48.510Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -14,176 +14,18 @@
    "home": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx"
   }
  },
- "errors": [],
+ "errors": [
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-11-09",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-11-19",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-11-29",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-09",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-19",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-29",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-08",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-18",
+  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-28"
+ ],
  "events": [
-  {
-   "id": "permits:898942",
-   "title": "Carroll Gardens Greenmarket Sunday",
-   "start": "2026-11-08T06:00:00",
-   "end": "2026-11-08T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Carroll Street between Smith Street and Court Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:898937",
-   "title": "Cortelyou Greenmarket Sunday",
-   "start": "2026-11-08T06:00:00",
-   "end": "2026-11-08T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Cortelyou Road between Rugby Road and Argyle Road",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:893705",
-   "title": "Down to Earth Park Slope Farmers Market",
-   "start": "2026-11-08T06:00:00",
-   "end": "2026-11-08T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "4th Street between Fifth Avenue and Dead End",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:923926",
-   "title": "RiseBoro Farmers Markets at Irving Square Park",
-   "start": "2026-11-08T09:00:00",
-   "end": "2026-11-08T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022385-1794128400-1794146400@www.prospectpark.org",
-   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-11-08T09:00:00",
-   "end": "2026-11-08T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-08/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024592-1794135600-1794146400@www.prospectpark.org",
-   "title": "Park Pitch In: Trail Care",
-   "start": "2026-11-08T11:00:00",
-   "end": "2026-11-08T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Prospect Park is home to several miles of trails, including areas such as the Peninsula, the Midwood and Lookout Hill. Join Prospect Park Alliance to help care for our trails system. Volunteers will help to mulch and…",
-   "tags": [
-    "Environment",
-    "Free",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/park-pitch-in-trail-care/2026-11-08/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10025031-1794135600-1794139200@www.prospectpark.org",
-   "title": "Urban Park Rangers | Fantastic Fungi Mushroom ID Hike",
-   "start": "2026-11-08T11:00:00",
-   "end": "2026-11-08T12:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "This Urban Park Ranger led hike will take you through the forest in Prospect Park to learn how to identify fungi. Participants will learn about the crucial role that mushrooms play in an ecosystem and how natural…",
-   "tags": [
-    "Free",
-    "Urban Park Rangers"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
-   "url": "https://www.prospectpark.org/event/urban-park-rangers-fantastic-fungi-mushroom-id-hike/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:901890",
-   "title": "Walk to End Alzheimers - Brooklyn",
-   "start": "2026-11-08T11:00:00",
-   "end": "2026-11-08T12:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Korean War Veterans Plaza: Korean War Veterans Plaza",
-   "summary": "",
-   "tags": [
-    "Parade"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024832-1794139200-1794157200@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-11-08T12:00:00",
-   "end": "2026-11-08T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-08/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022320-1794139200-1794157200@www.prospectpark.org",
-   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
-   "start": "2026-11-08T12:00:00",
-   "end": "2026-11-08T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
-   "tags": [],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
-   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-08/",
-   "source": "ppa",
-   "canceled": false
-  },
   {
    "id": "ppa:10020054-1794218400-1794236400@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
@@ -199,48 +41,6 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-09/",
    "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "bp:85468-1794304800-1794324600@www.brooklynbp.nyc.gov",
-   "title": "Brooklyn Missing Person day",
-   "start": "2026-11-10T10:00:00",
-   "end": "2026-11-10T15:30:00",
-   "allDay": false,
-   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
-   "summary": "Appointments",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/brooklyn-missing-person-day/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
-   "id": "bp:85439-1794315600-1794324600@www.brooklynbp.nyc.gov",
-   "title": "Estate Planning Essentials",
-   "start": "2026-11-10T13:00:00",
-   "end": "2026-11-10T15:30:00",
-   "allDay": false,
-   "location": "",
-   "summary": "Register Join us for Part One of our Estate Planning Forum. This forum will provide an overview of the essential documents and important steps you should take to prepare and protect your estate. Participants will learn…",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/estate-planning-essentials/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
-   "id": "bp:82781-1794333600-1794340800@www.brooklynbp.nyc.gov",
-   "title": "ULURP Public Hearing Meeting (Tuesday)",
-   "start": "2026-11-10T18:00:00",
-   "end": "2026-11-10T20:00:00",
-   "allDay": false,
-   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
-   "summary": "Public Notice 1) Phoenix Roller Coaster East Walk Demapping A change to the City Map to demap a volume of East Walk to remove an encumbrance from the Phoenix Roller Coaster, is being sought by a private applicant at 3025…",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-tuesday/",
-   "source": "bp",
    "canceled": false
   },
   {
@@ -399,20 +199,6 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
    "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-12/",
    "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "bp:85499-1794490200-1794499200@www.brooklynbp.nyc.gov",
-   "title": "Estate Planning Essentials",
-   "start": "2026-11-12T13:30:00",
-   "end": "2026-11-12T16:00:00",
-   "allDay": false,
-   "location": "",
-   "summary": "Join us for Part One of our Estate Planning Forum. This forum will provide an overview of the essential documents and important steps you should take to prepare and protect your estate. Participants will learn about key…",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/estate-planning-essentials-2/",
-   "source": "bp",
    "canceled": false
   },
   {
@@ -585,6 +371,57 @@
    "canceled": false
   },
   {
+   "id": "permits:898942",
+   "title": "Carroll Gardens Greenmarket Sunday",
+   "start": "2026-11-15T06:00:00",
+   "end": "2026-11-15T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Carroll Street between Smith Street and Court Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:898937",
+   "title": "Cortelyou Greenmarket Sunday",
+   "start": "2026-11-15T06:00:00",
+   "end": "2026-11-15T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Cortelyou Road between Rugby Road and Argyle Road",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:893705",
+   "title": "Down to Earth Park Slope Farmers Market",
+   "start": "2026-11-15T06:00:00",
+   "end": "2026-11-15T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "4th Street between Fifth Avenue and Dead End",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10025037-1794729600-1794744000@www.prospectpark.org",
    "title": "Pre-Thanksgiving Birding in Prospect Park",
    "start": "2026-11-15T08:00:00",
@@ -600,6 +437,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
    "url": "https://www.prospectpark.org/event/pre-thanksgiving-birding-in-prospect-park/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:923926",
+   "title": "RiseBoro Farmers Markets at Irving Square Park",
+   "start": "2026-11-15T09:00:00",
+   "end": "2026-11-15T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -684,20 +538,6 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-16/",
    "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "bp:85502-1794902400-1794909600@www.brooklynbp.nyc.gov",
-   "title": "Strategic Working Group Meeting on Public Safety",
-   "start": "2026-11-17T08:00:00",
-   "end": "2026-11-17T10:00:00",
-   "allDay": false,
-   "location": "",
-   "summary": "Join us to develop practical action plans to address youth violence. 📅 Tuesday, November 17 ⏰ 10:00 AM – 12:00 PM 📍PC Richard & Sons Training Center Gateway Mall, 550 Gateway Drive, Brooklyn, NY 11239",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/strategic-working-group-meeting-on-public-safety/",
-   "source": "bp",
    "canceled": false
   },
   {
@@ -1274,20 +1114,6 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-12-07/",
    "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "bp:82782-1796803200-1796835600@www.brooklynbp.nyc.gov",
-   "title": "ULURP Public Hearing Meeting",
-   "start": "2026-12-09T08:00:00",
-   "end": "2026-12-09T17:00:00",
-   "allDay": false,
-   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
-   "summary": "",
-   "tags": [],
-   "image": "https://www.brooklynbp.nyc.gov/wp-content/uploads/2026/01/FINAL-ULURP-2026-Schedule-2-scaled-e1769702027860.jpg",
-   "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-10/",
-   "source": "bp",
    "canceled": false
   },
   {
