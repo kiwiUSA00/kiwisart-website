@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T06:47:48.510Z",
+ "updated": "2026-11-09T19:52:43.283Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -14,17 +14,7 @@
    "home": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx"
   }
  },
- "errors": [
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-11-09",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-11-19",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-11-29",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-09",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-19",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-29",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-08",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-18",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-28"
- ],
+ "errors": [],
  "events": [
   {
    "id": "ppa:10020054-1794218400-1794236400@www.prospectpark.org",
@@ -41,6 +31,48 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-09/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:85468-1794304800-1794324600@www.brooklynbp.nyc.gov",
+   "title": "Brooklyn Missing Person day",
+   "start": "2026-11-10T10:00:00",
+   "end": "2026-11-10T15:30:00",
+   "allDay": false,
+   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
+   "summary": "Appointments",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/brooklyn-missing-person-day/",
+   "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "bp:85439-1794315600-1794324600@www.brooklynbp.nyc.gov",
+   "title": "Estate Planning Essentials",
+   "start": "2026-11-10T13:00:00",
+   "end": "2026-11-10T15:30:00",
+   "allDay": false,
+   "location": "",
+   "summary": "Register Join us for Part One of our Estate Planning Forum. This forum will provide an overview of the essential documents and important steps you should take to prepare and protect your estate. Participants will learn…",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/estate-planning-essentials/",
+   "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "bp:82781-1794333600-1794340800@www.brooklynbp.nyc.gov",
+   "title": "ULURP Public Hearing Meeting (Tuesday)",
+   "start": "2026-11-10T18:00:00",
+   "end": "2026-11-10T20:00:00",
+   "allDay": false,
+   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
+   "summary": "Public Notice 1) Phoenix Roller Coaster East Walk Demapping A change to the City Map to demap a volume of East Walk to remove an encumbrance from the Phoenix Roller Coaster, is being sought by a private applicant at 3025…",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-tuesday/",
+   "source": "bp",
    "canceled": false
   },
   {
@@ -199,6 +231,20 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
    "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-12/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:85499-1794490200-1794499200@www.brooklynbp.nyc.gov",
+   "title": "Estate Planning Essentials",
+   "start": "2026-11-12T13:30:00",
+   "end": "2026-11-12T16:00:00",
+   "allDay": false,
+   "location": "",
+   "summary": "Join us for Part One of our Estate Planning Forum. This forum will provide an overview of the essential documents and important steps you should take to prepare and protect your estate. Participants will learn about key…",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/estate-planning-essentials-2/",
+   "source": "bp",
    "canceled": false
   },
   {
@@ -538,6 +584,20 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-16/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:85502-1794902400-1794909600@www.brooklynbp.nyc.gov",
+   "title": "Strategic Working Group Meeting on Public Safety",
+   "start": "2026-11-17T08:00:00",
+   "end": "2026-11-17T10:00:00",
+   "allDay": false,
+   "location": "",
+   "summary": "Join us to develop practical action plans to address youth violence. 📅 Tuesday, November 17 ⏰ 10:00 AM – 12:00 PM 📍PC Richard & Sons Training Center Gateway Mall, 550 Gateway Drive, Brooklyn, NY 11239",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/strategic-working-group-meeting-on-public-safety/",
+   "source": "bp",
    "canceled": false
   },
   {
@@ -1114,6 +1174,20 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-12-07/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:82782-1796803200-1796835600@www.brooklynbp.nyc.gov",
+   "title": "ULURP Public Hearing Meeting",
+   "start": "2026-12-09T08:00:00",
+   "end": "2026-12-09T17:00:00",
+   "allDay": false,
+   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
+   "summary": "",
+   "tags": [],
+   "image": "https://www.brooklynbp.nyc.gov/wp-content/uploads/2026/01/FINAL-ULURP-2026-Schedule-2-scaled-e1769702027860.jpg",
+   "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-10/",
+   "source": "bp",
    "canceled": false
   },
   {
