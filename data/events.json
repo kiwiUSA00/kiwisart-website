@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T19:52:43.283Z",
+ "updated": "2026-11-10T03:37:21.576Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -53,7 +53,7 @@
    "start": "2026-11-10T13:00:00",
    "end": "2026-11-10T15:30:00",
    "allDay": false,
-   "location": "",
+   "location": "NY",
    "summary": "Register Join us for Part One of our Estate Planning Forum. This forum will provide an overview of the essential documents and important steps you should take to prepare and protect your estate. Participants will learn…",
    "tags": [],
    "image": null,
@@ -239,7 +239,7 @@
    "start": "2026-11-12T13:30:00",
    "end": "2026-11-12T16:00:00",
    "allDay": false,
-   "location": "",
+   "location": "NY",
    "summary": "Join us for Part One of our Estate Planning Forum. This forum will provide an overview of the essential documents and important steps you should take to prepare and protect your estate. Participants will learn about key…",
    "tags": [],
    "image": null,
@@ -592,11 +592,25 @@
    "start": "2026-11-17T08:00:00",
    "end": "2026-11-17T10:00:00",
    "allDay": false,
-   "location": "",
+   "location": "NY",
    "summary": "Join us to develop practical action plans to address youth violence. 📅 Tuesday, November 17 ⏰ 10:00 AM – 12:00 PM 📍PC Richard & Sons Training Center Gateway Mall, 550 Gateway Drive, Brooklyn, NY 11239",
    "tags": [],
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/strategic-working-group-meeting-on-public-safety/",
+   "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "bp:85518-1794920400-1794933000@www.brooklynbp.nyc.gov",
+   "title": "Free Tenants Legal Clinic",
+   "start": "2026-11-17T13:00:00",
+   "end": "2026-11-17T16:30:00",
+   "allDay": false,
+   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
+   "summary": "",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/free-tenants-legal-clinic/",
    "source": "bp",
    "canceled": false
   },
@@ -1121,6 +1135,20 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2025/11/RS2268_S06A1442-scaled.jpg",
    "url": "https://www.prospectpark.org/event/junior-volunteer-corps-8/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:85513-1796515200-1796601599@www.brooklynbp.nyc.gov",
+   "title": "2027 Brooklyn Pin Competition (Apply by December 6, 2026, at 11:59 PM.)",
+   "start": "2026-12-06T00:00:00",
+   "end": "2026-12-06T23:59:59",
+   "allDay": false,
+   "location": "NY",
+   "summary": "Brooklyn Borough President Antonio Reynoso is calling for Brooklyn-based artists to create the 2027 Brooklyn Pin, a limited-edition collectible that celebrates Brooklyn’s history, culture, and identity. Learn More",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/2027-brooklyn-pin-competition-apply-by-december-6-2026-at-1159-pm/",
+   "source": "bp",
    "canceled": false
   },
   {
