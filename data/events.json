@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T14:58:49.453Z",
+ "updated": "2026-11-10T21:20:28.211Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -345,6 +345,23 @@
    "summary": "",
    "tags": [
     "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:979950",
+   "title": "12th Street Block Party - Nov 14",
+   "start": "2026-11-14T12:00:00",
+   "end": "2026-11-14T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "12 Street between 5 Avenue and 6 Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -838,6 +855,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-23/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:985440",
+   "title": "DTBK Gets Lit 2026",
+   "start": "2026-11-24T18:00:00",
+   "end": "2026-11-24T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Albee Square Plaza: Albee Square Plaza Albee Square between Fulton Street and Bond Street",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
