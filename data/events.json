@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T21:20:28.211Z",
+ "updated": "2026-11-11T06:35:47.747Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,65 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "bp:85468-1794304800-1794324600@www.brooklynbp.nyc.gov",
-   "title": "Brooklyn Missing Person day",
-   "start": "2026-11-10T10:00:00",
-   "end": "2026-11-10T15:30:00",
-   "allDay": false,
-   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
-   "summary": "Appointments",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/brooklyn-missing-person-day/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
-   "id": "bp:85439-1794315600-1794324600@www.brooklynbp.nyc.gov",
-   "title": "Estate Planning Essentials",
-   "start": "2026-11-10T13:00:00",
-   "end": "2026-11-10T15:30:00",
-   "allDay": false,
-   "location": "NY",
-   "summary": "Register Join us for Part One of our Estate Planning Forum. This forum will provide an overview of the essential documents and important steps you should take to prepare and protect your estate. Participants will learn…",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/estate-planning-essentials/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
-   "id": "bp:82781-1794333600-1794340800@www.brooklynbp.nyc.gov",
-   "title": "ULURP Public Hearing Meeting (Tuesday)",
-   "start": "2026-11-10T18:00:00",
-   "end": "2026-11-10T20:00:00",
-   "allDay": false,
-   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
-   "summary": "Public Notice 1) Phoenix Roller Coaster East Walk Demapping A change to the City Map to demap a volume of East Walk to remove an encumbrance from the Phoenix Roller Coaster, is being sought by a private applicant at 3025…",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-tuesday/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
-   "id": "permits:984402",
-   "title": "Chess on Underhill Plaza",
-   "start": "2026-11-10T18:30:00",
-   "end": "2026-11-10T21:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "permits:930126",
    "title": "HHFM Kings County Hospital Market",
@@ -612,6 +553,23 @@
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/free-tenants-legal-clinic/",
    "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "permits:984402",
+   "title": "Chess on Underhill Plaza",
+   "start": "2026-11-17T18:30:00",
+   "end": "2026-11-17T21:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
