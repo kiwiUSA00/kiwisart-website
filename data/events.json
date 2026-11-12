@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T00:47:55.219Z",
+ "updated": "2026-11-12T11:25:17.049Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,79 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "permits:930126",
-   "title": "HHFM Kings County Hospital Market",
-   "start": "2026-11-11T08:00:00",
-   "end": "2026-11-11T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10000764-1794384000-1794405600@www.prospectpark.org",
-   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-11-11T08:00:00",
-   "end": "2026-11-11T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-11-11/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024593-1794391200-1794416400@www.prospectpark.org",
-   "title": "Veterans Day School Holiday in Prospect Park",
-   "start": "2026-11-11T10:00:00",
-   "end": "2026-11-11T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance for family friendly programming on the school holiday for Veterans Day. Nature Exploration Prospect Park Audubon Center, Free, 10 am–3 pm Join Prospect Park Alliance for nature education…",
-   "tags": [
-    "Audubon Center",
-    "Carousel",
-    "Free",
-    "Holiday",
-    "Kids",
-    "Lefferts Historic House"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/02/RS13739_DSC_3327-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/veterans-day-school-holiday-in-prospect-park-4/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:986905",
-   "title": "Veterans Day Parade",
-   "start": "2026-11-11T10:30:00",
-   "end": "2026-11-11T12:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Whitney Avenue between Plumb 2 Street and Gerritsen Avenue",
-   "summary": "",
-   "tags": [
-    "Parade"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "permits:911549",
    "title": "Borough Park Greenmarket Thursday",
@@ -566,6 +493,23 @@
    "summary": "",
    "tags": [
     "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:930126",
+   "title": "HHFM Kings County Hospital Market",
+   "start": "2026-11-18T08:00:00",
+   "end": "2026-11-18T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
