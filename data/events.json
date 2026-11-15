@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T22:30:43.608Z",
+ "updated": "2026-11-15T06:42:52.257Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -31,158 +31,6 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:911543",
-   "title": "4th Avenue Sunset Park Greenmarket Saturday",
-   "start": "2026-11-14T08:00:00",
-   "end": "2026-11-14T17:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "60 Street between 3 Avenue and 4 Avenue",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10001088-1794643200-1794672000@www.prospectpark.org",
-   "title": "Greenmarket at Grand Army Plaza",
-   "start": "2026-11-14T08:00:00",
-   "end": "2026-11-14T16:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "At what other market can you do all your food shopping, sample local wine and explore Brooklyn’s favorite park? Established in 1989, the Grand Army Plaza greenmarket is the flagship Brooklyn market. EBT/Food Stamps and…",
-   "tags": [
-    "Food",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-11-14/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:923923",
-   "title": "RiseBoro Farmers Markets at Maria Hernandez Park",
-   "start": "2026-11-14T08:00:00",
-   "end": "2026-11-14T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10021110-1794650400-1794657600@www.prospectpark.org",
-   "title": "Introduction to Birdwatching Outings",
-   "start": "2026-11-14T10:00:00",
-   "end": "2026-11-14T12:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Whether you’re new to birding or looking to build your skills, this introductory outing is a great way to explore Prospect Park and learn about the birds that visit throughout the year. Join a member of the Brooklyn Bird…",
-   "tags": [
-    "Audubon Center",
-    "Birdwatching",
-    "Free",
-    "Nature Programs"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-11-14/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "permits:983580",
-   "title": "Holiday Crafts - Music in the Plaza",
-   "start": "2026-11-14T11:30:00",
-   "end": "2026-11-14T17:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:979950",
-   "title": "12th Street Block Party - Nov 14",
-   "start": "2026-11-14T12:00:00",
-   "end": "2026-11-14T19:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "12 Street between 5 Avenue and 6 Avenue",
-   "summary": "",
-   "tags": [
-    "Block Party"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024835-1794657600-1794675600@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-11-14T12:00:00",
-   "end": "2026-11-14T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-14/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022321-1794657600-1794675600@www.prospectpark.org",
-   "title": "Exhibit: The Shirley Chisholm Way: Brooklyn's Blueprint for Change",
-   "start": "2026-11-14T12:00:00",
-   "end": "2026-11-14T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance and Shirley Chisholm Cultural Institute (SCCI) for a new exhibit that explores how Brooklyn’s beloved daughter broke down gender and racial barriers to fight for her community, becoming the…",
-   "tags": [],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/03/Shirley-Chisholm-c.-Pictorial-Parade-Getty-Images.png",
-   "url": "https://www.prospectpark.org/event/the-shirley-chisholm-way-brooklyns-blueprint-for-change-4/2026-11-14/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10025032-1794661200-1794666600@www.prospectpark.org",
-   "title": "Urban Park Rangers | Fall Foliage Hike",
-   "start": "2026-11-14T13:00:00",
-   "end": "2026-11-14T14:30:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Urban Park Rangers on a beautiful stroll around Prospect Park as we celebrate the changing of the seasons! Learn about the ecology of a fall forest and the science of the changing colors all while enjoying one…",
-   "tags": [
-    "Free",
-    "Urban Park Rangers"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
-   "url": "https://www.prospectpark.org/event/urban-park-rangers-fall-foliage-hike/",
-   "source": "ppa",
    "canceled": false
   },
   {
@@ -538,6 +386,23 @@
    "canceled": false
   },
   {
+   "id": "permits:911543",
+   "title": "4th Avenue Sunset Park Greenmarket Saturday",
+   "start": "2026-11-21T08:00:00",
+   "end": "2026-11-21T17:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "60 Street between 3 Avenue and 4 Avenue",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10001089-1795248000-1795276800@www.prospectpark.org",
    "title": "Greenmarket at Grand Army Plaza",
    "start": "2026-11-21T08:00:00",
@@ -552,6 +417,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/greenmarket-at-grand-army-plaza-2/2026-11-21/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:923923",
+   "title": "RiseBoro Farmers Markets at Maria Hernandez Park",
+   "start": "2026-11-21T08:00:00",
+   "end": "2026-11-21T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -589,6 +471,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
    "url": "https://www.prospectpark.org/event/park-pitch-in-fall-leaf-raking/2026-11-21/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:983580",
+   "title": "Holiday Crafts - Music in the Plaza",
+   "start": "2026-11-21T11:30:00",
+   "end": "2026-11-21T17:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
