@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T19:40:18.488Z",
+ "updated": "2026-11-17T03:57:22.112Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -56,7 +56,7 @@
    "start": "2026-11-17T08:00:00",
    "end": "2026-11-17T10:00:00",
    "allDay": false,
-   "location": "NY",
+   "location": "",
    "summary": "Join us to develop practical action plans to address youth violence. 📅 Tuesday, November 17 ⏰ 10:00 AM – 12:00 PM 📍PC Richard & Sons Training Center Gateway Mall, 550 Gateway Drive, Brooklyn, NY 11239",
    "tags": [],
    "image": null,
@@ -811,7 +811,7 @@
    "start": "2026-12-06T00:00:00",
    "end": "2026-12-06T23:59:59",
    "allDay": false,
-   "location": "NY",
+   "location": "",
    "summary": "Brooklyn Borough President Antonio Reynoso is calling for Brooklyn-based artists to create the 2027 Brooklyn Pin, a limited-edition collectible that celebrates Brooklyn’s history, culture, and identity. Learn More",
    "tags": [],
    "image": null,
@@ -870,6 +870,20 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-12-07/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:85535-1796662800-1796673600@www.brooklynbp.nyc.gov",
+   "title": "Narcan Training: For Restaurant, Entertainment & Nightlife Business Operators",
+   "start": "2026-12-07T17:00:00",
+   "end": "2026-12-07T20:00:00",
+   "allDay": false,
+   "location": "",
+   "summary": "Register",
+   "tags": [],
+   "image": null,
+   "url": "https://www.brooklynbp.nyc.gov/event/narcan-training-for-restaurant-entertainment-nightlife-business-operators/",
+   "source": "bp",
    "canceled": false
   },
   {
