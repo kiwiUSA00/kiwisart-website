@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T00:59:38.242Z",
+ "updated": "2026-11-18T11:51:29.922Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -24,51 +24,6 @@
    "allDay": false,
    "timesArePermitWindow": true,
    "location": "Banker'S Anchor: Banker'S Anchor North 15th Street between Nassau Avenue and Bankers Street",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "bp:85502-1794902400-1794909600@www.brooklynbp.nyc.gov",
-   "title": "Strategic Working Group Meeting on Public Safety",
-   "start": "2026-11-17T08:00:00",
-   "end": "2026-11-17T10:00:00",
-   "allDay": false,
-   "location": "",
-   "summary": "Join us to develop practical action plans to address youth violence. 📅 Tuesday, November 17 ⏰ 10:00 AM – 12:00 PM 📍PC Richard & Sons Training Center Gateway Mall, 550 Gateway Drive, Brooklyn, NY 11239",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/strategic-working-group-meeting-on-public-safety/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
-   "id": "bp:85518-1794920400-1794933000@www.brooklynbp.nyc.gov",
-   "title": "Free Tenants Legal Clinic",
-   "start": "2026-11-17T13:00:00",
-   "end": "2026-11-17T16:30:00",
-   "allDay": false,
-   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
-   "summary": "",
-   "tags": [],
-   "image": null,
-   "url": "https://www.brooklynbp.nyc.gov/event/free-tenants-legal-clinic/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
-   "id": "permits:984402",
-   "title": "Chess on Underhill Plaza",
-   "start": "2026-11-17T18:30:00",
-   "end": "2026-11-17T21:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
    "summary": "",
    "tags": [
     "Plaza Event"
@@ -516,6 +471,23 @@
    "allDay": false,
    "timesArePermitWindow": true,
    "location": "Albee Square Plaza: Albee Square Plaza Albee Square between Fulton Street and Bond Street",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:984402",
+   "title": "Chess on Underhill Plaza",
+   "start": "2026-11-24T18:30:00",
+   "end": "2026-11-24T21:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
    "summary": "",
    "tags": [
     "Plaza Event"
