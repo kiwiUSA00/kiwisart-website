@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T11:51:29.922Z",
+ "updated": "2026-11-18T20:38:12.865Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -100,6 +100,24 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025469-1795082400-1795091400@www.prospectpark.org",
+   "title": "Lawn and Field Care",
+   "start": "2026-11-19T10:00:00",
+   "end": "2026-11-19T12:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance this fall to help spruce up the park’s lawns and sports fields after a busy summer season. Adult volunteers will have the opportunity to help our Lawn and Field staff on a variety of projects.…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
+   "url": "https://www.prospectpark.org/event/lawn-and-field-care/2026-11-19/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -672,6 +690,24 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025470-1796205600-1796214600@www.prospectpark.org",
+   "title": "Lawn and Field Care",
+   "start": "2026-12-02T10:00:00",
+   "end": "2026-12-02T12:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance this fall to help spruce up the park’s lawns and sports fields after a busy summer season. Adult volunteers will have the opportunity to help our Lawn and Field staff on a variety of projects.…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
+   "url": "https://www.prospectpark.org/event/lawn-and-field-care/2026-12-02/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10019489-1796292000-1796310000@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2026-12-03T10:00:00",
@@ -685,6 +721,22 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-12-03/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025472-1796454000-1796468400@www.prospectpark.org",
+   "title": "NYCRUNS Ugly Sweater 5K",
+   "start": "2026-12-05T07:00:00",
+   "end": "2026-12-05T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join NYCRUNS for the Ugly Sweater 5K in Prospect Park. What’s better than a few festive holiday sweaters? A whole park full of them! Don your most delightfully tacky holiday knit—or whatever you feel most comfortable…",
+   "tags": [
+    "Running + Walking"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/6e/54/6e548d8e-abdd-448a-90ef-19dfef680f53/turkeytrotrunning.jpg",
+   "url": "https://www.prospectpark.org/event/nycruns-ugly-sweater-5k/",
    "source": "ppa",
    "canceled": false
   },
@@ -759,6 +811,24 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025449-1796473800-1796474700@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-05T12:30:00",
+   "end": "2026-12-05T12:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-05/1/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10025074-1796475600-1796482800@www.prospectpark.org",
    "title": "Junior Volunteer Corps",
    "start": "2026-12-05T13:00:00",
@@ -774,6 +844,24 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2025/11/RS2268_S06A1442-scaled.jpg",
    "url": "https://www.prospectpark.org/event/junior-volunteer-corps-8/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025450-1796481000-1796481900@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-05T14:30:00",
+   "end": "2026-12-05T14:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-05/2/",
    "source": "ppa",
    "canceled": false
   },
@@ -824,6 +912,60 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/87/33/8733fc50-b84f-43b9-9aa2-587be973a6d8/bird_watching_elizabeth_keegin_colley_dsc_4889-scaled.jpg",
    "url": "https://www.prospectpark.org/event/birdwatching-first-sunday-outings-6/2026-12-06/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025473-1796551200-1796556600@www.prospectpark.org",
+   "title": "Urban Park Rangers | Doggie Day Hike",
+   "start": "2026-12-06T10:00:00",
+   "end": "2026-12-06T11:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Take a stroll through the forest with your four legged friend while playing some dog and human trivia on this dog-friendly hike. Dogs are required to be on-leash. Dog lovers without dogs are also welcomed to participate.…",
+   "tags": [
+    "Dogs",
+    "Free",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-doggie-day-hike/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025451-1796560200-1796561100@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-06T12:30:00",
+   "end": "2026-12-06T12:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-06/1/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025452-1796567400-1796568300@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-06T14:30:00",
+   "end": "2026-12-06T14:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-06/2/",
    "source": "ppa",
    "canceled": false
   },
@@ -944,6 +1086,42 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025453-1797078600-1797079500@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-12T12:30:00",
+   "end": "2026-12-12T12:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-12/1/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025454-1797085800-1797086700@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-12T14:30:00",
+   "end": "2026-12-12T14:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-12/2/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10022390-1797152400-1797170400@www.prospectpark.org",
    "title": "Sunday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-12-13T09:00:00",
@@ -957,6 +1135,42 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-12-13/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025455-1797165000-1797165900@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-13T12:30:00",
+   "end": "2026-12-13T12:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-13/1/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025456-1797172200-1797173100@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-13T14:30:00",
+   "end": "2026-12-13T14:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-13/2/",
    "source": "ppa",
    "canceled": false
   },
@@ -992,6 +1206,24 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-16/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025471-1797415200-1797424200@www.prospectpark.org",
+   "title": "Lawn and Field Care",
+   "start": "2026-12-16T10:00:00",
+   "end": "2026-12-16T12:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance this fall to help spruce up the park’s lawns and sports fields after a busy summer season. Adult volunteers will have the opportunity to help our Lawn and Field staff on a variety of projects.…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
+   "url": "https://www.prospectpark.org/event/lawn-and-field-care/2026-12-16/",
    "source": "ppa",
    "canceled": false
   },
@@ -1049,6 +1281,42 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025457-1797683400-1797684300@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-19T12:30:00",
+   "end": "2026-12-19T12:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-19/1/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025458-1797690600-1797691500@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-19T14:30:00",
+   "end": "2026-12-19T14:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-19/2/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10022391-1797757200-1797775200@www.prospectpark.org",
    "title": "Sunday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-12-20T09:00:00",
@@ -1062,6 +1330,42 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-12-20/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025459-1797769800-1797770700@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-20T12:30:00",
+   "end": "2026-12-20T12:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-20/1/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025460-1797777000-1797777900@www.prospectpark.org",
+   "title": "Skate with Santa at Lakeside",
+   "start": "2026-12-20T14:30:00",
+   "end": "2026-12-20T14:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Celebrate the holiday season with a magical skating experience at the LeFrak Center at Lakeside in Prospect Park! Santa Claus is trading his sleigh for a pair of skates and joining us on the ice for a limited time this…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/IMG_0086-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/skate-with-santa-at-lakeside/2026-12-20/2/",
    "source": "ppa",
    "canceled": false
   },
