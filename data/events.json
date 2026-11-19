@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T11:48:25.888Z",
+ "updated": "2026-11-19T20:43:42.903Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -634,6 +634,23 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2026-11-30/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:980218",
+   "title": "Holiday Tree Lighting",
+   "start": "2026-11-30T17:00:00",
+   "end": "2026-11-30T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Knickerbocker Plaza: Knickerbocker Plaza Myrtle Avenue between Knickerbocker Avenue and Greene Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -1596,6 +1613,25 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025512-1798243200-1799625599@www.prospectpark.org",
+   "title": "Holiday Tree Drop-Off in Prospect Park",
+   "start": "2026-12-26",
+   "end": "2027-01-11",
+   "allDay": true,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance in recycling your holiday tree! Starting December 26, do the Earth a favor and leave your holiday tree along the Prospect Park perimeter fence near 3rd Street Entrance, Lincoln Road Entrance…",
+   "tags": [
+    "Community Engagement",
+    "Environment",
+    "Free",
+    "Holiday"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS17360_PPA-NYC-Mulchfest-370.jpg",
+   "url": "https://www.prospectpark.org/event/holiday-tree-drop-off-in-prospect-park-4/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10001094-1798272000-1798300800@www.prospectpark.org",
    "title": "Greenmarket at Grand Army Plaza",
    "start": "2026-12-26T08:00:00",
@@ -1867,6 +1903,25 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025508-1798718400-1798732800@www.prospectpark.org",
+   "title": "Winter Recess in Prospect Park",
+   "start": "2026-12-31T12:00:00",
+   "end": "2026-12-31T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Make the most of winter break with a wild adventure in Prospect Park! Who’s hiding beneath the leaves? Which animals are still active in the cold? And how do plants and wildlife survive the winter? Join Prospect Park…",
+   "tags": [
+    "Audubon Center",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/winter-recess-in-prospect-park-4/2026-12-31/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10025035-1798754400-1798754400@www.prospectpark.org",
    "title": "New Year's Eve Celebration in Prospect Park",
    "start": "2026-12-31T22:00:00",
@@ -1882,6 +1937,25 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2025/11/RS6190_Prospect-Park-Grand-Army-Plaza-c-2012-Andrew-Gardner3.jpg",
    "url": "https://www.prospectpark.org/event/new-years-eve-fireworks-in-prospect-park-3/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025509-1798804800-1798819200@www.prospectpark.org",
+   "title": "Winter Recess in Prospect Park",
+   "start": "2027-01-01T12:00:00",
+   "end": "2027-01-01T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Make the most of winter break with a wild adventure in Prospect Park! Who’s hiding beneath the leaves? Which animals are still active in the cold? And how do plants and wildlife survive the winter? Join Prospect Park…",
+   "tags": [
+    "Audubon Center",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/winter-recess-in-prospect-park-4/2027-01-01/",
    "source": "ppa",
    "canceled": false
   },
@@ -1922,6 +1996,25 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025510-1798891200-1798905600@www.prospectpark.org",
+   "title": "Winter Recess in Prospect Park",
+   "start": "2027-01-02T12:00:00",
+   "end": "2027-01-02T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Make the most of winter break with a wild adventure in Prospect Park! Who’s hiding beneath the leaves? Which animals are still active in the cold? And how do plants and wildlife survive the winter? Join Prospect Park…",
+   "tags": [
+    "Audubon Center",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/winter-recess-in-prospect-park-4/2027-01-02/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10024664-1798970400-1798983000@www.prospectpark.org",
    "title": "Birdwatching: First Sunday Outings",
    "start": "2027-01-03T10:00:00",
@@ -1937,6 +2030,25 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/87/33/8733fc50-b84f-43b9-9aa2-587be973a6d8/bird_watching_elizabeth_keegin_colley_dsc_4889-scaled.jpg",
    "url": "https://www.prospectpark.org/event/birdwatching-first-sunday-outings-6/2027-01-03/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025511-1798977600-1798992000@www.prospectpark.org",
+   "title": "Winter Recess in Prospect Park",
+   "start": "2027-01-03T12:00:00",
+   "end": "2027-01-03T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Make the most of winter break with a wild adventure in Prospect Park! Who’s hiding beneath the leaves? Which animals are still active in the cold? And how do plants and wildlife survive the winter? Join Prospect Park…",
+   "tags": [
+    "Audubon Center",
+    "Free",
+    "Kids",
+    "Nature Programs"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/winter-recess-in-prospect-park-4/2027-01-03/",
    "source": "ppa",
    "canceled": false
   },
@@ -2029,6 +2141,42 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025515-1799488800-1799503200@www.prospectpark.org",
+   "title": "Mulchfest in Prospect Park",
+   "start": "2027-01-09T10:00:00",
+   "end": "2027-01-09T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance on Saturday, January 9, and Sunday, January 10, for Mulchfest, an annual citywide event! Bring your holiday tree to Prospect Park’s 3rd Street or Park Circle chipping locations to be…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/19/27/19274a90-70dd-4fa3-8ab2-e33eb1eec708/mulchfest_2017.jpg",
+   "url": "https://www.prospectpark.org/event/mulchfest-in-prospect-park/2027-01-09/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025516-1799575200-1799589600@www.prospectpark.org",
+   "title": "Mulchfest in Prospect Park",
+   "start": "2027-01-10T10:00:00",
+   "end": "2027-01-10T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance on Saturday, January 9, and Sunday, January 10, for Mulchfest, an annual citywide event! Bring your holiday tree to Prospect Park’s 3rd Street or Park Circle chipping locations to be…",
+   "tags": [
+    "Environment",
+    "Free",
+    "Volunteer"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/19/27/19274a90-70dd-4fa3-8ab2-e33eb1eec708/mulchfest_2017.jpg",
+   "url": "https://www.prospectpark.org/event/mulchfest-in-prospect-park/2027-01-10/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10020063-1799661600-1799679600@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2027-01-11T10:00:00",
@@ -2077,6 +2225,22 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2027-01-14/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025517-1800082800-1800097200@www.prospectpark.org",
+   "title": "NYCRUNS  Frozen Pigeon 5K",
+   "start": "2027-01-16T07:00:00",
+   "end": "2027-01-16T11:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Kick off your 2027 running calendar in Prospect Park! The winter air may be crisp, but the park will be buzzing with energy as thousands of runners take to the loop for the NYCRUNS Frozen Pigeon 5K. Whether you are…",
+   "tags": [
+    "Running + Walking"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/6e/54/6e548d8e-abdd-448a-90ef-19dfef680f53/turkeytrotrunning.jpg",
+   "url": "https://www.prospectpark.org/event/nycruns-frozen-pigeon-5k/",
    "source": "ppa",
    "canceled": false
   },
@@ -2130,6 +2294,47 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit-2/2027-01-18/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025518-1800273600-1800290700@www.prospectpark.org",
+   "title": "Martin Luther King Jr. Day School Holiday in Prospect Park",
+   "start": "2027-01-18T12:00:00",
+   "end": "2027-01-18T16:45:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Prospect Park Alliance at the Prospect Park Audubon Center, LeFrak Center at Lakeside and the Tennis Center for the Martin Luther King Jr. Day School Holiday in Prospect Park! Nature Exploration, 12–4 PM Prospect…",
+   "tags": [
+    "Audubon Center",
+    "Education",
+    "Free",
+    "Holiday",
+    "Kids",
+    "Lakeside",
+    "Nature Programs",
+    "Tennis"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS6481_Pop-Up-Audubon_2016_Seck11.jpg",
+   "url": "https://www.prospectpark.org/event/martin-luther-king-jr-day-school-holiday-in-prospect-park-4/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025519-1800277200-1800288000@www.prospectpark.org",
+   "title": "Martin Luther King Jr. Day Tennis Program",
+   "start": "2027-01-18T13:00:00",
+   "end": "2027-01-18T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Start 2027 out strong on Monday, January 18, at the Prospect Park Tennis Center! The Martin Luther King Jr. Day Program features fast-paced station drills for adults and youth, focusing on specific skills including…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Wellness"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/01/dc08c16d-89d4-e300-c95d-105e26c0ba66.jpg",
+   "url": "https://www.prospectpark.org/event/martin-luther-king-jr-day-tennis-program-2/",
    "source": "ppa",
    "canceled": false
   },
