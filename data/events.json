@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T20:38:12.865Z",
+ "updated": "2026-11-19T02:37:39.200Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -725,6 +725,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025487-1796398200-1796403600@www.prospectpark.org",
+   "title": "Grand Army Plaza Menorah Lighting",
+   "start": "2026-12-04T15:30:00",
+   "end": "2026-12-04T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "The Largest Menorah in Brooklyn has been towering over New York since 1985 and is a must on everyone’s calendar, Jews and non-Jews alike. Every night of Chanukah, thousands celebrate with the accompaniment of live music…",
+   "tags": [
+    "Free",
+    "Holiday"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/Screen-Shot-2022-11-11-at-3.37.40-PM.png",
+   "url": "https://www.prospectpark.org/event/grand-army-plaza-menorah-lighting-3/2026-12-04/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10025472-1796454000-1796468400@www.prospectpark.org",
    "title": "NYCRUNS Ugly Sweater 5K",
    "start": "2026-12-05T07:00:00",
@@ -866,6 +883,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025488-1796498100-1796502600@www.prospectpark.org",
+   "title": "Grand Army Plaza Menorah Lighting",
+   "start": "2026-12-05T19:15:00",
+   "end": "2026-12-05T20:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "The Largest Menorah in Brooklyn has been towering over New York since 1985 and is a must on everyone’s calendar, Jews and non-Jews alike. Every night of Chanukah, thousands celebrate with the accompaniment of live music…",
+   "tags": [
+    "Free",
+    "Holiday"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/Screen-Shot-2022-11-11-at-3.37.40-PM.png",
+   "url": "https://www.prospectpark.org/event/grand-army-plaza-menorah-lighting-3/2026-12-05/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "bp:85513-1796515200-1796601599@www.brooklynbp.nyc.gov",
    "title": "2027 Brooklyn Pin Competition (Apply by December 6, 2026, at 11:59 PM.)",
    "start": "2026-12-06T00:00:00",
@@ -970,6 +1004,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025489-1796572800-1796583600@www.prospectpark.org",
+   "title": "Grand Army Plaza Menorah Lighting",
+   "start": "2026-12-06T16:00:00",
+   "end": "2026-12-06T19:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "The Largest Menorah in Brooklyn has been towering over New York since 1985 and is a must on everyone’s calendar, Jews and non-Jews alike. Every night of Chanukah, thousands celebrate with the accompaniment of live music…",
+   "tags": [
+    "Free",
+    "Holiday"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/Screen-Shot-2022-11-11-at-3.37.40-PM.png",
+   "url": "https://www.prospectpark.org/event/grand-army-plaza-menorah-lighting-3/2026-12-06/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10020058-1796637600-1796655600@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2026-12-07T10:00:00",
@@ -998,6 +1049,40 @@
    "image": null,
    "url": "https://www.brooklynbp.nyc.gov/event/narcan-training-for-restaurant-entertainment-nightlife-business-operators/",
    "source": "bp",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025490-1796666400-1796671800@www.prospectpark.org",
+   "title": "Grand Army Plaza Menorah Lighting",
+   "start": "2026-12-07T18:00:00",
+   "end": "2026-12-07T19:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "The Largest Menorah in Brooklyn has been towering over New York since 1985 and is a must on everyone’s calendar, Jews and non-Jews alike. Every night of Chanukah, thousands celebrate with the accompaniment of live music…",
+   "tags": [
+    "Free",
+    "Holiday"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/Screen-Shot-2022-11-11-at-3.37.40-PM.png",
+   "url": "https://www.prospectpark.org/event/grand-army-plaza-menorah-lighting-3/2026-12-07/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025491-1796752800-1796758200@www.prospectpark.org",
+   "title": "Grand Army Plaza Menorah Lighting",
+   "start": "2026-12-08T18:00:00",
+   "end": "2026-12-08T19:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "The Largest Menorah in Brooklyn has been towering over New York since 1985 and is a must on everyone’s calendar, Jews and non-Jews alike. Every night of Chanukah, thousands celebrate with the accompaniment of live music…",
+   "tags": [
+    "Free",
+    "Holiday"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/Screen-Shot-2022-11-11-at-3.37.40-PM.png",
+   "url": "https://www.prospectpark.org/event/grand-army-plaza-menorah-lighting-3/2026-12-08/",
+   "source": "ppa",
    "canceled": false
   },
   {
@@ -1033,6 +1118,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025492-1796839200-1796844600@www.prospectpark.org",
+   "title": "Grand Army Plaza Menorah Lighting",
+   "start": "2026-12-09T18:00:00",
+   "end": "2026-12-09T19:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "The Largest Menorah in Brooklyn has been towering over New York since 1985 and is a must on everyone’s calendar, Jews and non-Jews alike. Every night of Chanukah, thousands celebrate with the accompaniment of live music…",
+   "tags": [
+    "Free",
+    "Holiday"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/Screen-Shot-2022-11-11-at-3.37.40-PM.png",
+   "url": "https://www.prospectpark.org/event/grand-army-plaza-menorah-lighting-3/2026-12-09/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10019490-1796896800-1796914800@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
    "start": "2026-12-10T10:00:00",
@@ -1046,6 +1148,40 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
    "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-12-10/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025493-1796925600-1796931000@www.prospectpark.org",
+   "title": "Grand Army Plaza Menorah Lighting",
+   "start": "2026-12-10T18:00:00",
+   "end": "2026-12-10T19:30:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "The Largest Menorah in Brooklyn has been towering over New York since 1985 and is a must on everyone’s calendar, Jews and non-Jews alike. Every night of Chanukah, thousands celebrate with the accompaniment of live music…",
+   "tags": [
+    "Free",
+    "Holiday"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/Screen-Shot-2022-11-11-at-3.37.40-PM.png",
+   "url": "https://www.prospectpark.org/event/grand-army-plaza-menorah-lighting-3/2026-12-10/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025494-1797003000-1797008400@www.prospectpark.org",
+   "title": "Grand Army Plaza Menorah Lighting",
+   "start": "2026-12-11T15:30:00",
+   "end": "2026-12-11T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "The Largest Menorah in Brooklyn has been towering over New York since 1985 and is a must on everyone’s calendar, Jews and non-Jews alike. Every night of Chanukah, thousands celebrate with the accompaniment of live music…",
+   "tags": [
+    "Free",
+    "Holiday"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/Screen-Shot-2022-11-11-at-3.37.40-PM.png",
+   "url": "https://www.prospectpark.org/event/grand-army-plaza-menorah-lighting-3/2026-12-11/",
    "source": "ppa",
    "canceled": false
   },
@@ -1082,6 +1218,25 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2025/08/RS21286_DSC_9940-scaled.jpg",
    "url": "https://www.prospectpark.org/event/introduction-to-birdwatching-outings-3-2/2026-12-12/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025474-1797073200-1797076800@www.prospectpark.org",
+   "title": "Urban Park Rangers | Puppet Making and Puppet Show",
+   "start": "2026-12-12T11:00:00",
+   "end": "2026-12-12T12:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Urban Park Rangers for a whimsical winter adventure in Prospect Park! After a short nature walk for inspiration, you’ll design and create your very own storyteller puppet to bring the park’s creatures and…",
+   "tags": [
+    "Free",
+    "Kids",
+    "Nature Programs",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-puppet-making-and-puppet-show/",
    "source": "ppa",
    "canceled": false
   },
@@ -1439,6 +1594,43 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025475-1798279200-1798285800@www.prospectpark.org",
+   "title": "Winter Holiday Clinic",
+   "start": "2026-12-26T10:00:00",
+   "end": "2026-12-26T11:50:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Make the most of your winter break with four days of skating, skill-building, and fun at the LeFrak Center at Lakeside in Prospect Park! Our Winter Holiday Break Clinic is a great opportunity for skaters to develop their…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/01/RS4916_photo353.jpg",
+   "url": "https://www.prospectpark.org/event/winter-holiday-clinic/2026-12-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025076-1798286400-1798300800@www.prospectpark.org",
+   "title": "Birds of a Feather, Count Together! A Family Winter Bird Count",
+   "start": "2026-12-26T12:00:00",
+   "end": "2026-12-26T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Who’s hiding among the bare branches? Who’s splashing in the icy waters? And whose calls can you hear on a chilly winter day? Bundle up and join Prospect Park Alliance for a fun, free birdwatching adventure as we…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/ce/ac/ceac86d6-0ee8-46c6-a3d4-87d7d6c960b4/backyard_birds_cyanocitta_cristata_blue_jay-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/birds-of-a-feather-count-together-a-family-winter-bird-count/2026-12-26/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10022392-1798362000-1798380000@www.prospectpark.org",
    "title": "Sunday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-12-27T09:00:00",
@@ -1452,6 +1644,43 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-12-27/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025077-1798372800-1798387200@www.prospectpark.org",
+   "title": "Birds of a Feather, Count Together! A Family Winter Bird Count",
+   "start": "2026-12-27T12:00:00",
+   "end": "2026-12-27T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Who’s hiding among the bare branches? Who’s splashing in the icy waters? And whose calls can you hear on a chilly winter day? Bundle up and join Prospect Park Alliance for a fun, free birdwatching adventure as we…",
+   "tags": [
+    "Audubon Center",
+    "Birdwatching",
+    "Free",
+    "Kids"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/ce/ac/ceac86d6-0ee8-46c6-a3d4-87d7d6c960b4/backyard_birds_cyanocitta_cristata_blue_jay-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/birds-of-a-feather-count-together-a-family-winter-bird-count/2026-12-27/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025476-1798448400-1798458600@www.prospectpark.org",
+   "title": "Winter Holiday Clinic",
+   "start": "2026-12-28T09:00:00",
+   "end": "2026-12-28T11:50:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Make the most of your winter break with four days of skating, skill-building, and fun at the LeFrak Center at Lakeside in Prospect Park! Our Winter Holiday Break Clinic is a great opportunity for skaters to develop their…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/01/RS4916_photo353.jpg",
+   "url": "https://www.prospectpark.org/event/winter-holiday-clinic/2026-12-28/",
    "source": "ppa",
    "canceled": false
   },
@@ -1473,6 +1702,24 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025477-1798534800-1798545000@www.prospectpark.org",
+   "title": "Winter Holiday Clinic",
+   "start": "2026-12-29T09:00:00",
+   "end": "2026-12-29T11:50:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Make the most of your winter break with four days of skating, skill-building, and fun at the LeFrak Center at Lakeside in Prospect Park! Our Winter Holiday Break Clinic is a great opportunity for skaters to develop their…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/01/RS4916_photo353.jpg",
+   "url": "https://www.prospectpark.org/event/winter-holiday-clinic/2026-12-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10000771-1798617600-1798639200@www.prospectpark.org",
    "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-12-30T08:00:00",
@@ -1487,6 +1734,24 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-30/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025478-1798621200-1798631400@www.prospectpark.org",
+   "title": "Winter Holiday Clinic",
+   "start": "2026-12-30T09:00:00",
+   "end": "2026-12-30T11:50:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Make the most of your winter break with four days of skating, skill-building, and fun at the LeFrak Center at Lakeside in Prospect Park! Our Winter Holiday Break Clinic is a great opportunity for skaters to develop their…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Lakeside"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2023/01/RS4916_photo353.jpg",
+   "url": "https://www.prospectpark.org/event/winter-holiday-clinic/2026-12-30/",
    "source": "ppa",
    "canceled": false
   },
