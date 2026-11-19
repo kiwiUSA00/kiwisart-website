@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T02:37:39.200Z",
+ "updated": "2026-11-19T11:48:25.888Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -31,58 +31,6 @@
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
    "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:930126",
-   "title": "HHFM Kings County Hospital Market",
-   "start": "2026-11-18T08:00:00",
-   "end": "2026-11-18T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10000765-1794988800-1795010400@www.prospectpark.org",
-   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-11-18T08:00:00",
-   "end": "2026-11-18T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-11-18/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024686-1794996000-1795006800@www.prospectpark.org",
-   "title": "Fall Fix-Up",
-   "start": "2026-11-18T10:00:00",
-   "end": "2026-11-18T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
-   "tags": [
-    "Environment",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
-   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-11-18/",
-   "source": "ppa",
    "canceled": false
   },
   {
@@ -509,6 +457,23 @@
    "summary": "",
    "tags": [
     "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:930126",
+   "title": "HHFM Kings County Hospital Market",
+   "start": "2026-11-25T08:00:00",
+   "end": "2026-11-25T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
@@ -1542,6 +1507,42 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025495-1797858000-1797868800@www.prospectpark.org",
+   "title": "Holiday Week Adult & Youth Tennis Programs",
+   "start": "2026-12-21T13:00:00",
+   "end": "2026-12-21T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Warm up on the courts this holiday season at the Prospect Park Tennis Center! During holiday week, the Tennis Center offers intensive group instruction for adults and children of all levels of experience. Our…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Tennis"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/04/RS10576_PP-Tennis-Center-155-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/holiday-week-adult-youth-tennis-programs/2026-12-21/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025496-1797944400-1797955200@www.prospectpark.org",
+   "title": "Holiday Week Adult & Youth Tennis Programs",
+   "start": "2026-12-22T13:00:00",
+   "end": "2026-12-22T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Warm up on the courts this holiday season at the Prospect Park Tennis Center! During holiday week, the Tennis Center offers intensive group instruction for adults and children of all levels of experience. Our…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Tennis"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/04/RS10576_PP-Tennis-Center-155-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/holiday-week-adult-youth-tennis-programs/2026-12-22/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10000770-1798012800-1798034400@www.prospectpark.org",
    "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-12-23T08:00:00",
@@ -1556,6 +1557,24 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
    "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-12-23/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025497-1798030800-1798041600@www.prospectpark.org",
+   "title": "Holiday Week Adult & Youth Tennis Programs",
+   "start": "2026-12-23T13:00:00",
+   "end": "2026-12-23T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Warm up on the courts this holiday season at the Prospect Park Tennis Center! During holiday week, the Tennis Center offers intensive group instruction for adults and children of all levels of experience. Our…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Tennis"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/04/RS10576_PP-Tennis-Center-155-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/holiday-week-adult-youth-tennis-programs/2026-12-23/",
    "source": "ppa",
    "canceled": false
   },
@@ -1631,6 +1650,27 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025501-1798290000-1798293600@www.prospectpark.org",
+   "title": "Urban Park Rangers | Animal Tracking",
+   "start": "2026-12-26T13:00:00",
+   "end": "2026-12-26T14:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join the Urban Park Rangers for a guided hike focused on beginner wildlife tracking and species identification. Discover how to spot and interpret the subtle clues animals leave behind — from tracks and trails to feeding…",
+   "tags": [
+    "Audubon Center",
+    "Free",
+    "Hike",
+    "Kids",
+    "Nature Programs",
+    "Urban Park Rangers"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/DSC-0202-Nature-Exploration-Kids-Week-Bx-2-21-17-mp-cropped__66904b89bf04a.jpg",
+   "url": "https://www.prospectpark.org/event/urban-park-rangers-animal-tracking/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10022392-1798362000-1798380000@www.prospectpark.org",
    "title": "Sunday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-12-27T09:00:00",
@@ -1702,6 +1742,24 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025498-1798462800-1798473600@www.prospectpark.org",
+   "title": "Holiday Week Adult & Youth Tennis Programs",
+   "start": "2026-12-28T13:00:00",
+   "end": "2026-12-28T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Warm up on the courts this holiday season at the Prospect Park Tennis Center! During holiday week, the Tennis Center offers intensive group instruction for adults and children of all levels of experience. Our…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Tennis"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/04/RS10576_PP-Tennis-Center-155-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/holiday-week-adult-youth-tennis-programs/2026-12-28/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10025477-1798534800-1798545000@www.prospectpark.org",
    "title": "Winter Holiday Clinic",
    "start": "2026-12-29T09:00:00",
@@ -1716,6 +1774,24 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2023/01/RS4916_photo353.jpg",
    "url": "https://www.prospectpark.org/event/winter-holiday-clinic/2026-12-29/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025499-1798549200-1798560000@www.prospectpark.org",
+   "title": "Holiday Week Adult & Youth Tennis Programs",
+   "start": "2026-12-29T13:00:00",
+   "end": "2026-12-29T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Warm up on the courts this holiday season at the Prospect Park Tennis Center! During holiday week, the Tennis Center offers intensive group instruction for adults and children of all levels of experience. Our…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Tennis"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/04/RS10576_PP-Tennis-Center-155-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/holiday-week-adult-youth-tennis-programs/2026-12-29/",
    "source": "ppa",
    "canceled": false
   },
@@ -1752,6 +1828,24 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2023/01/RS4916_photo353.jpg",
    "url": "https://www.prospectpark.org/event/winter-holiday-clinic/2026-12-30/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025500-1798635600-1798646400@www.prospectpark.org",
+   "title": "Holiday Week Adult & Youth Tennis Programs",
+   "start": "2026-12-30T13:00:00",
+   "end": "2026-12-30T16:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Warm up on the courts this holiday season at the Prospect Park Tennis Center! During holiday week, the Tennis Center offers intensive group instruction for adults and children of all levels of experience. Our…",
+   "tags": [
+    "Holiday",
+    "Kids",
+    "Tennis"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2025/04/RS10576_PP-Tennis-Center-155-scaled.jpg",
+   "url": "https://www.prospectpark.org/event/holiday-week-adult-youth-tennis-programs/2026-12-30/",
    "source": "ppa",
    "canceled": false
   },
