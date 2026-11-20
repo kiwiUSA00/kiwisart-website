@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T11:49:16.248Z",
+ "updated": "2026-11-20T20:28:04.582Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -587,7 +587,7 @@
   },
   {
    "id": "ppa:10025470-1796205600-1796214600@www.prospectpark.org",
-   "title": "Lawn and Field Care",
+   "title": "Lawn and Field Care Volunteering",
    "start": "2026-12-02T10:00:00",
    "end": "2026-12-02T12:30:00",
    "allDay": false,
@@ -599,7 +599,7 @@
     "Volunteer"
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
-   "url": "https://www.prospectpark.org/event/lawn-and-field-care/2026-12-02/",
+   "url": "https://www.prospectpark.org/event/lawn-and-field-care-2/2026-12-02/",
    "source": "ppa",
    "canceled": false
   },
@@ -1296,7 +1296,7 @@
   },
   {
    "id": "ppa:10025471-1797415200-1797424200@www.prospectpark.org",
-   "title": "Lawn and Field Care",
+   "title": "Lawn and Field Care Volunteering",
    "start": "2026-12-16T10:00:00",
    "end": "2026-12-16T12:30:00",
    "allDay": false,
@@ -1308,7 +1308,7 @@
     "Volunteer"
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
-   "url": "https://www.prospectpark.org/event/lawn-and-field-care/2026-12-16/",
+   "url": "https://www.prospectpark.org/event/lawn-and-field-care-2/2026-12-16/",
    "source": "ppa",
    "canceled": false
   },
