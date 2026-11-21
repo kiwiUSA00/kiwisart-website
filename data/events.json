@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T02:24:11.766Z",
+ "updated": "2026-11-21T11:15:52.637Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,40 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "permits:936851",
-   "title": "CHIPS Distribution",
-   "start": "2026-11-20T11:30:00",
-   "end": "2026-11-20T12:30:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024838-1795176000-1795194000@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-11-20T12:00:00",
-   "end": "2026-11-20T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-20/",
-   "source": "ppa",
-   "canceled": false
-  },
   {
    "id": "permits:911543",
    "title": "4th Avenue Sunset Park Greenmarket Saturday",
