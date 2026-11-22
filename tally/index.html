@@ -279,6 +279,10 @@ h1{font-size:clamp(1.05rem,4.2vw,1.6rem);white-space:nowrap}
   .boardGrid{max-width:none}
 }
 @media (max-width:880px){ .boardGrid{margin-inline:auto} }
+@media (min-width:881px){
+  .wrap{box-sizing:border-box;max-width:940px;min-height:calc(100vh - 16px);min-height:calc(100dvh - 16px);display:flex;flex-direction:column;justify-content:center;padding-block:20px 28px}
+  .top{margin-bottom:22px}
+}
 .playing .tools,.playing .levels,.playing .notes,.playing #undo{display:none!important}
 .playing .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 2px 14px}
 .playing .bar .btn{min-height:32px;padding:3px 18px;font-size:.78rem;flex:0 0 auto;min-width:82px}
@@ -288,6 +292,7 @@ h1{font-size:clamp(1.05rem,4.2vw,1.6rem);white-space:nowrap}
 .welcome{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:32px 24px;text-align:center}
 .welcoming .wrap{display:none}
 body:not(.welcoming) .welcome{display:none}
+body.howonly .wrap>:not(.rules){display:none!important}
 .wlogo{width:min(260px,68vw)}
 .welcome h1{font-size:clamp(2.2rem,9vw,3.4rem);margin:4px 0 0;white-space:normal}
 .welcome .tag{margin:0;color:var(--mute);font-size:1.05rem;max-width:22em}
@@ -369,7 +374,7 @@ body:not(.welcoming) .welcome{display:none}
   <h1>Tally Tiles</h1>
   <p class="tag">Place every domino so each row and column adds up.</p>
   <div class="wlevels" id="wLevels"></div>
-  <div class="wrow"><button class="btn" id="wHow" type="button">How to play</button><button class="btn" id="wFull" type="button">Full screen</button><button class="btn" id="wBoard" type="button" hidden>Leaderboard</button></div>
+  <div class="wrow"><button class="btn" id="wHow" type="button">How to play</button><button class="btn" id="wBoard" type="button" hidden>Leaderboard</button></div>
   <p class="wday" id="wDay"></p>
 </section>
 <div class="wrap">
@@ -803,7 +808,7 @@ function fitTray(){
     if (!$('rules').hidden) top -= $('rules').offsetHeight + 18;
     if (document.body.classList.contains('playing')) top += 50;
     let c;
-    if (wide) c = Math.floor((Math.min(552, H - top - 28 - 41 - 16) - 12) / refN);
+    if (wide) c = Math.floor((Math.min(552, H - 330) - 12) / refN);
     else {
       const trW = tr.clientWidth || (Math.min(W, 1060) - 48);
       for (c = Math.floor((W - 68 - 12) / refN); c > 18; c--){
@@ -1121,6 +1126,7 @@ function drawBoard(){
       : '<p class="st">No scores yet. Be the first!</p>';
     h += '<p class="st lbfoot">Ranked by puzzles solved, then total time. Revealed puzzles do not count.</p>';
   }
+  h += '<button type="button" class="btn" id="lbShare" style="margin-top:8px">Share with friends</button>';
   showModal(h, {ok:'Close'});
 }
 async function openBoard(level, range){
@@ -1130,7 +1136,25 @@ async function openBoard(level, range){
   try { tok.rows = await lbRows(tok.level, tok.range); } catch(e) { tok.err = true; }
   if (LBUI === tok && !$('modal').hidden) drawBoard();
 }
-document.addEventListener('click', e => {
+function shareText(){
+  const u = LBUI, url = /kiwisart\.com$/.test(location.hostname) ? location.origin + location.pathname : 'https://kiwisart.com/tally/';
+  let t = 'Think you can beat me at Tally Tiles? A daily domino puzzle.';
+  try {
+    const rk = u && u.rows ? lbRank(u.rows) : [];
+    if (rk.length) t = 'Tally Tiles ' + LV_SHORT[u.level] + ' leaderboard (' + (u.range === 'week' ? 'last 7 days' : 'today') + '): #1 ' + rk[0].name + ' with ' + rk[0].n + (rk[0].n === 1 ? ' puzzle' : ' puzzles') + ' in ' + fmt(rk[0].secs * 1000) + '. Can you beat it?';
+  } catch(e) {}
+  return {text: t, url: url};
+}
+document.addEventListener('click', async e => {
+  const sb = e.target.closest('#lbShare');
+  if (sb){
+    const d = shareText(), old = sb.textContent;
+    const done = m => { sb.textContent = m; setTimeout(() => { if (sb.isConnected) sb.textContent = old; }, 2200); };
+    try { if (navigator.share){ await navigator.share({title: 'Tally Tiles', text: d.text, url: d.url}); return; } } catch(err) { if (err && err.name === 'AbortError') return; }
+    try { await navigator.clipboard.writeText(d.text + ' ' + d.url); done('Copied! Paste it to a friend'); }
+    catch(err) { sb.insertAdjacentHTML('afterend', '<p class="st" style="user-select:all">' + escH(d.text + ' ' + d.url) + '</p>'); sb.remove(); }
+    return;
+  }
   const t = e.target.closest('[data-lbl],[data-lbr],[data-openboard],#wBoard'); if (!t) return;
   if (t.dataset.lbl) openBoard(t.dataset.lbl, LBUI && LBUI.range);
   else if (t.dataset.lbr) openBoard(LBUI && LBUI.level, t.dataset.lbr);
@@ -1191,7 +1215,7 @@ function renderRules(){
   $('rBody').innerHTML = '<h2>' + RSTEPS[rStep].t + '</h2>' + RSTEPS[rStep].h();
   $('rDots').innerHTML = RSTEPS.map((_, i) => '<i class="' + (i === rStep ? 'on' : '') + '"></i>').join('');
   $('rBack').style.visibility = rStep === 0 ? 'hidden' : 'visible';
-  $('rNext').textContent = rStep === last ? 'Start playing' : 'Next';
+  $('rNext').textContent = rStep === last ? (document.body.classList.contains('howonly') ? 'Done' : 'Start playing') : 'Next';
 }
 function fitRules(){
   const b = $('rBody'), keep = rStep; b.style.minHeight = '0';
@@ -1207,6 +1231,11 @@ function openRules(scroll){
 function closeRules(){
   $('rules').hidden = true;
   try { localStorage.setItem('hd-seen', '1'); } catch(e) {}
+  if (document.body.classList.contains('howonly')){
+    document.body.classList.remove('howonly'); document.body.classList.add('welcoming');
+    try { window.scrollTo(0, 0); } catch(e) {}
+    return;
+  }
   try { $('stage').scrollIntoView({behavior:'smooth', block:'start'}); } catch(e) {}
 }
 function discover(d, how){
@@ -1466,22 +1495,11 @@ function enterGame(showHow, lv){
   renderAll();
 }
 renderWelcome();
-function goFull(){
-  try {
-    const el = document.documentElement, f = el.requestFullscreen || el.webkitRequestFullscreen;
-    if (f && !document.fullscreenElement && !document.webkitFullscreenElement){ const r = f.call(el); if (r && r.catch) r.catch(() => {}); }
-  } catch (e) {}
-}
-document.addEventListener('click', e => {
-  if (e.target.closest('#wFull')){
-    const fe = document.fullscreenElement || document.webkitFullscreenElement;
-    if (fe){ try { (document.exitFullscreen || document.webkitExitFullscreen).call(document); } catch (x) {} } else goFull();
-    return;
-  }
-  const b = e.target.closest('[data-wlv]'); if (b){ goFull(); enterGame(false, b.dataset.wlv); }
-});
-(function(){ const el = document.documentElement; if (!(el.requestFullscreen || el.webkitRequestFullscreen)) $('wFull').hidden = true; })();
-$('wHow').onclick = () => enterGame(true);
+document.addEventListener('click', e => { const b = e.target.closest('[data-wlv]'); if (b) enterGame(false, b.dataset.wlv); });
+$('wHow').onclick = () => {
+  document.body.classList.remove('welcoming'); document.body.classList.add('howonly');
+  openRules(false); try { window.scrollTo(0, 0); } catch(e) {}
+};
 $('btnHome').onclick = goHome;
 initStore();
 </script>
