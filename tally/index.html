@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#e6f2fd" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1b2e" media="(prefers-color-scheme: dark)"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Tally Tiles">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#e6f2fd" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1b2e" media="(prefers-color-scheme: dark)"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Tally Tiles"><meta name="description" content="A new domino puzzle every day. Place every domino so each row and column adds up. Free, no sign-up."><meta property="og:title" content="Tally Tiles"><meta property="og:description" content="A new domino puzzle every day. Place every domino so each row and column adds up."><meta property="og:type" content="website">
 <!-- Tally Tiles. Copyright (c) 2026 Troy Evans, kiwisart.com. All rights reserved. The code, puzzles and artwork may not be copied, redistributed or reused without written permission. -->
 <title>Tally Tiles</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700;800;900&display=swap">
@@ -349,8 +349,9 @@ body.howonly .wrap>:not(.rules){display:none!important}
 .wlogo g.sp{animation:twinkle 2.6s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes twinkle{50%{opacity:.35}}
+.wcta{margin:2px 0 -4px;font-weight:800;font-size:.95rem}
 .wrow .btn{padding:6px 14px;min-height:40px;font-size:.85rem}
-@media (max-height:820px){.welcome{padding-block:14px;gap:10px}.wlogo{width:min(190px,50vw)}.welcome .tag{font-size:.95rem}}
+@media (max-height:880px){.welcome{padding-block:14px;gap:10px}.wlogo{width:min(190px,50vw)}.welcome .tag{font-size:.95rem}}
 @media (max-height:700px){.wlogo{width:min(120px,32vw)}.welcome h1{font-size:2rem}.wlevels{gap:6px}.wl{padding:6px 16px}}
 @media (prefers-reduced-motion:reduce){
 .wlogo g.t3{animation:bob 2.6s ease-in-out infinite!important}
@@ -386,7 +387,8 @@ body.howonly .wrap>:not(.rules){display:none!important}
       <path d="M232 168 l7 -12 l7 12 z" fill="#46bfae"/><path d="M14 150 l8 -8 l8 8 l-8 8 z" fill="#f2b705"/></g>
   </svg>
   <h1>Tally Tiles</h1>
-  <p class="tag">Place every domino so each row and column adds up.</p>
+  <p class="tag">A new domino puzzle every day. Place every domino so each row and column adds up.</p>
+  <p class="wcta">Today’s puzzles are ready. Pick a level.</p>
   <div class="wlevels" id="wLevels"></div>
   <div class="wrow"><button class="btn" id="wHow" type="button">How to play</button><button class="btn" id="wBoard" type="button" hidden>Leaderboard</button><button class="btn" id="wShare" type="button">Share</button></div>
   <p class="wday" id="wDay"></p>
@@ -1154,7 +1156,7 @@ async function openBoard(level, range){
 }
 function shareText(general){
   const u = general ? null : LBUI, url = /kiwisart\.com$/.test(location.hostname) ? location.origin + location.pathname : 'https://kiwisart.com/tally/';
-  let t = general ? 'Try Tally Tiles, a free daily domino puzzle where every row and column has to hit its total.' : 'Think you can beat me at Tally Tiles? A daily domino puzzle.';
+  let t = general ? 'Try Tally Tiles, a free daily domino puzzle. Place every domino so each row and column adds up.' : 'Think you can beat me at Tally Tiles? A daily domino puzzle.';
   try {
     const rk = u && u.rows ? lbRank(u.rows) : [];
     if (rk.length) t = 'Tally Tiles ' + LV_SHORT[u.level] + ' leaderboard (' + (u.range === 'week' ? 'last 7 days' : 'today') + '): #1 ' + rk[0].name + ' with ' + rk[0].n + (rk[0].n === 1 ? ' puzzle' : ' puzzles') + ' in ' + fmt(rk[0].secs * 1000) + '. Can you beat it?';
