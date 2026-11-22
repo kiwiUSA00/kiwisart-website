@@ -103,7 +103,8 @@ h1{font:900 clamp(1.8rem,5vw,2.7rem)/1 var(--body);letter-spacing:-.03em;margin:
 .td .domin{width:92px;height:46px;border-radius:11px;outline-width:2px}
 .td .half{container-type:inline-size;--n:2}
 .td .half b{font-size:20px}
-.td[aria-pressed="true"]{outline:4px solid var(--c1);outline-offset:1px}
+.td[aria-pressed="true"]{outline:none}
+.td[aria-pressed="true"] .domin{box-shadow:0 0 0 6px var(--c1),0 6px 14px rgba(0,0,0,.25)}
 .td[aria-pressed="true"] .domin{transform:translateY(-3px)}
 .td{position:relative}
 .td.tv .domin{position:absolute;z-index:6;left:50%;top:50%;width:calc(var(--tw) / 2 - 3px);height:var(--tw);margin:calc(var(--tw) / -2) 0 0 calc((var(--tw) / 2 - 3px) / -2);flex-direction:column}
@@ -349,6 +350,8 @@ body.howonly .wrap>:not(.rules){display:none!important}
 .wlogo g.sp{animation:twinkle 2.6s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes twinkle{50%{opacity:.35}}
+.wlevels+.wrow{margin-top:14px}
+@media (max-height:700px){.wlevels+.wrow{margin-top:8px}}
 .wcta{margin:2px 0 -4px;font-weight:800;font-size:.95rem}
 .wrow .btn{padding:6px 14px;min-height:40px;font-size:.85rem}
 @media (max-height:880px){.welcome{padding-block:12px;gap:9px}.wlogo{width:min(262px,68vw)}.welcome .tag{font-size:.95rem}}
