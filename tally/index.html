@@ -347,6 +347,11 @@ body.howonly .wrap>:not(.rules){display:none!important}
 .wlogo g.sp{animation:twinkle 2.6s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes twinkle{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){
+.wlogo g.t3{animation:bob 2.6s ease-in-out infinite!important}
+.wlogo g.t1{animation:bob 2.6s ease-in-out .5s infinite!important}
+.wlogo g.t2{animation:bob 2.6s ease-in-out 1s infinite!important}
+.wlogo g.sp{animation:twinkle 2.6s ease-in-out infinite!important}}
 </style>
 <style>html{background:var(--bg);min-height:100%;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0;min-height:100vh;min-height:100dvh;background:var(--bg);-webkit-tap-highlight-color:transparent}[hidden]{display:none!important}</style></head><body>
 </style>
@@ -378,7 +383,7 @@ body.howonly .wrap>:not(.rules){display:none!important}
   <h1>Tally Tiles</h1>
   <p class="tag">Place every domino so each row and column adds up.</p>
   <div class="wlevels" id="wLevels"></div>
-  <div class="wrow"><button class="btn" id="wHow" type="button">How to play</button><button class="btn" id="wBoard" type="button" hidden>Leaderboard</button></div>
+  <div class="wrow"><button class="btn" id="wHow" type="button">How to play</button><button class="btn" id="wBoard" type="button" hidden>Leaderboard</button><button class="btn" id="wShare" type="button">Share</button></div>
   <p class="wday" id="wDay"></p>
   <p class="copy">&copy; 2026 Troy Evans &middot; <a href="https://kiwisart.com" target="_blank" rel="noopener">kiwisart.com</a></p>
 </section>
@@ -1142,9 +1147,9 @@ async function openBoard(level, range){
   try { tok.rows = await lbRows(tok.level, tok.range); } catch(e) { tok.err = true; }
   if (LBUI === tok && !$('modal').hidden) drawBoard();
 }
-function shareText(){
-  const u = LBUI, url = /kiwisart\.com$/.test(location.hostname) ? location.origin + location.pathname : 'https://kiwisart.com/tally/';
-  let t = 'Think you can beat me at Tally Tiles? A daily domino puzzle.';
+function shareText(general){
+  const u = general ? null : LBUI, url = /kiwisart\.com$/.test(location.hostname) ? location.origin + location.pathname : 'https://kiwisart.com/tally/';
+  let t = general ? 'Try Tally Tiles, a free daily domino puzzle where every row and column has to hit its total.' : 'Think you can beat me at Tally Tiles? A daily domino puzzle.';
   try {
     const rk = u && u.rows ? lbRank(u.rows) : [];
     if (rk.length) t = 'Tally Tiles ' + LV_SHORT[u.level] + ' leaderboard (' + (u.range === 'week' ? 'last 7 days' : 'today') + '): #1 ' + rk[0].name + ' with ' + rk[0].n + (rk[0].n === 1 ? ' puzzle' : ' puzzles') + ' in ' + fmt(rk[0].secs * 1000) + '. Can you beat it?';
@@ -1152,9 +1157,9 @@ function shareText(){
   return {text: t, url: url};
 }
 document.addEventListener('click', async e => {
-  const sb = e.target.closest('#lbShare');
+  const sb = e.target.closest('#lbShare,#wShare');
   if (sb){
-    const d = shareText(), old = sb.textContent;
+    const d = shareText(sb.id === 'wShare'), old = sb.textContent;
     const done = m => { sb.textContent = m; setTimeout(() => { if (sb.isConnected) sb.textContent = old; }, 2200); };
     try { if (navigator.share){ await navigator.share({title: 'Tally Tiles', text: d.text, url: d.url}); return; } } catch(err) { if (err && err.name === 'AbortError') return; }
     try { await navigator.clipboard.writeText(d.text + ' ' + d.url); done('Copied! Paste it to a friend'); }
