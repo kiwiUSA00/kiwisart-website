@@ -330,10 +330,12 @@ body.howonly .wrap>:not(.rules){display:none!important}
 .lbt[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .lbl{list-style:none;margin:10px 0 4px;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:4px;max-height:42vh;overflow:auto;padding:3px;scrollbar-width:thin}
 .sheet ol.lbl{padding:3px}
+.lbtop{margin:0;text-align:center;font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.lbl li.gap{background:none;justify-content:center;padding:0;min-height:0;color:var(--mute)}
 @media (hover:hover) and (pointer:fine){.lbl{scrollbar-gutter:stable both-edges}}
 .lbl li{display:flex;gap:10px;align-items:center;padding:6px 10px;border-radius:10px;background:rgba(127,127,127,.12)}
 .lbl li.me{box-shadow:inset 0 0 0 2px var(--ok)}
-.lbl .rk{font-weight:800;width:1.6em;text-align:right}.lbl .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}.lbl .sc{font-size:.85rem;opacity:.85;white-space:nowrap}
+.lbl .rk{font-weight:800;width:1.6em;text-align:right}.lbl .nm{flex:1 1 0;min-width:3em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}.lbl .sc{text-align:right;flex:0 0 auto;display:flex;flex-direction:column;line-height:1.15}.lbl .sc b{font-size:.95rem}.lbl .sc small{font-size:.72rem;opacity:.75}
 .lbfoot{font-size:.78rem;margin:6px 0 0}
 .lbf{display:flex;gap:8px;margin:6px 0;min-width:0}.lbf .btn{width:auto;flex:0 0 auto;white-space:nowrap}.lbf input{flex:1 1 0;width:0;min-width:0;font:inherit;padding:8px 12px;border-radius:12px;border:2px solid var(--line,#2b3d5c);background:transparent;color:inherit}
 .lbn.warn{color:#e66}
@@ -1192,9 +1194,13 @@ function drawBoard(){
   else if (!u.rows) h += '<p class="st">Loading…</p>';
   else {
     const rk = lbRank(u.rows);
-    h += rk.length ? '<ol class="lbl">' + rk.slice(0, 25).map((r, i) => '<li' + (r.name.toLowerCase() === me ? ' class="me"' : '') + '><span class="rk">' + (i + 1) + '</span><span class="nm">' + escH(r.name) + '</span><span class="sc">' + r.n + (r.n === 1 ? ' puzzle' : ' puzzles') + ' · ' + fmt(r.secs * 1000) + (r.hints ? ' · ' + r.hints + (r.hints === 1 ? ' hint' : ' hints') : '') + '</span></li>').join('') + '</ol>'
+    const tot = PUZZLES[u.level] ? PUZZLES[u.level].length : 0, wk = u.range === 'week';
+    const row = (r, i) => '<li' + (r.name.toLowerCase() === me ? ' class="me"' : '') + '><span class="rk">' + (i + 1) + '</span><span class="nm">' + escH(r.name) + '</span><span class="sc"><b>' + fmt(r.secs * 1000) + '</b><small>' + (wk ? r.n + ' solved' : r.n + '/' + tot + ' solved') + (r.hints ? ' \u00b7 ' + r.hints + (r.hints === 1 ? ' hint' : ' hints') : '') + '</small></span></li>';
+    const myIdx = me ? rk.findIndex(r => r.name.toLowerCase() === me) : -1;
+    h += rk.length ? '<p class="st lbtop">Top ' + Math.min(20, rk.length) + (rk.length > 20 ? ' of ' + rk.length + ' players' : '') + '</p><ol class="lbl">' + rk.slice(0, 20).map(row).join('') +
+      (myIdx >= 20 ? '<li class="gap" aria-hidden="true">⋯</li>' + row(rk[myIdx], myIdx) : '') + '</ol>'
       : '<p class="st">No scores yet. Be the first!</p>';
-    h += '<p class="st lbfoot" style="text-align:center">Ranked by puzzles solved, then total time, then fewest hints. Revealed puzzles do not count.</p>';
+    h += '<p class="st lbfoot" style="text-align:center">' + (wk ? 'Scores from the last 7 days.' : LV_SHORT[u.level] + ' has ' + tot + (tot === 1 ? ' puzzle' : ' puzzles') + ' today.') + ' Ranked by puzzles solved, then total time for those puzzles, then fewest hints. Revealed puzzles do not count.</p>';
   }
   h += '<button type="button" class="btn" id="lbShare" style="margin-top:8px">Share with friends</button>';
   showModal(h, {ok:'Close'});
