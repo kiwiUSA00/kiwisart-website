@@ -650,7 +650,11 @@ if (GA_ID && /^https?:$/.test(location.protocol)){
 function track(name, params){ try { if (GA_ID && window.gtag) gtag('event', name, params || {}); } catch(e) {} }
 /* ---------- per-puzzle run memory (survives reloads) ---------- */
 function runAll(){ try { const r = JSON.parse(localStorage.getItem('hd-run') || '{}'); return r && typeof r === 'object' ? r : {}; } catch(e) { return {}; } }
-function runElapsed(){ return S.solved ? S.elapsed : (S.homeAt || Date.now()) - S.t0; }
+function clockMs(){ return !S ? 0 : S.solved ? S.elapsed : !S.started ? 0 : Math.max(0, (S.pausedAt || Date.now()) - S.t0); }
+function runElapsed(){ return clockMs(); }
+function pauseClock(){ if (S && !S.solved && S.started && !S.pausedAt){ S.pausedAt = Date.now(); saveRun(); } }
+function resumeClock(){ if (S && S.pausedAt){ S.t0 += Date.now() - S.pausedAt; S.pausedAt = null; } }
+function startClock(){ if (S && !S.started && !S.solved){ S.started = true; S.t0 = Date.now(); S.pausedAt = null; } }
 function saveRun(){
   if (!S || S.replay) return;
   try {
@@ -672,7 +676,7 @@ function load(level, idx){
     const key = rkey(level, idx), run = runAll()[key];
     if ((run && run.solved) || (R[key] && R[key].best)){ S.replay = true; }
     else if (run){
-      S.t0 = Date.now() - (+run.el || 0); S.hints = Math.min(+run.hints || 0, MAX_HINTS); S.peeked = !!run.peeked;
+      S.t0 = Date.now() - (+run.el || 0); S.started = (+run.el || 0) > 0; S.hints = Math.min(+run.hints || 0, MAX_HINTS); S.peeked = !!run.peeked;
       const used = new Set(S.placed.map(p => p.id)), occ = new Set(); S.placed.forEach(p => { occ.add(p.a); occ.add(p.b); });
       (run.placed || []).forEach(q => {
         const [id, a, b, va, vb] = q;
@@ -685,8 +689,8 @@ function load(level, idx){
   renderAll();
   if (S.replay){ say('Practice round: you already solved this one today, so this time won\u2019t count.'); renderAll(); }
 }
-const fmt = ms => { const s = Math.floor(ms/1000); return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0'); };
-function tick(){ if (S && !S.solved){ $('timer').textContent = fmt(Date.now() - S.t0); if (!S.homeAt) saveRun(); } }
+const fmt = ms => { const s = Math.max(0, Math.floor(ms/1000)), h = Math.floor(s/3600), m = Math.floor(s/60) % 60, ss = String(s%60).padStart(2,'0'); return h ? h + ':' + String(m).padStart(2,'0') + ':' + ss : m + ':' + ss; };
+function tick(){ if (S && !S.solved){ $('timer').textContent = fmt(clockMs()); if (S.started && !S.pausedAt) saveRun(); } }
 
 const symChar = d => HD.SYM_CHAR[S.puz.districts[d].sym];
 const lawOf = d => HD.LAWS[S.puz.districts[d].law];
@@ -903,7 +907,7 @@ function renderAll(){
   document.body.classList.toggle('finished', !!S.solved);
   renderLevels(); renderBoard(c); renderTray(); fitTray(); renderNotes(); renderResult(); renderDone();
   const st = $('status'); st.textContent = statusText(c); st.classList.toggle('warn', !!S.warn); st.classList.toggle('almost', !!c.almost && !S.msg);
-  $('hintsUsed').textContent = S.hints; $('timer').textContent = fmt(S.solved ? S.elapsed : Date.now() - S.t0);
+  $('hintsUsed').textContent = S.hints; $('timer').textContent = fmt(clockMs());
   const rb = $('revbar');
   rb.hidden = !(S.solved && S.revealed);
   if (!rb.hidden){ const nx = nextRef(); rb.innerHTML = nextBtn() + '<button class="btn" type="button" data-again="1">Try again</button>'; }
@@ -1035,7 +1039,7 @@ function afterChange(){
   let won = false;
   if (c.ev.solved && !S.solved){
     won = true;
-    S.solved = true; S.elapsed = Date.now() - S.t0; clearInterval(timerId);
+    S.started = true; S.elapsed = clockMs(); S.solved = true; clearInterval(timerId);
     const hid = hiddenList();
     const allSelf = hid.every(d => S.disc[d] === 'guess');
     const noTold = hid.every(d => S.disc[d] === 'guess' || S.disc[d] === 'revealed');
@@ -1318,7 +1322,7 @@ function closeRules(){
   try { localStorage.setItem('hd-seen', '1'); } catch(e) {}
   if (document.body.classList.contains('howonly')){
     document.body.classList.remove('howonly');
-    if (window.__howFromGame){ window.__howFromGame = false; renderAll(); try { window.scrollTo(0, 0); } catch(e) {} return; }
+    if (window.__howFromGame){ window.__howFromGame = false; resumeClock(); renderAll(); try { window.scrollTo(0, 0); } catch(e) {} return; }
     document.body.classList.add('welcoming');
     try { window.scrollTo(0, 0); } catch(e) {}
     return;
@@ -1418,7 +1422,7 @@ $('reveal').onclick = reveal;
 $('btnHelp').onclick = () => {
   if (!$('rules').hidden) return closeRules();
   if (S && S.draft) settleDraft();
-  window.__howFromGame = true; document.body.classList.add('howonly'); openRules(false); try { window.scrollTo(0, 0); } catch(e) {}
+  pauseClock(); window.__howFromGame = true; document.body.classList.add('howonly'); openRules(false); try { window.scrollTo(0, 0); } catch(e) {}
 };
 $('flipb').onclick = flipDraft; $('retb').onclick = discardDraft;
 $('btnMode').onclick = () => { mode = mode === 'pips' ? 'num' : 'pips'; renderAll(); };
@@ -1552,7 +1556,12 @@ function scheduleMidnight(){
   setTimeout(() => { checkDay(); scheduleMidnight(); }, Math.max(1000, next - now));
 }
 scheduleMidnight();
-document.addEventListener('visibilitychange', () => { if (!document.hidden) checkDay(); else saveRun(); });
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden){ pauseClock(); saveRun(); return; }
+  if (!document.body.classList.contains('welcoming') && !document.body.classList.contains('howonly')) resumeClock();
+  checkDay();
+});
+['pointerdown','keydown'].forEach(t => document.querySelector('.layout').addEventListener(t, () => { if (!document.body.classList.contains('welcoming')) startClock(); }, true));
 window.addEventListener('pagehide', () => saveRun());
 window.addEventListener('focus', checkDay);
 setInterval(checkDay, 60000);
@@ -1571,21 +1580,21 @@ function renderWelcome(){
   }).join('');
 }
 function goHome(){
-  if (S && !S.solved) S.homeAt = Date.now();
+  pauseClock();
   if (S && S.draft) settleDraft();
   saveRun();
   renderWelcome(); document.body.classList.add('welcoming');
   try { window.scrollTo(0, 0); } catch(e) {}
 }
-document.body.classList.add('welcoming'); if (S) S.homeAt = Date.now();
+document.body.classList.add('welcoming'); pauseClock();
 $('wDay').textContent = DAY.label + ' \u00b7 new puzzles every day';
 function enterGame(showHow, lv){
   if (lv) track('level_start', {level: lv});
   if (lv){
     const idx = nextUnsolved(lv);
-    if (S && S.level === lv && S.idx === idx && !S.solved){ if (S.homeAt){ S.t0 += Date.now() - S.homeAt; S.homeAt = null; } }
+    if (S && S.level === lv && S.idx === idx && !S.solved){ resumeClock(); }
     else load(lv, idx);
-  } else if (S && S.homeAt){ S.t0 += Date.now() - S.homeAt; S.homeAt = null; }
+  } else if (S) resumeClock();
   document.body.classList.remove('welcoming');
   let seen = false; try { seen = localStorage.getItem('hd-seen') === '1'; } catch(e) {}
   renderAll();
