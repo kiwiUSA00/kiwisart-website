@@ -365,6 +365,7 @@ body.howonly .wrap>:not(.rules){display:none!important}
 @media (max-height:700px){.wlevels+.wrow{margin-top:8px}}
 .wcta{margin:2px 0 -4px;font-weight:800;font-size:.95rem}
 .wrow .btn{padding:6px 14px;min-height:40px;font-size:.85rem}
+.wremind{border:0;background:none;color:var(--mute);font:700 .82rem var(--body);padding:6px 10px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:380px){.wrow{gap:6px}.wrow .btn{padding:6px 11px;font-size:.8rem}}
 @media (max-height:880px){.welcome{padding-block:12px;gap:9px}.wlogo{width:min(262px,68vw)}.welcome .tag{font-size:.95rem}}
 @media (max-height:780px){.wlogo{width:min(215px,58vw)}}
@@ -407,8 +408,9 @@ body.howonly .wrap>:not(.rules){display:none!important}
   <p class="wcta" id="wCta">Today’s puzzles are ready. Pick a level.</p>
   <div class="wlevels" id="wLevels"></div>
   <div class="wrow"><button class="btn" id="wHow" type="button">How to play</button><button class="btn" id="wBoard" type="button" hidden>Leaderboard</button><button class="btn" id="wShare" type="button">Share</button></div>
+  <button class="wremind" id="wRemind" type="button" hidden></button>
   <p class="wday" id="wDay"></p>
-  <p class="copy">&copy; 2026 Troy Evans &middot; <a href="https://kiwisart.com" target="_blank" rel="noopener">kiwisart.com</a></p>
+  <p class="copy">&copy; 2026 Troy Evans &middot; <a href="https://kiwisart.com" target="_blank" rel="noopener">kiwisart.com</a> &middot; <a href="https://kiwisart.com/tally/privacy.html" target="_blank" rel="noopener">Privacy</a></p>
 </section>
 <div class="wrap">
   <header class="top">
@@ -457,7 +459,7 @@ body.howonly .wrap>:not(.rules){display:none!important}
     </section>
     <aside class="notes" id="notes" aria-label="Notes"></aside>
   </main>
-  <p class="copy">&copy; 2026 Troy Evans &middot; <a href="https://kiwisart.com" target="_blank" rel="noopener">kiwisart.com</a></p>
+  <p class="copy">&copy; 2026 Troy Evans &middot; <a href="https://kiwisart.com" target="_blank" rel="noopener">kiwisart.com</a> &middot; <a href="https://kiwisart.com/tally/privacy.html" target="_blank" rel="noopener">Privacy</a></p>
 </div>
 <div class="modal" id="modal" hidden></div>
 <div class="confetti" id="confetti" aria-hidden="true"></div>
@@ -639,6 +641,19 @@ function recordSolve(){
   try { persist(); } catch(err) {}
 }
 
+/* ---------- iOS app bridge (only inside the Tally Tiles app) ---------- */
+const APP = window.__TALLY_APP || null;
+function appPost(msg){ try { if (APP && window.webkit && webkit.messageHandlers && webkit.messageHandlers.tally){ webkit.messageHandlers.tally.postMessage(msg); return true; } } catch(e) {} return false; }
+function renderRemind(){
+  const b = document.getElementById('wRemind'); if (!b) return;
+  if (!APP){ b.hidden = true; return; }
+  const r = APP.reminder || {};
+  b.hidden = false; b.textContent = r.on ? '\ud83d\udd14 Daily reminder: ' + (r.label || 'on') : '\ud83d\udd14 Remind me about new puzzles';
+}
+window.__tallyPause = () => { try { pauseClock(); saveRun(); } catch(e) {} };
+window.__tallyResume = () => { try { if (!document.body.classList.contains('welcoming') && !document.body.classList.contains('howonly')) resumeClock(); checkDay(); } catch(e) {} };
+window.__tallyReminder = st => { if (APP){ APP.reminder = st || {}; renderRemind(); } };
+document.addEventListener('click', e => { if (e.target.closest('#wRemind')) appPost({type: 'reminder'}); });
 /* ---------- Google Analytics (only when config.js sets ga: 'G-...') ---------- */
 const GA_ID = (window.TALLY_CONFIG && /^G-[A-Z0-9]{4,}$/.test(String(window.TALLY_CONFIG.ga || ''))) ? window.TALLY_CONFIG.ga : null;
 if (GA_ID && /^https?:$/.test(location.protocol)){
@@ -1239,6 +1254,7 @@ document.addEventListener('click', async e => {
     track('share', {method: navigator.share ? 'share_sheet' : 'copy', content_type: sb.id === 'wShare' ? 'home' : 'leaderboard'});
     const d = shareText(sb.id === 'wShare'), old = sb.textContent;
     const done = m => { sb.textContent = m; setTimeout(() => { if (sb.isConnected) sb.textContent = old; }, 2200); };
+    if (appPost({type: 'share', text: d.text, url: d.url})) return;
     try { if (navigator.share){ await navigator.share({title: 'Tally Tiles', text: d.text, url: d.url}); return; } } catch(err) { if (err && err.name === 'AbortError') return; }
     try { await navigator.clipboard.writeText(d.text + ' ' + d.url); done('Copied! Paste it to a friend'); }
     catch(err) { sb.insertAdjacentHTML('afterend', '<p class="st" style="user-select:all">' + escH(d.text + ' ' + d.url) + '</p>'); sb.remove(); }
@@ -1570,6 +1586,7 @@ function nextUnsolved(lv){
   return 0;
 }
 function renderWelcome(){
+  renderRemind();
   try {
     const left = LV.filter(k => !(R[rkey(k, 0)] && R[rkey(k, 0)].best)).length;
     $('wCta').textContent = left === 0 ? 'All four done today. New puzzles tomorrow!' : left === LV.length ? 'Today\u2019s puzzles are ready. Pick a level.' : left + (left === 1 ? ' level' : ' levels') + ' left to solve today.';
