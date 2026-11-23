@@ -324,9 +324,11 @@ body.howonly .wrap>:not(.rules){display:none!important}
 .lbtabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:6px 0}
 .lbt{font:inherit;font-weight:700;font-size:.85rem;padding:6px 12px;border-radius:999px;border:2px solid var(--line,#2b3d5c);background:transparent;color:inherit;cursor:pointer}
 .lbt[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.lbl{list-style:none;margin:10px 0 4px;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:4px;max-height:42vh;overflow:auto;scrollbar-gutter:stable both-edges;scrollbar-width:thin}
+.lbl{list-style:none;margin:10px 0 4px;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:4px;max-height:42vh;overflow:auto;padding:3px;scrollbar-width:thin}
+.sheet ol.lbl{padding:3px}
+@media (hover:hover) and (pointer:fine){.lbl{scrollbar-gutter:stable both-edges}}
 .lbl li{display:flex;gap:10px;align-items:center;padding:6px 10px;border-radius:10px;background:rgba(127,127,127,.12)}
-.lbl li.me{outline:2px solid var(--easy,#6cc36c)}
+.lbl li.me{box-shadow:inset 0 0 0 2px var(--ok)}
 .lbl .rk{font-weight:800;width:1.6em;text-align:right}.lbl .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}.lbl .sc{font-size:.85rem;opacity:.85;white-space:nowrap}
 .lbfoot{font-size:.78rem;margin:6px 0 0}
 .lbf{display:flex;gap:8px;margin:6px 0;min-width:0}.lbf .btn{width:auto;flex:0 0 auto;white-space:nowrap}.lbf input{flex:1 1 0;width:0;min-width:0;font:inherit;padding:8px 12px;border-radius:12px;border:2px solid var(--line,#2b3d5c);background:transparent;color:inherit}
@@ -627,6 +629,19 @@ function recordSolve(){
   try { persist(); } catch(err) {}
 }
 
+/* ---------- per-puzzle run memory (survives reloads) ---------- */
+function runAll(){ try { const r = JSON.parse(localStorage.getItem('hd-run') || '{}'); return r && typeof r === 'object' ? r : {}; } catch(e) { return {}; } }
+function runElapsed(){ return S.solved ? S.elapsed : (S.homeAt || Date.now()) - S.t0; }
+function saveRun(){
+  if (!S || S.replay) return;
+  try {
+    const all = runAll(), out = {};
+    Object.keys(all).forEach(k => { if (k.indexOf(DAY.id + ':') === 0) out[k] = all[k]; });
+    out[rkey(S.level, S.idx)] = {el: Math.max(0, Math.round(runElapsed())), hints: S.hints, peeked: !!S.peeked, solved: !!S.solved,
+      placed: S.placed.filter(p => !p.given).map(p => [p.id, p.a, p.b, p.va, p.vb])};
+    localStorage.setItem('hd-run', JSON.stringify(out));
+  } catch(e) {}
+}
 /* ---------- puzzle state ---------- */
 function load(level, idx){
   const puz = PUZZLES[level][idx];
@@ -634,11 +649,25 @@ function load(level, idx){
        disc:{}, tier:{}, hints:0, wrong:0, t0:Date.now(), solved:false, revealed:false, metaDone:false, metaMsg:null,
        history:[], msg:null, warn:false, pick:null, gmsg:{}, glow:null, rating:null, elapsed:0, newBest:false, prevBest:null, confirmReveal:false, doneOpen:false};
   puz.districts.forEach((d,i) => { if (d.revealed) S.disc[i] = 'revealed'; });
+  try {
+    const key = rkey(level, idx), run = runAll()[key];
+    if ((run && run.solved) || (R[key] && R[key].best)){ S.replay = true; }
+    else if (run){
+      S.t0 = Date.now() - (+run.el || 0); S.hints = Math.min(+run.hints || 0, MAX_HINTS); S.peeked = !!run.peeked;
+      const used = new Set(S.placed.map(p => p.id)), occ = new Set(); S.placed.forEach(p => { occ.add(p.a); occ.add(p.b); });
+      (run.placed || []).forEach(q => {
+        const [id, a, b, va, vb] = q;
+        if (used.has(id) || occ.has(a) || occ.has(b) || !puz.tray[id]) return;
+        used.add(id); occ.add(a); occ.add(b); S.placed.push({id, a, b, va, vb});
+      });
+    }
+  } catch(e) {}
   clearInterval(timerId); timerId = setInterval(tick, 1000);
   renderAll();
+  if (S.replay){ say('Practice round: you already solved this one today, so this time won\u2019t count.'); renderAll(); }
 }
 const fmt = ms => { const s = Math.floor(ms/1000); return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0'); };
-function tick(){ if (S && !S.solved) $('timer').textContent = fmt(Date.now() - S.t0); }
+function tick(){ if (S && !S.solved){ $('timer').textContent = fmt(Date.now() - S.t0); if (!S.homeAt) saveRun(); } }
 
 const symChar = d => HD.SYM_CHAR[S.puz.districts[d].sym];
 const lawOf = d => HD.LAWS[S.puz.districts[d].law];
@@ -993,8 +1022,9 @@ function afterChange(){
     const ok = S.wrong <= hid.length;
     S.rating = S.hints === 0 ? 'Clean solve' : 'Solved';
     undiscovered().forEach(d => { S.disc[d] = 'end'; });
-    if (S.peeked){ S.revealed = true; S.rating = 'Revealed'; } else recordSolve();
+    if (S.peeked){ S.revealed = true; S.rating = 'Revealed'; } else if (S.replay){ S.rating = 'Practice'; } else recordSolve();
   }
+  saveRun();
   const c2 = ctx(), key = c2.almost ? c2.vd.join(',') : '';
   if (c2.almost && S.almostKey !== key){
     S.glow = c2.vd; clearTimeout(S.glowT); S.glowT = setTimeout(() => { S.glow = null; if (S) renderAll(); }, 3600);
@@ -1045,7 +1075,7 @@ function reveal(){
   clearTimeout(revTimer); S.confirmReveal = false;
   if (S.draft){ const d = S.draft; S.draft = null; if (S.draftSnap){ S.placed = JSON.parse(S.draftSnap); S.draftSnap = null; } else S.sel = d.id; }
   S.peeked = true; S.sel = null; S.active = null; S.msg = null; S.viewSol = true;
-  renderAll();
+  saveRun(); renderAll();
 }
 
 function showModal(html, o){
@@ -1127,10 +1157,11 @@ async function lbSubmit(name){
 }
 function lbBlock(){
   if (!lbOn() || !S || S.revealed) return '';
+  if (S.replay) return '<p class="st lbn">Practice round. Your first solve of this puzzle today is the one that counts.</p><button class="btn" type="button" data-openboard="1">View leaderboard</button>';
   const L = S.lb || {state:'ask'};
   if (L.state === 'posting') return '<p class="st lbn">Posting your score…</p>';
-  if (L.state === 'posted') return '<p class="st lbn">On the leaderboard as <b>' + escH(L.name) + '</b>' + (L.rank ? ' · #' + L.rank + ' today on ' + LV_SHORT[S.level] : '') + '</p><button class="btn" type="button" data-openboard="1">View leaderboard</button>';
-  return (L.state === 'error' ? '<p class="st lbn warn">Could not reach the leaderboard. Try again.</p>' : '<p class="st lbn">Add your time to today’s leaderboard.</p>') +
+  if (L.state === 'posted') return '<p class="st lbn">On the leaderboard as <b>' + escH(L.name) + '</b> (' + (S.hints ? S.hints + (S.hints === 1 ? ' hint' : ' hints') : 'no hints') + ')' + (L.rank ? ' · #' + L.rank + ' today on ' + LV_SHORT[S.level] : '') + '</p><button class="btn" type="button" data-openboard="1">View leaderboard</button>';
+  return (L.state === 'error' ? '<p class="st lbn warn">Could not reach the leaderboard. Try again.</p>' : '<p class="st lbn">Add your time to today’s leaderboard: ' + fmt(S.elapsed) + ' with ' + (S.hints ? S.hints + (S.hints === 1 ? ' hint' : ' hints') : 'no hints') + '.</p>') +
     '<form class="lbf" id="lbForm"><input id="lbName" maxlength="16" placeholder="Your name" autocomplete="nickname" value="' + escH(lsGet('hd-name') || '') + '"><button class="btn small primary" type="submit">Post score</button></form>' +
     '<button class="btn" type="button" data-openboard="1">View leaderboard</button>';
 }
@@ -1144,9 +1175,9 @@ function drawBoard(){
   else if (!u.rows) h += '<p class="st">Loading…</p>';
   else {
     const rk = lbRank(u.rows);
-    h += rk.length ? '<ol class="lbl">' + rk.slice(0, 25).map((r, i) => '<li' + (r.name.toLowerCase() === me ? ' class="me"' : '') + '><span class="rk">' + (i + 1) + '</span><span class="nm">' + escH(r.name) + '</span><span class="sc">' + r.n + (r.n === 1 ? ' puzzle' : ' puzzles') + ' · ' + fmt(r.secs * 1000) + '</span></li>').join('') + '</ol>'
+    h += rk.length ? '<ol class="lbl">' + rk.slice(0, 25).map((r, i) => '<li' + (r.name.toLowerCase() === me ? ' class="me"' : '') + '><span class="rk">' + (i + 1) + '</span><span class="nm">' + escH(r.name) + '</span><span class="sc">' + r.n + (r.n === 1 ? ' puzzle' : ' puzzles') + ' · ' + fmt(r.secs * 1000) + (r.hints ? ' · ' + r.hints + (r.hints === 1 ? ' hint' : ' hints') : '') + '</span></li>').join('') + '</ol>'
       : '<p class="st">No scores yet. Be the first!</p>';
-    h += '<p class="st lbfoot" style="text-align:center">Ranked by puzzles solved, then total time. Revealed puzzles do not count.</p>';
+    h += '<p class="st lbfoot" style="text-align:center">Ranked by puzzles solved, then total time, then fewest hints. Revealed puzzles do not count.</p>';
   }
   h += '<button type="button" class="btn" id="lbShare" style="margin-top:8px">Share with friends</button>';
   showModal(h, {ok:'Close'});
@@ -1188,12 +1219,12 @@ function renderDone(){
   const el = $('done');
   if (!(S && S.solved && S.doneOpen)){ el.hidden = true; el.innerHTML = ''; return; }
   const nx = nextRef(), nlabel = LV_SHORT[nx[0]] + ' ' + (nx[1] + 1), key = rkey(S.level, S.idx);
-  const best = R[key] && R[key].best, rv = S.revealed;
+  const best = R[key] && R[key].best, rv = S.revealed, pr = S.replay && !rv;
   const badges = rv ? '<span class="badge rv">Not timed</span>'
     : '<span class="badge' + (S.newBest ? ' nb' : '') + '">' + (S.newBest ? 'New best time' : S.rating) + '</span>' + (S.newBest ? '<span class="badge">' + S.rating + '</span>' : '');
   el.innerHTML = '<div class="doneCard" role="dialog" aria-label="Puzzle complete"><div class="cwrap"><span class="eyebrow">' + (rv ? 'Solution revealed' : 'Puzzle complete') + '</span><h2>' + LV_SHORT[S.level] + ' ' + (S.idx + 1) + (rv ? '' : ' solved') + '</h2>' +
     '<div class="stats" style="justify-content:center">' + badges + '</div>' +
-    '<div class="cstats"><div class="cstat"><b>' + fmt(S.elapsed) + '</b><span>' + (rv ? 'Time, not saved' : 'Time') + '</span></div><div class="cstat"><b>' + S.hints + '</b><span>' + (S.hints === 1 ? 'Hint' : 'Hints') + '</span></div></div>' +
+    '<div class="cstats"><div class="cstat"><b>' + fmt(S.elapsed) + '</b><span>' + (rv || pr ? 'Time, not saved' : 'Time') + '</span></div><div class="cstat"><b>' + S.hints + '</b><span>' + (S.hints === 1 ? 'Hint' : 'Hints') + '</span></div></div>' +
     (!rv && !S.newBest && best ? '<p class="st" style="margin:0">Your best is ' + fmt(best) + '.</p>' : '') + '</div>' +
     lbBlock() +
     '<button class="btn primary" type="button" data-playnext="1">Play next: ' + nlabel + '</button>' +
@@ -1302,7 +1333,7 @@ function useHint(){
     S.hintSeen = (S.hintSeen || []).filter(id => mine.some(p => p.id === id));
     let pool = mine.filter(p => !S.hintSeen.includes(p.id)); if (!pool.length){ S.hintSeen = []; pool = mine; }
     const t = pool[Math.floor(Math.random() * pool.length)]; S.hintSeen.push(t.id);
-    S.hints++; S.sel = null; S.active = null; flashHint(t.id);
+    S.hints++; saveRun(); S.sel = null; S.active = null; flashHint(t.id);
     S.msg = 'Hint: this domino is right (lit up). Keep it.'; S.warn = false; afterChange(); return;
   } else {
     const c = hintCands(); if (!c.length) return;
@@ -1314,7 +1345,7 @@ function useHint(){
   S.history.push(snap); if (S.history.length > 100) S.history.shift();
   S.placed = S.placed.filter(x => x.id !== q[0] && x.a !== q[1] && x.b !== q[1] && x.a !== q[2] && x.b !== q[2]);
   S.placed.push({id:q[0], a:q[1], b:q[2], va:q[3], vb:q[4], pv:q[1]});
-  S.hints++; S.sel = null; S.active = null; flashHint(q[0]);
+  S.hints++; saveRun(); S.sel = null; S.active = null; flashHint(q[0]);
   S.msg = msg; S.warn = false;
   afterChange();
 }
@@ -1488,7 +1519,8 @@ function scheduleMidnight(){
   setTimeout(() => { checkDay(); scheduleMidnight(); }, Math.max(1000, next - now));
 }
 scheduleMidnight();
-document.addEventListener('visibilitychange', () => { if (!document.hidden) checkDay(); });
+document.addEventListener('visibilitychange', () => { if (!document.hidden) checkDay(); else saveRun(); });
+window.addEventListener('pagehide', () => saveRun());
 window.addEventListener('focus', checkDay);
 setInterval(checkDay, 60000);
 function nextUnsolved(lv){
@@ -1504,6 +1536,7 @@ function renderWelcome(){
 function goHome(){
   if (S && !S.solved) S.homeAt = Date.now();
   if (S && S.draft) settleDraft();
+  saveRun();
   renderWelcome(); document.body.classList.add('welcoming');
   try { window.scrollTo(0, 0); } catch(e) {}
 }
