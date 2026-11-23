@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T01:49:24.481Z",
+ "updated": "2026-11-23T12:59:13.275Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -14,151 +14,8 @@
    "home": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx"
   }
  },
- "errors": [
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-12",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-22",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-01",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-21",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-31"
- ],
+ "errors": [],
  "events": [
-  {
-   "id": "permits:898942",
-   "title": "Carroll Gardens Greenmarket Sunday",
-   "start": "2026-11-22T06:00:00",
-   "end": "2026-11-22T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Carroll Street between Smith Street and Court Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:898937",
-   "title": "Cortelyou Greenmarket Sunday",
-   "start": "2026-11-22T06:00:00",
-   "end": "2026-11-22T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Cortelyou Road between Rugby Road and Argyle Road",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:893705",
-   "title": "Down to Earth Park Slope Farmers Market",
-   "start": "2026-11-22T06:00:00",
-   "end": "2026-11-22T18:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "4th Street between Fifth Avenue and Dead End",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:923926",
-   "title": "RiseBoro Farmers Markets at Irving Square Park",
-   "start": "2026-11-22T09:00:00",
-   "end": "2026-11-22T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Knickerbocker Avenue between Starr Street and Suydam Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10022387-1795338000-1795356000@www.prospectpark.org",
-   "title": "Sunday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-11-22T09:00:00",
-   "end": "2026-11-22T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/sunday-greenmarket-at-bartel-pritchard-square-4/2026-11-22/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024598-1795345200-1795356000@www.prospectpark.org",
-   "title": "Park Pitch In: Fall Leaf Raking",
-   "start": "2026-11-22T11:00:00",
-   "end": "2026-11-22T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance during leaf-peeping season to care for Brooklyn’s Backyard! Volunteers will help to rake leaves from pathways and other areas around the 3rd St and Willink Entrances to ensure safe and easy…",
-   "tags": [
-    "Environment",
-    "Free",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2023/03/RS7529_7.16.16_Volunteers_Martin-Seck-66-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/park-pitch-in-fall-leaf-raking/2026-11-22/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024840-1795348800-1795366800@www.prospectpark.org",
-   "title": "Carousel Rides",
-   "start": "2026-11-22T12:00:00",
-   "end": "2026-11-22T17:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Children’s Corner, $3 per ride, $13 for a book of 5 tickets, Free with Prospect Park Alliance Family Supporter membership or higher. Enjoy a ride on Prospect Park’s beloved 1912 Carousel. Open Thursdays – Sundays and…",
-   "tags": [
-    "Carousel",
-    "Kids"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/76/89/76899e3f-b3bb-4b0a-b93d-213193babf82/041914_carousel_birthday_party_c_paul_martinka_008-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/carousel-rides-9/2026-11-22/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10025033-1795359600-1795365000@www.prospectpark.org",
-   "title": "Urban Park Rangers | Freedom Seekers: Stories by the Fire",
-   "start": "2026-11-22T15:00:00",
-   "end": "2026-11-22T16:30:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join the Urban Park Rangers for an outdoor storytelling program exploring the history of the Underground Railroad. Hear poems, accounts, and stories shared by freedom seekers during their journeys, and learn how these…",
-   "tags": [
-    "Free",
-    "Urban Park Rangers"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2026/10/RS14574_DSC_3323-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/urban-park-rangers-freedom-seekers-stories-by-the-fire/",
-   "source": "ppa",
-   "canceled": false
-  },
   {
    "id": "ppa:10020056-1795428000-1795446000@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
@@ -360,6 +217,57 @@
    "summary": "",
    "tags": [
     "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:898942",
+   "title": "Carroll Gardens Greenmarket Sunday",
+   "start": "2026-11-29T06:00:00",
+   "end": "2026-11-29T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Carroll Street between Smith Street and Court Street",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:898937",
+   "title": "Cortelyou Greenmarket Sunday",
+   "start": "2026-11-29T06:00:00",
+   "end": "2026-11-29T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Cortelyou Road between Rugby Road and Argyle Road",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:893705",
+   "title": "Down to Earth Park Slope Farmers Market",
+   "start": "2026-11-29T06:00:00",
+   "end": "2026-11-29T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "4th Street between Fifth Avenue and Dead End",
+   "summary": "",
+   "tags": [
+    "Farmers Market"
    ],
    "image": null,
    "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
