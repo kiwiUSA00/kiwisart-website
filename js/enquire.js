@@ -19,6 +19,9 @@
   var slug = m && m[1];
   if (!slug || !PAINTINGS[slug]) return;
   var title = PAINTINGS[slug][0], dims = PAINTINGS[slug][1];
+  // Paintings that have sold: enquiries are about similar work instead.
+  var SOLD = { 'koi': 1, 'winter-is-coming': 1, 'tidal-pool': 1, 'spring-is-awakening': 1 };
+  var sold = !!SOLD[slug];
 
   var form = document.getElementById('contact-form');
   if (!form) return;
@@ -28,9 +31,11 @@
   var h1 = document.querySelector('main h1');
   var lede = document.querySelector('main .lede');
   if (eyebrow) eyebrow.textContent = 'Painting Enquiry';
-  if (h1) h1.textContent = 'Enquire about “' + title + '”';
-  if (lede) lede.textContent = 'Ask about availability, pricing, shipping or arranging a viewing. Kiwi will reply personally.';
-  document.title = 'Enquire about ' + title + ' | Kiwi\'s Art';
+  if (h1) h1.textContent = sold ? 'Work like “' + title + '”' : 'Enquire about “' + title + '”';
+  if (lede) lede.textContent = sold
+    ? '“' + title + '” has sold. Ask about a commission in a similar spirit, or what is available now. Kiwi will reply personally.'
+    : 'Ask about availability, pricing, shipping or arranging a viewing. Kiwi will reply personally.';
+  document.title = (sold ? 'Work like ' : 'Enquire about ') + title + ' | Kiwi\'s Art';
 
   // Painting summary card
   var card = document.createElement('a');
@@ -40,7 +45,7 @@
     '<span><strong></strong><span class="enquiry-dims"></span><span class="enquiry-change">Original painting · view details</span></span>';
   card.querySelector('img').src = '/images/' + slug + '.jpg';
   card.querySelector('strong').textContent = title;
-  card.querySelector('.enquiry-dims').textContent = dims || 'New original painting';
+  card.querySelector('.enquiry-dims').textContent = (sold ? 'Sold · ' : '') + (dims || 'New original painting');
   form.parentNode.insertBefore(card, form);
 
   // "Interested in" choice
@@ -49,9 +54,12 @@
   group.innerHTML =
     '<label for="ct-interest">I’d like to know about</label>' +
     '<select id="ct-interest" name="interest">' +
-    '<option>Buying the original</option>' +
-    '<option>Arranging a viewing</option>' +
-    '<option>A commission in a similar style</option>' +
+    (sold
+      ? '<option>A commission in a similar style</option>' +
+        '<option>Similar paintings available now</option>'
+      : '<option>Buying the original</option>' +
+        '<option>Arranging a viewing</option>' +
+        '<option>A commission in a similar style</option>') +
     '<option>Something else</option>' +
     '</select>';
   var msgGroup = document.getElementById('ct-message').closest('.form-group');
@@ -63,12 +71,14 @@
     if (!i) { i = document.createElement('input'); i.type = 'hidden'; i.name = name; form.insertBefore(i, form.firstChild); }
     i.value = value;
   }
-  hidden('_subject', 'Painting enquiry: ' + title + ' — Kiwi\'s Art');
-  hidden('painting', title + (dims ? ' (' + dims + ')' : '') + ' — https://kiwisart.com/gallery/' + slug + '.html');
+  hidden('_subject', (sold ? 'Enquiry about work like ' : 'Painting enquiry: ') + title + ' — Kiwi\'s Art');
+  hidden('painting', title + (sold ? ' (sold)' : '') + (dims ? ' (' + dims + ')' : '') + ' — https://kiwisart.com/gallery/' + slug + '.html');
 
   var msg = document.getElementById('ct-message');
   if (msg && !msg.value) {
-    msg.value = 'Hi Kiwi, I’m interested in “' + title + '”' + (dims ? ' (' + dims + ')' : '') + '. ';
+    msg.value = sold
+      ? 'Hi Kiwi, I love “' + title + '” and would like something similar. '
+      : 'Hi Kiwi, I’m interested in “' + title + '”' + (dims ? ' (' + dims + ')' : '') + '. ';
   }
   var btn = form.querySelector('button[type="submit"]');
   if (btn) btn.textContent = 'Send Enquiry';
