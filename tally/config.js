@@ -3,5 +3,7 @@
 // These two values are meant to be public (the database rules in supabase.sql limit what visitors can do).
 window.TALLY_CONFIG = {
   url: 'https://azdlmhgpjdasrcuoboia.supabase.co',
-  key: 'sb_publishable_91Slzmuf7Tqwyun2PXTjDg_wrfoVTGv'
+  key: 'sb_publishable_91Slzmuf7Tqwyun2PXTjDg_wrfoVTGv',
+  // Google Analytics 4 measurement ID (public). Remove this line to turn analytics off.
+  ga: 'G-VX9PJ92T7J'
 };
