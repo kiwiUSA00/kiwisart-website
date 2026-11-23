@@ -82,6 +82,9 @@ h1{font:900 clamp(1.8rem,5vw,2.7rem)/1 var(--body);letter-spacing:-.03em;margin:
 .dom.v .domin{flex-direction:column}
 .dom.given,.dom.given .domin{cursor:default}
 .dom.given .domin{outline:3.5px solid #141414}
+.dom.given .domin,.dom.given .half{background:#dfe6ef}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .dom.given .domin,:root:not([data-theme="light"]) .dom.given .half{background:#c5cfdc}}
+:root[data-theme="dark"] .dom.given .domin,:root[data-theme="dark"] .dom.given .half{background:#c5cfdc}
 .half{position:relative;flex:1;background:var(--ivory);min-width:0;min-height:0}
 .half.d0{background:color-mix(in srgb,var(--c0) 30%,var(--ivory))} .half.d1{background:color-mix(in srgb,var(--c1) 30%,var(--ivory))}
 .half.d2{background:color-mix(in srgb,var(--c2) 30%,var(--ivory))} .half.d3{background:color-mix(in srgb,var(--c3) 30%,var(--ivory))}
@@ -1275,7 +1278,7 @@ const RSTEPS = [
     '<ul class="rlist"><li><b>Drag and drop</b> works too: drag a domino from the tray onto the board, or drag one already placed to move it. Drop it off the board to return it to the tray.</li>' +
     '<li><b>Tap a domino on the board to spin it.</b> It turns a quarter turn around the square you tap, like a pin in that square. Tap the other half to pivot on that one instead.</li>' +
     '<li>Keep tapping to keep spinning. When you stop, or tap anywhere else, it sets down. To remove a domino, drag it off the board.</li>' +
-    '<li>Dominoes with a heavy outline are fixed. They are given to you.</li></ul>' },
+    '<li>Grey dominoes with a heavy outline are fixed. They are given to you and can\u2019t be moved.</li></ul>' },
   { t:'Match the totals', h:() =>
     '<p>The number at the end of every row and column is the sum the pips in that line must reach.</p>' +
     '<div class="vis">' + fig('<div class="rowex">' + mini(2, 3, false) + mini(1, 4, false) + '<div class="tot ok"><span>10</span></div></div>', '2 + 3 + 1 + 4 = 10', 'wide') + '</div>' +
