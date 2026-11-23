@@ -931,3 +931,43 @@ section.tight + section.tight { padding-top: 0; }
 /* About: purchase + gallery buttons */
 .about-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .about-actions-note { margin-top: 12px; font-size: 0.88rem; color: #6a7080; }
+
+/* Sold: a gallery-style red dot sticker on images, and a label by titles */
+.art-card figure { position: relative; }
+.featured-strip a.has-sold { position: relative; }
+.sold-sticker {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #b3261e;
+  color: #fff;
+  font: 700 0.7rem/1 "Inter", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35), inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+.badge-sold {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #b3261e;
+  color: #fff;
+  font: 700 0.68rem/1.2 "Inter", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+h1 .badge-sold { font-size: 0.8rem; padding: 4px 10px; }
+.sold-dot { display: inline-block; width: 12px; height: 12px; margin-right: 10px; border-radius: 50%; background: #e0574b; vertical-align: 1px; }
+@media (max-width: 640px) {
+  .sold-sticker { width: 44px; height: 44px; top: 8px; right: 8px; font-size: 0.58rem; }
+}
