@@ -1245,11 +1245,15 @@ async function openBoard(level, range){
   if (LBUI === tok && !$('modal').hidden) drawBoard();
 }
 function shareText(general){
-  const u = general ? null : LBUI, url = /kiwisart\.com$/.test(location.hostname) ? location.origin + location.pathname : 'https://kiwisart.com/tally/';
+  const u = general ? null : LBUI;
+  const store = String((window.TALLY_CONFIG && window.TALLY_CONFIG.appStore) || '');
+  // Inside the iOS app, share the App Store page (once config.js has it); on the web, share the website.
+  const url = (APP && /^https:\/\/apps\.apple\.com\//.test(store)) ? store
+    : /kiwisart\.com$/.test(location.hostname) ? location.origin + location.pathname : 'https://kiwisart.com/tally/';
   let t = general ? 'Try Tally Tiles, a free daily domino puzzle. Place every domino so each row and column adds up.' : 'Think you can beat me at Tally Tiles? A daily domino puzzle.';
   try {
     const rk = u && u.rows ? lbRank(u.rows) : [];
-    if (rk.length) t = 'Tally Tiles ' + LV_SHORT[u.level] + ' leaderboard (' + (u.range === 'week' ? 'last 7 days' : 'today') + '): #1 ' + rk[0].name + ' with ' + rk[0].n + (rk[0].n === 1 ? ' puzzle' : ' puzzles') + ' in ' + fmt(rk[0].secs * 1000) + '. Can you beat it?';
+    if (rk.length) t = 'Tally Tiles ' + LV_SHORT[u.level] + ' leaderboard (' + (u.range === 'week' ? 'last 7 days' : 'today') + '): #1 ' + rk[0].name + (u.range === 'week' ? ' with ' + rk[0].n + (rk[0].n === 1 ? ' puzzle' : ' puzzles') + ' in ' : ' in ') + fmt(rk[0].secs * 1000) + '. Can you beat it?';
   } catch(e) {}
   return {text: t, url: url};
 }
