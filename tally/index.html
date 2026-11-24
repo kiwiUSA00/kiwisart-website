@@ -171,6 +171,10 @@ h1{font:900 clamp(1.8rem,5vw,2.7rem)/1 var(--body);letter-spacing:-.03em;margin:
 .stage{position:relative}
 .cdyn{display:contents}
 .wad{width:min(100%,380px)}
+.gad{width:min(100%,728px);margin:28px auto 0}
+.gad:empty{display:none}
+.gad .adcard{border-top:2px dashed var(--line);padding-top:12px}
+body.howonly .gad{display:none}
 .wad:empty{display:none}
 .wad .adcard{border-top:0;padding-top:0}
 .adcard{margin-top:2px;border-top:2px dashed var(--line);padding-top:10px;display:flex;flex-direction:column;gap:6px;min-height:0}
@@ -474,6 +478,7 @@ body.howonly .wrap>:not(.rules){display:none!important}
     </section>
     <aside class="notes" id="notes" aria-label="Notes"></aside>
   </main>
+  <div class="gad" id="gAd"></div>
   <p class="copy">&copy; 2026 Troy Evans &middot; <a href="https://kiwisart.com" target="_blank" rel="noopener">kiwisart.com</a> &middot; <a href="https://kiwisart.com/tally/privacy.html" target="_blank" rel="noopener">Privacy</a></p>
 </div>
 <div class="modal" id="modal" hidden></div>
@@ -1726,6 +1731,8 @@ function enterGame(showHow, lv){
   renderAll();
   if (showHow || !seen) openRules(!!showHow);
   renderAll();
+  // Game-screen ad below the tray, requested once per visit (only while the game screen is showing).
+  try { const box = $('gAd'); if (box && !box.dataset.done && !document.body.classList.contains('howonly')){ const h = inlineAdHTML(); if (h){ box.dataset.done = '1'; box.innerHTML = h; fillInlineAd(box); } } } catch(e) {}
 }
 renderWelcome();
 document.addEventListener('click', e => { const b = e.target.closest('[data-wlv]'); if (b){ const lv = b.dataset.wlv; const same = S && S.level === lv && !S.solved; same ? enterGame(false, lv) : betweenLevels(() => enterGame(false, lv)); } });
