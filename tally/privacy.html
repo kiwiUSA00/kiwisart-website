@@ -2,64 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Tally Tiles Privacy Policy</title>
+<meta name="description" content="How the Tally Tiles website handles your data.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700;800;900&display=swap">
 <style>
-  :root{--bg:#e6f2fd;--card:#fff;--ink:#141414;--mute:#4a5b72}
-  @media (prefers-color-scheme: dark){:root{--bg:#0f1b2e;--card:#17263d;--ink:#eef3fa;--mute:#9db0c9}}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
-  main{max-width:680px;margin:0 auto;padding:32px max(18px,env(safe-area-inset-left)) 48px}
-  .card{background:var(--card);border-radius:18px;padding:24px 26px}
-  h1{margin:0 0 4px;font-size:1.8rem;line-height:1.2}
-  h2{font-size:1.1rem;margin:26px 0 6px}
-  p,li{color:var(--ink)} .muted{color:var(--mute);font-size:.9rem}
-  a{color:inherit}
+:root{--bg:#e6f2fd;--card:#ffffff;--tile:#e1ebf7;--ink:#141414;--mute:#4a5b72;--line:#c3d7ee;--ivory:#fffdf6;
+  --c0:#f5a04c;--c1:#46bfae;--c2:#ee7aa9;--c3:#a78bea;
+  --shadow:0 2px 0 rgba(20,20,20,.28),0 6px 14px rgba(20,20,20,.16);
+  --body:"Libre Franklin","Helvetica Neue",Arial,system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme: dark){:root{--bg:#0f1b2e;--card:#17263d;--tile:#223652;--ink:#eef3fa;--mute:#9db0c9;--line:#2e4668;
+  --shadow:0 2px 0 rgba(0,0,0,.5),0 6px 14px rgba(0,0,0,.45);color-scheme:dark}}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);-webkit-text-size-adjust:100%}
+main{max-width:720px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(36px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+header{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;margin:6px 0 22px}
+header a.home{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:inherit}
+.wlogo{position:relative;width:min(200px,56vw);aspect-ratio:260/200}
+.wlogo>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;will-change:transform}
+.wlogo .t3{animation:bob 2.6s ease-in-out infinite}.wlogo .t1{animation:bob 2.6s ease-in-out .5s infinite}
+.wlogo .t2{animation:bob 2.6s ease-in-out 1s infinite}.wlogo .sp{animation:twinkle 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-3%,0)}}
+@keyframes twinkle{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.wlogo>svg{animation:none!important}}
+h1{margin:4px 0 0;font-size:clamp(2rem,7vw,2.6rem);font-weight:900;letter-spacing:-.02em;line-height:1.05}
+.kicker{margin:0;font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.updated{margin:2px 0 0;color:var(--mute);font-size:.88rem}
+.card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:22px clamp(18px,4vw,30px);margin:0 0 16px}
+.intro{font-size:1.05rem}
+h2{display:flex;align-items:flex-start;gap:10px;margin:0 0 6px;font-size:1.12rem;font-weight:900;letter-spacing:-.01em}
+h2 .pip{flex:none;width:12px;height:12px;margin-top:.42em;border-radius:50%;background:var(--c1);box-shadow:0 0 0 3px color-mix(in srgb,var(--c1) 25%,transparent)}
+.card:nth-of-type(3n+1) h2 .pip{background:var(--c3);box-shadow:0 0 0 3px color-mix(in srgb,var(--c3) 25%,transparent)}
+.card:nth-of-type(3n+2) h2 .pip{background:var(--c2);box-shadow:0 0 0 3px color-mix(in srgb,var(--c2) 25%,transparent)}
+p,li{max-width:65ch}
+p{margin:0 0 10px} p:last-child{margin-bottom:0}
+ul{margin:0;padding-left:1.2em} li{margin:4px 0}
+a{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:22px 0 8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 20px;border-radius:999px;border:3px solid var(--ink);font-weight:800;text-decoration:none;color:var(--ink);background:transparent}
+.btn.primary{background:var(--ink);color:var(--bg)}
+footer{text-align:center;color:var(--mute);font-size:.82rem;margin-top:14px}
 </style>
 </head>
 <body>
-<main><div class="card">
-<h1>Tally Tiles Privacy Policy</h1>
-<p class="muted">Last updated: November 24, 2026. Applies to the Tally Tiles website (kiwisart.com/tally) and the Tally Tiles iPhone and iPad app.</p>
+<main>
+<header>
+  <a class="home" href="/tally/" aria-label="Back to Tally Tiles">
+  <div class="wlogo" role="img" aria-label="Tally Tiles logo">
+    <svg class="w0" viewBox="0 0 260 200" aria-hidden="true"><ellipse cx="132" cy="182" rx="96" ry="9" fill="rgba(20,20,20,.16)"/></svg>
+    <svg class="t1" viewBox="0 0 260 200" aria-hidden="true"><g class="t1"><g transform="rotate(-17 55 100)">
+      <rect x="24" y="36" width="62" height="124" rx="17" fill="#a78bea" stroke="#141414" stroke-width="6"/>
+      <line x1="30" y1="98" x2="80" y2="98" stroke="#141414" stroke-width="4" opacity=".5"/>
+      <g fill="#fffdf6"><circle cx="42" cy="54" r="7"/><circle cx="68" cy="54" r="7"/><circle cx="42" cy="80" r="7"/><circle cx="68" cy="80" r="7"/><circle cx="55" cy="130" r="7"/></g>
+    </g></g></svg>
+    <svg class="t2" viewBox="0 0 260 200" aria-hidden="true"><g class="t2"><g transform="rotate(15 205 92)">
+      <rect x="174" y="28" width="62" height="124" rx="17" fill="#ee7aa9" stroke="#141414" stroke-width="6"/>
+      <line x1="180" y1="90" x2="230" y2="90" stroke="#141414" stroke-width="4" opacity=".5"/>
+      <g fill="#fffdf6"><circle cx="190" cy="46" r="7"/><circle cx="205" cy="60" r="7"/><circle cx="220" cy="74" r="7"/><circle cx="190" cy="108" r="7"/><circle cx="220" cy="134" r="7"/></g>
+    </g></g></svg>
+    <svg class="t3" viewBox="0 0 260 200" aria-hidden="true"><g class="t3"><g transform="rotate(-5 130 124)">
+      <rect x="50" y="86" width="160" height="80" rx="20" fill="#fffdf6" stroke="#141414" stroke-width="6"/>
+      <line x1="130" y1="94" x2="130" y2="158" stroke="#141414" stroke-width="4" stroke-linecap="round" opacity=".5"/>
+      <circle cx="84" cy="116" r="8.5" fill="#141414"/><circle cx="110" cy="116" r="8.5" fill="#141414"/>
+      <circle cx="86.5" cy="113" r="2.6" fill="#fffdf6"/><circle cx="112.5" cy="113" r="2.6" fill="#fffdf6"/>
+      <circle cx="74" cy="138" r="7" fill="#f5a04c" opacity=".75"/><circle cx="120" cy="138" r="7" fill="#f5a04c" opacity=".75"/>
+      <path d="M146 124 Q170 152 194 124" fill="none" stroke="#141414" stroke-width="7" stroke-linecap="round"/>
+    </g></g></svg>
+    <svg class="sp" viewBox="0 0 260 200" aria-hidden="true"><g class="sp"><circle cx="20" cy="30" r="6" fill="#46bfae"/><circle cx="238" cy="20" r="5" fill="#f5a04c"/><circle cx="130" cy="14" r="5" fill="#ee7aa9"/>
+      <path d="M232 168 l7 -12 l7 12 z" fill="#46bfae"/><path d="M14 150 l8 -8 l8 8 l-8 8 z" fill="#f2b705"/></g>
+  </svg>
+  </div>
+  </a>
+  <p class="kicker">Tally Tiles</p>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated November 24, 2026 &middot; Applies to kiwisart.com/tally</p>
+</header>
 
-<p>Tally Tiles is a daily puzzle game by Troy Evans. You can play without an account, and we collect as little as possible.</p>
+<section class="card intro">
+  <p>Tally Tiles is a free daily domino puzzle by Troy Evans. You can play without an account, and we collect as little as possible.</p>
+</section>
 
-<h2>Stored on your device only</h2>
-<ul>
-  <li>Your puzzle progress, times, hints used and best times.</li>
-  <li>The name you last typed for the leaderboard, so you don't have to type it again.</li>
-  <li>In the app, your daily reminder setting.</li>
-</ul>
-<p>This stays in your browser or on your device. Clearing your browser data or deleting the app removes it.</p>
+<section class="card">
+  <h2><span class="pip"></span>Stored only in your browser</h2>
+  <ul>
+    <li>Your puzzle progress, times, hints used and best times.</li>
+    <li>The name you last typed for the leaderboard, so you don't have to type it again.</li>
+  </ul>
+  <p>This stays in your browser on your device. Clearing your browser data removes it.</p>
+</section>
 
-<h2>Leaderboard (only if you post a score)</h2>
-<p>When you choose to post a score, we store: the name you type, your time, the number of hints you used, the puzzle date and level, and a random ID created by the game on your device. The random ID only stops the same device from posting the same puzzle twice; it isn't linked to your identity. Names and scores are shown publicly on the leaderboard, so please don't use your full name or personal information as your leaderboard name.</p>
-<p>Leaderboard data is stored with our database provider, Supabase.</p>
+<section class="card">
+  <h2><span class="pip"></span>Leaderboard (only if you post a score)</h2>
+  <p>When you choose to post a score, we store the name you type, your time, the number of hints you used, the puzzle date and level, and a random ID created by the game in your browser. The random ID only stops the same browser from posting the same puzzle twice; it isn't linked to your identity.</p>
+  <p>Names and scores are shown publicly on the leaderboard, so please don't use your full name or other personal information as your leaderboard name. Leaderboard data is stored with our database provider, Supabase.</p>
+</section>
 
-<h2>Website analytics</h2>
-<p>The website uses Google Analytics to count visits and see how the game is used (for example, which levels are started and finished). Google Analytics uses cookies and similar technology. We ask Google to anonymize IP addresses. You can block it with your browser's privacy settings or an ad blocker. See <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.</p>
-<p>The app does not use Google Analytics or any other analytics or tracking.</p>
+<section class="card">
+  <h2><span class="pip"></span>Analytics</h2>
+  <p>We use Google Analytics to count visits and see how the game is used, for example which levels are started and finished. Google Analytics uses cookies and similar technology, and we ask Google to anonymize IP addresses. You can block it with your browser's privacy settings or an ad blocker. See <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.</p>
+</section>
 
-<h2>Advertising (website only)</h2>
-<p>The website may show an ad from Google AdSense between levels. Google and its partners may use cookies or similar technology to show ads based on your visits to this and other websites. You can learn how Google uses this information in <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses information from sites that use its services</a>, and turn off personalized ads in <a href="https://myadcenter.google.com" rel="noopener">My Ad Center</a>. Where the law requires it, you'll be asked for consent first.</p>
-<p>The app does not show ads.</p>
+<section class="card">
+  <h2><span class="pip"></span>Advertising</h2>
+  <p>The game may show an ad from Google AdSense between levels. Google and its partners may use cookies or similar technology to show ads based on your visits to this and other websites. Learn how in <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses information from sites that use its services</a>, and turn off personalized ads in <a href="https://myadcenter.google.com" rel="noopener">My Ad Center</a>. Where the law requires it, you'll be asked for consent first.</p>
+</section>
 
-<h2>Notifications (app only)</h2>
-<p>If you turn on the daily reminder, the notification is scheduled on your device. No notification data is sent to us.</p>
+<section class="card">
+  <h2><span class="pip"></span>What we don't do</h2>
+  <ul>
+    <li>No accounts and no email collection.</li>
+    <li>We don't sell your personal data.</li>
+  </ul>
+</section>
 
-<h2>What we don't do</h2>
-<ul>
-  <li>No accounts and no email collection.</li>
-  <li>We don't sell or share your data for advertising.</li>
-  <li>The app doesn't track you across other apps or websites.</li>
-</ul>
+<section class="card">
+  <h2><span class="pip"></span>Questions or removing a score</h2>
+  <p>To ask about this policy, or to have a leaderboard score you posted removed, reach us through the <a href="https://kiwisart.com/contact.html">kiwisart.com contact page</a>. For a score, include the name, date and level.</p>
+</section>
 
-<h2>Removing a leaderboard score</h2>
-<p>To have a score you posted removed, contact us with the name, date and level, and we'll delete it.</p>
-
-<h2>Contact</h2>
-<p>Questions about this policy: <!-- TODO: replace with your real contact email --> CONTACT_EMAIL_HERE</p>
-
-<p class="muted">&copy; 2026 Troy Evans &middot; <a href="https://kiwisart.com">kiwisart.com</a></p>
-</div></main>
+<div class="btns">
+  <a class="btn primary" href="/tally/">Play Tally Tiles</a>
+  <a class="btn" href="https://kiwisart.com/contact.html">Contact</a>
+</div>
+<footer>&copy; 2026 Troy Evans &middot; <a href="https://kiwisart.com">kiwisart.com</a></footer>
+</main>
 </body>
 </html>
