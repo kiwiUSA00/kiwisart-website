@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T13:51:16.440Z",
+ "updated": "2026-11-24T23:56:09.270Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -326,6 +326,23 @@
    "canceled": false
   },
   {
+   "id": "permits:990106",
+   "title": "Giving Tuesday Nonprofit Awareness Event",
+   "start": "2026-12-01T10:00:00",
+   "end": "2026-12-01T15:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Albee Square Plaza: Albee Square Plaza Albee Square between Fulton Street and Bond Street",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10000767-1796198400-1796220000@www.prospectpark.org",
    "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-12-02T08:00:00",
@@ -393,6 +410,40 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2024/11/RS3043_A©2013-Elizabeth-Keegin-Colley-4288x2848-1.jpg",
    "url": "https://www.prospectpark.org/event/winter-corps-5/2026-12-03/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "permits:915900",
+   "title": "Dumbo Holiday Tree Lighting",
+   "start": "2026-12-03T16:00:00",
+   "end": "2026-12-03T19:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Pearl Street Plaza: Pearl Triangle (Pearl Street Plaza) Pearl Street between Water Street and Anchorage Place",
+   "summary": "",
+   "tags": [
+    "Plaza Partner Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
+   "id": "permits:936854",
+   "title": "CHIPS Distribution",
+   "start": "2026-12-04T11:30:00",
+   "end": "2026-12-04T12:30:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Kensington Plaza: Kensington Plaza Church Avenue between Beverly Road and Mcdonald Avenue",
+   "summary": "",
+   "tags": [
+    "Plaza Event"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
    "canceled": false
   },
   {
@@ -656,6 +707,23 @@
    "canceled": false
   },
   {
+   "id": "permits:976868",
+   "title": "Winter Wonderland Holiday Block Party",
+   "start": "2026-12-06T12:00:00",
+   "end": "2026-12-06T18:00:00",
+   "allDay": false,
+   "timesArePermitWindow": true,
+   "location": "Tompkins Avenue between Putnam Avenue and Jefferson Avenue",
+   "summary": "",
+   "tags": [
+    "Block Party"
+   ],
+   "image": null,
+   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
+   "source": "permits",
+   "canceled": false
+  },
+  {
    "id": "ppa:10025451-1796560200-1796561100@www.prospectpark.org",
    "title": "Skate with Santa at Lakeside",
    "start": "2026-12-06T12:30:00",
@@ -815,7 +883,7 @@
    "end": "2026-12-09T20:00:00",
    "allDay": false,
    "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
-   "summary": "",
+   "summary": "Members of the public may register for a livestream of the hearing on Webex at: https://nycbp.webex.com/weblink/register/r095283de6d3305b633fe64d2f1a04e5e 1) 900 60th Street Rezoning A zoning map amendment from M1-1 to…",
    "tags": [],
    "image": "https://www.brooklynbp.nyc.gov/wp-content/uploads/2026/01/FINAL-ULURP-2026-Schedule-2-scaled-e1769702027860.jpg",
    "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-10/",
