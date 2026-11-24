@@ -174,6 +174,7 @@ h1{font:900 clamp(1.8rem,5vw,2.7rem)/1 var(--body);letter-spacing:-.03em;margin:
 .adcard .adlabel{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:center}
 .adcard ins{width:100%;min-height:60px;max-height:120px;border-radius:12px;overflow:hidden;background:var(--tile)}
 .adcard ins[data-ad-status="unfilled"]{display:none!important}
+.adcard.unfilled{display:none}
 .doneOverlay{position:absolute;inset:-8px;z-index:30;display:grid;place-items:center;padding:12px;border-radius:22px;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 .doneCard{background:var(--card);border-radius:22px;padding:22px;box-shadow:var(--shadow);width:100%;max-width:380px;display:flex;flex-direction:column;gap:12px;animation:pop .25s ease-out}
 .doneCard .btn{width:100%}
@@ -707,6 +708,16 @@ function fillInlineAd(root){
   const ins = root && root.querySelector('ins.adsbygoogle:not([data-filled])');
   if (!ins) return;
   ins.setAttribute('data-filled', '1');
+  if (window.MutationObserver){
+    // Report Google's answer for this ad slot in the ?adtest=1 log.
+    const mo = new MutationObserver(() => {
+      const st = ins.getAttribute('data-ad-status');
+      if (st === 'unfilled') ins.closest('.adcard')?.classList.add('unfilled');
+      if (st){ adsLog('Inline ad ' + (st === 'filled' ? 'FILLED: Google sent an ad' : 'UNFILLED: Google had no ad for this slot') + (ins.offsetHeight ? ' (' + ins.offsetWidth + 'x' + ins.offsetHeight + ')' : '')); mo.disconnect(); }
+    });
+    mo.observe(ins, {attributes: true, attributeFilter: ['data-ad-status']});
+    setTimeout(() => { if (!ins.getAttribute('data-ad-status')){ adsLog('Inline ad: no answer from Google after 15 s'); mo.disconnect(); } }, 15000);
+  }
   requestAnimationFrame(() => { try { (window.adsbygoogle = window.adsbygoogle || []).push({}); adsLog('Inline ad requested'); track('ad_inline', {level: S && S.level}); } catch(e) { adsLog('Inline ad error: ' + e.message); } });
 }
 let playedThisVisit = false;
@@ -1003,7 +1014,7 @@ function renderAll(){
   $('flipb').disabled = !act; $('retb').disabled = !act;
   $('undo').disabled = (!S.history.length && !S.draft) || S.solved || !!S.viewSol;
   $('clear').disabled = S.solved || !!S.viewSol || S.placed.every(p => p.given);
-  $('hint').disabled = S.solved || !!S.viewSol || !hintCands().length || S.hints >= MAX_HINTS;
+  $('hint').disabled = S.solved || !!S.viewSol || !!S.hintId || !hintCands().length || S.hints >= MAX_HINTS;
   $('hint').textContent = S.hints >= MAX_HINTS ? 'No hints' : 'Hint \u00b7 ' + (MAX_HINTS - S.hints);
   $('reveal').disabled = S.solved;
   $('reveal').textContent = S.viewSol ? 'My board' : S.confirmReveal ? 'Confirm' : S.peeked ? 'Solution' : 'Reveal';
@@ -1455,6 +1466,7 @@ function flashHint(id){
 const MAX_HINTS = 3;
 function useHint(){
   if (S.viewSol || S.solved) return;
+  if (S.hintId) return;   // one hint at a time: wait until the lit-up domino fades
   if (S.hints >= MAX_HINTS){ S.msg = 'No hints left for this puzzle.'; S.warn = true; renderAll(); return; }
   if (S.draft) cancelDraft();
   const mine = S.placed.filter(p => !p.given), wrong = mine.filter(p => !isRight(p));
