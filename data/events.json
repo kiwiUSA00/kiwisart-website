@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T12:59:13.275Z",
+ "updated": "2026-11-24T02:16:24.162Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -791,20 +791,6 @@
    "canceled": false
   },
   {
-   "id": "bp:82782-1796803200-1796835600@www.brooklynbp.nyc.gov",
-   "title": "ULURP Public Hearing Meeting",
-   "start": "2026-12-09T08:00:00",
-   "end": "2026-12-09T17:00:00",
-   "allDay": false,
-   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
-   "summary": "",
-   "tags": [],
-   "image": "https://www.brooklynbp.nyc.gov/wp-content/uploads/2026/01/FINAL-ULURP-2026-Schedule-2-scaled-e1769702027860.jpg",
-   "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-10/",
-   "source": "bp",
-   "canceled": false
-  },
-  {
    "id": "ppa:10000768-1796803200-1796824800@www.prospectpark.org",
    "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
    "start": "2026-12-09T08:00:00",
@@ -837,6 +823,20 @@
    "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/Screen-Shot-2022-11-11-at-3.37.40-PM.png",
    "url": "https://www.prospectpark.org/event/grand-army-plaza-menorah-lighting-3/2026-12-09/",
    "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "bp:82782-1796839200-1796846400@www.brooklynbp.nyc.gov",
+   "title": "ULURP Public Hearing Meeting",
+   "start": "2026-12-09T18:00:00",
+   "end": "2026-12-09T20:00:00",
+   "allDay": false,
+   "location": "Brooklyn Borough Hall, 209 Joralemon St., Brooklyn, NY, 11201",
+   "summary": "",
+   "tags": [],
+   "image": "https://www.brooklynbp.nyc.gov/wp-content/uploads/2026/01/FINAL-ULURP-2026-Schedule-2-scaled-e1769702027860.jpg",
+   "url": "https://www.brooklynbp.nyc.gov/event/ulurp-public-hearing-meeting-10/",
+   "source": "bp",
    "canceled": false
   },
   {
@@ -1913,6 +1913,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025554-1799402400-1799427600@www.prospectpark.org",
+   "title": "Third Life: Ikebana Exhibit",
+   "start": "2027-01-08T10:00:00",
+   "end": "2027-01-08T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Flower Heart Alliance and Prospect Park Alliance for Third Life, an ikebana exhibition held each January in Prospect Park, made largely from discarded Christmas trees. The title comes from the life of the tree…",
+   "tags": [
+    "Art",
+    "Free"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/Ikebana-at-Winter-Tea-2025.jpg",
+   "url": "https://www.prospectpark.org/event/third-life-ikebana-exhibit/2027-01-08/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10001096-1799481600-1799510400@www.prospectpark.org",
    "title": "Greenmarket at Grand Army Plaza",
    "start": "2027-01-09T08:00:00",
@@ -1967,6 +1984,23 @@
    "canceled": false
   },
   {
+   "id": "ppa:10025555-1799488800-1799514000@www.prospectpark.org",
+   "title": "Third Life: Ikebana Exhibit",
+   "start": "2027-01-09T10:00:00",
+   "end": "2027-01-09T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Flower Heart Alliance and Prospect Park Alliance for Third Life, an ikebana exhibition held each January in Prospect Park, made largely from discarded Christmas trees. The title comes from the life of the tree…",
+   "tags": [
+    "Art",
+    "Free"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/Ikebana-at-Winter-Tea-2025.jpg",
+   "url": "https://www.prospectpark.org/event/third-life-ikebana-exhibit/2027-01-09/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
    "id": "ppa:10025516-1799575200-1799589600@www.prospectpark.org",
    "title": "Mulchfest in Prospect Park",
    "start": "2027-01-10T10:00:00",
@@ -1981,6 +2015,23 @@
    ],
    "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/19/27/19274a90-70dd-4fa3-8ab2-e33eb1eec708/mulchfest_2017.jpg",
    "url": "https://www.prospectpark.org/event/mulchfest-in-prospect-park/2027-01-10/",
+   "source": "ppa",
+   "canceled": false
+  },
+  {
+   "id": "ppa:10025556-1799575200-1799600400@www.prospectpark.org",
+   "title": "Third Life: Ikebana Exhibit",
+   "start": "2027-01-10T10:00:00",
+   "end": "2027-01-10T17:00:00",
+   "allDay": false,
+   "location": "Prospect Park",
+   "summary": "Join Flower Heart Alliance and Prospect Park Alliance for Third Life, an ikebana exhibition held each January in Prospect Park, made largely from discarded Christmas trees. The title comes from the life of the tree…",
+   "tags": [
+    "Art",
+    "Free"
+   ],
+   "image": "https://www.prospectpark.org/wp-content/uploads/2026/11/Ikebana-at-Winter-Tea-2025.jpg",
+   "url": "https://www.prospectpark.org/event/third-life-ikebana-exhibit/2027-01-10/",
    "source": "ppa",
    "canceled": false
   },
