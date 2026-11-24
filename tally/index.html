@@ -170,6 +170,9 @@ h1{font:900 clamp(1.8rem,5vw,2.7rem)/1 var(--body);letter-spacing:-.03em;margin:
 .sheet ol{padding-left:1.2em;display:grid;gap:6px}
 .stage{position:relative}
 .cdyn{display:contents}
+.wad{width:min(100%,380px)}
+.wad:empty{display:none}
+.wad .adcard{border-top:0;padding-top:0}
 .adcard{margin-top:2px;border-top:2px dashed var(--line);padding-top:10px;display:flex;flex-direction:column;gap:6px;min-height:0}
 .adcard .adlabel{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:center}
 .adcard ins{width:100%;min-height:60px;max-height:120px;border-radius:12px;overflow:hidden;background:var(--tile)}
@@ -420,6 +423,7 @@ body.howonly .wrap>:not(.rules){display:none!important}
   <div class="wlevels" id="wLevels"></div>
   <div class="wrow"><button class="btn" id="wHow" type="button">How to play</button><button class="btn" id="wBoard" type="button" hidden>Leaderboard</button><button class="btn" id="wShare" type="button">Share</button></div>
   <button class="wremind" id="wRemind" type="button" hidden></button>
+  <div class="wad" id="wAd"></div>
   <p class="wday" id="wDay"></p>
   <p class="copy">&copy; 2026 Troy Evans &middot; <a href="https://kiwisart.com" target="_blank" rel="noopener">kiwisart.com</a> &middot; <a href="https://kiwisart.com/tally/privacy.html" target="_blank" rel="noopener">Privacy</a></p>
 </section>
@@ -759,7 +763,7 @@ function saveRun(){
   try {
     const all = runAll(), out = {};
     Object.keys(all).forEach(k => { if (k.indexOf(DAY.id + ':') === 0) out[k] = all[k]; });
-    out[rkey(S.level, S.idx)] = {el: Math.max(0, Math.round(runElapsed())), hints: S.hints, peeked: !!S.peeked, solved: !!S.solved,
+    out[rkey(S.level, S.idx)] = {el: Math.max(0, Math.round(runElapsed())), hints: S.hints, seen: (S.hintSeen || []).slice(0, 12), peeked: !!S.peeked, solved: !!S.solved,
       placed: S.placed.filter(p => !p.given).map(p => [p.id, p.a, p.b, p.va, p.vb])};
     localStorage.setItem('hd-run', JSON.stringify(out));
   } catch(e) {}
@@ -775,7 +779,7 @@ function load(level, idx){
     const key = rkey(level, idx), run = runAll()[key];
     if ((run && run.solved) || (R[key] && R[key].best)){ S.replay = true; }
     else if (run){
-      S.t0 = Date.now() - (+run.el || 0); S.started = (+run.el || 0) > 0; S.hints = Math.min(+run.hints || 0, MAX_HINTS); S.peeked = !!run.peeked;
+      S.t0 = Date.now() - (+run.el || 0); S.started = (+run.el || 0) > 0; S.hints = Math.min(+run.hints || 0, MAX_HINTS); S.hintSeen = Array.isArray(run.seen) ? run.seen.filter(n => Number.isInteger(n)) : []; S.peeked = !!run.peeked;
       const used = new Set(S.placed.map(p => p.id)), occ = new Set(); S.placed.forEach(p => { occ.add(p.a); occ.add(p.b); });
       (run.placed || []).forEach(q => {
         const [id, a, b, va, vb] = q;
@@ -1469,25 +1473,32 @@ function useHint(){
   if (S.hintId) return;   // one hint at a time: wait until the lit-up domino fades
   if (S.hints >= MAX_HINTS){ S.msg = 'No hints left for this puzzle.'; S.warn = true; renderAll(); return; }
   if (S.draft) cancelDraft();
+  // Every hint is about a different domino: S.hintSeen remembers each domino already hinted on this puzzle.
+  const seen = S.hintSeen = S.hintSeen || [];
+  const pick = a => a[Math.floor(Math.random() * a.length)];
   const mine = S.placed.filter(p => !p.given), wrong = mine.filter(p => !isRight(p));
-  let q = null, msg, flashId;
+  let q = null, msg;
   if (wrong.length){
     // fix a wrong domino: put the right one where it should be, then light it up
-    const w = wrong[Math.floor(Math.random() * wrong.length)];
-    q = S.puz.sol.find(x => x[1] === w.a || x[2] === w.a) || S.puz.sol.find(x => x[1] === w.b || x[2] === w.b);
-    msg = 'Hint: that domino did not belong. The right one is in its place now (lit up).';
-  } else if (mine.length){
-    // everything placed is right: light one up to confirm it
-    S.hintSeen = (S.hintSeen || []).filter(id => mine.some(p => p.id === id));
-    let pool = mine.filter(p => !S.hintSeen.includes(p.id)); if (!pool.length){ S.hintSeen = []; pool = mine; }
-    const t = pool[Math.floor(Math.random() * pool.length)]; S.hintSeen.push(t.id);
-    S.hints++; saveRun(); track('hint_used', {level: S.level, puzzle: S.idx + 1, hint: S.hints}); S.sel = null; S.active = null; flashHint(t.id);
-    S.msg = 'Hint: this domino is right (lit up). Keep it.'; S.warn = false; afterChange(); return;
+    const fixes = wrong.map(w => S.puz.sol.find(x => x[1] === w.a || x[2] === w.a) || S.puz.sol.find(x => x[1] === w.b || x[2] === w.b))
+      .filter(x => x && !seen.includes(x[0]));
+    if (fixes.length){ q = pick(fixes); msg = 'Hint: that domino did not belong. The right one is in its place now (lit up).'; }
   } else {
-    const c = hintCands(); if (!c.length) return;
-    q = c[Math.floor(Math.random() * c.length)];
-    msg = 'Hint: one domino was set where it belongs (lit up).';
+    // everything placed is right: confirm one the player placed that hasn't been hinted yet
+    const unconfirmed = mine.filter(p => !seen.includes(p.id));
+    if (unconfirmed.length){
+      const t = pick(unconfirmed); seen.push(t.id);
+      S.hints++; saveRun(); track('hint_used', {level: S.level, puzzle: S.idx + 1, hint: S.hints}); S.sel = null; S.active = null; flashHint(t.id);
+      S.msg = 'Hint: this domino is right (lit up). Keep it.'; S.warn = false; afterChange(); return;
+    }
   }
+  if (!q){
+    // otherwise place a new domino that hasn't been hinted before
+    const c = hintCands().filter(x => !seen.includes(x[0]));
+    if (!c.length){ S.msg = 'No new hints for this puzzle.'; S.warn = true; renderAll(); return; }
+    q = pick(c); msg = 'Hint: one domino was set where it belongs (lit up).';
+  }
+  seen.push(q[0]);
   if (!q) return;
   const snap = JSON.stringify(S.placed);
   S.history.push(snap); if (S.history.length > 100) S.history.shift();
@@ -1683,6 +1694,8 @@ function nextUnsolved(lv){
 }
 function renderWelcome(){
   renderRemind();
+  // Home-screen ad (same ad unit as the results card), requested once per visit.
+  try { const box = $('wAd'); if (box && !box.dataset.done){ const h = inlineAdHTML(); if (h){ box.dataset.done = '1'; box.innerHTML = h; fillInlineAd(box); } } } catch(e) {}
   try {
     const left = LV.filter(k => !(R[rkey(k, 0)] && R[rkey(k, 0)].best)).length;
     $('wCta').textContent = left === 0 ? 'All four done today. New puzzles tomorrow!' : left === LV.length ? 'Today\u2019s puzzles are ready. Pick a level.' : left + (left === 1 ? ' level' : ' levels') + ' left to solve today.';
