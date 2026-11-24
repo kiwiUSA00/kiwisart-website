@@ -668,24 +668,46 @@ if (ADS_ID){
   const as = document.createElement('script'); as.async = true; as.crossOrigin = 'anonymous';
   as.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADS_ID;
   if (ADS_CFG.adsTest !== false || ADS_TRY) as.setAttribute('data-adbreak-test', 'on');   // Google test ads until config.js sets adsTest: false
+  as.onload = () => { adsState = 'loaded'; adsLog('Google ad script loaded'); };
+  as.onerror = () => { adsState = 'blocked'; adsLog('Google ad script BLOCKED (ad blocker, content blocker or network)'); };
   document.head.appendChild(as);
   window.adsbygoogle = window.adsbygoogle || [];
   window.adBreak = window.adConfig = function(o){ window.adsbygoogle.push(o); };
+  window.adConfig({preloadAdBreaks: 'on', sound: 'off'});
+  adsLog('Ads on for ' + ADS_ID + (as.hasAttribute('data-adbreak-test') ? ' (test mode)' : ''));
+}
+var adsState = 'loading';
+// With ?adtest=1 a small log in the corner shows what Google's ad code did, to help set ads up.
+function adsLog(msg){
+  if (!ADS_TRY) return;
+  try {
+    let box = document.getElementById('adsLog');
+    if (!box){
+      box = document.createElement('div'); box.id = 'adsLog';
+      box.style.cssText = 'position:fixed;left:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:9999;max-width:min(92vw,420px);max-height:38vh;overflow:auto;background:rgba(0,0,0,.82);color:#fff;font:12px/1.35 ui-monospace,Menlo,monospace;padding:8px 10px;border-radius:10px;pointer-events:auto';
+      (document.body || document.documentElement).appendChild(box);
+    }
+    const line = document.createElement('div'); line.textContent = new Date().toLocaleTimeString() + '  ' + msg; box.appendChild(line); box.scrollTop = box.scrollHeight;
+  } catch(e) {}
 }
 let playedThisVisit = false;
 // Shows a Google ad break (if Google has one) between levels, then runs next(). Never blocks the game:
 // if the ad script is blocked or has nothing to show, the next level starts right away.
 function betweenLevels(next){
-  if (!ADS_ID || !playedThisVisit) return next();
+  if (!ADS_ID) return next();
+  if (!playedThisVisit){ adsLog('No ad before the first puzzle of a visit'); return next(); }
+  if (adsState === 'blocked'){ adsLog('Skipping ad: script blocked'); return next(); }
   let finished = false, showing = false;
   const go = () => { if (finished) return; finished = true; document.body.classList.remove('adbreak'); next(); };
   try {
     window.adBreak({type: 'next', name: 'next_level',
-      beforeAd(){ showing = true; document.body.classList.add('adbreak'); pauseClock(); track('ad_break', {placement: 'next_level'}); },
+      beforeAd(){ showing = true; adsLog('beforeAd: Google is showing an ad'); document.body.classList.add('adbreak'); pauseClock(); track('ad_break', {placement: 'next_level'}); },
       afterAd(){ document.body.classList.remove('adbreak'); },
-      adBreakDone(){ go(); }});
-  } catch(e) { return go(); }
-  setTimeout(() => { if (!showing) go(); }, 2500);
+      adBreakDone(info){ adsLog('adBreakDone: ' + (info ? JSON.stringify(info) : '(no info)')); go(); }});
+    adsLog('adBreak called (next_level)');
+  } catch(e) { adsLog('adBreak error: ' + e.message); return go(); }
+  // Don't keep the player waiting if Google never answers.
+  setTimeout(() => { if (!showing && !finished){ adsLog('No answer from Google, continuing'); go(); } }, adsState === 'loaded' ? 6000 : 2500);
 }
 const GA_ID = (window.TALLY_CONFIG && /^G-[A-Z0-9]{4,}$/.test(String(window.TALLY_CONFIG.ga || ''))) ? window.TALLY_CONFIG.ga : null;
 if (GA_ID && /^https?:$/.test(location.protocol)){
