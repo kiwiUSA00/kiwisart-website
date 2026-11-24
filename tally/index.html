@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#e6f2fd" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1b2e" media="(prefers-color-scheme: dark)"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Tally Tiles"><meta name="description" content="A new domino puzzle every day. Place every domino so each row and column adds up. Free, no sign-up."><meta property="og:title" content="Tally Tiles"><meta property="og:description" content="A new domino puzzle every day. Place every domino so each row and column adds up."><meta property="og:type" content="website">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#e6f2fd" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1b2e" media="(prefers-color-scheme: dark)"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Tally Tiles"><meta name="description" content="A new domino puzzle every day. Place every domino so each row and column adds up. Free, no sign-up."><meta property="og:title" content="Tally Tiles"><meta property="og:description" content="A new domino puzzle every day. Place every domino so each row and column adds up."><meta property="og:type" content="website"><meta name="google-adsense-account" content="ca-pub-1918382369099424">
 <!-- Tally Tiles. Copyright (c) 2026 Troy Evans, kiwisart.com. All rights reserved. The code, puzzles and artwork may not be copied, redistributed or reused without written permission. -->
 <title>Tally Tiles</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700;800;900&display=swap">
@@ -660,6 +660,33 @@ window.__tallyResume = () => { try { if (!document.body.classList.contains('welc
 window.__tallyReminder = st => { if (APP){ APP.reminder = st || {}; renderRemind(); } };
 document.addEventListener('click', e => { if (e.target.closest('#wRemind')) appPost({type: 'reminder'}); });
 /* ---------- Google Analytics (only when config.js sets ga: 'G-...') ---------- */
+/* ---------- Ads between levels (website only; AdSense H5 Games Ad Placement API) ---------- */
+const ADS_CFG = window.TALLY_CONFIG || {};
+const ADS_TRY = /[?&]adtest=1\b/.test(location.search);   // ?adtest=1 previews Google test ads before ads are switched on
+const ADS_ID = (!APP && /^https?:$/.test(location.protocol) && /^ca-pub-\d{8,20}$/.test(String(ADS_CFG.adsense || '')) && (ADS_CFG.ads === true || ADS_TRY)) ? ADS_CFG.adsense : null;
+if (ADS_ID){
+  const as = document.createElement('script'); as.async = true; as.crossOrigin = 'anonymous';
+  as.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADS_ID;
+  if (ADS_CFG.adsTest !== false || ADS_TRY) as.setAttribute('data-adbreak-test', 'on');   // Google test ads until config.js sets adsTest: false
+  document.head.appendChild(as);
+  window.adsbygoogle = window.adsbygoogle || [];
+  window.adBreak = window.adConfig = function(o){ window.adsbygoogle.push(o); };
+}
+let playedThisVisit = false;
+// Shows a Google ad break (if Google has one) between levels, then runs next(). Never blocks the game:
+// if the ad script is blocked or has nothing to show, the next level starts right away.
+function betweenLevels(next){
+  if (!ADS_ID || !playedThisVisit) return next();
+  let finished = false, showing = false;
+  const go = () => { if (finished) return; finished = true; document.body.classList.remove('adbreak'); next(); };
+  try {
+    window.adBreak({type: 'next', name: 'next_level',
+      beforeAd(){ showing = true; document.body.classList.add('adbreak'); pauseClock(); track('ad_break', {placement: 'next_level'}); },
+      afterAd(){ document.body.classList.remove('adbreak'); },
+      adBreakDone(){ go(); }});
+  } catch(e) { return go(); }
+  setTimeout(() => { if (!showing) go(); }, 2500);
+}
 const GA_ID = (window.TALLY_CONFIG && /^G-[A-Z0-9]{4,}$/.test(String(window.TALLY_CONFIG.ga || ''))) ? window.TALLY_CONFIG.ga : null;
 if (GA_ID && /^https?:$/.test(location.protocol)){
   window.dataLayer = window.dataLayer || [];
@@ -1067,6 +1094,7 @@ function afterChange(){
     S.rating = S.hints === 0 ? 'Clean solve' : 'Solved';
     undiscovered().forEach(d => { S.disc[d] = 'end'; });
     if (S.peeked){ S.revealed = true; S.rating = 'Revealed'; } else if (S.replay){ S.rating = 'Practice'; } else recordSolve();
+    playedThisVisit = true;
     track('puzzle_complete', {level: S.level, puzzle: S.idx + 1, seconds: Math.round(S.elapsed / 1000), hints: S.hints, result: S.revealed ? 'revealed' : S.replay ? 'practice' : 'solved'});
   }
   saveRun();
@@ -1426,7 +1454,7 @@ document.addEventListener('click', e => {
   if ((el = q('[data-guess]'))){ const [d,id] = el.dataset.guess.split(':'); return guess(+d, id); }
   if ((el = q('[data-pick]'))){ const d = +el.dataset.pick; S.pick = d < 0 ? null : d; return renderNotes(); }
   if (q('[data-closedone]')){ S.doneOpen = false; renderAll(); return; }
-  if (q('[data-playnext]')){ $('modal').hidden = true; const nx = nextRef(); if (nx) return load(nx[0], nx[1]); }
+  if (q('[data-playnext]')){ $('modal').hidden = true; const nx = nextRef(); if (nx) return betweenLevels(() => load(nx[0], nx[1])); }
   if (q('[data-gohome]')){ $('modal').hidden = true; return goHome(); }
   if (q('[data-again]')){ $('modal').hidden = true; return load(S.level, S.idx); }
   if ((el = q('[data-next]'))) return load(S.level, +el.dataset.next);
@@ -1628,7 +1656,7 @@ function enterGame(showHow, lv){
   renderAll();
 }
 renderWelcome();
-document.addEventListener('click', e => { const b = e.target.closest('[data-wlv]'); if (b) enterGame(false, b.dataset.wlv); });
+document.addEventListener('click', e => { const b = e.target.closest('[data-wlv]'); if (b){ const lv = b.dataset.wlv; const same = S && S.level === lv && !S.solved; same ? enterGame(false, lv) : betweenLevels(() => enterGame(false, lv)); } });
 $('wHow').onclick = () => {
   window.__howFromGame = false; document.body.classList.remove('welcoming'); document.body.classList.add('howonly');
   openRules(false); try { window.scrollTo(0, 0); } catch(e) {}
