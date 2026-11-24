@@ -169,6 +169,11 @@ h1{font:900 clamp(1.8rem,5vw,2.7rem)/1 var(--body);letter-spacing:-.03em;margin:
 .sheet p,.sheet ol{margin:0}
 .sheet ol{padding-left:1.2em;display:grid;gap:6px}
 .stage{position:relative}
+.cdyn{display:contents}
+.adcard{margin-top:2px;border-top:2px dashed var(--line);padding-top:10px;display:flex;flex-direction:column;gap:6px;min-height:0}
+.adcard .adlabel{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);text-align:center}
+.adcard ins{width:100%;min-height:60px;max-height:120px;border-radius:12px;overflow:hidden;background:var(--tile)}
+.adcard ins[data-ad-status="unfilled"]{display:none!important}
 .doneOverlay{position:absolute;inset:-8px;z-index:30;display:grid;place-items:center;padding:12px;border-radius:22px;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 .doneCard{background:var(--card);border-radius:22px;padding:22px;box-shadow:var(--shadow);width:100%;max-width:380px;display:flex;flex-direction:column;gap:12px;animation:pop .25s ease-out}
 .doneCard .btn{width:100%}
@@ -673,7 +678,7 @@ if (ADS_ID){
   document.head.appendChild(as);
   window.adsbygoogle = window.adsbygoogle || [];
   window.adBreak = window.adConfig = function(o){ window.adsbygoogle.push(o); };
-  window.adConfig({preloadAdBreaks: 'on', sound: 'off'});
+  if (ADS_CFG.adBreaks) window.adConfig({preloadAdBreaks: 'on', sound: 'off'});
   adsLog('Ads on for ' + ADS_ID + (as.hasAttribute('data-adbreak-test') ? ' (test mode)' : ''));
 }
 var adsState = 'loading';
@@ -690,11 +695,25 @@ function adsLog(msg){
     const line = document.createElement('div'); line.textContent = new Date().toLocaleTimeString() + '  ' + msg; box.appendChild(line); box.scrollTop = box.scrollHeight;
   } catch(e) {}
 }
+// Inline display ad inside the "Puzzle complete" card (needs config.js adSlot from an AdSense display ad unit).
+const AD_SLOT = (ADS_ID && /^\d{6,14}$/.test(String(ADS_CFG.adSlot || ''))) ? String(ADS_CFG.adSlot) : null;
+function inlineAdHTML(){
+  if (!AD_SLOT){ if (ADS_ID) adsLog('Inline ad: no adSlot in config.js yet'); return ''; }
+  const test = (ADS_CFG.adsTest !== false || ADS_TRY) ? ' data-adtest="on"' : '';
+  return '<div class="adcard"><span class="adlabel">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="' + ADS_ID +
+    '" data-ad-slot="' + AD_SLOT + '" data-ad-format="horizontal" data-full-width-responsive="false"' + test + '></ins></div>';
+}
+function fillInlineAd(root){
+  const ins = root && root.querySelector('ins.adsbygoogle:not([data-filled])');
+  if (!ins) return;
+  ins.setAttribute('data-filled', '1');
+  requestAnimationFrame(() => { try { (window.adsbygoogle = window.adsbygoogle || []).push({}); adsLog('Inline ad requested'); track('ad_inline', {level: S && S.level}); } catch(e) { adsLog('Inline ad error: ' + e.message); } });
+}
 let playedThisVisit = false;
 // Shows a Google ad break (if Google has one) between levels, then runs next(). Never blocks the game:
 // if the ad script is blocked or has nothing to show, the next level starts right away.
 function betweenLevels(next){
-  if (!ADS_ID) return next();
+  if (!ADS_ID || !ADS_CFG.adBreaks){ return next(); }
   if (!playedThisVisit){ adsLog('No ad before the first puzzle of a visit'); return next(); }
   if (adsState === 'blocked'){ adsLog('Skipping ad: script blocked'); return next(); }
   let finished = false, showing = false;
@@ -1333,15 +1352,21 @@ function renderDone(){
   const best = R[key] && R[key].best, rv = S.revealed, pr = S.replay && !rv;
   const badges = rv ? '<span class="badge rv">Not timed</span>'
     : '<span class="badge' + (S.newBest ? ' nb' : '') + '">' + (S.newBest ? 'New best time' : S.rating) + '</span>' + (S.newBest ? '<span class="badge">' + S.rating + '</span>' : '');
-  el.innerHTML = '<div class="doneCard" role="dialog" aria-label="Puzzle complete"><div class="cwrap"><span class="eyebrow">' + (rv ? 'Solution revealed' : 'Puzzle complete') + '</span><h2>' + LV_SHORT[S.level] + (rv ? '' : ' solved') + '</h2>' +
+  const solveId = S.level + ':' + S.idx + ':' + S.elapsed;
+  const inner = '<div class="cwrap"><span class="eyebrow">' + (rv ? 'Solution revealed' : 'Puzzle complete') + '</span><h2>' + LV_SHORT[S.level] + (rv ? '' : ' solved') + '</h2>' +
     '<div class="stats" style="justify-content:center">' + badges + '</div>' +
     '<div class="cstats"><div class="cstat"><b>' + fmt(S.elapsed) + '</b><span>' + (rv || pr ? 'Time, not saved' : 'Time') + '</span></div><div class="cstat"><b>' + S.hints + '</b><span>' + (S.hints === 1 ? 'Hint' : 'Hints') + '</span></div></div>' +
     (!rv && !S.newBest && best ? '<p class="st" style="margin:0">Your best is ' + fmt(best) + '.</p>' : '') + '</div>' +
     lbBlock() +
     nextBtn() +
     (rv ? '<button class="btn" type="button" data-again="1">Try it again</button>' : '') +
-    '<button class="btn" type="button" data-closedone="1">View the board</button></div>';
+    '<button class="btn" type="button" data-closedone="1">View the board</button>';
+  const dyn = el.dataset.solve === solveId ? el.querySelector('.cdyn') : null;
+  if (dyn){ dyn.innerHTML = inner; el.hidden = false; return; }   // keep the ad loaded when the card updates
+  el.dataset.solve = solveId;
+  el.innerHTML = '<div class="doneCard" role="dialog" aria-label="Puzzle complete"><div class="cdyn">' + inner + '</div>' + (rv ? '' : inlineAdHTML()) + '</div>';
   el.hidden = false;
+  fillInlineAd(el);
 }
 const fig = (inner, cap, cls) => '<figure' + (cls ? ' class="' + cls + '"' : '') + '>' + inner + '<figcaption>' + cap + '</figcaption></figure>';
 function mini(a, b, v, ca, cb){
