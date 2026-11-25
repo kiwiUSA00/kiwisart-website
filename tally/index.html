@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#e6f2fd" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1b2e" media="(prefers-color-scheme: dark)"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Tally Tiles"><meta name="description" content="A new domino puzzle every day. Place every domino so each row and column adds up. Free, no sign-up."><meta property="og:title" content="Tally Tiles"><meta property="og:description" content="A new domino puzzle every day. Place every domino so each row and column adds up."><meta property="og:type" content="website"><meta name="google-adsense-account" content="ca-pub-1918382369099424">
-<!-- Tally Tiles. Copyright (c) 2026 Troy Evans, kiwisart.com. All rights reserved. The code, puzzles and artwork may not be copied, redistributed or reused without written permission. -->
-<title>Tally Tiles</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#e6f2fd" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1b2e" media="(prefers-color-scheme: dark)"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Kiwi Tally"><meta name="description" content="A new domino puzzle every day. Place every domino so each row and column adds up. Free, no sign-up."><meta property="og:title" content="Kiwi Tally"><meta property="og:description" content="A new domino puzzle every day. Place every domino so each row and column adds up."><meta property="og:type" content="website"><meta name="google-adsense-account" content="ca-pub-1918382369099424">
+<!-- Kiwi Tally. Copyright (c) 2026 Troy Evans, kiwisart.com. All rights reserved. The code, puzzles and artwork may not be copied, redistributed or reused without written permission. -->
+<title>Kiwi Tally</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700;800;900&display=swap">
 <style>
 /* Layout: a bright puzzle table. Colored district tiles and ivory dominoes on the left, a field-notes ledger and personal times on the right; one column on phones. */
@@ -397,7 +397,7 @@ body.howonly .wrap>:not(.rules){display:none!important}
 </style>
 
 <section class="welcome" id="welcome" aria-label="Welcome">
-  <div class="wlogo" role="img" aria-label="Tally Tiles logo">
+  <div class="wlogo" role="img" aria-label="Kiwi Tally logo">
     <svg class="w0" viewBox="0 0 260 200" aria-hidden="true"><ellipse cx="132" cy="182" rx="96" ry="9" fill="rgba(20,20,20,.16)"/></svg>
     <svg class="t1" viewBox="0 0 260 200" aria-hidden="true"><g class="t1"><g transform="rotate(-17 55 100)">
       <rect x="24" y="36" width="62" height="124" rx="17" fill="#a78bea" stroke="#141414" stroke-width="6"/>
@@ -421,7 +421,7 @@ body.howonly .wrap>:not(.rules){display:none!important}
       <path d="M232 168 l7 -12 l7 12 z" fill="#46bfae"/><path d="M14 150 l8 -8 l8 8 l-8 8 z" fill="#f2b705"/></g>
   </svg>
   </div>
-  <h1>Tally Tiles</h1>
+  <h1>Kiwi Tally</h1>
   <p class="tag">A new domino puzzle every day. Place every domino so each row and column adds up.</p>
   <p class="wcta" id="wCta">Today’s puzzles are ready. Pick a level.</p>
   <div class="wlevels" id="wLevels"></div>
@@ -437,7 +437,7 @@ body.howonly .wrap>:not(.rules){display:none!important}
     <div class="brand">
       <span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
       <div>
-        <h1>Tally Tiles</h1>
+        <h1>Kiwi Tally</h1>
         <p class="sub">Fill the board so every row and column hits its total.</p>
         <p class="day" id="dayChip"></p>
       </div>
@@ -661,7 +661,7 @@ function recordSolve(){
   try { persist(); } catch(err) {}
 }
 
-/* ---------- iOS app bridge (only inside the Tally Tiles app) ---------- */
+/* ---------- iOS app bridge (only inside the Kiwi Tally app) ---------- */
 const APP = window.__TALLY_APP || null;
 function appPost(msg){ try { if (APP && window.webkit && webkit.messageHandlers && webkit.messageHandlers.tally){ webkit.messageHandlers.tally.postMessage(msg); return true; } } catch(e) {} return false; }
 function renderRemind(){
@@ -1353,10 +1353,10 @@ function shareText(general){
   // Inside the iOS app, share the App Store page (once config.js has it); on the web, share the website.
   const url = (APP && /^https:\/\/apps\.apple\.com\//.test(store)) ? store
     : /kiwisart\.com$/.test(location.hostname) ? location.origin + location.pathname : 'https://kiwisart.com/tally/';
-  let t = general ? 'Try Tally Tiles, a free daily domino puzzle. Place every domino so each row and column adds up.' : 'Think you can beat me at Tally Tiles? A daily domino puzzle.';
+  let t = general ? 'Try Kiwi Tally, a free daily domino puzzle. Place every domino so each row and column adds up.' : 'Think you can beat me at Kiwi Tally? A daily domino puzzle.';
   try {
     const rk = u && u.rows ? lbRank(u.rows) : [];
-    if (rk.length) t = 'Tally Tiles ' + LV_SHORT[u.level] + ' leaderboard (' + (u.range === 'week' ? 'last 7 days' : 'today') + '): #1 ' + rk[0].name + (u.range === 'week' ? ' with ' + rk[0].n + (rk[0].n === 1 ? ' puzzle' : ' puzzles') + ' in ' : ' in ') + fmt(rk[0].secs * 1000) + '. Can you beat it?';
+    if (rk.length) t = 'Kiwi Tally ' + LV_SHORT[u.level] + ' leaderboard (' + (u.range === 'week' ? 'last 7 days' : 'today') + '): #1 ' + rk[0].name + (u.range === 'week' ? ' with ' + rk[0].n + (rk[0].n === 1 ? ' puzzle' : ' puzzles') + ' in ' : ' in ') + fmt(rk[0].secs * 1000) + '. Can you beat it?';
   } catch(e) {}
   return {text: t, url: url};
 }
@@ -1367,7 +1367,7 @@ document.addEventListener('click', async e => {
     const d = shareText(sb.id === 'wShare'), old = sb.textContent;
     const done = m => { sb.textContent = m; setTimeout(() => { if (sb.isConnected) sb.textContent = old; }, 2200); };
     if (appPost({type: 'share', text: d.text, url: d.url})) return;
-    try { if (navigator.share){ await navigator.share({title: 'Tally Tiles', text: d.text, url: d.url}); return; } } catch(err) { if (err && err.name === 'AbortError') return; }
+    try { if (navigator.share){ await navigator.share({title: 'Kiwi Tally', text: d.text, url: d.url}); return; } } catch(err) { if (err && err.name === 'AbortError') return; }
     try { await navigator.clipboard.writeText(d.text + ' ' + d.url); done('Copied! Paste it to a friend'); }
     catch(err) { sb.insertAdjacentHTML('afterend', '<p class="st" style="user-select:all">' + escH(d.text + ' ' + d.url) + '</p>'); sb.remove(); }
     return;
