@@ -305,7 +305,7 @@ h1{font-size:clamp(1.05rem,4.2vw,1.6rem);white-space:nowrap}
   .wrap{box-sizing:border-box;max-width:940px;min-height:calc(100vh - 16px);min-height:calc(100dvh - 16px);display:flex;flex-direction:column;justify-content:center;padding-block:20px 28px}
   .top{margin-bottom:22px}
 }
-.playing .tools,.playing .levels,.playing .notes,.playing #undo{display:none!important}
+.tools,.levels,.notes,#undo{display:none!important}
 .finished #revbar,.finished .tools,.finished .levels,.finished .notes,.finished .trayBox,.finished #undo{display:none!important}
 @media (min-width:881px){.finished .result{grid-area:tray;align-self:center;margin-top:0;min-width:280px}}
 .playing .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 2px 14px}
@@ -1220,9 +1220,13 @@ function showModal(html, o){
   m.hidden = false; $('modalOk').focus();
   try { m.querySelector('.sheet').scrollIntoView({block:'center'}); } catch(e) {}
 }
+function levelDone(l){
+  if (R[rkey(l, 0)] && R[rkey(l, 0)].best) return true;
+  try { const r = runAll()[rkey(l, 0)]; return !!(r && (r.solved || r.peeked)); } catch(e) { return false; }
+}
 function nextRef(){
   const k = LV.indexOf(S.level);
-  for (let j = 1; j <= LV.length; j++){ const l = LV[(k + j) % LV.length]; if (l !== S.level && !(R[rkey(l, 0)] && R[rkey(l, 0)].best)) return [l, 0]; }
+  for (let j = 1; j <= LV.length; j++){ const l = LV[(k + j) % LV.length]; if (l !== S.level && !levelDone(l)) return [l, 0]; }
   return null;
 }
 function nextBtn(){
@@ -1702,11 +1706,11 @@ function renderWelcome(){
   // Home-screen ad (same ad unit as the results card), requested once per visit.
   try { const box = $('wAd'); if (box && !box.dataset.done){ const h = inlineAdHTML(); if (h){ box.dataset.done = '1'; box.innerHTML = h; fillInlineAd(box); } } } catch(e) {}
   try {
-    const left = LV.filter(k => !(R[rkey(k, 0)] && R[rkey(k, 0)].best)).length;
+    const left = LV.filter(k => !levelDone(k)).length;
     $('wCta').textContent = left === 0 ? 'All four done today. New puzzles tomorrow!' : left === LV.length ? 'Today\u2019s puzzles are ready. Pick a level.' : left + (left === 1 ? ' level' : ' levels') + ' left to solve today.';
   } catch(e) {}
   $('wLevels').innerHTML = LV.map(k => {
-    const arr = PUZZLES[k], done = arr.filter((_, i) => R[rkey(k, i)] && R[rkey(k, i)].best).length, n = arr[0].n;
+    const arr = PUZZLES[k], done = levelDone(k), n = arr[0].n;
     return '<button type="button" class="wl" data-wlv="' + k + '"><span>' + LV_SHORT[k] + '<small>' + n + '\u00d7' + n + ' \u00b7 ' + (done ? 'Solved today \u2713' : 'Today\u2019s puzzle') + '</small></span><span class="go">\u203a</span></button>';
   }).join('');
 }
