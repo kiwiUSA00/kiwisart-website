@@ -764,7 +764,7 @@ function pauseClock(){ if (S && !S.solved && S.started && !S.pausedAt){ S.paused
 function resumeClock(){ if (S && S.pausedAt){ S.t0 += Date.now() - S.pausedAt; S.pausedAt = null; } }
 function startClock(){ if (S && !S.started && !S.solved){ S.started = true; S.t0 = Date.now(); S.pausedAt = null; } }
 function saveRun(){
-  if (!S || S.replay) return;
+  if (!S || S.replay || S.locked) return;
   try {
     const all = runAll(), out = {};
     Object.keys(all).forEach(k => { if (k.indexOf(DAY.id + ':') === 0) out[k] = all[k]; });
@@ -782,7 +782,15 @@ function load(level, idx){
   puz.districts.forEach((d,i) => { if (d.revealed) S.disc[i] = 'revealed'; });
   try {
     const key = rkey(level, idx), run = runAll()[key];
-    if ((run && run.solved) || (R[key] && R[key].best)){ S.replay = true; }
+    if ((run && (run.solved || run.peeked)) || (R[key] && R[key].best)){
+      // Finished today (solved or revealed): open it read-only, showing the completed board / solution.
+      S.locked = true; S.solved = true; S.started = true;
+      S.placed = puz.sol.map(q => ({id:q[0], a:q[1], b:q[2], va:q[3], vb:q[4], given: puz.givens.some(g => g.id === q[0])}));
+      S.revealed = !!(run && run.peeked);
+      S.hints = Math.min(+(run && run.hints) || 0, MAX_HINTS);
+      S.elapsed = (R[key] && R[key].best) || (+(run && run.el) || 0);
+      S.rating = S.revealed ? 'Revealed' : S.hints === 0 ? 'Clean solve' : 'Solved';
+    }
     else if (run){
       S.t0 = Date.now() - (+run.el || 0); S.started = (+run.el || 0) > 0; S.hints = Math.min(+run.hints || 0, MAX_HINTS); S.hintSeen = Array.isArray(run.seen) ? run.seen.filter(n => Number.isInteger(n)) : []; S.peeked = !!run.peeked;
       const used = new Set(S.placed.map(p => p.id)), occ = new Set(); S.placed.forEach(p => { occ.add(p.a); occ.add(p.b); });
@@ -793,9 +801,9 @@ function load(level, idx){
       });
     }
   } catch(e) {}
-  clearInterval(timerId); timerId = setInterval(tick, 1000);
+  clearInterval(timerId); if (!S.locked) timerId = setInterval(tick, 1000);
   renderAll();
-  if (S.replay){ say('Practice round: you already solved this one today, so this time won\u2019t count.'); renderAll(); }
+  if (S.locked){ say(S.revealed ? 'You revealed this puzzle today. Here is the solution. New puzzles tomorrow.' : 'You finished this puzzle today. New puzzles tomorrow.'); renderAll(); }
 }
 const fmt = ms => { const s = Math.max(0, Math.floor(ms/1000)), h = Math.floor(s/3600), m = Math.floor(s/60) % 60, ss = String(s%60).padStart(2,'0'); return h ? h + ':' + String(m).padStart(2,'0') + ':' + ss : m + ':' + ss; };
 function tick(){ if (S && !S.solved){ $('timer').textContent = fmt(clockMs()); if (S.started && !S.pausedAt) saveRun(); } }
@@ -904,7 +912,7 @@ function renderTray(){
 function statusText(c){
   const {ev} = c, total = S.puz.tray.length;
   if (S.viewSol) return 'Solution view: red squares differ from your board. Tap My board to go back.';
-  if (S.confirmReveal) return 'Tap Confirm to see the solution. This puzzle then won\'t be timed.';
+  if (S.confirmReveal) return 'Tap Confirm to see the solution. This ends the puzzle for today and it won\'t be timed.';
   if (S.msg) return S.msg;
   if (S.revealed) return 'Solved after viewing the solution (not timed).';
   if (S.solved) return 'Board complete in ' + fmt(S.elapsed) + '.';
@@ -955,7 +963,7 @@ function renderRecords(){
 function renderNotes(){
   let h = '<div><h2>How it works</h2><p class="lede">Each number outside the board is the total its row or column must reach. Every puzzle has exactly one solution.</p></div>';
   h += renderRecords();
-  h += '<ul class="legend"><li><b>Clean solve</b> means you finished without a hint.</li><li><b>Hint</b> (3 per puzzle) lights a correct domino or fixes a wrong one.</li><li><b>Reveal</b> shows the solution on the board so you can compare it with yours. Tap <b>My board</b> to switch back and keep playing. A puzzle you peek at is not timed.</li></ul>';
+  h += '<ul class="legend"><li><b>Clean solve</b> means you finished without a hint.</li><li><b>Hint</b> (3 per puzzle) lights a correct domino or fixes a wrong one.</li><li><b>Reveal</b> fills in the solution and ends the puzzle for the day. A revealed puzzle isn\u2019t timed and doesn\u2019t count on the leaderboard.</li></ul>';
   $('notes').innerHTML = h;
 }
 
@@ -966,16 +974,15 @@ function renderResult(){
   const p = S.puz;
   let h;
   if (S.revealed){
-    h = '<h2>Solution revealed</h2><span class="badge rv">Not timed</span><p class="lede" style="margin:0">Nothing was recorded for this one. Try it again whenever you like.</p>';
+    h = '<h2>Solution revealed</h2><span class="badge rv">Not timed</span><p class="lede" style="margin:0">This puzzle is finished for today and wasn\u2019t timed. New puzzles tomorrow.</p>';
   } else {
     const best = R[rkey(S.level, S.idx)] && R[rkey(S.level, S.idx)].best;
     h = '<h2>Board complete</h2><div class="big">' + fmt(S.elapsed) + '</div><div class="stats"><span class="badge' + (S.newBest ? ' nb' : '') + '">' + (S.newBest ? 'New best' : S.rating) + '</span>' +
-      (S.newBest ? '<span class="badge">' + S.rating + '</span>' : '<span>Best ' + (best ? fmt(best) : fmt(S.elapsed)) + '</span>') +
+      (S.newBest ? '<span class="badge">' + S.rating + '</span>' : '') +
       '<span>Hints ' + S.hints + '</span></div>';
   }
   const nx = nextRef();
-  h += '<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">' + nextBtn() + '' +
-    (S.revealed ? '<button class="btn" type="button" data-again="1">Try it again</button>' : '') + '</div>';
+  h += '<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">' + nextBtn() + '</div>';
   el.innerHTML = h;
 }
 
@@ -1018,7 +1025,7 @@ function renderAll(){
   $('hintsUsed').textContent = S.hints; $('timer').textContent = fmt(clockMs());
   const rb = $('revbar');
   rb.hidden = !(S.solved && S.revealed);
-  if (!rb.hidden){ const nx = nextRef(); rb.innerHTML = nextBtn() + '<button class="btn" type="button" data-again="1">Try again</button>'; }
+  if (!rb.hidden){ const nx = nextRef(); rb.innerHTML = nextBtn(); }
   const act = !!S.draft && !S.solved;
   $('flipb').disabled = !act; $('retb').disabled = !act;
   $('undo').disabled = (!S.history.length && !S.draft) || S.solved || !!S.viewSol;
@@ -1208,9 +1215,12 @@ function reveal(){
   }
   clearTimeout(revTimer); S.confirmReveal = false;
   if (S.draft){ const d = S.draft; S.draft = null; if (S.draftSnap){ S.placed = JSON.parse(S.draftSnap); S.draftSnap = null; } else S.sel = d.id; }
-  S.peeked = true; S.sel = null; S.active = null; S.msg = null; S.viewSol = true;
+  S.peeked = true; S.sel = null; S.active = null; S.msg = null; S.viewSol = false;
   track('reveal_solution', {level: S.level, puzzle: S.idx + 1});
-  saveRun(); renderAll();
+  // Revealing ends the puzzle: the board shows the solution and can't be played again today.
+  S.placed = S.puz.sol.map(q => ({id:q[0], a:q[1], b:q[2], va:q[3], vb:q[4], given: S.puz.givens.some(g => g.id === q[0])}));
+  afterChange();
+  say('Solution revealed. This puzzle is finished for today.');
 }
 
 function showModal(html, o){
@@ -1383,7 +1393,6 @@ function renderDone(){
     (!rv && !S.newBest && best ? '<p class="st" style="margin:0">Your best is ' + fmt(best) + '.</p>' : '') + '</div>' +
     lbBlock() +
     nextBtn() +
-    (rv ? '<button class="btn" type="button" data-again="1">Try it again</button>' : '') +
     '<button class="btn" type="button" data-closedone="1">View the board</button>';
   const dyn = el.dataset.solve === solveId ? el.querySelector('.cdyn') : null;
   if (dyn){ dyn.innerHTML = inner; el.hidden = false; return; }   // keep the ad loaded when the card updates
@@ -1418,7 +1427,7 @@ const RSTEPS = [
     '<ul class="rlist"><li>A small number under a target shows your sum so far.</li><li>A target turns green when it matches, and red if you go over or finish the line wrong.</li><li>Each puzzle has exactly one solution, and the fixed dominoes plus the totals are enough to find it.</li></ul>' },
   { t:'Finish', h:() =>
     '<p>You finish when every row and column total matches.</p>' +
-    '<ul class="rlist"><li><b>Hint</b> (3 per puzzle) lights a correct domino or fixes a wrong one. <b>Reveal</b> shows the solution on the board so you can compare it with yours. Tap <b>My board</b> to switch back and keep playing. A puzzle you peek at is not timed.</li>' +
+    '<ul class="rlist"><li><b>Hint</b> (3 per puzzle) lights a correct domino or fixes a wrong one. <b>Reveal</b> fills in the solution and ends the puzzle for the day. A revealed puzzle isn\u2019t timed and doesn\u2019t count on the leaderboard.</li>' +
     '<li>Finishing with no hints earns a <b>Clean solve</b>.</li></ul>' }
 ];
 let rStep = 0;
@@ -1535,7 +1544,6 @@ document.addEventListener('click', e => {
   if (q('[data-closedone]')){ S.doneOpen = false; renderAll(); return; }
   if (q('[data-playnext]')){ $('modal').hidden = true; const nx = nextRef(); if (nx) return betweenLevels(() => load(nx[0], nx[1])); }
   if (q('[data-gohome]')){ $('modal').hidden = true; return goHome(); }
-  if (q('[data-again]')){ $('modal').hidden = true; return load(S.level, S.idx); }
   if ((el = q('[data-next]'))) return load(S.level, +el.dataset.next);
   if ((el = q('[data-lv]'))) return load(el.dataset.lv, 0);
   if ((el = q('[data-pz]'))) return load(S.level, +el.dataset.pz);
