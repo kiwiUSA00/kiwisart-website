@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T23:56:09.270Z",
+ "updated": "2026-11-25T08:44:14.087Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,40 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "permits:985440",
-   "title": "DTBK Gets Lit 2026",
-   "start": "2026-11-24T18:00:00",
-   "end": "2026-11-24T19:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Albee Square Plaza: Albee Square Plaza Albee Square between Fulton Street and Bond Street",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "permits:984402",
-   "title": "Chess on Underhill Plaza",
-   "start": "2026-11-24T18:30:00",
-   "end": "2026-11-24T21:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Underhill Avenue Plaza: Underhill Avenue Plaza Underhill Ave between Atlantic Ave and Pacific St",
-   "summary": "",
-   "tags": [
-    "Plaza Event"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
   {
    "id": "permits:930126",
    "title": "HHFM Kings County Hospital Market",
