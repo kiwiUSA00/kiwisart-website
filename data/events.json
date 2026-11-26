@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T03:39:33.670Z",
+ "updated": "2026-11-26T16:59:55.417Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -14,65 +14,8 @@
    "home": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx"
   }
  },
- "errors": [
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-15",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2026-12-25",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-14",
-  "bp: 504 https://www.brooklynbp.nyc.gov/events/list/?ical=1&tribe-bar-date=2027-01-24"
- ],
+ "errors": [],
  "events": [
-  {
-   "id": "permits:930126",
-   "title": "HHFM Kings County Hospital Market",
-   "start": "2026-11-25T08:00:00",
-   "end": "2026-11-25T15:00:00",
-   "allDay": false,
-   "timesArePermitWindow": true,
-   "location": "Clarkson Avenue between East 37 Street and East 38 Street",
-   "summary": "",
-   "tags": [
-    "Farmers Market"
-   ],
-   "image": null,
-   "url": "https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx",
-   "source": "permits",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10000766-1795593600-1795615200@www.prospectpark.org",
-   "title": "Wednesday Greenmarket at Bartel-Pritchard Square",
-   "start": "2026-11-25T08:00:00",
-   "end": "2026-11-25T14:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Nestled inside Prospect Park’s tree-shaded southwest corner, this much-loved market is where South Slope and Windsor Terrace residents stock up on locally grown staples. The offerings range from a selection of…",
-   "tags": [
-    "Food",
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/filer_public/bc/e9/bce94562-9695-40f8-9cf3-c7124c2d64b4/greenmarket_c_martin_seck-scaled.jpg",
-   "url": "https://www.prospectpark.org/event/wednesday-greenmarket-at-bartel-pritchard-square/2026-11-25/",
-   "source": "ppa",
-   "canceled": false
-  },
-  {
-   "id": "ppa:10024687-1795600800-1795611600@www.prospectpark.org",
-   "title": "Fall Fix-Up",
-   "start": "2026-11-25T10:00:00",
-   "end": "2026-11-25T13:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Join Prospect Park Alliance this fall to help spruce up the park after a busy summer season. Lend a hand with a variety of projects from path and playground restoration, painting and leaf raking. From September through…",
-   "tags": [
-    "Environment",
-    "Volunteer"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2022/11/RS21702_112319-ppa-volunteer-leaves-raking_49121858733_o.jpg",
-   "url": "https://www.prospectpark.org/event/fall-fix-up-5/2026-11-25/",
-   "source": "ppa",
-   "canceled": false
-  },
   {
    "id": "ppa:10019488-1795687200-1795705200@www.prospectpark.org",
    "title": "Sexual Health Mobile Medical Unit",
