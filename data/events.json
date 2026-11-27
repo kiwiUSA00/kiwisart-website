@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T01:46:42.775Z",
+ "updated": "2026-11-27T12:36:05.631Z",
  "sources": {
   "ppa": {
    "name": "Prospect Park Alliance",
@@ -16,23 +16,6 @@
  },
  "errors": [],
  "events": [
-  {
-   "id": "ppa:10019488-1795687200-1795705200@www.prospectpark.org",
-   "title": "Sexual Health Mobile Medical Unit",
-   "start": "2026-11-26T10:00:00",
-   "end": "2026-11-26T15:00:00",
-   "allDay": false,
-   "location": "Prospect Park",
-   "summary": "Prospect Park Alliance is collaborating with NewYork-Presbyterian to offer comprehensive sexual health services in Brooklyn’s backyard at Grand Army Plaza every Thursday from 10 am to 3 pm and every Monday at the…",
-   "tags": [
-    "Free",
-    "Wellness"
-   ],
-   "image": "https://www.prospectpark.org/wp-content/uploads/2024/08/News-Banner-2024-06-13-nyp-launches-sexual-health-mobile-medical-unit-in-nyc.jpg",
-   "url": "https://www.prospectpark.org/event/sexual-health-mobile-medical-unit/2026-11-26/",
-   "source": "ppa",
-   "canceled": false
-  },
   {
    "id": "ppa:10025034-1795780800-1795788000@www.prospectpark.org",
    "title": "Urban Park Rangers | Post-Thanksgiving Day Super Hike",
